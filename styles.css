@@ -1,0 +1,93 @@
+/*=== Reset ===*/
+
+html, body, h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%
+}
+
+body {
+  display: flex;
+}
+
+/*=== Background Colors ===*/
+
+.purple-1 {
+  background: #EAEAF4;
+}
+
+.purple-2 {
+  background: #A9AAD2;
+}
+
+.purple-3 {
+  background: #5356A4;
+}
+
+.purple-4 {
+  background: #1F1F3D;;
+}
+
+
+/*=== Fonts ===*/
+
+.header-text {
+  color: #EAEAF4;
+  font-family: 'Open Sans';
+  font-weight: bold;
+  padding: 20px;
+}
+
+.body-text {
+  font: 'Open Sans' light;
+}
+
+
+/*=== menu section ===*/
+
+.menu {
+  height: 100%;
+  width: 380px;
+}
+
+/*=== main section ===*/
+
+.ideas {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.idea-form {
+  flex-grow: 2;
+}
+
+.idea-cards {
+  flex-grow: 3;
+}
+
+/*=== media queries ===*/
+
+@media only screen and (max-width: 400px) {
+  body {
+    flex-direction: column;
+  }
+
+  .header-text {
+    font-size: 18px;
+    padding: 10px;
+  }
+
+  .menu {
+    height: 40px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .idea-form {
+    flex-grow: 1;
+  }
+}
