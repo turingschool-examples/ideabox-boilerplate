@@ -88,6 +88,8 @@ After you have completed Iterations 0-1, your Project Manager will provide you w
   * Uses logical operators instead of if/else statements where applicable
   * When 'Filtering and Searching by Text' and 'Viewing Urgent ToDo Cards', to-dos that do not need to be shown on the DOM should be completely removed from the DOM, instead of only being hidden from view
 * **3:**
+  * Application uses the Data Model exclusively to track changes to the ideas,
+    and display of ideas happens after the Data Model has been updated
   * DRY and SRP practices are demonstrated in codebase and students can speak to implementation decisions
   * All functions are less than 10 lines
   * There are no nested if/else statements
