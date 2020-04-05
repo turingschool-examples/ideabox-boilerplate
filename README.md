@@ -32,9 +32,9 @@ Plan then write the HTML and CSS so that your application matches this comp. Bas
 
 Use the same text on your cards that is used in the spec so you can ensure your spacing/sizing is accurate.
 
-![Desktop Layout](https://frontend.turing.io/module-1/assets/ideabox-group/desktop.jpg)
-![Colors](https://frontend.turing.io/module-1/assets/ideabox-group/colors.jpg)
-![Colors](https://frontend.turing.io/module-1/assets/ideabox-group/icons.jpg)
+![Desktop Layout](https://frontend.turing.io/projects/module-1/assets/ideabox-group/desktop.jpg)
+![Colors](https://frontend.turing.io/projects/module-1/assets/ideabox-group/colors.jpg)
+![Colors](https://frontend.turing.io/projects/module-1/assets/ideabox-group/icons.jpg)
 
 You will need the `svg` files for the star, delete, and menu icons. [Here's the link to download the `svg` icons.](https://drive.google.com/drive/folders/18xpWplI0tpXIK1omBZeq04LEx2OMzzMK?usp=sharing)
 
@@ -44,11 +44,11 @@ Now that your Desktop Layout is in place, it's time to write some media queries 
 
 Full mobile layout:
 
-![Mobile Layout](https://frontend.turing.io/module-1/assets/ideabox-group/mobile.jpg)
+![Mobile Layout](https://frontend.turing.io/projects/module-1/assets/ideabox-group/mobile.jpg)
 
 Full mobile layout with open navigation:
 
-![Mobile Layout with Dropdown](https://frontend.turing.io/module-1/assets/ideabox-group/mobile-dropdown.jpg)
+![Mobile Layout with Dropdown](https://frontend.turing.io/projects/module-1/assets/ideabox-group/mobile-dropdown.jpg)
 
 ### Iteration 2 and beyond
 
