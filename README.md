@@ -1,4 +1,4 @@
-## Overview
+# Ideabox Group Project
 
 Every developer has more ideas than time. As David Allen likes to say "the human brain is for creating ideas, not remembering them." In this project, we'll be building an application a new client that records and archives our ideas (good and bad alike).
 
