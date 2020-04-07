@@ -131,7 +131,25 @@ font-size: 15px;
   margin-bottom: 3.04vh;
 }
 
-
+.search-btn {
+  background-color: #353567;
+  padding: 0;
+  float: left;
+  height: 6.09vh;
+  width: 3.47vw;
+}
+.search-section {
+  box-sizing: border-box;
+    height: 5.23vh;
+}
+.search-input {
+  height: 100%;
+    width: 85%
+}
+.mag-glass {
+  height: 3.04vh;
+  width: 1.73vw;
+}
 /*=== media queries ===*/
 
 @media only screen and (max-width: 400px) {
