@@ -94,6 +94,30 @@ body {
   padding: 20px;
 }
 
+.idea-cards {
+  border: 2px solid black;
+}
+
+.search-icon {
+  height: 50px;
+  width: 50px;
+}
+
+.red-star {
+  height: 35px;
+  width: 35px;
+}
+
+.comment-circle {
+  height: 35px;
+  width: 35px;
+}
+
+.delete-white {
+  height: 35px;
+  width: 35px;
+}
+
 /*=== media queries ===*/
 
 @media only screen and (max-width: 400px) {
