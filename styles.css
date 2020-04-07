@@ -94,13 +94,76 @@ img {
 }
 
 .idea-form {
+  display: flex;
   flex-grow: 2;
+  justify-content: center;
+  padding: 1em;
 }
 
 .idea-cards {
   flex-grow: 3;
 }
 
+.form-parent {
+  flex-direction: column;
+  height: 15em;
+  width: 40%;
+}
+
+.idea-title {
+  margin-bottom: 1em;
+  font-weight: bold;
+}
+
+.idea-body {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+.title {
+  border: 2px solid #5356A4;
+  width: 97.5%;
+  height: 3em;
+  border-radius: 5px;
+}
+
+.input-body {
+  border: 2px solid #5356A4;
+  width: 97.5%;
+  height: 7em;
+  margin-bottom: 3em;
+  border-radius: 5px;
+}
+
+.search {
+  display: flex;  
+  border: 2px solid #5356A4;
+  background: #353567;
+  width: 98%;
+  border-radius: 5px;
+}
+
+.magnifying-glass {
+  width: 19px;
+  padding: 19px;
+}
+
+.search-input {
+width: 94%;
+height: 3em;
+}
+
+.save {
+  background: #5356A4;
+  color: #E9E9F3;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 100px;
+  border: 2px solid #5356A4;
+  width: 98.75%;
+  margin-bottom: 2em;
+  border-radius: 5px;
+}
 /*=== media queries ===*/
 
 @media only screen and (max-width: 400px) {
