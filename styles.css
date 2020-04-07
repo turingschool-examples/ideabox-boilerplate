@@ -63,6 +63,17 @@ body {
   border-radius: 1px;
   color: #E9E9F3;
 }
+
+.save-button {
+  border: 1px solid #353567;
+  padding: 5px;
+  height: 42px;
+  width: 340px;
+  margin: 2px
+  background-color: #5356A4;
+  border-radius: 1px;
+  color: #E9E9F3;
+}
 /*=== main section ===*/
 
 .ideas {
@@ -75,8 +86,12 @@ body {
   flex-grow: 2;
 }
 
-.idea-cards {
+.idea-cards-grid {
   flex-grow: 3;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  padding: 20px;
 }
 
 /*=== media queries ===*/
