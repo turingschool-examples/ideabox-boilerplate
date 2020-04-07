@@ -59,7 +59,6 @@ body {
 .comment-text {
   color: #EAEAF4;
   font-family: "Open Sans";
-  /* padding-: 5px; */
   padding-left: 5px;
   padding-top: 2px;
 }
@@ -95,6 +94,7 @@ body {
   grid-template-rows: repeat(3, 1fr);
   grid-gap: 15px;
   grid-auto-flow: dense;
+  /* position: center; */
   /* align-content: center; */
   /* justify-content: center; */
   /* width: 100px; */
@@ -119,10 +119,10 @@ body {
   /* height: 250px */
 }
 
-svg {
+img {
   max-width: 10%;
   height: auto;
-  
+  padding-top: 3px;
 }
 
 /*=== media queries ===*/
