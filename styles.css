@@ -6,7 +6,7 @@ html, body, h1, h2, h3, h4, h5, h6, p {
 }
 
 html, body {
-  height: 100%
+  height: 100vh
 }
 
 body {
@@ -42,7 +42,7 @@ body {
 }
 
 .body-text {
-  font: 'Open Sans' light;
+  font-family: 'Open Sans' light;
 }
 
 
@@ -60,6 +60,7 @@ body {
 }
 
 .filter-star-heading  {
+  font-family: 'Open Sans';
   align-items: left;
   padding-left: 15px;
   color: #A9AAD2;
@@ -100,18 +101,29 @@ body {
 
 .idea-cards-section {
   flex-grow: 3;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  padding: 20px;
 }
-.idea-form {
 
+.idea-form {
+ font: 'Open Sans' bold;
  display: flex;
  flex-direction: column;
- justify-content: center;
+ justify-content: space-between;
  width: 60%;
 }
 
 .idea-form input {
   border-radius: 5px;
   margin: 15px 0px;
+}
+
+.idea-form label {
+  font-family: 'Open Sans';
+  font-weight: 900;
+  color: rgb(40,38,84);
 }
 
 #title-input-field {
@@ -137,6 +149,35 @@ body {
 
 
 /*idea box cards section*/
+.idea-box { 
+  border: 3px solid;
+  border-color: #5356A4;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  justify-content: space-between;
+  width: 180px;  
+}
+
+.star-delete-option {
+  background-color: #1f1f3d;
+  display: flex;
+  flex-direction: row;
+  height: 18px;
+  justify-content: space-between;
+  padding: 3px;
+}
+
+.idea-box-main-content {
+  padding-left: 7px;
+  overflow: scroll;
+}
+
+.add-comment {
+  background-color: #a9aad2;
+  height: 24px;
+}
+
 /*=== media queries ===*/
 
 @media only screen and (max-width: 400px) {
