@@ -4,29 +4,32 @@
     <link href="https://fonts.googleapis.com/css?family=Open%20Sans" rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="./styles.css">
   </head>
-  <body class="purple-1">
+  <body class="purple-1 body-text">
     <section class="menu purple-4">
       <h1 class="header-text">IdeaBox</h1>
-    </br>
-      <h2>Filter Starred Ideas</h2>
-      <button class="show-ideas-btn">Show Starred Ideas</button>
-    </br>
+      <div class="filter-star-ideas">
+        <h4 class="filter-star-heading">Filter Starred Ideas</h4>
+        <button class="show-ideas-btn">
+          <h2 class="show-starred-heading">Show Starred Ideas
+            </h2>
+          </button>
+      </div>
     </section>
     <main class="ideas">
-      <section class="idea-form purple-2">
-        <form class="idea-form-form">
-          <label for="title-input-field">Title:</label>
+      <section class="idea-form-section purple-2">
+        <form class="idea-form">
+          <label for="title-input-field">Title</label>
           <input type="input" name="title-input-field" id="title-input-field">
-          <label for="body-input-field">Body:</label>
+          <label for="body-input-field">Body</label>
           <input type="input" name="body-input-field" id="body-input-field">
-          <button class="save-idea-btn">Save!</button>
+          <button class="save-idea-btn">Save</button>
         </form>
         <div class="search-bar">
           <button class="search-icon-btn" for="search-entry"><img src="./assets/search.svg" /></button>
           <input type="text" id="search-entry" name="search-entry" />
         </div>
       </section>
-      <section class="idea-cards">
+      <section class="idea-cards-section">
         <section class="idea-box">
           <div class="star-delete-option">
             <button class="star-btn" disabled><img src="./assests/star.svg" /></button>
