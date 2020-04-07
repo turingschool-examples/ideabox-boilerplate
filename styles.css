@@ -31,7 +31,18 @@ body {
   background: #1F1F3D;;
 }
 
+.filter {
+  color: #BFBFDD;
+}
 
+.show-starred {
+  background: #5356A4;
+  color: #E9E9F3;
+}
+
+img {
+  width: 20px;
+}
 /*=== Fonts ===*/
 
 .header-text {
