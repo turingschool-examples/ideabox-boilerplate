@@ -45,6 +45,17 @@ body {
   font: 'Open Sans' light;
 }
 
+.card-header {
+  font-family: 'Open Sans';
+  font-weight: bold;
+  padding: 7px;
+}
+
+.card-text {
+  font: 'Open Sans' light;
+  padding: 7px;
+}
+
 
 /*=== menu section ===*/
 
@@ -67,6 +78,35 @@ body {
 
 .idea-cards {
   flex-grow: 3;
+}
+
+.cards {
+  flex-grow: 3;
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 15px;
+  /* align-content: center; */
+  /* justify-content: center; */
+  /* width: 100px; */
+
+  padding: 15px;
+}
+
+.card-top {
+  background: #1F1F3D;
+  height: 25px;
+}
+
+.card-bottom {
+  background: #5356A4;
+  height: 25px;
+}
+
+.box {
+  border: solid;
+  border-color: #1F1F3D;
+  border-width: 1px;
 }
 
 /*=== media queries ===*/
