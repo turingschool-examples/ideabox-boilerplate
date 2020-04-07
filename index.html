@@ -9,12 +9,28 @@
       <h1 class = "header-text">IdeaBox</h1>
        <hr />
         <h3>Filter Starred Ideas</h3>
-        <button class = "starred-ideas-button">Show Starred Ideas</button>
+        <button type="submit" class = "starred-ideas-button">Show Starred Ideas</button>
        <hr />
     </section>
     <main class = "ideas">
       <section class = "idea-form purple-2">
-        
+        <form>
+          <label for = "title">Title</label>
+           <br>
+          <input type = "text" id = "title-input">
+           <br>
+          <label for = "body">Body</label>
+           <br>
+          <input type = "text" id = "body-input">
+           <br>
+          <button class = "save-button">Save</button>
+           <br>
+          <form class = "search-button" action="/action_page.php">
+            <button type="submit"></button>
+            <input type="text" placeholder="Search ideas">
+          </form>
+
+        </form>
       </section>
       <section class = "idea-cards">
       </section>
