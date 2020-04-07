@@ -46,6 +46,8 @@ body {
 }
 
 
+
+
 /*=== menu section ===*/
 
 .menu {
@@ -68,11 +70,12 @@ body {
   border: 1px solid #353567;
   padding: 5px;
   height: 42px;
-  width: 340px;
+  width: 58%;
   margin: 2px;
   background-color: #5356A4;
   border-radius: 1px;
   color: #E9E9F3;
+
 }
 /*=== main section ===*/
 
@@ -84,6 +87,7 @@ body {
 
 .idea-form {
   flex-grow: 2;
+  padding-left: 30%;
 }
 
 .idea-cards-grid {
@@ -99,8 +103,13 @@ body {
 }
 
 .search-icon {
-  height: 50px;
-  width: 50px;
+  height: 16px;
+  width: 16px;
+  border: 1px solid #1F1F3D;
+  background-color: #353567;
+  padding: 3px;
+  position: fixed;
+  left: 561px;
 }
 
 .red-star {
@@ -118,6 +127,27 @@ body {
   width: 35px;
 }
 
+.input-box {
+  width: 55%;
+  padding: 5px;
+  /* height: 22%; */
+  border: 1px solid #353567;
+  border-radius: 1px;
+  margin-bottom: 5px;
+}
+
+#body-input-box {
+  padding-top: 50px;
+  margin-bottom: 5px;
+}
+
+#searchbar {
+  margin-left: 20px;
+  padding-left: 10px;
+  width: 25%;
+
+  position: fixed;
+}
 /*=== media queries ===*/
 
 @media only screen and (max-width: 400px) {
@@ -137,6 +167,7 @@ body {
   }
 
   .idea-form {
+    display: flex;
     flex-grow: 1;
   }
 }
