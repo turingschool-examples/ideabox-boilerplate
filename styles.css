@@ -1,5 +1,7 @@
 /*=== Reset ===*/
-
+* {
+  font-family: 'Open Sans';
+}
 html, body, h1, h2, h3, h4, h5, h6, p {
   margin: 0;
   padding: 0;
@@ -53,6 +55,27 @@ body {
   width: 380px;
 }
 
+.left-side-border {
+  border-top: solid 1px #353567;
+  border-bottom: solid 1px #353567;
+  padding: 2.43vh;
+}
+
+.left-side-text {
+color: #BBBAD9;
+font-size: 15px;
+}
+
+.ideas-btn {
+  background-color: #5356A4;
+  color: #e9e9f3;
+  border: #353567 solid 1px;
+  width: 100%;
+  font-size: 23px;
+  height: 7vh;
+  margin-top: 5vh;
+  margin-bottom: 3vh;
+}
 /*=== main section ===*/
 
 .ideas {
@@ -63,11 +86,51 @@ body {
 
 .idea-form {
   flex-grow: 2;
+  display: flex;
+  justify-content: center;
 }
 
 .idea-cards {
   flex-grow: 3;
 }
+
+.title-input, .body-input, .save-button {
+  display: block;
+  width: 26.04vw;
+  border: 1px solid #595BA6;
+  font-weight: bold;
+  box-sizing: border-box;
+
+}
+
+.title-input {
+  height: 5.23vh;
+}
+.body-input{
+  height: 10.46vh;
+  }
+.form-text {
+  font-size: 16px;
+}
+
+.form-text2 {
+  font-size: 16px;
+  margin-top: 3.04vh;
+}
+.save-button {
+  background-color: #353567;
+  color:#E9E7F3;
+  margin-top: 3.04vh;
+  margin-bottom: 3.04vh;
+  height: 6.09vh;
+  font-size: 24px;
+}
+
+.inputs-holder {
+  margin-top: 3.04vh;
+  margin-bottom: 3.04vh;
+}
+
 
 /*=== media queries ===*/
 
