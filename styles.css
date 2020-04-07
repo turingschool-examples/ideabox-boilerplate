@@ -11,6 +11,7 @@ html, body {
 
 body {
   display: flex;
+  font-family: 'Open Sans', sans-serif;
 }
 
 /*=== Background Colors ===*/
@@ -33,11 +34,17 @@ body {
 
 .filter {
   color: #BFBFDD;
+  margin-left: 20px;
 }
 
 .show-starred {
   background: #5356A4;
   color: #E9E9F3;
+  border-color: #353567;
+  padding: 20px;
+  margin: 20px;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 img {
@@ -50,6 +57,8 @@ img {
   font-family: 'Open Sans';
   font-weight: bold;
   padding: 20px;
+  margin-left: 14px;
+
 }
 
 .body-text {
@@ -62,6 +71,18 @@ img {
 .menu {
   height: 100%;
   width: 380px;
+  display: flex;
+  flex-direction: column;
+}
+.menu-items {
+  display: flex;
+  border: solid;
+  border-width: 2px;
+  border-color: #353567;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 10px;
+
 }
 
 /*=== main section ===*/
