@@ -25,6 +25,7 @@ body {
 
 .purple-3 {
   background: #5356A4;
+  color: white;
 }
 
 .purple-4 {
@@ -66,7 +67,17 @@ body {
 }
 
 .idea-cards {
+  display: flex;
   flex-grow: 3;
+  justify-content: space-between;
+}
+
+.user-cards {
+  margin: 20px;
+  width: 150px;
+  border-color: #6E646B;
+  border-style: solid;
+  border-width: 1px
 }
 
 /*=== media queries ===*/
