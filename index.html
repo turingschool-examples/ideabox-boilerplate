@@ -7,9 +7,28 @@
   <body class="purple-1">
     <section class="menu purple-4">
       <h1 class="header-text">IdeaBox</h1>
+      <div class="filter-box">
+     <h1 id="filtered-Starred-Ideas">Filter Starred Ideas</h1>
+     <button class="starred-ideas-button"> Show Starred Ideas </button>
+    </div>
     </section>
     <main class="ideas">
       <section class="idea-form purple-2">
+        <form>
+          <div class="idea-title-area">
+            <label for="idea-title-text">Title</label>
+            <input type="text" name="idea-title-text" id="idea-title-text">
+          </div>
+          <div class="idea-body-area">
+            <label for="idea-body-text">Body</label>
+            <textarea type="text" name="idea-body-text" id="idea-body-text"></textarea>
+           </div>
+           <button class="save-card-button">Save</button>
+           <div class="search">
+            <img src="assets/search.svg" alt="search" id="searchmag">
+            <input type="text" name="search-ideas-text-" id="search-ideas-text" placeholder="Search ideas">
+           </div>
+         </form>
       </section>
       <section class="idea-cards">
       </section>
