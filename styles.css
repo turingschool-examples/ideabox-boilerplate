@@ -218,7 +218,7 @@ body {
   /* height: 215px */
 }
 
-img, .star-active, .delete, .comment {
+.star-active, .delete, .comment {
   max-width: 10%;
   height: auto;
   padding-top: 3px;
