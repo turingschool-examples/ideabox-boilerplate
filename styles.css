@@ -25,6 +25,7 @@ body {
 
 .purple-3 {
   background: #5356A4;
+  color: white;
 }
 
 .purple-4 {
@@ -35,7 +36,7 @@ body {
 /*=== Fonts ===*/
 
 .header-text {
-  color: #EAEAF4;
+  color: black;
   font-family: 'Open Sans';
   font-weight: bold;
   padding: 20px;
@@ -62,11 +63,32 @@ body {
 }
 
 .idea-form {
+  display: flex;
+  flex-direction: column;
   flex-grow: 2;
+  align-items: center;
 }
 
 .idea-cards {
+  display: flex;
   flex-grow: 3;
+  justify-content: space-between;
+}
+
+.user-cards {
+  margin: 20px;
+  width: 150px;
+  border-color: #6E646B;
+  border-style: solid;
+  border-width: 1px
+}
+
+.title-display {
+  padding: 10px 10px 0px 10px;
+}
+
+.body-display {
+  padding: 10px;
 }
 
 /*=== media queries ===*/
