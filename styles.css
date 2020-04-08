@@ -1,3 +1,5 @@
+/* GLOBAL RULES */
+
 body {
   display: grid;
   grid-template-columns: 1fr 3fr;
@@ -8,53 +10,24 @@ body {
   grid-gap: 1px;
 }
 
+h2 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+input {
+  border-color: #5E60A9;
+  border-radius: 2px;
+}
+
+/* IDEABOX RULES (SIDEBAR) */
+
 .idea-box {
   background-color: #1F1F3D;
   font-family: Open Sans, bold;
   color: #E9E9F3;
   font-size: 12px;
   grid-area: idea-box;
-}
-
-.idea-form {
-  background-color: #A9AAD2;
-  font-family: Open Sans, bold;
-  font-size: 15px;
-  font-weight: bold;
-  grid-area: idea-form;
-  padding-left: 150px;
-  padding-right: 150px;
-  padding-top: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-
-.idea-cards-section {
-  background-color: #EAEAF4;
-  font-family: Open Sans, bold;
-  font-size: 10px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
-  grid-gap: 15px;
-  place-items: center / center;
-  padding: 10px;
-}
-
-.idea-cards-article {
-  display: flex;
-  flex-direction: column;
-  height: max-content;
-  border: 2px solid #1F1F3D;
-  background-color: #FFFFFF;
-  font-size: 16px;
-  grid-gap: 10px;
-  justify-content: space-between;
-}
-
-.idea-cards-text {
-  padding: 0px 10px;
 }
 
 .filter-starred {
@@ -68,11 +41,6 @@ body {
   padding-bottom: 15px;
 }
 
-h2 {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
 button.show-starred {
   color: #E9E9F3;
   background-color: #5356A4;
@@ -81,9 +49,20 @@ button.show-starred {
   font-size: 15px;
 }
 
-input {
-  border-color: #5E60A9;
-  border-radius: 2px;
+/* IDEAFORM RULES */
+
+.idea-form {
+  background-color: #A9AAD2;
+  font-family: Open Sans, bold;
+  font-size: 15px;
+  font-weight: bold;
+  grid-area: idea-form;
+  padding-left: 150px;
+  padding-right: 150px;
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .search-bar {
@@ -114,6 +93,35 @@ button.save {
 
 #search-input {
   width: 300px;
+}
+
+/* IDEACARD RULES */
+
+.idea-cards-section {
+  background-color: #EAEAF4;
+  font-family: Open Sans, bold;
+  font-size: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 15px;
+  place-items: center / center;
+  padding: 10px;
+}
+
+.idea-cards-article {
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  border: 2px solid #1F1F3D;
+  background-color: #FFFFFF;
+  font-size: 16px;
+  grid-gap: 10px;
+  justify-content: space-between;
+}
+
+.idea-cards-text {
+  padding: 0px 10px;
 }
 
 button.comment-color{
