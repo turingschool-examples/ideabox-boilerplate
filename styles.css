@@ -50,21 +50,21 @@ body {
   font-family: 'Open Sans';
   font-weight: bold;
   padding: 7px;
-  font-size: 175%;
+  font-size: 16px;
 }
 
 .card-text {
   font-family: 'Open Sans';
-  font weight: light;
+  font-weight: light;
   padding: 7px;
-  font-size: 150%;
+  font-size: 13px;
 }
 
 .comment-text {
   color: #EAEAF4;
   font-family: "Open Sans";
   padding: 5px;
-  font-size: 175%;
+  font-size: 13px;
 }
 
 
@@ -108,13 +108,14 @@ body {
 
 .idea-form {
   flex-grow: 2;
-  padding: 5% 5% 1% 5%;
 }
 
 .form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 300px;
+  height: 40vh;
 }
 
 .title-text {
@@ -126,15 +127,12 @@ body {
 
 .input-title {
   width: 50%;
-  height: 7vh;
-  margin-top: 1%;
-  margin-bottom: 4%;
+  height: 10vh;
   border: 2px solid #5356A4;
   border-radius: 4px;
 }
 
 .form-body-text {
-  margin-bottom: 1%;
   width: 50%;
   font-family: 'Open Sans';
   color: #333451;
@@ -143,7 +141,7 @@ body {
 
 .input-body {
   width: 50%;
-  height: 14vh;
+  height: 15vh;
   border: 2px solid #5356A4;
   border-radius: 4px;
 }
@@ -190,36 +188,68 @@ body {
 
 .idea-cards {
   flex-grow: 3;
+  max-height: 500px;
+  overflow: auto;
 }
 
 .card-grid {
   flex-grow: 3;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* grid-template-rows: repeat(3, 1fr); */
   grid-gap: 15px;
   padding: 30px;
+  background: #EAEAF4;
 }
 
-.card-top {
-  background: #1F1F3D;
-  height: 50px;
+.idea-cards {
+  flex-grow: 3;
 }
 
-.card-bottom {
-  background: #5356A4;
-  height: 55px;
+.card-grid {
+  flex-grow: 3;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 15px;
+  padding: 30px;
+  font-size: 14px;
 }
 
 .box {
   border: solid;
   border-color: #1F1F3D;
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border-width: 1px;
-  /* height: 215px */
+  min-height: 10vh;
+  max-height: 30vh;
 }
 
-.star-active, .delete, .comment {
+.card-top {
+  background: #1F1F3D;
+  height: 3vh;
+  width: auto;
+}
+
+.card-bottom {
+  background: #5356A4;
+  height: 3vh;
+  width: auto;
+  display: flex;
+  align-items: center;
+}
+
+.star-active,
+.delete,
+.comment {
   max-width: 10%;
+  height: auto;
+  /* padding-top: 3px; */
+}
+
+input {
+  max-width: 50%;
   height: auto;
   padding-top: 3px;
 }
