@@ -1,4 +1,4 @@
-/*=== Reset ===*/
+# /*=== Reset ===*/
 
 html, body, h1, h2, h3, h4, h5, h6, p {
   margin: 0;
@@ -133,7 +133,7 @@ body {
   border-radius: 4px;
 }
 
-.body-text {
+.form-body-text {
   margin-bottom: 1%;
   width: 50%;
   font-family: 'Open Sans';
@@ -218,8 +218,7 @@ body {
   /* height: 215px */
 }
 
-img,
-input {
+.star-active, .delete, .comment {
   max-width: 10%;
   height: auto;
   padding-top: 3px;
