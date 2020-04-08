@@ -31,7 +31,6 @@ body {
   background: #1F1F3D;;
 }
 
-
 /*=== Fonts ===*/
 
 .header-text {
@@ -42,7 +41,9 @@ body {
 }
 
 .body-text {
-  font: 'Open Sans' light;
+  color: #BFBFDD;
+  font-family: 'Open Sans';
+  font-weight: light;
 }
 
 .card-header {
@@ -72,6 +73,29 @@ body {
 .menu {
   height: 100%;
   width: 380px;
+  background-color: #1F1F3D;
+}
+
+.menu-body-text {
+  border-top: 1px solid #353567;
+  border-bottom: 1px solid #353567;
+  font-size: 90%;
+  padding: 20px;
+  height: 10vh;
+  font-family: 'Open Sans';
+  font-weight: bold;
+  color: #BFBFDD;
+}
+
+.show-starred-button {
+  background: #5356A4;
+  border: #353567;
+  font-size: 130%;
+  font-weight: bold;
+  font-family: 'Open Sans';
+  color: #E9E9F3;
+  width: 95%;
+  height: 4vh;
 }
 
 /*=== main section ===*/
@@ -84,6 +108,84 @@ body {
 
 .idea-form {
   flex-grow: 2;
+  padding: 5% 5% 1% 5%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title-text {
+  width: 50%;
+  font-family: 'Open Sans';
+  font-weight: bold;
+  color: #333451;
+}
+
+.input-title {
+  width: 50%;
+  height: 7vh;
+  margin-top: 1%;
+  margin-bottom: 4%;
+  border: 2px solid #5356A4;
+  border-radius: 4px;
+}
+
+.body-text {
+  margin-bottom: 1%;
+  width: 50%;
+  font-family: 'Open Sans';
+  color: #333451;
+  font-weight: bold;
+}
+
+.input-body {
+  width: 50%;
+  height: 14vh;
+  border: 2px solid #5356A4;
+  border-radius: 4px;
+}
+
+.form-button {
+  background-color: #353567;
+  color: #EAEAF4;
+  font-family: 'Open Sans';
+  font-weight: bold;
+  font-size: 1.5em;
+  width: 50%;
+  margin-top: 2%;
+  height: 7vh;
+  border: 2px solid #5356A4;
+  border-radius: 4px;
+}
+
+.search-box {
+  display: flex;
+  margin: 2%;
+  width: 50%;
+  border: 2px solid #5356A4;
+  height: 7vh;
+  background-color:  #353567;
+  border-radius: 4px;
+}
+
+#search {
+  padding: 2%;
+  width: 10%;
+}
+
+.search-input {
+  width: 100%;
+  font-size: 1.2em;
+  padding-left: 2%;
+}
+
+::placeholder {
+  font-family: 'Open Sans';
+  font-weight: light;
+  color: #5356A4;
 }
 
 .idea-cards {
