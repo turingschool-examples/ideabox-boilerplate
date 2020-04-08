@@ -36,7 +36,7 @@ body {
 /*=== Fonts ===*/
 
 .header-text {
-  color: #EAEAF4;
+  color: black;
   font-family: 'Open Sans';
   font-weight: bold;
   padding: 20px;
@@ -78,6 +78,14 @@ body {
   border-color: #6E646B;
   border-style: solid;
   border-width: 1px
+}
+
+.title-display {
+  padding: 10px 10px 0px 10px;
+}
+
+.body-display {
+  padding: 10px;
 }
 
 /*=== media queries ===*/
