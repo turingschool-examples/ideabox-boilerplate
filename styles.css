@@ -88,6 +88,7 @@ body {
   display: flex;
   flex: 1;
   flex-direction: column;
+  font-family:'Open Sans';
 }
 
 .idea-form-section {
@@ -100,7 +101,6 @@ body {
 }
 
 .idea-cards-section {
-  font-family:'Open Sans';
   flex-grow: 3;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -109,7 +109,6 @@ body {
 }
 
 .idea-form {
- font: 'Open Sans' bold;
  display: flex;
  flex-direction: column;
  justify-content: space-between;
@@ -118,12 +117,12 @@ body {
 
 .idea-form input {
   border-radius: 5px;
-  margin: 15px 0px;
+  margin: 12px 0px;
 }
 
 .idea-form label {
   font-family: 'Open Sans';
-  font-weight: 900;
+  font-weight: bold;
   color: rgb(40,38,84);
 }
 
