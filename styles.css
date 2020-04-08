@@ -6,7 +6,7 @@ html, body, h1, h2, h3, h4, h5, h6, p {
 }
 
 html, body {
-  height: 100%
+  height: 100vh
 }
 
 body {
@@ -42,7 +42,7 @@ body {
 }
 
 .body-text {
-  font: 'Open Sans' light;
+  font-family: 'Open Sans' light;
 }
 
 
@@ -53,6 +53,35 @@ body {
   width: 380px;
 }
 
+.filter-star-ideas {
+  border-bottom: 3px solid #A9AAD2;
+  border-top: 3px solid #A9AAD2;
+  padding: 10px;
+}
+
+.filter-star-heading  {
+  font-family: 'Open Sans';
+  align-items: left;
+  padding-left: 15px;
+  color: #A9AAD2;
+  margin: 5px;
+}
+
+.show-ideas-btn {
+  background-color: #5356A4;
+  border:2px white;
+  color: #E9E9F3;
+  font: 3em;
+  font-weight: 900;
+  height: 4em;
+  margin: 25px 10px;
+  padding: 5px;
+  width:94%;
+}
+
+.show-starred-heading {
+  width: 90%;
+}
 /*=== main section ===*/
 
 .ideas {
@@ -61,12 +90,92 @@ body {
   flex-direction: column;
 }
 
-.idea-form {
+.idea-form-section {
+  align-items: center;
   flex-grow: 2;
+  display: flex;
+  flex-direction:column;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
-.idea-cards {
+.idea-cards-section {
   flex-grow: 3;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+.idea-form {
+ font: 'Open Sans' bold;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ width: 60%;
+}
+
+.idea-form input {
+  border-radius: 5px;
+  margin: 15px 0px;
+}
+
+.idea-form label {
+  font-family: 'Open Sans';
+  font-weight: 900;
+  color: rgb(40,38,84);
+}
+
+#title-input-field {
+  flex-grow: 1;
+  height: 3.5em;
+}
+
+#body-input-field {
+  flex-grow: 2;
+  height: 8em;
+}
+
+.save-idea-btn {
+  border-radius: 5px;
+  font-size: x-large;
+  font-weight: 500;
+  color: #EAEAF4;
+  height: 2em;
+  background-color: rgb(40,38,84);
+}
+
+
+
+
+/*idea box cards section*/
+.idea-box { 
+  border: 3px solid;
+  border-color: #5356A4;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  justify-content: space-between;
+  width: 180px;  
+}
+
+.star-delete-option {
+  background-color: #1f1f3d;
+  display: flex;
+  flex-direction: row;
+  height: 18px;
+  justify-content: space-between;
+  padding: 3px;
+}
+
+.idea-box-main-content {
+  padding-left: 7px;
+  overflow: scroll;
+}
+
+.add-comment {
+  background-color: #a9aad2;
+  height: 24px;
 }
 
 /*=== media queries ===*/
