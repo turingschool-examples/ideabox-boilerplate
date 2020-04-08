@@ -31,7 +31,6 @@ body {
   background: #1F1F3D;;
 }
 
-
 /*=== Fonts ===*/
 
 .header-text {
@@ -53,14 +52,18 @@ body {
 .menu {
   height: 100%;
   width: 380px;
+  background-color: #1F1F3D;
 }
 
-.body-text {
+.menu-body-text {
   border-top: 1px solid #353567;
   border-bottom: 1px solid #353567;
   font-size: 90%;
   padding: 20px;
   height: 10vh;
+  font-family: 'Open Sans';
+  font-weight: bold;
+  color: #BFBFDD;
 }
 
 .show-starred-button {
