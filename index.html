@@ -4,14 +4,84 @@
     <link href="https://fonts.googleapis.com/css?family=Open%20Sans" rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="./styles.css">
   </head>
-  <body class="purple-1">
+  <body class="purple-1 body-text">
     <section class="menu purple-4">
       <h1 class="header-text">IdeaBox</h1>
+      <div class="filter-star-ideas">
+        <h4 class="filter-star-heading">Filter Starred Ideas</h4>
+        <button class="show-ideas-btn">
+          <h2 class="show-starred-heading">Show Starred Ideas
+            </h2>
+          </button>
+      </div>
     </section>
     <main class="ideas">
-      <section class="idea-form purple-2">
+      <section class="idea-form-section purple-2">
+        <form class="idea-form body-text">
+          <label for="title-input-field">Title</label>
+          <input type="input" name="title-input-field" id="title-input-field">
+          <label for="body-input-field">Body</label>
+          <input type="input" name="body-input-field" id="body-input-field">
+          <button class="save-idea-btn">Save</button>
+        </form>
+        <div class="search-bar">
+          <button class="search-icon-btn" for="search-entry"><img src="./assets/search.svg" /></button>
+          <input type="text" id="search-entry" name="search-entry" />
+        </div>
       </section>
-      <section class="idea-cards">
+      <section class="idea-cards-section">
+        <section class="idea-box">
+          <div class="star-delete-option">
+            <button class="star-btn" disabled><img src="./assests/star.svg" /></button>
+            <button class="x-delete-btn" diabled><img src="./assests/delete.svg" /></button>
+         </div>
+         <div class="idea-box-main-content">
+           <h4 class="idea-box-title">Best Idea Yet</h4>
+           <p class="idea-box-body">Here's an idea of what the idea box could look like. Of course, class names could be changed and sizing modified to fit within our grid. In other words, just a draft.</p>
+         </div>
+         <div>
+         <button class="plus-cmmt-btn"><img src="./assests/comment.svg" />Comment</button>
+         </div>
+       </section>
+       <section class="idea-box">
+        <div class="star-delete-option">
+          <button class="star-btn" disabled><img src="./assests/star.svg" /></button>
+          <button class="x-delete-btn" diabled><img src="./assests/delete.svg" /></button>
+        </div>
+        <div class="idea-box-main-content">
+         <h4 class="idea-box-title">Best Idea Yet</h4>
+         <p class="idea-box-body">Here's an idea of what the idea box could look like. Of course, class names could be changed and sizing modified to fit within our grid. In other words, just a draft.</p>
+        </div>
+        <div>
+          <button class="plus-cmmt-btn"><img src="./assests/comment.svg" />Comment</button>
+        </div>
+     </section>
+     <section class="idea-box">
+      <div class="star-delete-option">
+        <button class="star-btn" disabled><img src="./assests/star.svg" /></button>
+        <button class="x-delete-btn" diabled><img src="./assests/delete.svg" /></button>
+     </div>
+     <div class="idea-box-main-content">
+       <h4 class="idea-box-title">Best Idea Yet</h4>
+       <p class="idea-box-body">Here's an idea of what the idea box could look like. Of course, class names could be changed and sizing modified to fit within our grid. In other words, just a draft.</p>
+     </div>
+     <div>
+      <button class="plus-cmmt-btn"><img src="./assests/comment.svg" />Comment</button>
+     </div>
+   </section>
+   <section class="idea-box">
+    <div class="star-delete-option">
+      <button class="star-btn" disabled><img src="./assests/star.svg" /></button>
+      <button class="x-delete-btn" diabled><img src="./assests/delete.svg" /></button>
+   </div>
+   <div class="idea-box-main-content">
+     <h4 class="idea-box-title">Best Idea Yet</h4>
+     <p class="idea-box-body">Here's an idea of what the idea box could look like. Of course, class names could be changed and sizing modified to fit within our grid. In other words, just a draft.</p>
+   </div>
+   <div>
+   <button class="plus-cmmt-btn"><img src="./assests/comment.svg" />Comment</button>
+   </div>
+ </section>
       </section>
     </main>
   </body>
