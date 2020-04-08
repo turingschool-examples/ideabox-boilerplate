@@ -101,9 +101,49 @@ img {
 }
 
 .idea-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   flex-grow: 3;
+  justify-content: space-around;
+  align-content: flex-start;
 }
+.idea-card-unit {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+  border: 1px #1F1F3D solid;
+  width: 40px;
+  margin: 10px;
 
+}
+.idea-box-top {
+  justify-content: space-between;
+  border: 1px #1f1f3d solid;
+  background-color: #1f1f3d;
+  display: flex;
+}
+.idea-box-mid {
+  border: 1px #1f1f3d solid;
+  background-color: #ffffff;
+  padding: 8px;
+
+}
+h3 {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-weight: bold;
+}
+.idea-box-bottom {
+ border: 1px #1f1f3d solid;
+ background-color: #5356a4;
+ display: flex;
+ color: white;
+ font-weight: bold;
+}
+.idea-bottom-bar {
+  display: inline-block;
+}
 .form-parent {
   flex-direction: column;
   height: 15em;
@@ -136,7 +176,7 @@ img {
 }
 
 .search {
-  display: flex;  
+  display: flex;
   border: 2px solid #5356A4;
   background: #353567;
   width: 98%;
