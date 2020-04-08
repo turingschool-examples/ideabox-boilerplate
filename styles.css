@@ -94,12 +94,7 @@ body {
   grid-template-rows: repeat(3, 1fr);
   grid-gap: 15px;
   grid-auto-flow: dense;
-  /* position: center; */
-  /* align-content: center; */
-  /* justify-content: center; */
-  /* width: 100px; */
-
-  padding: 15px;
+  padding: 30px;
 }
 
 .card-top {
@@ -116,10 +111,11 @@ body {
   border: solid;
   border-color: #1F1F3D;
   border-width: 1px;
-  /* height: 250px */
+  /* height: 215px */
 }
 
-img {
+img,
+input {
   max-width: 10%;
   height: auto;
   padding-top: 3px;
