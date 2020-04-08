@@ -42,7 +42,9 @@ body {
 }
 
 .body-text {
-  font: 'Open Sans' light;
+  color: #BFBFDD;
+  font-family: 'Open Sans';
+  font-weight: light;
 }
 
 
@@ -51,6 +53,25 @@ body {
 .menu {
   height: 100%;
   width: 380px;
+}
+
+.body-text {
+  border-top: 1px solid #353567;
+  border-bottom: 1px solid #353567;
+  font-size: 90%;
+  padding: 20px;
+  height: 10vh;
+}
+
+.show-starred-button {
+  background: #5356A4;
+  border: #353567;
+  font-size: 130%;
+  font-weight: bold;
+  font-family: 'Open Sans';
+  color: #E9E9F3;
+  width: 95%;
+  height: 4vh;
 }
 
 /*=== main section ===*/
