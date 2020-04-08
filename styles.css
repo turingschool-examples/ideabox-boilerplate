@@ -1,6 +1,7 @@
 /*=== Reset ===*/
 * {
   font-family: 'Open Sans';
+  box-sizing: border-box;
 }
 html, body, h1, h2, h3, h4, h5, h6, p {
   margin: 0;
@@ -12,7 +13,7 @@ html, body {
 }
 
 body {
-  display: flex;
+  display: flex;  
 }
 
 /*=== Background Colors ===*/
@@ -41,10 +42,6 @@ body {
   font-family: 'Open Sans';
   font-weight: bold;
   padding: 20px;
-}
-
-.body-text {
-  font: 'Open Sans' light;
 }
 
 
@@ -133,10 +130,10 @@ font-size: 15px;
 
 .search-btn {
   background-color: #353567;
-  padding: 0;
+  padding: 11.75px;
   float: left;
-  height: 6.09vh;
-  width: 3.47vw;
+  /* height: 6.09vh;
+  width: 3.47vw; */
 }
 .search-section {
   box-sizing: border-box;
@@ -150,6 +147,97 @@ font-size: 15px;
   height: 3.04vh;
   width: 1.73vw;
 }
+
+/* ***ADDED TODAY */
+
+/* .starred-cards-grid { */
+  /* width: auto;
+  background-color: #EAEAF4;
+  border: solid 100px #EAEAF4;
+  box-sizing: border-box; */
+
+
+.mini-card {
+  background-color: #FFFFFF;
+  border: solid 1px #53564A;
+  width: 15.4166vw;
+  margin: 10px;
+}
+
+.idea-card-top {
+  background-color: #1F1F3D;
+  border-bottom: solid 1px #1F1F3D;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.idea-card-text {
+  color: #1F1F3D;
+  height: 100%;
+  margin-bottom: 1.94vh;
+  margin-right: 20px;
+  margin-left: 20px;
+
+}
+
+.idea-card-title {
+  font-weight: 800;
+  font-size: 17px;
+  margin-top: 3.23vh;
+  margin-bottom: 3.23vh;
+}
+
+.idea-card-body { 
+  font-weight: 400; 
+}
+.idea-card-top {
+  width: 100%;
+  top: 0px;
+}
+.idea-card-bottom {
+  background-color: #5356A4;
+  width: 100%;
+  bottom: 0px;
+  display: flex;
+  align-items: center;
+}
+
+.comment-idea-img {
+  display: in-line;
+}
+
+.comment-text {
+  display: inline;
+  color: #E9E9F3;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: ;
+}
+
+.star-active-button, .delete-button, .comment-button {
+  padding: 3.75px;
+  background: transparent;
+  border: none;
+}
+
+.star-active-img {
+  height: 25px;
+  width: 25px;
+}
+
+.delete-idea-img {
+  height: 25px;
+  width: 25px;
+}
+
+.comment-idea-img {
+  height: 25px;
+  width: 25px;
+}
+
+
+
 /*=== media queries ===*/
 
 @media only screen and (max-width: 400px) {
