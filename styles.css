@@ -42,7 +42,7 @@ body {
 }
 
 .body-text {
-  font: 'Open Sans' light;
+  font-family: 'Open Sans' light;
 }
 
 /*=== menu section ===*/
@@ -52,6 +52,38 @@ body {
   width: 380px;
 }
 
+<<<<<<< HEAD
+.filter-box {
+  border: 1px solid #353567;
+  border-left: none;
+  border-right: none;
+  padding: 3px auto 2px;
+}
+
+#filtered-Starred-Ideas {
+  padding: 20px;
+  font-family: 'Open Sans';
+  font-size: 18px;
+  font-weight: bolder;
+  color: #BFBFDD;
+}
+
+.starred-ideas-button {
+  display: block;
+  padding: 10px 80px;
+  margin: 3px auto 30px;
+  background-color: #5356A4;
+  border: 2px solid #353567;
+  color: #E9E9F3;
+  font-size: 20px;
+  font-family: 'Open Sans';
+  font-weight: bold;
+}
+
+.starred-ideas-button:hover {
+  background: #E9E9F3;
+  color: #353567;
+=======
 #filtered-Starred-Ideas {
   padding: 20px;
   font-family: 'Open Sans';
@@ -59,6 +91,7 @@ body {
   color: #BFBFDD;
   font-size: 18px;
 }
+
 .starred-ideas-button {
   color: #E9E9F3;
   padding: 10px 80px;
@@ -68,7 +101,15 @@ body {
   font-family: 'Open Sans';
   font-weight: bold;
   display: block;
-  margin: auto;
+  margin: 3px auto 30px;
+}
+
+.filter-box {
+  border: 1px solid #5356A4;
+  border-left: none;
+  border-right: none;
+  padding: 3px auto 2px;
+>>>>>>> master
 }
 
 /*=== main section ===*/
@@ -79,8 +120,13 @@ body {
   flex-direction: column;
 }
 
+.idea-cards {
+  flex-grow: 3;
+}
+
 .idea-form {
   flex-grow: 2;
+  height: 55%;
 }
 /* Dustin's assignment start */
 .idea-cards {
@@ -120,6 +166,84 @@ footer {
   background: #5356A4;
   height: 28px;
 }
+
+
+
+.idea-title-area, .idea-body-area {
+  display: block;
+  padding: 30px 310px 5px;
+  color: #1F1F3D;
+  font-family: "Open Sans";
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+#idea-title-text, #idea-body-text {
+  display: block;
+  width: 420px;
+  padding: 15px;
+  margin: 3px auto 3px;
+  border: 2px solid #5356A4;
+  border-radius: 4px;
+  color: #1F1F3D;
+  font-family: "Open Sans";
+  font-weight: lighter;
+  font-size: 16px;
+}
+
+#idea-body-text {
+  height: 70px;
+}
+
+.save-card-button {
+  display: block;
+  background-color: #1F1F3D;
+  margin: 30px auto 30px;
+  padding: 15px 0 15px;
+  width: 450px;
+  border: 2px solid #5356A4;
+  border-radius: 4px;
+  color: #E9E9F3;
+  font-family: "Open Sans";
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.save-card-button:hover {
+  background: #5356A4;
+  color: #FFFFFF;
+}
+
+.search {
+  display: flex;
+  width: 450px;
+  margin: 10px auto 0;
+  border: 2px solid #5356A4;
+  border-radius: 4px;
+}
+
+#searchmag {
+  width: 25px;
+  height: 25px;
+  background-color: #1F1F3D;
+  padding: 10px;
+  border-radius: 1px 0 0 2px;
+}
+
+#search-ideas-text {
+ width: 420px;
+ border-radius: 0 2px 2px 0;
+ border: none;
+ padding: 10px;
+ font-family: "Open Sans";
+ color: #5356A4;
+ font-size: 16px;
+}
+
+::placeholder {
+  color: #5356A4;
+}
+
 
 
 /*=== media queries ===*/

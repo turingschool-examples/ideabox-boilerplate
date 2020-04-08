@@ -1,10 +1,8 @@
 # Ideabox Group Project
 
-Every developer has more ideas than time. As David Allen likes to say "the human brain is for creating ideas, not remembering them." In this project, we'll be building an application a new client that records and archives our ideas (good and bad alike).
+The IdeaBox project provides a fluid and responsive client-side interface to record and archive client ideas quickly and cleanly.
 
-Throughout the project, one of our focuses will be on providing a fluid and responsive client-side interface. To this end, we'll rely on JavaScript and to implement snappy filtering in the browser, and `localStorage` to persist our wonderful ideas between sessions.  Our goal is to also incorporate an agile workflow by incorporating two weekly sprints.
-
-*Note*: Expectations listed for Iteration 0-1 should be complete by your first check-in. No JavaScript should be written before that check-in, unless you get approval to move ahead with functionality from your Project Manager.
+Our team will utilize an agile workflow over two weekly sprints. We will use a complementary color palette and presentation, with a reliance on Javascript, as well as localStorage to maintain our client's ideas between sessions.
 
 ## Learning Goals
 
@@ -15,28 +13,31 @@ Throughout the project, one of our focuses will be on providing a fluid and resp
 * Incorporate & iterate over arrays in order to filter what is being displayed
 * Craft code with clean style, using small functions that show trends toward DRYness and SRP
 
-## Setup
+## Planning
 
-- Complete a DTR
-- Create a slack channel for all team members and your Project Manager.
-- Fork [the boilerplate
-  repository](https://github.com/turingschool-examples/ideabox-boilerplate). Add all team members and your Project Manager as collaborators.
-- Deploy your application to GitHub Pages.
-- In the team channel, drop the repo link and GitHub pages link.
+Deployed Pages Link: https://leighlars.github.io/ideabox-boilerplate/
+
+Derek Romero Gihub Link: https://github.com/dereklromero13
+Dustin LaDue Github Link: https://github.com/DustinLaDue
+Leigh Larson Github Link: https://github.com/leighlars
+Driver/navigator style collaboration.
+Text editor: Atom
+Project management tool: Github Projects
+
+Estimated schedule:
+Iteration 0 completed: Tuesday pm
+Iteration 1 completed: Thursday pm
+Iteration 2 completed: Saturday pm
+Iteration 3 completed: Monday pm
+Iteration 4 completed: Tuesday pm
+Polishing / refactoring / mentor feedback: Wednesday
+
 
 ## Progression
 
 ### Iteration 0 - Desktop Layout
+Day 1: Created repo, Github Project planner, Slack channel. Planned out HTML, CSS, JS using hand-drawn wireframes, identified/ labeled appropriate elements. Updated READMe to feature contact info, project overview, timeline. Added svg to created assets folder and created README imgs folder.
 
-Plan then write the HTML and CSS so that your application matches this comp. Based on what you are building, you can anticipate that the Idea "cards" will not always be there on page load, but for now, they should.
-
-Use the same text on your cards that is used in the spec so you can ensure your spacing/sizing is accurate.
-
-![Desktop Layout](https://frontend.turing.io/projects/module-1/assets/ideabox-group/desktop.jpg)
-![Colors](https://frontend.turing.io/projects/module-1/assets/ideabox-group/colors.jpg)
-![Colors](https://frontend.turing.io/projects/module-1/assets/ideabox-group/icons.jpg)
-
-You will need the `svg` files for the star, delete, and menu icons. [Here's the link to download the `svg` icons.](https://drive.google.com/drive/folders/18xpWplI0tpXIK1omBZeq04LEx2OMzzMK?usp=sharing)
 
 ### Iteration 1 - Mobile Layout
 
