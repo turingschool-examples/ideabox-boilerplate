@@ -82,6 +82,9 @@ body {
   font-size: 90%;
   padding: 20px;
   height: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   font-family: 'Open Sans';
   font-weight: bold;
   color: #BFBFDD;
