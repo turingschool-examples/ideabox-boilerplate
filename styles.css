@@ -30,6 +30,47 @@ input {
   grid-area: idea-box;
 }
 
+.idea-form {
+  background-color: #A9AAD2;
+  font-family: Open Sans, bold;
+  font-size: 15px;
+  font-weight: bold;
+  grid-area: idea-form;
+  padding-left: 150px;
+  padding-right: 150px;
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.idea-cards-section {
+  background-color: #EAEAF4;
+  font-family: Open Sans, bold;
+  font-size: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 15px;
+  place-items: center / center;
+  padding: 5px;
+}
+
+.idea-cards-article {
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  border: 2px solid #1F1F3D;
+  background-color: #FFFFFF;
+  font-size: 16px;
+  grid-gap: 10px;
+  justify-content: space-between;
+}
+
+.idea-cards-text {
+  padding: 0px 10px;
+}
+
 .filter-starred {
   font-family: Open Sans, light;
   color: #BFBFDD;
@@ -61,8 +102,9 @@ button.show-starred {
   padding-right: 150px;
   padding-top: 15px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
+  height: 25px;
+  background-color: #353467;
 }
 
 #title-input {
