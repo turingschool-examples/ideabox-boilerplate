@@ -69,6 +69,20 @@ body {
   align-items: center;
 }
 
+.search-container {
+  border: 1px solid black;
+  display: flex;
+  
+}
+
+.search-container img {
+  width: 20px;
+}
+
+/* .search-container input {
+
+} */
+
 .idea-cards {
   display: flex;
   flex-grow: 3;
