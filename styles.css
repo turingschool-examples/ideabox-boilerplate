@@ -118,7 +118,7 @@ body {
   flex-direction: column;
   align-items: center;
   min-height: 300px;
-  height: 40vh;
+  height: auto;
 }
 
 .title-text {
@@ -130,7 +130,7 @@ body {
 
 .input-title {
   width: 50%;
-  height: 10vh;
+  height: 7vh;
   border: 2px solid #5356A4;
   border-radius: 4px;
 }
@@ -251,11 +251,11 @@ body {
   /* padding-top: 3px; */
 }
 
-input {
+/* input {
   max-width: 50%;
   height: auto;
   padding-top: 3px;
-}
+} */
 
 /*=== media queries ===*/
 
