@@ -1,13 +1,19 @@
 /* GLOBAL RULES */
 
+/* @font-face {
+  font-family: "Open Sans";
+  src: url("https://fonts.googleapis.com/css?family=Open%20Sans");
+} */
+
 body {
   display: grid;
   grid-template-columns: 1fr 3fr;
-  grid-template-rows: 300px 450px;
+  grid-template-rows: 400px 500px;
   grid-template-areas:
     "idea-box idea-form"
     "idea-box idea-cards";
   grid-gap: 1px;
+  font-family: "Open Sans", sans-serif;
 }
 
 h2 {
@@ -16,7 +22,7 @@ h2 {
 }
 
 input {
-  border-color: #5E60A9;
+  border: 1px solid #5E60A9;
   border-radius: 2px;
 }
 
@@ -24,14 +30,13 @@ input {
 
 .idea-box {
   background-color: #1F1F3D;
-  font-family: Open Sans, bold;
+  font-weight: bold;
   color: #E9E9F3;
   font-size: 12px;
   grid-area: idea-box;
 }
 
 .filter-starred {
-  font-family: Open Sans, light;
   color: #BFBFDD;
   font-size: 12px;
   border-top: 1px groove white;
@@ -45,7 +50,6 @@ button.show-starred {
   color: #E9E9F3;
   background-color: #5356A4;
   border-color: #353567;
-  font-family: Open Sans;
   font-size: 15px;
 }
 
@@ -53,12 +57,11 @@ button.show-starred {
 
 .idea-form {
   background-color: #A9AAD2;
-  font-family: Open Sans, bold;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: bold;
   grid-area: idea-form;
-  padding-left: 150px;
-  padding-right: 150px;
+  padding-left: 250px;
+  padding-right: 250px;
   padding-top: 15px;
   display: flex;
   flex-direction: column;
@@ -66,13 +69,13 @@ button.show-starred {
 }
 
 #title-input {
-  height: 25px;
-  margin-top: -15px;
+  height: 40px;
+  margin-top: -20px;
 }
 
 #body-input {
-  height: 50px;
-  margin-top: -15px;
+  height: 80px;
+  margin-top: -20px;
 }
 
 button.save {
@@ -80,26 +83,41 @@ button.save {
   background-color: #353467;
   border-color: #353567;
   border-radius: 2px;
-  font-family: Open Sans;
   font-size: 15px;
-  height: 25px;
+  height: 40px;
+  border: 1px solid #5E60A9;
+  border-radius: 2px;
 }
 
 .search-bar {
+  align-self: center;
+  background-color: #353467;
+  width: max-content;
   display: flex;
   justify-content: center;
-  height: 25px;
+  height: 40px;
+  border: 1px solid #5E60A9;
+  border-radius: 2px;
 }
 
 #search-input {
   width: 300px;
+  border: none;
+  padding-left: 5px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.search-image {
+  background-color: #353467;
+  padding: 5px 10px;
 }
 
 /* IDEACARD RULES */
 
 .idea-cards-section {
   background-color: #EAEAF4;
-  font-family: Open Sans, bold;
+  font-weight: bold;
   font-size: 10px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -124,19 +142,29 @@ button.save {
   background-color: #1F1F3D;
   display: flex;
   justify-content: space-between;
-  margin-bottom: -10px;
+  border: none;
 }
 
 .idea-cards-text {
   padding: 0px 10px;
 }
 
-button.comment-color{
+.comment-button {
+  display: flex;
   background-color: #5356A4;
   color: #FFFFFF;
-  font-family: Open Sans;
+  align-items: center;
+  height: max-content;
+  border-top: 2px solid #1F1F3D;
+}
+
+#comment-text {
+  margin: 0px 0px;
   font-size: 12px;
-  text-align: left;
-  font-weight: bold;
-  border: 2px solid #5356A4;
+}
+
+button.comment-color{
+  background-color: #5356A4;
+  border: none;
+  padding: 0px;
 }
