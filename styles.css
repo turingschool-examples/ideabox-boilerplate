@@ -29,7 +29,7 @@ body {
 }
 
 .purple-4 {
-  background: #1F1F3D;;
+  background: #1F1F3D;
 }
 
 
@@ -39,9 +39,33 @@ body {
   color: #EAEAF4;
   font-family: 'Open Sans';
   font-weight: bold;
-  padding: 20px;
+  padding: 18px;
+  font-size: 17px;
+  opacity: .8;
 }
 
+.header-text-filter {
+  color: #E9E9F3;
+  font-family: 'Open Sans';
+  font-weight: bold;
+  font-size: 13px;
+  letter-spacing: 1px;
+  opacity: .8;
+  padding: 16px;
+}
+
+.show-starred {
+  color: #E9E9F3;
+  font-family: 'Open Sans';
+  font-weight: bold;
+  font-size: 15px;
+  letter-spacing: 1.2px;
+  opacity: .9;
+  padding: 50px;
+
+
+
+}
 .body-text {
   font: 'Open Sans' light;
 }
@@ -53,18 +77,25 @@ body {
 
 .menu {
   height: 100%;
-  width: 380px;
+  width: 230px;
 }
 
 .show-starred {
-  border: 1px solid #353567;
-  padding: 5px;
-  height: 42px;
-  width: 340px;
+  border: 1.5px solid #353567;
+  padding: 7px;
+  height: 38px;
+  width: 90%;
   margin: 2px;
   background-color: #5356A4;
   border-radius: 1px;
   color: #E9E9F3;
+  margin-left: 12px;
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+.line {
+  border-bottom: 1px solid #353567;
 }
 
 .save-button {
