@@ -24,9 +24,9 @@ Throughout the project, one of our focuses will be on providing a fluid and resp
 - ~~Deploy your application to GitHub Pages.~~ DONE
 - ~~In the team channel, drop the repo link and GitHub pages link.~~ DONE </br>
 #### We worked as a team completing all of the necessary Setup steps on Monday from 3-6pm. We then agreed that we would each write out on paper a desktop layout of elements and classnames etc. We then posted those in our channel. It was interesting because we each had our own focus in doing this mock up. See pics below. Edwin also completed a mock up of one idea card in codepen to help with Tuesdays work on building out the desktop layout in html and css.</br>
-[link](IMG_0677.jpg) </br>
-[link](IMG_2475.jpg) </br>
-[link](https://turingschool.slack.com/files/UPF8TJB0X/F0118LA4D5G/photo_on_4-6-20_at_8.45_pm.jpg)
+![link](IMG_0677.jpg) </br>
+![link](IMG_2475.jpg) </br>
+![link](https://turingschool.slack.com/files/UPF8TJB0X/F0118LA4D5G/photo_on_4-6-20_at_8.45_pm.jpg)
 
 ## Progression
 ### Iteration 0 - Desktop Layout - Team Effort in html/css build out </br>
