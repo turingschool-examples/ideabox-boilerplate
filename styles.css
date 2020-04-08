@@ -171,3 +171,34 @@ button.comment-color{
   border: none;
   padding: 0px;
 }
+
+@media screen and (max-width: 45em) {
+  .idea-cards-section {
+   grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 35em) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 400px auto;
+    grid-template-areas:
+      "idea-box"
+      "idea-form"
+      "idea-cards";
+  }
+  .idea-box {
+    border-bottom: 1px solid #FFFFFF;
+    border-right: none;
+  }
+  .idea-cards-section {
+   grid-template-columns: repeat(1, 1fr);
+  }
+  .idea-form {
+    justify-self: stretch;
+    align-items: stretch;
+  }
+  #search-input {
+    align-self: stretch;
+  }
+}
