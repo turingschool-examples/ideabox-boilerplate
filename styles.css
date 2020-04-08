@@ -65,12 +65,6 @@ button.show-starred {
   justify-content: space-evenly;
 }
 
-.search-bar {
-  display: flex;
-  justify-content: center;
-  height: 25px;
-}
-
 #title-input {
   height: 25px;
   margin-top: -15px;
@@ -88,6 +82,12 @@ button.save {
   border-radius: 2px;
   font-family: Open Sans;
   font-size: 15px;
+  height: 25px;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
   height: 25px;
 }
 
