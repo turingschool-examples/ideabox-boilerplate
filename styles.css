@@ -102,6 +102,10 @@ body {
   height: 4vh;
 }
 
+#menu {
+  display: none;
+}
+
 /*=== main section ===*/
 
 .ideas {
@@ -119,7 +123,7 @@ body {
   flex-direction: column;
   align-items: center;
   min-height: 300px;
-  height: 40vh;
+  height: auto;
 }
 
 .title-text {
@@ -131,7 +135,7 @@ body {
 
 .input-title {
   width: 50%;
-  height: 10vh;
+  height: 7vh;
   border: 2px solid #5356A4;
   border-radius: 4px;
 }
@@ -271,43 +275,35 @@ body {
 
   .header-text {
     font-size: 18px;
-    padding: 10px;
+    padding: 9px;
+    margin: 0px;
+    align-items: center;
+    justify-content: space-between;
   }
 
-  .menu {
+  .mobile-menu {
     height: 40px;
     text-align: center;
     width: 100%;
   }
 
-  .header-text {
-    justify-content: center;
+  #menu {
+    display: inline;
+    min-width: 5%;
+    max-width: 11%;
+    height: auto;
+    float: left;
   }
 
   .idea-form {
     flex-grow: 1;
   }
 
-  .title-text {
-    width: 90%;
-  }
-
-  .input-title {
-    width: 90%;
-  }
-
-  .form-body-text {
-    width: 90%;
-  }
-
-  .input-body {
-    width: 90%;
-  }
-
-  .search-input {
-    width: 90%;
-  }
-
+  .title-text,
+  .input-title,
+  .form-body-text,
+  .input-body,
+  .search-input,
   .form-button {
     width: 90%;
   }
