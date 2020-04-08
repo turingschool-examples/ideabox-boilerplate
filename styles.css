@@ -167,7 +167,6 @@ body {
   width: 35px;
 }
 
-<<<<<<< Updated upstream
 .input-box {
   width: 55%;
   padding: 5px;
@@ -188,7 +187,7 @@ body {
 
   /* position: fixed; */
 }
-=======
+
 .idea-top {
   border: 1px solid #6E646B;
   background-color: #1F1F3D;
@@ -216,7 +215,6 @@ body {
   color: #1F1F3D;
 }
 
->>>>>>> Stashed changes
 /*=== media queries ===*/
 
 @media only screen and (max-width: 400px) {
