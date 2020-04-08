@@ -3,6 +3,7 @@
 html, body, h1, h2, h3, h4, h5, h6, p {
   margin: 0;
   padding: 0;
+  font-family: "open sans";
 }
 
 html, body {
@@ -28,7 +29,7 @@ body {
 }
 
 .purple-4 {
-  background: #1F1F3D;;
+  background: #1F1F3D;
 }
 
 
@@ -38,9 +39,33 @@ body {
   color: #EAEAF4;
   font-family: 'Open Sans';
   font-weight: bold;
-  padding: 20px;
+  padding: 18px;
+  font-size: 17px;
+  opacity: .8;
 }
 
+.header-text-filter {
+  color: #E9E9F3;
+  font-family: 'Open Sans';
+  font-weight: bold;
+  font-size: 13px;
+  letter-spacing: 1px;
+  opacity: .8;
+  padding: 16px;
+}
+
+.show-starred {
+  color: #E9E9F3;
+  font-family: 'Open Sans';
+  font-weight: bold;
+  font-size: 15px;
+  letter-spacing: 1.2px;
+  opacity: .9;
+  padding: 50px;
+
+
+
+}
 .body-text {
   font: 'Open Sans' light;
 }
@@ -52,18 +77,25 @@ body {
 
 .menu {
   height: 100%;
-  width: 380px;
+  width: 230px;
 }
 
 .show-starred {
-  border: 1px solid #353567;
-  padding: 5px;
-  height: 42px;
-  width: 340px;
+  border: 1.5px solid #353567;
+  padding: 7px;
+  height: 38px;
+  width: 90%;
   margin: 2px;
   background-color: #5356A4;
   border-radius: 1px;
   color: #E9E9F3;
+  margin-left: 12px;
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+.line {
+  border-bottom: 1px solid #353567;
 }
 
 .save-button {
@@ -97,8 +129,18 @@ body {
 }
 
 .idea-cards {
-  border: 2px solid black;
+  border: 2px solid #6E646B;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
 }
+
+.all-text {
+  padding-left: 10px;
+}
+
 
 .search-icon {
   margin-top: 10px;
@@ -125,6 +167,7 @@ body {
   width: 35px;
 }
 
+<<<<<<< Updated upstream
 .input-box {
   width: 55%;
   padding: 5px;
@@ -145,6 +188,35 @@ body {
 
   /* position: fixed; */
 }
+=======
+.idea-top {
+  border: 1px solid #6E646B;
+  background-color: #1F1F3D;
+  display: flex;
+  justify-content: space-between;
+}
+
+.idea-bottom {
+  background-color: #5356A4;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.idea-title {
+  font-family: "open sans";
+  font-weight: bold;
+}
+
+.comment {
+  color: #FFFFFF;
+}
+
+.idea-text {
+  color: #1F1F3D;
+}
+
+>>>>>>> Stashed changes
 /*=== media queries ===*/
 
 @media only screen and (max-width: 400px) {
