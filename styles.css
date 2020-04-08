@@ -45,7 +45,6 @@ body {
   font-family: 'Open Sans' light;
 }
 
-
 /*=== menu section ===*/
 
 .menu {
@@ -53,6 +52,7 @@ body {
   width: 380px;
 }
 
+<<<<<<< HEAD
 .filter-box {
   border: 1px solid #353567;
   border-left: none;
@@ -83,6 +83,33 @@ body {
 .starred-ideas-button:hover {
   background: #E9E9F3;
   color: #353567;
+=======
+#filtered-Starred-Ideas {
+  padding: 20px;
+  font-family: 'Open Sans';
+  font-weight: bold;
+  color: #BFBFDD;
+  font-size: 18px;
+}
+
+.starred-ideas-button {
+  color: #E9E9F3;
+  padding: 10px 80px;
+  background-color: #5356A4;
+  border: #353567;
+  font-size: 20px;
+  font-family: 'Open Sans';
+  font-weight: bold;
+  display: block;
+  margin: 3px auto 30px;
+}
+
+.filter-box {
+  border: 1px solid #5356A4;
+  border-left: none;
+  border-right: none;
+  padding: 3px auto 2px;
+>>>>>>> master
 }
 
 /*=== main section ===*/
