@@ -45,12 +45,30 @@ body {
   font: 'Open Sans' light;
 }
 
-
 /*=== menu section ===*/
 
 .menu {
   height: 100%;
   width: 380px;
+}
+
+#filtered-Starred-Ideas {
+  padding: 20px;
+  font-family: 'Open Sans';
+  font-weight: bold;
+  color: #BFBFDD;
+  font-size: 18px;
+}
+.starred-ideas-button {
+  color: #E9E9F3;
+  padding: 10px 80px;
+  background-color: #5356A4;
+  border: #353567;
+  font-size: 20px;
+  font-family: 'Open Sans';
+  font-weight: bold;
+  display: block;
+  margin: auto;
 }
 
 /*=== main section ===*/
@@ -64,10 +82,45 @@ body {
 .idea-form {
   flex-grow: 2;
 }
-
+/* Dustin's assignment start */
 .idea-cards {
   flex-grow: 3;
+  padding: 40px;
 }
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr, 1fr;
+  grid-template-areas:
+    "header"
+    "box1"
+    "footer";
+}
+
+header {
+  /* display: flex;
+  justify-content: space-between; */
+  background: #1F1F3D;
+  height: 28px;
+}
+
+.box1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  grid-row: span 2;
+  border: 1px solid;
+  border-color: #6E646B;
+  background: #FFFFFF;
+  height:35vh;
+  width: 35vh;
+}
+
+footer {
+  background: #5356A4;
+  height: 28px;
+}
+
 
 /*=== media queries ===*/
 
