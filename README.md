@@ -1,4 +1,4 @@
-# Ideabox Group Project
+# Ideabox Group Project - Edwin, Kyle, & Steph
 
 Every developer has more ideas than time. As David Allen likes to say "the human brain is for creating ideas, not remembering them." In this project, we'll be building an application a new client that records and archives our ideas (good and bad alike).
 
@@ -15,18 +15,22 @@ Throughout the project, one of our focuses will be on providing a fluid and resp
 * Incorporate & iterate over arrays in order to filter what is being displayed
 * Craft code with clean style, using small functions that show trends toward DRYness and SRP
 
-## Setup
+## Setup - Assigned group project on Monday April 6th 2020 </br> 11am Kick off time
 
-- Complete a DTR
-- Create a slack channel for all team members and your Project Manager.
-- Fork [the boilerplate
-  repository](https://github.com/turingschool-examples/ideabox-boilerplate). Add all team members and your Project Manager as collaborators.
-- Deploy your application to GitHub Pages.
-- In the team channel, drop the repo link and GitHub pages link.
+- ~~Complete a DTR~~ DONE
+- ~~Create a slack channel for all team members and your Project Manager.~~ DONE
+- ~~Fork [the boilerplate
+  repository](https://github.com/turingschool-examples/ideabox-boilerplate).~~  DONE </BR>~~Add all team members and your Project Manager as collaborators.~~  DONE
+- ~~Deploy your application to GitHub Pages.~~ DONE
+- ~~In the team channel, drop the repo link and GitHub pages link.~~ DONE </br>
+#### We worked as a team completing all of the necessary Setup steps on Monday from 3-6pm. We then agreed that we would each write out on paper a desktop layout of elements and classnames etc. We then posted those in our channel. It was interesting because we each had our own focus in doing this mock up. See pics below. Edwin also completed a mock up of one idea card in codepen to help with Tuesdays work on building out the desktop layout in html and css.</br>
+[link](IMG_0677.jpg) </br>
+[link](IMG_2475.jpg) </br>
+[link](https://turingschool.slack.com/files/UPF8TJB0X/F0118LA4D5G/photo_on_4-6-20_at_8.45_pm.jpg)
 
 ## Progression
-
-### Iteration 0 - Desktop Layout
+### Iteration 0 - Desktop Layout - Team Effort in html/css build out </br>
+#### Today(Tuesday April 7th), we began work at 1pm. We all three got on a zoom call set up by Edwin and began the process of moving our ideas of html and css into the files in atom. Edwin was driver with Kyle and Steph as navigators. We worked well together considering it was our first time building out code together, it was a group effort and we stayed with it for four hours. We completed all the way up to the idea cards section. Tomorrow we will focus on some smaller details that we werent able to get to and then focus on clean/refactoring, renaming, etc. Our hope is to finish iteration 0 and get our site to be responsive in its layout(iteration1).
 
 Plan then write the HTML and CSS so that your application matches this comp. Based on what you are building, you can anticipate that the Idea "cards" will not always be there on page load, but for now, they should.
 
