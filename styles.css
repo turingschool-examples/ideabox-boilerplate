@@ -192,8 +192,7 @@ h3 {
 }
 
 .magnifying-glass {
-  width: 19px;
-  padding: 19px;
+  background: #1F1F3D
 }
 
 .search-input {
@@ -234,4 +233,45 @@ height: 3em;
   .idea-form {
     flex-grow: 1;
   }
+}
+
+.mini-menu {
+  visibility: hidden;
+}
+
+@media only screen and (max-width: 780px) {
+  .menu {
+    display: none;
+  }
+
+  .mini-menu {
+    visibility: visible;
+    background: #1F1F3D;
+    display: flex;
+  }
+
+  .hamburger-menu {
+    background: #1F1F3D;
+    border: none;
+    display: flex;
+    border-radius: 5px;
+  }
+
+  .mini-menu h3 {
+    color:#E9E9F3;
+    margin-left: 7em;
+    font-size: 12px;
+  }
+  
+  .form-parent {
+  min-width: 300px;
+  max-width: 300px;
+  }
+
+  .idea-title {
+    margin-bottom: 1em;
+    margin-top: 1em;
+    font-weight: bold;
+  }
+
 }
