@@ -8,12 +8,13 @@
 body {
   display: grid;
   grid-template-columns: 1fr 3fr;
-  grid-template-rows: 400px 500px;
+  grid-template-rows: 400px auto;
   grid-template-areas:
     "idea-box idea-form"
     "idea-box idea-cards";
   grid-gap: 1px;
   font-family: "Open Sans", sans-serif;
+  background-color: #A9AAD2;
 }
 
 h2 {
@@ -34,6 +35,7 @@ input {
   color: #E9E9F3;
   font-size: 12px;
   grid-area: idea-box;
+  border-right: 1px solid #FFFFFF;
 }
 
 .filter-starred {
@@ -57,12 +59,10 @@ button.show-starred {
 
 .idea-form {
   background-color: #A9AAD2;
+  justify-self: center;
   font-size: 12px;
   font-weight: bold;
   grid-area: idea-form;
-  padding-left: 250px;
-  padding-right: 250px;
-  padding-top: 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -70,7 +70,7 @@ button.show-starred {
 
 #title-input {
   height: 40px;
-  margin-top: -20px;
+  margin-top: -20px
 }
 
 #body-input {
@@ -106,6 +106,8 @@ button.save {
   padding-left: 5px;
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
+  color: #A9AAD2;
+  font-size: 13px;
 }
 
 .search-image {
@@ -125,6 +127,7 @@ button.save {
   grid-gap: 15px;
   place-items: center / center;
   padding: 10px;
+  border-top: 1px solid #FFFFFF;
 }
 
 .idea-cards-article {
