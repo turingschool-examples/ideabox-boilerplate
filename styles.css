@@ -120,6 +120,13 @@ button.save {
   justify-content: space-between;
 }
 
+.star-x-button {
+  background-color: #1F1F3D;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: -10px;
+}
+
 .idea-cards-text {
   padding: 0px 10px;
 }
@@ -132,11 +139,4 @@ button.comment-color{
   text-align: left;
   font-weight: bold;
   border: 2px solid #5356A4;
-}
-
-.star-x-button {
-  background-color: #1F1F3D;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: -10px;
 }
