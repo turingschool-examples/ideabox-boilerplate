@@ -16,7 +16,7 @@ body {
 footer {
   padding-top: 0px;
   font-size: 15px;
-  width: 200px;
+  width: 100%;
   height: 30px;
   display: flex;
   justify-content: flex-start;
@@ -99,8 +99,8 @@ footer {
 
 .header-card {
   background-color: #1F1F3D;
-  width: 200px;
-  height: 30px;
+  width: 100%;
+  height: 1.5em;
   display: flex;
   display:flex;
   justify-content: space-between;
@@ -114,8 +114,8 @@ footer {
 }
 
 .user-cards {
-  margin: 20px;
-  width: 200px;
+  margin: 1em;
+  width:auto;
   border-color: #6E646B;
   border-style: solid;
   border-width: 1px;
@@ -139,8 +139,13 @@ footer {
 }
 
 .comment {
-  padding-top: .3em;
+  padding-top: 0px;
   font-size: 1em;
+  width: 100%;
+  height: 1.5em;
+  display: flex;
+  justify-content: flex-start;
+  border-color: #6E646B;
 }
 
 /*=== media queries ===*/
