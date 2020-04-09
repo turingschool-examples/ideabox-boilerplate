@@ -74,6 +74,8 @@ body {
   margin-top: 10px;
   margin-bottom: 25px;
   position: inherit;
+=======
+>>>>>>> master
 }
 
 .body-text {
@@ -105,7 +107,7 @@ form {
   grid-column-start: 2;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 10px; 
+  grid-template-rows: 10px;
 }
 
 .title-box {
@@ -182,7 +184,7 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
+
 }
 
 .all-text {
@@ -297,11 +299,11 @@ form {
   form {
     grid-column-start: 1;
   }
-  
+
   .hidden-small {
     display: none;
   }
-  
+
   .idea-form-grid {
     /* display: flex;
     flex-grow: 1; */
