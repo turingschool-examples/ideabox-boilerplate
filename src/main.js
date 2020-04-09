@@ -1,6 +1,19 @@
-var doubleWidth = document.documentElement.clientWidth;
-var doubleHeight = document.documentElement.clientHeight;
-var filterStarred = document.querySelector('.filter-starred');
+//querySelector
+var hamburgerMenu = document.querySelector(".hamburger-menu");
+var hamburgerMenuClose = document.querySelector(".hamburger-menu-close");
+var filterStarred = document.querySelector(".filter-starred");
 
-console.log(doubleWidth);
-console.log(doubleHeight);
+//event listeners
+hamburgerMenu.addEventListener('click', showFilterStarred);
+//hamburgerMenuClose.addEventListener('click', toggleFilterStarred);
+//functions
+
+function showFilterStarred() {
+  //hide hamburgerMenu
+  // AND show hamburgerMenuClose
+  // ANd show filterStarred
+  var image = hamburgerMenu.querySelector('img');
+  image.src = "images/menu-close.svg";
+
+  filterStarred.style.display = "block";
+}
