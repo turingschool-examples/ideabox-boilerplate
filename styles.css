@@ -50,14 +50,16 @@ body {
   font-family: 'Open Sans';
   font-weight: bold;
   padding: 7px;
-  font-size: 16px;
+  font-size: 10px;
+  min-font-size: 1px;
 }
 
 .card-text {
   font-family: 'Open Sans';
   font-weight: light;
   padding: 7px;
-  font-size: 13px;
+  font-size: 7px;
+  min-font-size: 1px;
 }
 
 .comment-text {
@@ -65,7 +67,8 @@ body {
   font-family: "Open Sans";
   font-weight: bold;
   padding: 5px;
-  font-size: 13px;
+  font-size: 7px;
+  min-font-size: 1px;
 }
 
 
@@ -230,26 +233,37 @@ body {
   flex-direction: column;
   justify-content: space-between;
   border-width: 1px;
+  min-width: 150px;
   min-height: 10vh;
   max-height: 30vh;
+  flex-wrap: wrap;
 }
 
 .card-top {
   background: #1F1F3D;
   height: 3vh;
   width: auto;
-  display: flex;
+  flex-grow: 1;
+  /* display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; */
+}
+
+.card-body {
+  /* display: flex; */
+  /* flex-direction: column;
+  justify-content: space-between; */
+  flex-grow: 2;
 }
 
 .card-bottom {
   background: #5356A4;
   height: 3vh;
   width: auto;
-  display: flex;
+  flex-grow: 3;
+  /* display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: center; */
 }
 
 .star-active,
@@ -268,7 +282,7 @@ body {
 
 /*=== media queries ===*/
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
   body {
     flex-direction: column;
   }
