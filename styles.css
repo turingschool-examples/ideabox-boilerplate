@@ -13,7 +13,7 @@ html, body {
 }
 
 body {
-  display: flex;  
+  display: flex;
 }
 
 /*=== Background Colors ===*/
@@ -82,7 +82,6 @@ font-size: 15px;
 }
 
 .idea-form {
-  flex-grow: 2;
   display: flex;
   justify-content: center;
 }
@@ -102,17 +101,22 @@ font-size: 15px;
 
 .title-input {
   height: 5.23vh;
+  width: 370px;
 }
 .body-input{
   height: 10.46vh;
+  width: 370px;
+  font-size: 15px;
   }
 .form-text {
   font-size: 16px;
+  font-weight: 600;
 }
 
 .form-text2 {
   font-size: 16px;
   margin-top: 3.04vh;
+  font-weight: 600;
 }
 .save-button {
   background-color: #353567;
@@ -121,6 +125,7 @@ font-size: 15px;
   margin-bottom: 3.04vh;
   height: 6.09vh;
   font-size: 24px;
+  width: 370px;
 }
 
 .inputs-holder {
@@ -130,22 +135,25 @@ font-size: 15px;
 
 .search-btn {
   background-color: #353567;
-  padding: 11.75px;
+  height: 45px;
+  width: 45px;
   float: left;
-  /* height: 6.09vh;
-  width: 3.47vw; */
+  border: none;
 }
 .search-section {
-  box-sizing: border-box;
-    height: 5.23vh;
+    height: 45px;
+    width: 383px;
+
+
 }
 .search-input {
   height: 100%;
-    width: 85%
+    width: 85%;
+    font-size: 15px;
 }
 .mag-glass {
-  height: 3.04vh;
-  width: 1.73vw;
+  height: 25px;
+  width: 25px;
 }
 
 /* ***ADDED TODAY */
@@ -160,7 +168,8 @@ font-size: 15px;
 .mini-card {
   background-color: #FFFFFF;
   border: solid 1px #53564A;
-  width: 15.4166vw;
+  width: 203px;
+  height: auto;
   margin: 10px;
 }
 
@@ -169,7 +178,7 @@ font-size: 15px;
   border-bottom: solid 1px #1F1F3D;
   display: flex;
   justify-content: space-between;
-  
+
 }
 
 .idea-card-text {
@@ -184,12 +193,12 @@ font-size: 15px;
 .idea-card-title {
   font-weight: 800;
   font-size: 17px;
-  margin-top: 3.23vh;
-  margin-bottom: 3.23vh;
+  margin-top: 2.23vh;
+  margin-bottom: 2.23vh;
 }
 
-.idea-card-body { 
-  font-weight: 400; 
+.idea-card-body {
+  font-weight: 400;
 }
 .idea-card-top {
   width: 100%;
@@ -198,7 +207,6 @@ font-size: 15px;
 .idea-card-bottom {
   background-color: #5356A4;
   width: 100%;
-  bottom: 0px;
   display: flex;
   align-items: center;
 }
@@ -212,7 +220,6 @@ font-size: 15px;
   color: #E9E9F3;
   font-size: 14px;
   font-weight: bold;
-  margin-bottom: ;
 }
 
 .star-active-button, .delete-button, .comment-button {
