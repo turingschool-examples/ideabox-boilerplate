@@ -10,11 +10,11 @@ body.addEventListener("click", buttonHandler)
 function buttonHandler(event) {
   if(event.target === showIdeas){
     alert("HEY");
+  } else if (event.target === burgerButton) {
+    displayStarredIdeas();
   }
 }
 
-function displayStarredIdeas(event) {
-  event.target === burgerButton
-    ideas.classList.add("mini-show-starred");
-
+function displayStarredIdeas() {
+  ideas.classList.add("mini-show-starred");
 }
