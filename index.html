@@ -6,15 +6,18 @@
   </head>
   <meta name=‘viewport’ content=‘width=device-width, initial-scale=1’>
   <body class="purple-1">
-    <section class="menu mobile-menu purple-4">
-      <p class="header-text">
-        <input type="image" src="assets/menu.svg" name="menu" class="hamburger-menu" id="menu" />
-        IdeaBox</p>
-      <section class="menu-body-text">Filter Starred Ideas<br /><br />
+    <section class="menu mobile-menu">
+      <span class="header-text">
+        <input type="image" src="assets/menu.svg" name="menu" class="menu-icon hamburger-menu" id="menu" />
+        <input type="image" src="assets/menu-close.svg" name="menu-close" class="menu-icon menu-close hide" id="menu-close" />
+        <p class="menu-title">IdeaBox</p>
+      </span>
+      <span class="menu-body-text">
+      <section class="mobile-menu-body-text">Filter Starred Ideas<br /><br /></section>
         <div style="text-align:center;">
           <button class="show-starred-button">Show Starred Ideas</button>
         </div>
-      </section>
+      </span>
     </section>
     <main class="ideas">
       <section class="idea-form purple-2">
@@ -37,8 +40,8 @@
               <input type="image" src="assets/star-active.svg" name="star-active" class="star-active" id="star-active" />
               <input type="image" src="assets/delete.svg" name="delete" class="delete" id="delete" align="right"/>
             </section>
-            <section>
-            <h3 class= "card-header">Item Title</h3>
+            <section class="card-body">
+            <p class= "card-header">Item Title</p>
               <p class= "card-text">Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! cloth talk.</p>
             </section>
             <section class="card-bottom">

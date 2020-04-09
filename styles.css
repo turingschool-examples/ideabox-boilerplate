@@ -11,6 +11,7 @@ html, body {
 
 body {
   display: flex;
+  margin: 0;
 }
 
 /*=== Background Colors ===*/
@@ -77,6 +78,11 @@ body {
   width: 380px;
 }
 
+.menu-title {
+  color: white;
+  margin: 0;
+}
+
 .menu-body-text {
   border-bottom: 1px solid #353567;
   border-top: 1px solid #353567;
@@ -102,7 +108,19 @@ body {
   width: 95%;
 }
 
-#menu {
+.hamburger-menu {
+  display: none;
+}
+
+.menu-close {
+  display: inline;
+  min-width: 5%;
+  max-width: 11%;
+  height: auto;
+  float: left;
+}
+
+.hide {
   display: none;
 }
 
@@ -253,17 +271,11 @@ body {
 }
 
 .comment,
-.delete, 
+.delete,
 .star-active {
   height: auto;
   max-width: 15%;
   min-width: 15%;
-}
-
-input {
-  max-width: 50%;
-  height: auto;
-  padding-top: 3px;
 }
 
 /*=== media queries ===*/
@@ -281,22 +293,32 @@ input {
   height: 50px;
 }
 
+@media only screen and (min-width: 500px) {
+  .menu-icon {
+    display: none;
+  }
+
 .card-bottom {
   background: #5356A4;
   height: 55px;
-}
+  }
 
 .box {
   border: solid;
   border-color: #1F1F3D;
   border-width: 1px;
-}
+  }
 }
 
 @media only screen and (max-width: 600px) {
   body {
     flex-direction: column;
   }
+
+.menu-icon {
+  position: absolute;
+  left: 0px;
+}
 
   .header-text {
     align-items: center;
@@ -312,12 +334,41 @@ input {
     width: 100%;
   }
 
-  #menu {
+  .hamburger-menu {
     display: inline;
-    float: left;
+    min-width: 8%;
+    max-width: 9%;
     height: auto;
-    max-width: 11%;
-    min-width: 5%;
+  }
+
+  .menu-close {
+    display: inline;
+    min-width: 8%;
+    max-width: 9%;
+    height: auto;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .purple-4 {
+    background: #1F1F3D;
+    height: 180px;
+    width: 100%;
+    position: absolute;
+    border-top: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .mobile-menu-body-text {
+    left: 0px;
+  }
+
+  .menu-body-mobile {
+    border: none;
   }
 
   .idea-form {
@@ -349,7 +400,7 @@ input {
   }
 
   .comment,
-  .delete, 
+  .delete,
   .star-active, {
     height: auto;
     max-width: 11%;
