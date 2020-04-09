@@ -192,13 +192,15 @@ body {
 
 .idea-box-add-comment img {
   width: 15%;
+
 }
+
 
 
 
 /*=== media queries ===*/
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 860px) {
   body {
     flex-direction: column;
   }
@@ -240,9 +242,19 @@ body {
     flex-grow: 1;
   }
 
-  .idea-cards-section {
-    display: flex;
-    flex-direction: column;
+  .idea-box-add-comment img {
+    width: 2.5em;
+    height: 2.5em;
+  }
+}
 
+@media only screen and (max-width: 600px) {
+  .idea-form {
+    width: 90%;
+  }
+
+  .idea-cards-section {
+  display: flex;
+  flex-direction: column;
   }
 }
