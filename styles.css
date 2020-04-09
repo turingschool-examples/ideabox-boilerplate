@@ -162,6 +162,7 @@ form {
 }
 label {
   margin-top: auto;
+  font-size: small;
 }
 .ideas {
   display: flex;
