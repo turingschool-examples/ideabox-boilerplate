@@ -45,6 +45,14 @@ body {
   font-family: 'Open Sans';
 }
 
+#menu-icon {
+  display: none;
+}
+
+#menu-x-icon {
+  display: none;
+}
+
 .filter-star-ideas {
   border-bottom: 2px solid #A9AAD2;
   border-top: 2px solid #A9AAD2;
@@ -147,14 +155,14 @@ body {
 }
 
 /*idea box cards section*/
-.idea-box { 
+.idea-box {
   border: 2px solid;
   border-color: #5356A4;
   display: flex;
   flex-direction: column;
   height: 90%;
   justify-content: space-between;
-  width: 1fr;  
+  width: 1fr;
 }
 
 .star-delete-option {
@@ -190,23 +198,51 @@ body {
 
 /*=== media queries ===*/
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 600px) {
   body {
     flex-direction: column;
   }
 
   .header-text {
-    font-size: 18px;
-    padding: 10px;
+    font-size: 22px;
+    padding: 6px;
+    margin-right: 30%;
+    margin-bottom: 15px;
+
   }
 
   .menu {
-    height: 40px;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     width: 100%;
+    height: 7vh;
+  }
+
+  #menu-icon {
+    display: inline;
+    align-self: flex-start;
+    margin-left: 4px;
+    width: 42px;
+    height: 100%;
+  }
+
+  #menu-x-icon :hover {
+    width: 42px;
+    height: 100%;
+  }
+
+  .filter-star-ideas {
+    display: none;
   }
 
   .idea-form {
     flex-grow: 1;
+  }
+
+  .idea-cards-section {
+    display: flex;
+    flex-direction: column;
+
   }
 }
