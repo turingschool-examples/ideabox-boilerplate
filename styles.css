@@ -11,6 +11,7 @@ html, body {
 
 body {
   display: flex;
+  margin: 0;
 }
 
 /*=== Background Colors ===*/
@@ -82,6 +83,7 @@ body {
 
 .menu-title {
   color: white;
+  margin: 0;
 }
 
 .menu-body-text {
@@ -292,6 +294,13 @@ body {
 
 /*=== media queries ===*/
 
+@media only screen and (min-width: 500px) {
+  .menu-icon {
+    display: none;
+  }
+}
+
+
 @media only screen and (max-width: 500px) {
   body {
     flex-direction: column;
@@ -302,6 +311,12 @@ body {
     padding: 9px;
     margin: 0px;
     display: flex;
+    justify-content: center;
+  }
+
+  .menu-icon {
+    position: absolute;
+    left: 0px;
   }
 
   .mobile-menu {
@@ -313,14 +328,14 @@ body {
   .hamburger-menu {
     display: inline;
     min-width: 8%;
-    max-width: 15%;
+    max-width: 9%;
     height: auto;
   }
 
   .menu-close {
     display: inline;
     min-width: 8%;
-    max-width: 15%;
+    max-width: 9%;
     height: auto;
   }
 
@@ -337,6 +352,10 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+
+  .mobile-menu-body-text {
+    left: 0px;
   }
 
   .menu-body-mobile {
