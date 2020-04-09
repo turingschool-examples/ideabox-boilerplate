@@ -330,3 +330,15 @@ body {
     height: auto;
   }
 }
+
+@media only screen and (max-width: 400px) {
+  .card-grid {
+    /* display: flex; */
+    /* flex-grow: 3; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+    padding: 30px;
+    font-size: 14px;
+  }
+}
