@@ -48,58 +48,58 @@ body {
 
 .card-header {
   font-family: 'Open Sans';
+  font-size: 20px;
   font-weight: bold;
   padding: 7px;
-  font-size: 20px;
 }
 
 .card-text {
   font-family: 'Open Sans';
+  font-size: 15px;
   font-weight: light;
   padding: 7px;
-  font-size: 15px;
 }
 
 .comment-text {
   color: #EAEAF4;
   font-family: "Open Sans";
+  font-size: 18px;
   font-weight: bold;
   padding: 5px;
-  font-size: 18px;
 }
 
 
 /*=== menu section ===*/
 
 .menu {
+  background-color: #1F1F3D;
   height: 100%;
   width: 380px;
-  background-color: #1F1F3D;
 }
 
 .menu-body-text {
-  border-top: 1px solid #353567;
   border-bottom: 1px solid #353567;
-  font-size: 90%;
-  padding: 20px;
-  height: 10vh;
+  border-top: 1px solid #353567;
+  color: #BFBFDD;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   font-family: 'Open Sans';
+  font-size: 90%;
   font-weight: bold;
-  color: #BFBFDD;
+  height: 10vh;
+  justify-content: space-between;
+  padding: 20px;
 }
 
 .show-starred-button {
   background: #5356A4;
   border: #353567;
+  color: #E9E9F3;
+  font-family: 'Open Sans';
   font-size: 130%;
   font-weight: bold;
-  font-family: 'Open Sans';
-  color: #E9E9F3;
-  width: 95%;
   height: 4vh;
+  width: 95%;
 }
 
 #menu {
@@ -110,8 +110,8 @@ body {
 
 .ideas {
   display: flex;
-  flex: 1;
   flex-direction: column;
+  flex: 1;
 }
 
 .idea-form {
@@ -119,62 +119,62 @@ body {
 }
 
 .form {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  min-height: 300px;
   height: auto;
+  min-height: 300px;
 }
 
 .title-text {
-  width: 50%;
+  color: #333451;
   font-family: 'Open Sans';
   font-weight: bold;
-  color: #333451;
+  width: 50%;
 }
 
 .input-title {
-  width: 50%;
-  height: 7vh;
-  border: 2px solid #5356A4;
   border-radius: 4px;
+  border: 2px solid #5356A4;
+  height: 7vh;
+  width: 50%;
 }
 
 .form-body-text {
-  width: 50%;
-  font-family: 'Open Sans';
   color: #333451;
+  font-family: 'Open Sans';
   font-weight: bold;
+  width: 50%;
 }
 
 .input-body {
-  width: 50%;
-  height: 15vh;
-  border: 2px solid #5356A4;
   border-radius: 4px;
+  border: 2px solid #5356A4;
+  height: 15vh;
+  width: 50%;
 }
 
 .form-button {
   background-color: #353567;
+  border-radius: 4px;
+  border: 2px solid #5356A4;
   color: #EAEAF4;
   font-family: 'Open Sans';
-  font-weight: bold;
   font-size: 1.5em;
-  width: 50%;
-  margin-top: 2%;
+  font-weight: bold;
   height: 7vh;
-  border: 2px solid #5356A4;
-  border-radius: 4px;
+  margin-top: 2%;
+  width: 50%;
 }
 
 .search-box {
-  display: flex;
-  margin: 2%;
-  width: 50%;
-  border: 2px solid #5356A4;
-  height: 7vh;
   background-color:  #353567;
   border-radius: 4px;
+  border: 2px solid #5356A4;
+  display: flex;
+  height: 7vh;
+  margin: 2%;
+  width: 50%;
 }
 
 #search {
@@ -183,15 +183,15 @@ body {
 }
 
 .search-input {
-  width: 100%;
   font-size: 1.2em;
   padding-left: 2%;
+  width: 100%;
 }
 
 ::placeholder {
+  color: #5356A4;
   font-family: 'Open Sans';
   font-weight: light;
-  color: #5356A4;
 }
 
 .idea-cards {
@@ -201,12 +201,12 @@ body {
 }
 
 .card-grid {
-  flex-grow: 3;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 15px;
-  padding: 30px;
   background: #EAEAF4;
+  display: grid;
+  flex-grow: 3;
+  grid-gap: 15px;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 30px;
 }
 
 .idea-cards {
@@ -214,18 +214,19 @@ body {
 }
 
 .card-grid {
-  flex-grow: 3;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 15px;
-  padding: 30px;
+  flex-grow: 3;
   font-size: 14px;
+  grid-gap: 15px;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 30px;
 }
 
 .box {
-  border: solid;
-  border-color: #1F1F3D;
   background: #FFFFFF;
+  border-color: #1F1F3D;
+  border-width: 1px;
+  border: solid;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -234,29 +235,29 @@ body {
 }
 
 .card-top {
-  background: #1F1F3D;
-  height: 6vh;
-  width: auto;
-  display: flex;
   align-items: center;
+  background: #1F1F3D;
+  display: flex;
+  height: 6vh;
   justify-content: space-between;
+  width: auto;
 }
 
 .card-bottom {
+  align-items: center;
   background: #5356A4;
-  height: 6vh;
-  width: auto;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  height: 6vh;
+  width: auto;
 }
 
-.star-active,
 .comment,
-.delete {
+.delete, 
+.star-active {
+  height: auto;
   max-width: 15%;
   min-width: 15%;
-  height: auto;
 }
 
 input {
@@ -298,11 +299,11 @@ input {
   }
 
   .header-text {
-    font-size: 18px;
-    padding: 9px;
-    margin: 0px;
     align-items: center;
+    font-size: 18px;
     justify-content: space-between;
+    margin: 0px;
+    padding: 9px;
   }
 
   .mobile-menu {
@@ -313,23 +314,23 @@ input {
 
   #menu {
     display: inline;
-    min-width: 5%;
-    max-width: 11%;
-    height: auto;
     float: left;
+    height: auto;
+    max-width: 11%;
+    min-width: 5%;
   }
 
   .idea-form {
     flex-grow: 1;
   }
 
-  .title-text,
-  .input-title,
   .form-body-text,
-  .input-body,
-  .search-input,
   .form-button,
-  .search-box {
+  .input-body,
+  .input-title,
+  .search-box,
+  .search-input,
+  .title-text {
     width: 90%;
   }
 
@@ -343,15 +344,15 @@ input {
   .box {
     display: flex;
     flex-grow: 1;
-    width: 100%;
     margin: 5px 0;
+    width: 100%;
   }
 
-  .star-active,
   .comment,
-  .delete {
+  .delete, 
+  .star-active, {
+    height: auto;
     max-width: 11%;
     min-width: 5%;
-    height: auto;
   }
 }
