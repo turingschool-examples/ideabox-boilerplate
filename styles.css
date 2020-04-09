@@ -258,3 +258,8 @@ body {
   flex-direction: column;
   }
 }
+
+// create gaps for the idea cards when it is moved to mobile screen
+// add border color around the input fields in form section
+// add active star icon and hide it so the regular star icon shows
+// make adjustments to the starred ideas text area 
