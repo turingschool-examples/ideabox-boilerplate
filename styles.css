@@ -62,7 +62,6 @@ body {
   letter-spacing: 1.2px;
   opacity: .9;
   padding: 50px;
-<<<<<<< HEAD
   border: 1.5px solid #353567;
   padding: 7px;
   height: 38px;
@@ -75,9 +74,6 @@ body {
   margin-top: 10px;
   margin-bottom: 25px;
   position: inherit;
-
-
-
 =======
 >>>>>>> master
 }
@@ -196,17 +192,8 @@ form {
 }
 
 .menu-navigate {
-  heigt: 40px;
+  height: 40px;
   width: 40px;
-}
-.search-icon {
-  margin-top: 10px;
-  height: 16px;
-  width: 16px;
-  border: 1px solid #1F1F3D;
-  background-color: #353567;
-  padding: 3px;
-/*position: fixed*/
 }
 
 .red-star {
@@ -225,7 +212,6 @@ form {
 }
 
 .input-box {
-  width: 55%;
   padding: 5px;
   /* height: 22%; */
   border: 1px solid #353567;
