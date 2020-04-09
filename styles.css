@@ -295,6 +295,21 @@ body {
     float: left;
   }
 
+  .purple-4 {
+    background: #1F1F3D;
+    height: 180px;
+    width: 100%;
+    position: absolute;
+    border-top: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .menu-body-mobile {
+    border: none;
+  }
+
   .idea-form {
     flex-grow: 1;
   }
