@@ -74,8 +74,6 @@ body {
   margin-top: 10px;
   margin-bottom: 25px;
   position: inherit;
-=======
->>>>>>> master
 }
 
 .body-text {
@@ -107,11 +105,10 @@ form {
   grid-column-start: 2;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 10px;
+  grid-template-rows: auto;
 }
-
 .title-box {
-  grid-row-start: 3;
+  grid-row-start: 2;
 }
 
 .input-box {
@@ -128,7 +125,7 @@ form {
 #body-input-box {
   padding-top: 50px;
   margin-bottom: 5px;
-  grid-row-start: 5;
+  grid-row-start: 4;
 }
 
 .save-button {
@@ -138,7 +135,7 @@ form {
   background-color: #5356A4;
   border-radius: 1px;
   color: #E9E9F3;
-  grid-row-start: 6;
+  grid-row-start: 5;
   grid-column-start: 1;
   grid-column-end: 3;
 }
@@ -149,7 +146,7 @@ form {
   border: 1px solid #1F1F3D;
   background-color: #353567;
   padding: 4px;
-  grid-row-start: 8;
+  grid-row-start: 6;
   grid-column-start: 1;
   grid-column-end: 3;
   /*position: fixed*/
@@ -158,12 +155,14 @@ form {
 .search-bar {
   height: 18px;
   display: inline-flex;
-  grid-row-start: 8;
+  grid-row-start: 6;
   grid-column-start: 1;
   grid-column-end: 3;
   margin-left: 25px;
 }
-
+label {
+  margin-top: auto;
+}
 .ideas {
   display: flex;
   flex: 1;
@@ -219,10 +218,10 @@ form {
   margin-bottom: 5px;
 }
 
-#body-input-box {
+/* #body-input-box {
   padding-top: 50px;
   margin-bottom: 5px;
-}
+} */
 
 #searchbar {
   margin-left: 15px;
@@ -274,6 +273,10 @@ form {
   }
   .form-grid {
     display: block;
+  }
+  form {
+    margin: 5px;
+    grid-gap: 5px;
   }
 }
 
