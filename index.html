@@ -7,21 +7,21 @@
   <body class="purple-1">
     <section class="menu purple-4">
       <h1 class="header-text line">IdeaBox</h1>
-      <h3 class="header-text-filter">Filter Starred Ideas</h3>
-      <button class="show-starred purple-3">Show Starred Ideas</button>
+      <h3 class="header-text-filter hidden-small">Filter Starred Ideas</h3>
+      <button class="show-starred purple-3 hidden-small">Show Starred Ideas</button>
       <h1 class="line">
     </section>
     <main class="ideas">
-      <section class="idea-form purple-2">
+      <section class="idea-form purple-2 form-grid">
       <form class ="form">
-        <label>Title</label><br>
-        <input class="input-box" type="text"><br>
-        <label>Body</label><br>
+        <label style="grid-row-start: 2;">Title</label><br>
+        <input class="input-box title-box" type="text"><br>
+        <label style="grid-row-start: 4;" >Body</label><br>
         <input class="input-box" id="body-input-box" type="text"><br>
         <button class="save-button">Save</button><br>
-        <div class="search-element"></div>
+        <div class="search-element" ></div>
           <img class="search-icon" src="assets/search.svg" alt='Search Magnifying Glass'>
-          <input class="input-box"type="text" id="seachbar" name="seach" placeholder="Search ideas"/>
+          <input class="input-box search-bar"type="text" id="seachbar" name="seach" placeholder="Search ideas"/>
         </div>
       </form>
       </section>
