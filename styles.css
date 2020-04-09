@@ -94,9 +94,9 @@ footer {
 } */
 
 .header-pic {
-  width: 2em;
-
+  width: 1.5em;
 }
+
 .header-card {
   background-color: #1F1F3D;
   width: 200px;
@@ -105,12 +105,12 @@ footer {
   display:flex;
   justify-content: space-between;
 }
+
 .idea-cards {
   display: flex;
   flex-grow: 3;
   justify-content: space-between;
   font-family: 'Open Sans', 'sans-serif';
-
 }
 
 .user-cards {
@@ -123,10 +123,12 @@ footer {
 }
 
 .title-display {
-  padding: 10px 10px 0px 10px;
+  font-size: 1em;
   background-color: white;
   font-weight: bold;
-
+  padding-left: 1em;
+  padding-top: 1em;
+  padding-bottom: .5em;
 }
 
 .body-display {
@@ -139,7 +141,6 @@ footer {
 .comment {
   padding-top: .3em;
   font-size: 1em;
-
 }
 
 /*=== media queries ===*/
