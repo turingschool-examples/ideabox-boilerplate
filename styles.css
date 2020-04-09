@@ -27,6 +27,9 @@ input {
   border-radius: 2px;
 }
 
+.hidden {
+  display: none;
+}
 /* IDEABOX RULES (SIDEBAR) */
 
 .idea-box {
@@ -172,6 +175,8 @@ button.comment-color{
   padding: 0px;
 }
 
+/* media Queries */
+
 @media screen and (max-width: 45em) {
   .idea-cards-section {
    grid-template-columns: repeat(2, 1fr);
@@ -187,18 +192,18 @@ button.comment-color{
       "idea-form"
       "idea-cards";
   }
+
   .idea-box {
     border-bottom: 1px solid #FFFFFF;
     border-right: none;
+    text-align: center;
   }
+
   .idea-cards-section {
    grid-template-columns: repeat(1, 1fr);
   }
-  .idea-form {
-    justify-self: stretch;
-    align-items: stretch;
-  }
-  #search-input {
-    align-self: stretch;
+
+  .filter-starred {
+    display: none;
   }
 }
