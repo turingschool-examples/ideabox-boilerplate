@@ -331,14 +331,22 @@ body {
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 780px) {
   .card-grid {
-    /* display: flex; */
     /* flex-grow: 3; */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 15px;
     padding: 30px;
-    font-size: 14px;
   }
+
+  /* .card-grid {
+    display: flex;
+    flex-grow: 3;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+    padding: 30px;
+    font-size: 14px;
+  } */
 }
