@@ -62,19 +62,6 @@ body {
   letter-spacing: 1.2px;
   opacity: .9;
   padding: 50px;
-}
-
-.body-text {
-  font: 'Open Sans' light;
-}
-/*=== menu section ===*/
-
-.menu {
-  height: 100%;
-  width: 230px;
-}
-
-.show-starred {
   border: 1.5px solid #353567;
   padding: 7px;
   height: 38px;
@@ -86,6 +73,17 @@ body {
   margin-left: 12px;
   margin-top: 10px;
   margin-bottom: 25px;
+  position: inherit;
+}
+
+.body-text {
+  font: 'Open Sans' light;
+}
+/*=== menu section ===*/
+
+.menu {
+  height: 100%;
+  width: 230px;
 }
 
 .line {
@@ -191,6 +189,19 @@ form {
   padding-left: 10px;
 }
 
+.menu-navigate {
+  heigt: 40px;
+  width: 40px;
+}
+.search-icon {
+  margin-top: 10px;
+  height: 16px;
+  width: 16px;
+  border: 1px solid #1F1F3D;
+  background-color: #353567;
+  padding: 3px;
+/*position: fixed*/
+}
 .red-star {
   height: 35px;
   width: 35px;
@@ -307,4 +318,5 @@ form {
   .idea-cards-grid {
     grid-template-columns: repeat(1, 1fr);
   }
+
 }
