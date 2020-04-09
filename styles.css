@@ -37,13 +37,13 @@ body {
 
 .header-text {
   color: black;
-  font-family: 'Open Sans';
-  font-weight: bold;
-  padding: 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
 }
 
 .body-text {
-  font: 'Open Sans' light;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
 }
 
 
@@ -54,7 +54,16 @@ body {
   width: 380px;
 }
 
+.menu .header-text {
+  padding: 20px;
+}
+
 /*=== main section ===*/
+
+main {
+  display: flex;
+  flex-direction: column;
+}
 
 .ideas {
   display: flex;
@@ -63,58 +72,87 @@ body {
 }
 
 .idea-form {
+  width: 55%;
+  margin: auto;
+}
+
+.idea-form > * {
+  width: 100%;
+  margin: 2%;
+}
+
+.idea-form-container {
+  flex-grow: 2;
+}
+
+.idea-form {
   display: flex;
   flex-direction: column;
-  flex-grow: 2;
-  align-items: center;
-  padding: 20px;
+  margin-bottom: 20px;
+  /* flex-grow: 2;
+  align-items: center; */
+  /* padding: 15px; */
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+.form-label {
+  font-family: Open Sans, Light;
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 3px;
 }
 
 .title-section {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
+}
+
+#title-input, #body-input {
+  /* width: 198px; */
+  height: 100%;
+  border: 1px solid #5356A4;
+  /* margin-bottom: 15px; */
 }
 
 .body-section {
   display: flex;
   flex-direction: column;
+  flex-grow: 2;
 }
-
 
 .search-container {
   border: 1px solid #5356A4;
   display: flex;
-  width: 200px
-
+  flex-grow: .8;
+  /* width: 200px; */
+  margin-bottom: 40px;
 }
 
 .search-container img {
-  width: 20px;
-  margin: 5px;
+  width: 24px;
+  margin: 0px 20px;
+}
 
+.search-container input {
+  width: 100%;
+  font-size: 24px;
+  padding-left: 5px;
 }
 
 .save-button {
-  width: 200px;
-    background-color: #5356A4;
-    color: #E9E9F3;
-    border: 1px solid #5356A4;
-    font-family: Open Sans, Bold;
-    margin: 5px auto 10px auto;
-}
-#body-input {
-  width: 198px;
-  height: 40px;
+  /* width: 200px; */
+  flex-grow: .6;
+  background-color: #5356A4;
+  color: #E9E9F3;
   border: 1px solid #5356A4;
-  margin-bottom: 5px;
+  font-family: Open Sans, Bold;
+  font-size: 24px;
+    /* margin: 5px auto 0 auto; */
 }
 
-#title-input {
-  width: 198px;
-  height: 20px;
-  border: 1px solid #5356A4;
-  margin-bottom: 15px;
-}
+
 
 /* .search-container input {
 
@@ -128,7 +166,7 @@ body {
 
 .user-cards {
   margin: 20px;
-  width: 150px;
+  /* width: 150px; */
   border-color: #6E646B;
   border-style: solid;
   border-width: 1px
