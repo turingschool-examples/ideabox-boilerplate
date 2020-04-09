@@ -162,6 +162,7 @@ form {
 }
 label {
   margin-top: auto;
+  font-size: small;
 }
 .ideas {
   display: flex;
@@ -193,6 +194,7 @@ label {
 .menu-navigate {
   height: 40px;
   width: 40px;
+  display: none;
 }
 
 .red-star {
@@ -284,7 +286,9 @@ label {
   body {
     flex-direction: column;
   }
-
+  .menu {
+    display: flex;
+  }
   .header-text {
     font-size: 18px;
     padding: 10px;
@@ -292,8 +296,17 @@ label {
 
   .menu {
     height: 40px;
-    text-align: center;
     width: 100%;
+    display: flex;
+  }
+  .menu-navigate {
+    display: flex;
+    margin-left: 5px;
+
+  }
+  .header-text {
+    display: flex;
+    margin-left: 25%;
   }
 
   .form-grid {
