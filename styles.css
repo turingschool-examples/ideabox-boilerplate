@@ -273,9 +273,8 @@ body {
 .comment,
 .delete,
 .star-active {
-  height: auto;
-  max-width: 15%;
-  min-width: 15%;
+  height: 6vh;
+  width: 5em;
 }
 
 /*=== media queries ===*/
@@ -399,11 +398,4 @@ body {
     width: 100%;
   }
 
-  .comment,
-  .delete,
-  .star-active, {
-    height: auto;
-    max-width: 11%;
-    min-width: 5%;
-  }
 }
