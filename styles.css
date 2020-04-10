@@ -81,6 +81,7 @@ body {
 .menu-title {
   color: white;
   margin: 0;
+  padding-left: 5px;
 }
 
 .menu-body-text {
@@ -113,7 +114,7 @@ body {
 }
 
 .menu-close {
-  display: inline;
+  display: none;
   min-width: 5%;
   max-width: 11%;
   height: auto;
