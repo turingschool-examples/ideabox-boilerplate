@@ -46,7 +46,7 @@ footer {
 /*=== Fonts ===*/
 
 .header-text {
-  color: black;
+  color: #ffffff;
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
 }
@@ -99,9 +99,6 @@ main {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
-  /* flex-grow: 2;
-  align-items: center; */
-  /* padding: 15px; */
   justify-content: space-evenly;
   height: 100%;
 }
@@ -120,10 +117,8 @@ main {
 }
 
 #title-input, #body-input {
-  /* width: 198px; */
   height: 100%;
   border: 1px solid #5356A4;
-  /* margin-bottom: 15px; */
 }
 
 .body-section {
@@ -135,13 +130,8 @@ main {
 .search-container {
   border: 1px solid #5356A4;
   display: flex;
-<<<<<<< HEAD
-
-=======
   flex-grow: .8;
-  /* width: 200px; */
   margin-bottom: 40px;
->>>>>>> master
 }
 
 .search-container img {
@@ -156,21 +146,16 @@ main {
 }
 
 .save-button {
-  /* width: 200px; */
   flex-grow: .6;
   background-color: #5356A4;
   color: #E9E9F3;
   border: 1px solid #5356A4;
   font-family: Open Sans, Bold;
   font-size: 24px;
-    /* margin: 5px auto 0 auto; */
 }
 
 
-
-/* .search-container input {
-
-} */
+/* .search-container input  */
 
 .header-pic {
   width: 1.5em;
@@ -228,9 +213,6 @@ main {
   border-color: #6E646B;
 }
 
-/* .form-label { */
-  /* text-align: left; */
-   /* } */
 /*=== media queries ===*/
 
 @media only screen and (max-width: 400px) {
