@@ -187,19 +187,14 @@ main {
 
 .idea-cards {
   display: flex;
+  flex-wrap: wrap;
   flex-grow: 3;
-  justify-content: space-between;
   font-family: 'Open Sans', 'sans-serif';
 }
 
 .user-cards {
-<<<<<<< HEAD
-  margin: 1em;
-  width:auto;
-=======
   margin: 20px;
-  /* width: 150px; */
->>>>>>> master
+  width: 30%;
   border-color: #6E646B;
   border-style: solid;
   border-width: 1px;
