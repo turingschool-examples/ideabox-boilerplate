@@ -88,6 +88,7 @@ body {
   display: flex;
   flex-flow:column wrap;
   justify-content: space-around;
+  padding-bottom: 2em;
 }
 
 .idea-cards-section {
@@ -103,11 +104,11 @@ body {
  flex-direction: column;
  justify-content: space-between;
  width: 60%;
- padding: 1.5em 0em;
+ padding: 1.5em 0em 0em 0em;
 }
 
 .idea-form input {
-  border-radius: 5px;
+  border-radius: 4px;
   margin: 12px 0px;
 }
 
@@ -120,20 +121,24 @@ body {
 #title-input-field {
   flex-grow: 1;
   height: 3.5em;
+  border-color: #5356A4;
 }
 
 #body-input-field {
   flex-grow: 2;
   height: 8em;
+  border-color: #5356A4;
 }
 
 .save-idea-btn {
-  border-radius: 5px;
+  border-radius: 4px;
   font-size: x-large;
   font-weight: 500;
   color: #EAEAF4;
   height: 2em;
+  margin: 18px 0px;
   background-color: rgb(40,38,84);
+  border-color: #5356A4;
 }
 
 .search-bar {
@@ -141,17 +146,23 @@ body {
   height: 3em;
   margin: 15px 0px;
   width: 60%;
+
 }
 
 #search-icon-btn {
  background: #5356A4;
  padding: .5em .2em;
  width: 12%;
+ border-color: #5356A4;
+ /* border-radius: 2px; */
 }
 
 #search-entry {
   width: 88%;
-  font-size:1.2em;
+  font-size:1em;
+  padding-left: 1em;
+  border-color: #5356A4;
+  border-radius: 3px;
 }
 
 /*idea box cards section*/
@@ -162,6 +173,7 @@ body {
   flex-direction: column;
   height: 90%;
   justify-content: space-between;
+  margin-bottom: 1.5em;
   width: 1fr;
 }
 
@@ -175,6 +187,10 @@ body {
 
 .star-delete-option img {
   width: 25px;
+}
+
+#star-btn {
+  display: none;
 }
 
 .idea-box-main-content {
@@ -262,4 +278,4 @@ body {
 // create gaps for the idea cards when it is moved to mobile screen
 // add border color around the input fields in form section
 // add active star icon and hide it so the regular star icon shows
-// make adjustments to the starred ideas text area 
+// make adjustments to the starred ideas text area
