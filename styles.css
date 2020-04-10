@@ -273,15 +273,8 @@ body {
 .comment,
 .delete,
 .star-active {
-  height: auto;
-  max-width: 15%;
-  min-width: 15%;
-}
-
-input {
-  max-width: 50%;
-  height: auto;
-  padding-top: 3px;
+  height: 6vh;
+  width: 5em;
 }
 
 /*=== media queries ===*/
@@ -302,13 +295,13 @@ input {
 .card-bottom {
   background: #5356A4;
   height: 55px;
-}
+  }
 
 .box {
   border: solid;
   border-color: #1F1F3D;
   border-width: 1px;
-}
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -400,11 +393,4 @@ input {
     width: 100%;
   }
 
-  .comment,
-  .delete,
-  .star-active, {
-    height: auto;
-    max-width: 11%;
-    min-width: 5%;
-  }
 }
