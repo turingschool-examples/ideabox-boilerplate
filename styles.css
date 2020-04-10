@@ -43,7 +43,9 @@ footer {
 }
 
 
+
 /*=== Fonts ===*/
+
 
 .header-text {
   color: #ffffff;
@@ -58,10 +60,28 @@ footer {
 
 
 /*=== menu section ===*/
+.starred-ideas-button {
+  font-size: 16px;
+  padding: 10px;
+  margin: 0px 20px 20px 20px;
+  border-radius: 3px;
+  border: 1px solid #353567;
+  font-weight: bold;
+  font-family: 'Open Sans';
+  width: 100%;
+
+}
+
+.filter-starred-ideas {
+  color: #BFBFDD;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  padding: 20px;
+}
 
 .menu {
   height: 100%;
-  width: 380px;
+  width: 75%;
 }
 
 .menu .header-text {
@@ -178,12 +198,16 @@ main {
 }
 
 .user-cards {
-  margin: 20px;
-  width: 30%;
+  margin: 1em;
+  width: 25%;
+  /* height:fit-content; */
   border-color: #6E646B;
   border-style: solid;
   border-width: 1px;
-
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  flex-direction: column
 }
 
 .title-display {
