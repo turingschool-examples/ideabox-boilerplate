@@ -68,8 +68,14 @@ footer {
   border: 1px solid #353567;
   font-weight: bold;
   font-family: 'Open Sans';
-  width: 100%;
+  width: 80%;
 
+}
+
+.starred-ideas {
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  color: #353567;
 }
 
 .filter-starred-ideas {
@@ -86,6 +92,7 @@ footer {
 
 .menu .header-text {
   padding: 20px;
+  border-bottom: #
 }
 
 /*=== main section ===*/
