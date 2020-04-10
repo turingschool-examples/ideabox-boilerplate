@@ -286,18 +286,16 @@ label {
   body {
     flex-direction: column;
   }
-  .menu {
-    display: flex;
-  }
   .header-text {
     font-size: 18px;
     padding: 10px;
   }
 
   .menu {
-    height: 40px;
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
+
   }
   .menu-navigate {
     display: flex;
@@ -308,10 +306,17 @@ label {
     display: flex;
     margin-left: 25%;
   }
-
+  .filter {
+    opacity: 30%;
+  }
   .form-grid {
     grid-template-columns: auto;
   }
+
+  .show-starred {
+    margin-left: 20px;
+  }
+
   form {
     grid-column-start: 1;
   }
