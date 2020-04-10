@@ -237,6 +237,10 @@ body {
     height: 7vh;
   }
 
+  .show-ideas-btn {
+    letter-spacing: -4px;
+  }
+
   #menu-icon {
     display: inline;
     align-self: flex-start;
@@ -252,6 +256,7 @@ body {
 
   .filter-star-ideas {
     display: none;
+    letter-spacing: normal;
   }
 
   .idea-form {
