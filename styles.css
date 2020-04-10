@@ -309,15 +309,16 @@ body {
     flex-direction: column;
   }
 
-.menu-icon {
-  position: absolute;
-  left: 0px;
-}
+  .menu-icon {
+    position: absolute;
+    left: 0px;
+  }
 
   .header-text {
     align-items: center;
     font-size: 18px;
-    justify-content: space-between;
+    display: flex;
+    justify-content: center;
     margin: 0px;
     padding: 9px;
   }
@@ -359,6 +360,7 @@ body {
 
   .mobile-menu-body-text {
     left: 0px;
+    display: inherit;
   }
 
   .menu-body-mobile {
