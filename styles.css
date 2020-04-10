@@ -81,6 +81,7 @@ body {
 .menu-title {
   color: white;
   margin: 0;
+  padding-left: 5px;
 }
 
 .menu-body-text {
@@ -113,7 +114,7 @@ body {
 }
 
 .menu-close {
-  display: inline;
+  display: none;
   min-width: 5%;
   max-width: 11%;
   height: auto;
@@ -292,11 +293,6 @@ body {
   height: 50px;
 }
 
-@media only screen and (min-width: 500px) {
-  .menu-icon {
-    display: none;
-  }
-
 .card-bottom {
   background: #5356A4;
   height: 55px;
@@ -314,15 +310,16 @@ body {
     flex-direction: column;
   }
 
-.menu-icon {
-  position: absolute;
-  left: 0px;
-}
+  .menu-icon {
+    position: absolute;
+    left: 0px;
+  }
 
   .header-text {
     align-items: center;
     font-size: 18px;
-    justify-content: space-between;
+    display: flex;
+    justify-content: center;
     margin: 0px;
     padding: 9px;
   }
@@ -364,6 +361,7 @@ body {
 
   .mobile-menu-body-text {
     left: 0px;
+    display: inherit;
   }
 
   .menu-body-mobile {
