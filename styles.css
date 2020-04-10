@@ -66,7 +66,7 @@ body {
   border:2px #EAEAF4;
   color: #E9E9F3;
   font-weight: 600;
-  font-size: 1.3em;
+  font-size: 1.4vw;
   height: 1.5em;
   padding: .2em;
   width:94%;
@@ -237,10 +237,6 @@ body {
     height: 7vh;
   }
 
-  .show-ideas-btn {
-    letter-spacing: -4px;
-  }
-
   #menu-icon {
     display: inline;
     align-self: flex-start;
@@ -249,14 +245,13 @@ body {
     height: 100%;
   }
 
-  #menu-x-icon :hover {
+  #menu-x-icon {
     width: 42px;
     height: 100%;
   }
 
   .filter-star-ideas {
     display: none;
-    letter-spacing: normal;
   }
 
   .idea-form {
