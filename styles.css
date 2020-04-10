@@ -105,22 +105,16 @@ img {
 }
 
 .idea-cards {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  flex-grow: 3;
-  justify-content: space-around;
-  align-content: flex-start;
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+  grid-gap: 1rem;
+  padding: 1rem;
 }
 
 .idea-card-unit {
   display: flex;
   flex-direction: column;
-  flex-grow: 2;
   border: 1px #1F1F3D solid;
-  min-width: 200px;
-  max-width: 300px;
-  margin: 10px;
 }
 
 .idea-box-top {
@@ -157,7 +151,8 @@ h3 {
 
 .form-parent {
   flex-direction: column;
-  width: 40%;
+  width: 100%;
+  max-width: 500px;
 }
 
 .idea-title {
@@ -249,10 +244,6 @@ height: 3em;
   opacity: 50%;
 }
 
-.mobile-menu {
-  visibility: hidden;
-}
-
 @media only screen and (max-width: 780px) {
   /* .menu {
     display: none;
@@ -266,9 +257,9 @@ height: 3em;
     visibility: visible;
     background: #1F1F3D;
     display: flex;
-    width: 10%;
     height: 100%;
-   
+    position: absolute;
+    left: 0;
   }
 
   .hamburger-menu {
@@ -283,11 +274,6 @@ height: 3em;
     margin-left: 7em;
     font-size: 12px;
    
-  }
-
-  .form-parent {
-  min-width: 300px;
-  max-width: 300px;
   }
 
   .idea-title {
@@ -348,15 +334,13 @@ height: 3em;
     height: 100%;
     width: 100%;
     display: flex;
-    flex-direction: row;
     padding-top: 20px;
     padding-bottom: 20px;
+    position: relative;
+    justify-content: center;
   }
   .menu-items {
     display: flex;
-    border: solid;
-    border-width: 2px;
-    border-color: #353567;
     justify-content: flex-start;
     flex-direction: column;
     padding: 10px;
@@ -373,8 +357,16 @@ height: 3em;
     font-family: 'Open Sans';
     font-weight: bold;
     padding: 0px;
-    margin-left: 6em;
     display: inline-block;
-  
+    text-align: center;
+  }
+
+  .mini-menu-x-button {
+    background: #1F1F3D;
+    margin-left: 4em;
+  }
+
+  .mini-menu-x {
+    width: 40px;
   }
 }
