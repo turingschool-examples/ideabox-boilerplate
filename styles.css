@@ -42,8 +42,6 @@ footer {
   background: #1F1F3D;;
 }
 
-
-
 /*=== Fonts ===*/
 
 
@@ -58,8 +56,11 @@ footer {
   font-weight: 300;
 }
 
-
 /*=== menu section ===*/
+.hidden {
+  display: none;
+}
+
 .starred-ideas-button {
   font-size: 16px;
   padding: 10px;
@@ -246,12 +247,12 @@ main {
 
 /*=== media queries ===*/
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 600px) {
   body {
     flex-direction: column;
   }
 
-  .header-text {
+  .menu .header-text {
     font-size: 18px;
     padding: 10px;
   }
@@ -262,7 +263,22 @@ main {
     width: 100%;
   }
 
+  .menu-icon {
+    display: block;
+    width: 1.5em;
+    position: absolute;
+    margin: 10px 20px;
+  }
+
   .idea-form {
     flex-grow: 1;
+  }
+
+  .idea-cards {
+    /* flex-direction: column; */
+  }
+
+  .user-cards {
+    width: 100%;
   }
 }
