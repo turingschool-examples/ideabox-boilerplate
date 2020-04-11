@@ -6,6 +6,7 @@ var filterStarredIdeasElement = document.querySelector(".header-text-filter");
 var showStarredButton = document.querySelector(".show-starred");
 var menuCloseButton = document.querySelector(".menu-close");
 var ideas = document.querySelector(".ideas");
+
 bodyElement.addEventListener("click", dropNavMenu);
 
 function dropNavMenu(event) {
@@ -22,9 +23,6 @@ function dropNavMenu(event) {
   }
 }
 function toggleHiddenMenu() {
-  filterStarredIdeasElement.classList.toggle("hidden-small");
-  showStarredButton.classList.toggle("hidden-small");
-  dropDownMenuElement.classList.toggle("hidden");
-  ideas.classList.toggle("filter");
+    document.querySelector(".bottom-menu-4").classList.toggle("hidden-small")
+    // ideas.classList.toggle("filter")
 }
-
