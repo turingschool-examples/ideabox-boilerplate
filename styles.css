@@ -143,8 +143,16 @@ main {
   flex-grow: 1;
 }
 
-#title-input, #body-input {
+#title-input {
   height: 100%;
+  border: 1px solid #5356A4;
+  min-height: 5em;
+  border-radius: 4px;
+}
+
+#body-input {
+  min-height: 10em;
+  border-radius: 4px;
   border: 1px solid #5356A4;
 }
 
@@ -159,6 +167,8 @@ main {
   display: flex;
   flex-grow: .8;
   margin-bottom: 40px;
+  min-height: 3em;
+  border-radius: 4px;
 }
 
 .search-container img {
@@ -170,13 +180,18 @@ main {
   width: 100%;
   font-size: 24px;
   padding-left: 5px;
+  border-radius: 0px 4px 4px 0px;
+  border: 0px;
 }
 
 .save-button {
   flex-grow: .6;
+  min-height: 2.5em;
   background-color: #5356A4;
-  color: #E9E9F3;
+  background-color: #1F1F3D;
+  color: #EAEAF4;
   border: 1px solid #5356A4;
+  border-radius: 4px;
   font-family: Open Sans, Bold;
   font-size: 24px;
 }
