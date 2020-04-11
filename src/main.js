@@ -7,6 +7,7 @@ var hamburgerImg = document.querySelector('.hamburger-img')
 var miniMenuXButton = document.querySelector('.mini-menu-x-button');
 var miniMenuX = document.querySelector('.mini-menu-x');
 var miniMenu = document.querySelector('.mini-menu')
+var list = []
 // var miniMenuX = document.querySelector('.mini-menu-x');
 
 body.addEventListener("click", buttonHandler)
