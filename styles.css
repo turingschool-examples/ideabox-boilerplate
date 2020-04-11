@@ -278,6 +278,10 @@ main {
     width: 100%;
   }
 
+  .menu-expanded {
+    height: 100%;
+  }
+
   .menu-icon {
     display: block;
     width: 1.5em;
