@@ -1,115 +1,101 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link href="https://fonts.googleapis.com/css?family=Open%20Sans" rel='stylesheet'>
-    <link rel="stylesheet" type="text/css" href="./styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-  </head>
-  <body class="purple-1">
-    <section class="menu purple-4">
-      <section class="mini-menu">
-        <button class = "mini-menu hamburger-menu"><img class= "hamburger-img" src="assets/menu.svg"></button>
-        
-      </section>
-      <h1 class="header-text">IdeaBox</h1>
-      <section class="menu-items">
-        <p class= "filter">Filter Starred ideas</p>
-        <button class= "show-starred">Show Starred Ideas</button>
-      </section>
-    </section>
-    <main class="ideas">
-      <section class="idea-form purple-2">
 
-        <section class= "form-parent">
-          
-          <h5 class= "idea-title">Title</h5>
-          <input class= "input-title" type="text" name="Title" id="">
-          <h5 class="idea-body">Body</h5>
-          <textarea class = " input-body" type="text" name="Body" id=""></textarea>
-          <br>
-          <button class = "save">Save</button>
-          <section class = "search">
-          <button class = "magnifying-glass"><img src="assets/search.svg" alt="Magnifying glass search icon"></button>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Open%20Sans" rel='stylesheet'>
+  <link rel="stylesheet" type="text/css" href="./styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body class="purple-1">
+  <section class="menu purple-4">
+    <section class="mini-menu">
+      <button class="mini-menu hamburger-menu"><img class="hamburger-img" src="assets/menu.svg"></button>
+      <button class="mini-menu-x-button"><img class=" mini-menu-x" src="assets/delete.svg" alt=""></button>
+    </section>
+    <h1 class="header-text">IdeaBox</h1>
+    <section class="menu-items">
+      <p class="filter">Filter Starred ideas</p>
+      <button class="show-starred">Show Starred Ideas</button>
+    </section>
+  </section>
+  <main class="ideas">
+    <section class="idea-form purple-2">
+      <section class="form-parent">
+        <h5 class="idea-title">Title</h5>
+        <input class="input-title" type="text" name="Title" id="">
+        <h5 class="idea-body">Body</h5>
+        <textarea class=" input-body" type="text" name="Body" id=""></textarea>
+        <br>
+        <button class="save">Save</button>
+        <section class="search">
+          <button class="magnifying-glass"><img src="assets/search.svg" alt="Magnifying glass search icon"></button>
           <input class="search-input" type="text" name="Search" placeholder="search ideas">
-          </section>
-      </section>
-      </section>
-      <section class = "idea-cards">
-          <section class = "idea-card-unit">
-            <section class = "idea-box-top">
-              <img src = "assets/star-active.svg" alt="Orange Active Star Icon">
-            <img src = "assets/delete.svg" alt=" X delete">
-          </section>
-          <section class = "idea-box-mid">
-            <h3>Idea title</h3>
-            <p>Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth talk.</p>
-          </section>
-            <section class = "idea-box-bottom">
-              <img src="assets/comment.svg" alt="Plus Icon add a comment">
-              <p>Comment</p>
-            </section>
-          </section>
-          <section class = "idea-card-unit">
-            <section class = "idea-box-top">
-              <img src = "assets/star-active.svg" alt="Orange Active Star Icon">
-            <img src = "assets/delete.svg" alt=" X delete">
-          </section>
-          <section class = "idea-box-mid">
-            <h3>Idea title</h3>
-            <p>Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth talk.</p>
-          </section>
-            <section class = "idea-box-bottom">
-              <img src="assets/comment.svg" alt="Plus Icon add a comment">
-              <p>Comment</p>
-            </section>
-          </section>
-          <section class = "idea-card-unit">
-            <section class = "idea-box-top">
-              <img src = "assets/star-active.svg" alt="Orange Active Star Icon">
-            <img src = "assets/delete.svg" alt=" X delete">
-          </section>
-          <section class = "idea-box-mid">
-            <h3>Idea title</h3>
-            <p>Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth talk.</p>
-          </section>
-            <section class = "idea-box-bottom">
-              <img src="assets/comment.svg" alt="Plus Icon add a comment">
-              <p class = "idea-bottom-bar">Comment</p>
-            </section>
-          </section>
-          <section class = "idea-card-unit">
-            <section class = "idea-box-top">
-              <img src = "assets/star-active.svg" alt="Orange Active Star Icon">
-            <img src = "assets/delete.svg" alt=" X delete">
-          </section>
-          <section class = "idea-box-mid">
-            <h3>Idea title</h3>
-            <p>Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth talk.</p>
-          </section>
-            <section class = "idea-box-bottom">
-              <img src="assets/comment.svg" alt="Plus Icon add a comment">
-              <p>Comment</p>
-            </section>
-          </section>
         </section>
       </section>
-    </main>
-  </body>
-  <script src="src/main.js"></script>
+    </section>
+    <section class="idea-cards">
+      <section class="idea-card-unit">
+        <section class="idea-box-top">
+          <img src="assets/star-active.svg" alt="Orange Active Star Icon">
+          <img src="assets/delete.svg" alt=" X delete">
+        </section>
+        <section class="idea-box-mid">
+          <h3>Idea title</h3>
+          <p>Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth talk.</p>
+        </section>
+        <section class="idea-box-bottom">
+          <img src="assets/comment.svg" alt="Plus Icon add a comment">
+          <p>Comment</p>
+        </section>
+      </section>
+      <section class="idea-card-unit">
+        <section class="idea-box-top">
+          <img src="assets/star-active.svg" alt="Orange Active Star Icon">
+          <img src="assets/delete.svg" alt=" X delete">
+        </section>
+        <section class="idea-box-mid">
+          <h3>Idea title</h3>
+          <p>Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth talk.</p>
+        </section>
+        <section class="idea-box-bottom">
+          <img src="assets/comment.svg" alt="Plus Icon add a comment">
+          <p>Comment</p>
+        </section>
+      </section>
+      <section class="idea-card-unit">
+        <section class="idea-box-top">
+          <img src="assets/star-active.svg" alt="Orange Active Star Icon">
+          <img src="assets/delete.svg" alt=" X delete">
+        </section>
+        <section class="idea-box-mid">
+          <h3>Idea title</h3>
+          <p>Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth talk.</p>
+        </section>
+        <section class="idea-box-bottom">
+          <img src="assets/comment.svg" alt="Plus Icon add a comment">
+          <p class="idea-bottom-bar">Comment</p>
+        </section>
+      </section>
+      <section class="idea-card-unit">
+        <section class="idea-box-top">
+          <img src="assets/star-active.svg" alt="Orange Active Star Icon">
+          <img src="assets/delete.svg" alt=" X delete">
+        </section>
+        <section class="idea-box-mid">
+          <h3>Idea title</h3>
+          <p>Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth talk.</p>
+        </section>
+        <section class="idea-box-bottom">
+          <img src="assets/comment.svg" alt="Plus Icon add a comment">
+          <p>Comment</p>
+        </section>
+      </section>
+    </section>
+    </section>
+  </main>
+</body>
+<script src="src/main.js"></script>
+
 </html>
-
-<!-- style="background: url(assets/menu.svg);" -->
-
-<!-- <section class="mobile-menu">
-  <section class="mobile-menu-top">
-  <button class="mobile-menu-button"><img src="assets/delete.svg"></button>
-  <h3>IdeaBox</h3>
-</section>
-  <p>Filter Starred Ideas</p>
-  <button class="mobile-show-starred">Show Starred Ideas</button>
-</section> -->
-
-<!-- <section class="mini-menu">
-  <button class = "hamburger-menu"><img src="assets/menu.svg"></button>
-  <h3>IdeaBox</h3>
-</section> -->

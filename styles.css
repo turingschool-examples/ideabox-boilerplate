@@ -50,6 +50,7 @@ body {
 img {
   width: 20px;
 }
+
 /*=== Fonts ===*/
 
 .header-text {
@@ -59,13 +60,7 @@ img {
   padding: 20px;
   margin-left: 12px;
   display: inline-block;
-
 }
-
-/* .body-text {
-  font: 'Open Sans' light;
-} */
-
 
 /*=== menu section ===*/
 
@@ -75,6 +70,7 @@ img {
   display: flex;
   flex-direction: column;
 }
+
 .menu-items {
   display: flex;
   border: solid;
@@ -83,11 +79,7 @@ img {
   justify-content: flex-start;
   flex-direction: column;
   padding: 10px;
-
 }
-
-
-
 
 /*=== main section ===*/
 
@@ -105,22 +97,16 @@ img {
 }
 
 .idea-cards {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  flex-grow: 3;
-  justify-content: space-around;
-  align-content: flex-start;
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+  grid-gap: 1rem;
+  padding: 1rem;
 }
 
 .idea-card-unit {
   display: flex;
   flex-direction: column;
-  flex-grow: 2;
   border: 1px #1F1F3D solid;
-  min-width: 200px;
-  max-width: 300px;
-  margin: 10px;
 }
 
 .idea-box-top {
@@ -157,7 +143,8 @@ h3 {
 
 .form-parent {
   flex-direction: column;
-  width: 40%;
+  width: 100%;
+  max-width: 500px;
 }
 
 .idea-title {
@@ -197,7 +184,7 @@ h3 {
 }
 
 .magnifying-glass {
-  background: #1F1F3D
+  background: #1F1F3D;
 }
 
 .search-input {
@@ -217,6 +204,9 @@ height: 3em;
   border-radius: 5px;
 }
 
+button {
+  outline: none;
+}
 
 /*=== media queries ===*/
 
@@ -243,32 +233,29 @@ height: 3em;
 
 .mini-menu {
   display: none;
-
 }
+
 .mini-show-starred {
   opacity: 50%;
 }
 
-.mobile-menu {
-  visibility: hidden;
-}
+
 
 @media only screen and (max-width: 780px) {
-  /* .menu {
-    display: none;
-  } */
+
   body {
     display: flex;
     font-family: 'Open Sans', light;
     flex-direction: column;
   }
+
   .mini-menu {
     visibility: visible;
-    background: #1F1F3D;
+    /* background: #1F1F3D; */
     display: flex;
-    width: 10%;
     height: 100%;
-   
+    position: absolute;
+    left: 0;
   }
 
   .hamburger-menu {
@@ -278,94 +265,33 @@ height: 3em;
     border-radius: 5px;
   }
 
-  .mini-menu h3 {
-    color:#E9E9F3;
-    margin-left: 7em;
-    font-size: 12px;
-   
-  }
-
-  .form-parent {
-  min-width: 300px;
-  max-width: 300px;
-  }
-
   .idea-title {
     margin-bottom: 1em;
     margin-top: 1em;
     font-weight: bold;
   }
 
-  .mobile-menu {
-    background-color: #1f1f3d;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    visibility: visible;
-  }
-
-  .mobile-menu-button{
-    background-color: #1F1F3D;
-    width: 30px;
-    height: 40px;
-    font-size: 16px;
-    border: none;
-  }
-
-  .mobile-menu-top img{
-    
-    display: inline-block;
-  }
-
-  .mobile-show-starred{
-    background: #5356A4;
-    color: #E9E9F3;
-    border-color: #353567;
-    padding: 20px;
-    margin: 20px;
-    font-size: 18px;
-    font-weight: bold;
-  }
-
-  .mobile-menu-top{
-    display: flex;
-  }
-
-  .mobile-menu-top h3{
-    color:#E9E9F3;
-    margin-left: 7em;
-    font-size: 17px;
-    margin-bottom: 1em;
-    padding-top: 12px;
-  }
-
-  .mobile-menu p {
-    margin-left: 22px;
-  }
-
   .menu {
     height: 100%;
     width: 100%;
     display: flex;
-    flex-direction: row;
     padding-top: 20px;
     padding-bottom: 20px;
+    position: relative;
+    justify-content: center;
   }
+
   .menu-items {
     display: flex;
-    border: solid;
-    border-width: 2px;
-    border-color: #353567;
     justify-content: flex-start;
     flex-direction: column;
     padding: 10px;
     display: none;
+    border: none;
   }
   
   .hamburger-img {
     width: 42px;
-    /* margin-top: 4.5em; */
   }
 
   .header-text {
@@ -373,8 +299,23 @@ height: 3em;
     font-family: 'Open Sans';
     font-weight: bold;
     padding: 0px;
-    margin-left: 6em;
     display: inline-block;
-  
+    text-align: center;
+  }
+
+  .mini-menu-x-button {
+    background: #1F1F3D;
+    margin-left: 1em;
+    height: 53px;
+    border: none;
+    padding-top: 11px;
+  }
+
+  .mini-menu-x {
+    width: 43px;
+  }
+
+  .mini-menu-hidden {
+    display: none;
   }
 }
