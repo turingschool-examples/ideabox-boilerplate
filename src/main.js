@@ -6,9 +6,13 @@ var menuItems = document.querySelector('.menu-items');
 var hamburgerImg = document.querySelector('.hamburger-img')
 var miniMenuXButton = document.querySelector('.mini-menu-x-button');
 var miniMenuX = document.querySelector('.mini-menu-x');
-var miniMenu = document.querySelector('.mini-menu')
+var miniMenu = document.querySelector('.mini-menu');
 var list = []
+var saveButton = document.querySelector('.save');
+var ideaTitleInput = document.querySelector('.input-title');
+var ideaBodyInput = document.querySelector('.input-body');
 // var miniMenuX = document.querySelector('.mini-menu-x');
+
 
 body.addEventListener("click", buttonHandler)
 
@@ -20,6 +24,8 @@ function buttonHandler(event) {
     displayStarredIdeasMenu();
   } else if (event.target === miniMenuX) {
     hideStarredIdeasMenu();
+  } else if (event.target === saveButton) {
+    saveNewTitle();
   }
 }
 
@@ -34,4 +40,12 @@ function hideStarredIdeasMenu() {
   menuItems.style.display = 'none';
   hamburgerImg.style.display = 'flex';
   burgerButton.style.display = 'flex';
+}
+
+
+function saveNewTitle() {
+var newIdea = new Idea(ideaTitleInput.value, ideaBodyInput.value);
+ideaTitleInput.value = ""
+ideaBodyInput.value = ""
+return list.push(newIdea);
 }
