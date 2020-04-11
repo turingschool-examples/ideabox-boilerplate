@@ -25,7 +25,8 @@ function buttonHandler(event) {
   } else if (event.target === miniMenuX) {
     hideStarredIdeasMenu();
   } else if (event.target === saveButton) {
-    saveNewTitle();
+    validateInputs();
+    saveNewIdea();
   }
 }
 
@@ -43,9 +44,17 @@ function hideStarredIdeasMenu() {
 }
 
 
-function saveNewTitle() {
+function saveNewIdea() {
 var newIdea = new Idea(ideaTitleInput.value, ideaBodyInput.value);
 ideaTitleInput.value = ""
 ideaBodyInput.value = ""
 return list.push(newIdea);
+}
+
+function validateInputs() {
+  if (ideaTitleInput.value.length === null || ideaBodyInput.value.length === null) {
+    saveButton.disabled = false;
+  } else {
+    saveButton.disabled = true;
+  }
 }
