@@ -25,9 +25,9 @@ function saveHandler(event) {
   //   enableSubmitButton();
   // }
 }
-// put an event listener for mouse over on the save button. 
+// put an event listener for mouse over on the save button.
 // event handler will do 3 things.
-  //one is check the inputs on the form 
+  //one is check the inputs on the form
     // if they are empty then the button is disabled
     // when the button is disabled, a filter or lighter color is applied
   //
@@ -41,6 +41,22 @@ function saveHandler(event) {
 
 //   }
 // }
+form.addEventListener("input", enableSubmitButton)
+saveButton.disabled = true;
+function enableSubmitButton() {
+  if (bodyInput.value !== ""  &&  titleInput.value !== "") {
+    saveButton.disabled = false
+    saveButton.classList.remove("filter-save-button")
+  } else {
+    saveButton.classList.add("filter-save-button")
+    saveButton.disabled = true
+  }
+}
+
+
+
+
+
 
 
 function saveIdeas(event) {
@@ -48,6 +64,8 @@ function saveIdeas(event) {
   var currentIdea = new Idea(titleInput.value, bodyInput.value);
   savedIdeasArray.push(currentIdea);
   form.reset();
+  saveButton.disabled = true;
+  saveButton.classList.add("filter-save-button");
 // make new instance of idea class using the inputs from the page, take that class we are creating from page and put that instance of class into array.
 }
 //every time we add a new card, we need to add html(placeholders in our html) to the page
@@ -109,5 +127,5 @@ function dropNavMenu(event) {
 }
 function toggleHiddenMenu() {
     document.querySelector(".bottom-menu-4").classList.toggle("hidden-small")
-    // ideas.classList.toggle("filter")
+    ideas.classList.toggle("filter")
 }
