@@ -217,10 +217,6 @@ body {
   padding: 30px;
 }
 
-/* .idea-cards {
-  flex-grow: 3;
-} */
-
 .box {
   background: #FFFFFF;
   border-color: #1F1F3D;
@@ -263,7 +259,7 @@ body {
 
   .card-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 15px;
   padding: 20px;
 }
@@ -293,7 +289,7 @@ body {
   .menu-title {
     padding: 0px;
   }
-  
+
   .menu-icon {
     position: absolute;
     left: 0px;
