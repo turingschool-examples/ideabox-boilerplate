@@ -291,12 +291,12 @@ main {
   }
 
   .menu .header-text {
-    font-size: 18px;
-    padding: 10px;
+    font-size: 1.1em;
+    padding: .6em;
   }
 
   .menu {
-    height: 40px;
+    height: 2.5em;
     text-align: center;
     width: 100%;
   }
@@ -309,7 +309,7 @@ main {
     display: block;
     width: 1.5em;
     position: absolute;
-    margin: 10px 1.25em;
+    margin: .6em 1.25em;
   }
 
   .idea-form {
@@ -322,5 +322,11 @@ main {
 
   .user-cards {
     width: 100%;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+   .overlay {
+     display: none;
   }
 }
