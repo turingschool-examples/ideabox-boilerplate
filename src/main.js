@@ -9,6 +9,7 @@ var userForm = document.querySelector('.form');
 
 menuButton.addEventListener('click', showMobileMenu);
 saveIdeaButton.addEventListener('click', saveIdea);
+menuCloseButton.addEventListener('click', closeMenu);
 
 var savedIdeas = [];
 
@@ -17,6 +18,13 @@ function showMobileMenu() {
   mobileMenuBody.classList.add('menu-body-mobile')
   menuButton.classList.add('hide');
   menuCloseButton.classList.remove('hide');
+}
+
+function closeMenu() {
+  mobileMenu.classList.remove('purple-4');
+  mobileMenuBody.classList.remove('menu-body-mobile')
+  menuButton.classList.remove('hide');
+  menuCloseButton.classList.add('hide');
 }
 
 function saveIdea(event) {
