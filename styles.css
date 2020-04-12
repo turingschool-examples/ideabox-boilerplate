@@ -34,41 +34,40 @@ body {
 
 /*=== Fonts ===*/
 
-.header-text {
-  color: #EAEAF4;
+.title-text,
+.form-body-text,
+.formbutton,
+.header-text,
+.card-header,
+.comment-text,
+.menu-body-text,
+.show-starred-button {
   font-family: 'Open Sans';
   font-weight: bold;
-  padding: 20px;
+}
+
+.header-text,
+.comment-text {
+  color: #EAEAF4;
 }
 
 .body-text {
   color: #BFBFDD;
-  font-family: 'Open Sans';
-  font-weight: light;
 }
 
-.card-header {
-  font-family: 'Open Sans';
-  font-size: 20px;
-  font-weight: bold;
-  padding: 7px;
-}
-
-.card-text {
-  font-family: 'Open Sans';
-  font-size: 15px;
-  font-weight: light;
-  padding: 7px;
-}
-
+.card-header,
+.card-text,
 .comment-text {
-  color: #EAEAF4;
-  font-family: "Open Sans";
   font-size: 18px;
-  font-weight: bold;
-  padding: 5px;
+  padding: 6px;
 }
 
+.card-text,
+.body-text,
+::placeholder {
+  font-family: 'Open Sans';
+  font-weight: light;
+}
 
 /*=== menu section ===*/
 
@@ -90,9 +89,7 @@ body {
   color: #BFBFDD;
   display: flex;
   flex-direction: column;
-  font-family: 'Open Sans';
   font-size: 90%;
-  font-weight: bold;
   height: 10vh;
   justify-content: space-between;
   padding: 20px;
@@ -102,9 +99,7 @@ body {
   background: #5356A4;
   border: #353567;
   color: #E9E9F3;
-  font-family: 'Open Sans';
   font-size: 130%;
-  font-weight: bold;
   height: 4vh;
   width: 95%;
 }
@@ -147,53 +142,47 @@ body {
 
 .title-text {
   color: #333451;
-  font-family: 'Open Sans';
-  font-weight: bold;
+  width: 50%;
+}
+
+.input-title,
+.input-body,
+.form-button,
+.search-box {
+  border: 2px solid #5356A4;
+  border-radius: 4px;
   width: 50%;
 }
 
 .input-title {
-  border-radius: 4px;
-  border: 2px solid #5356A4;
   height: 7vh;
   width: 50%;
 }
 
 .form-body-text {
   color: #333451;
-  font-family: 'Open Sans';
-  font-weight: bold;
   width: 50%;
 }
 
 .input-body {
-  border-radius: 4px;
-  border: 2px solid #5356A4;
   height: 15vh;
-  width: 50%;
+}
+
+.form-button,
+.search-box {
+  background-color: #353567;
+  height: 7vh;
 }
 
 .form-button {
-  background-color: #353567;
-  border-radius: 4px;
-  border: 2px solid #5356A4;
   color: #EAEAF4;
-  font-family: 'Open Sans';
   font-size: 1.5em;
-  font-weight: bold;
-  height: 7vh;
   margin-top: 2%;
-  width: 50%;
 }
 
 .search-box {
-  background-color:  #353567;
-  border-radius: 4px;
-  border: 2px solid #5356A4;
   display: flex;
-  height: 7vh;
   margin: 2%;
-  width: 50%;
 }
 
 #search {
@@ -209,8 +198,6 @@ body {
 
 ::placeholder {
   color: #5356A4;
-  font-family: 'Open Sans';
-  font-weight: light;
 }
 
 .idea-cards {
@@ -223,23 +210,15 @@ body {
   background: #EAEAF4;
   display: grid;
   flex-grow: 3;
-  grid-gap: 15px;
-  grid-template-columns: repeat(3, 1fr);
-  padding: 30px;
-}
-
-.idea-cards {
-  flex-grow: 3;
-}
-
-.card-grid {
-  display: grid;
-  flex-grow: 3;
   font-size: 14px;
   grid-gap: 15px;
   grid-template-columns: repeat(3, 1fr);
   padding: 30px;
 }
+
+/* .idea-cards {
+  flex-grow: 3;
+} */
 
 .box {
   background: #FFFFFF;
@@ -253,22 +232,22 @@ body {
   min-height: 10vh;
 }
 
-.card-top {
+.card-top,
+.card-bottom {
   align-items: center;
-  background: #1F1F3D;
   display: flex;
   height: 6vh;
-  justify-content: space-between;
   width: auto;
 }
 
+.card-top {
+  background: #1F1F3D;
+  justify-content: space-between;
+}
+
 .card-bottom {
-  align-items: center;
   background: #5356A4;
-  display: flex;
   flex-direction: row;
-  height: 6vh;
-  width: auto;
 }
 
 .comment,
@@ -330,13 +309,7 @@ body {
     width: 100%;
   }
 
-  .hamburger-menu {
-    display: inline;
-    min-width: 8%;
-    max-width: 9%;
-    height: auto;
-  }
-
+  .hamburger-menu,
   .menu-close {
     display: inline;
     min-width: 8%;
