@@ -9,8 +9,8 @@ var userForm = document.querySelector('.form');
 var ideaGallery = document.querySelector('.card-grid');
 
 menuButton.addEventListener('click', showMobileMenu);
-saveIdeaButton.addEventListener('click', saveIdea);
 menuCloseButton.addEventListener('click', closeMenu);
+saveIdeaButton.addEventListener('click', saveIdea);
 
 var savedIdeas = [];
 
@@ -29,14 +29,29 @@ function closeMenu() {
 }
 
 function saveIdea(event) {
+  event.preventDefault();
+  verifyForm();
+  createNewIdea();
+  clearFields();
+  showUsersIdeaCard();
+}
+
+function verifyForm() {
+  if (userNewTitle.value && userNewBody.value) {
+    saveIdeaButton.disabled = false;
+  } else {
+    saveIdeaButton.disabled = true;
+  }
+}
+
+function createNewIdea() {
   var currentIdea = new Idea(userNewTitle.value, userNewBody.value);
   savedIdeas.push(currentIdea);
+}
+
+function clearFields() {
   userNewTitle.value = " ";
   userNewBody.value = " ";
-  event.preventDefault();
-
-  showUsersIdeaCard();
-  //button should be disabled if both fields not filled out
 }
 
 function showUsersIdeaCard() {
