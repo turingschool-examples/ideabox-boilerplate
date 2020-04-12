@@ -261,6 +261,11 @@ label {
   color: #1F1F3D;
 }
 
+.filter-save-button {
+  opacity: 30%;
+  cursor: not-allowed;
+}
+
 /*=== media queries ===*/
 
 @media only screen and (max-width: 800px) {
@@ -307,6 +312,7 @@ label {
   .filter {
     opacity: 30%;
   }
+
   .form-grid {
     grid-template-columns: auto;
   }
