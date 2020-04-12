@@ -1,3 +1,7 @@
+var ideaListArray = [
+  
+];
+
 var menuIcon = document.querySelector(".menu-icon");
 var menu = document.querySelector(".menu");
 var overlay = document.querySelector(".overlay");
