@@ -1,23 +1,26 @@
 /*=== Reset ===*/
-
+/* note-sidebar seems to have a max height of 969px and does so when idea cards stack to one column. Columns get stacked at about 684px */
 html, body, h1, h2, h3, h4, h5, h6, p {
   margin: 0;
   padding: 0;
+
 }
 
 html, body {
   height: 100%
+
 }
 
 body {
   display: flex;
+  /* font-family: 'Open Sans'; */
 }
 
 footer {
-  padding-top: 0px;
-  font-size: 15px;
+  padding-top: 0em;
+  font-size: 1em;
   width: 100%;
-  height: 30px;
+  height: 2em;
   display: flex;
   justify-content: flex-start;
   border-color: #6E646B
@@ -62,14 +65,14 @@ footer {
 }
 
 .starred-ideas-button {
-  font-size: 16px;
-  padding: 10px;
-  margin: 0px 20px 20px 20px;
+  font-size: 1em;
+  padding: .6em;
+  margin: 1em 2em 2em 1em;
   border-radius: 3px;
   border: 1px solid #353567;
   font-weight: bold;
   font-family: 'Open Sans';
-  width: 80%;
+  width: 88%;
 
 }
 
@@ -82,18 +85,18 @@ footer {
 .filter-starred-ideas {
   color: #BFBFDD;
   font-family: 'Open Sans';
-  font-size: 16px;
-  padding: 20px;
+  font-size: 1em;
+  padding: 1.2em;
 }
 
 .menu {
   height: 100%;
   width: 75%;
+  min-width: 17.5em;
 }
 
 .menu .header-text {
-  padding: 20px;
-  border-bottom: #
+  padding: 1.25em;
 }
 
 /*=== main section ===*/
@@ -126,14 +129,14 @@ main {
 .idea-form {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
+  margin-bottom: 1.25em;
   justify-content: space-evenly;
   height: 100%;
 }
 
 .form-label {
   font-family: Open Sans, Light;
-  font-size: 20px;
+  font-size: 1.25em;
   font-weight: bold;
   padding-bottom: 3px;
 }
@@ -144,42 +147,47 @@ main {
   flex-grow: 1;
 }
 
-#title-input {
-  height: 100%;
-  border: 1px solid #5356A4;
-  min-height: 5em;
-  border-radius: 4px;
-}
-
-#body-input {
-  min-height: 10em;
-  border-radius: 4px;
-  border: 1px solid #5356A4;
-}
-
 .body-section {
   display: flex;
   flex-direction: column;
   flex-grow: 2;
 }
 
+
+#title-input {
+  min-height: 5em;
+  height: 100%;
+  border: 1px solid #5356A4;
+  border-radius: 4px;
+}
+
+#body-input {
+  min-height: 10em;
+  border: 1px solid #5356A4;
+  border-radius: 4px;
+}
+
+
+
 .search-container {
   border: 1px solid #5356A4;
   display: flex;
   flex-grow: .8;
-  margin-bottom: 40px;
+  margin-bottom: 2.5em;
   min-height: 3em;
   border-radius: 4px;
+
 }
 
 .search-container img {
-  width: 24px;
-  margin: 0px 20px;
+  width: 1.4em;
+  margin: 0em 1.25em;
+
 }
 
 .search-container input {
   width: 100%;
-  font-size: 24px;
+  font-size: 1.5em;
   padding-left: 5px;
   border-radius: 0px 4px 4px 0px;
   border: 0px;
@@ -193,14 +201,14 @@ main {
   color: #EAEAF4;
   border: 1px solid #5356A4;
   border-radius: 4px;
-  font-family: Open Sans, Bold;
-  font-size: 24px;
+  font-family: 'Open Sans', Bold;
+  font-size: 1.5em;
 }
 
 
 /* .search-container input  */
 
-.header-pic {
+.comment-card-pic {
   width: 1.5em;
 }
 
@@ -218,19 +226,22 @@ main {
   flex-wrap: wrap;
   flex-grow: 3;
   font-family: 'Open Sans', 'sans-serif';
+
 }
 
 .user-cards {
   margin: 1em;
   width: 25%;
-  /* height:fit-content; */
+  height:fit-content;
   border-color: #6E646B;
   border-style: solid;
   border-width: 1px;
   display: flex;
   justify-content: space-between;
   background-color: white;
-  flex-direction: column
+  flex-direction: column;
+  min-width: 12em;
+  max-width: 94%;
 }
 
 .title-display {
@@ -251,8 +262,9 @@ main {
 }
 
 .comment {
-  padding-top: 0px;
+  padding-top: 5px;
   font-size: 1em;
+  font-weight: 600;
   width: 100%;
   height: 1.5em;
   display: flex;
@@ -262,7 +274,7 @@ main {
 
 /*=== media queries ===*/
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
   body {
     flex-direction: column;
   }
@@ -286,7 +298,7 @@ main {
     display: block;
     width: 1.5em;
     position: absolute;
-    margin: 10px 20px;
+    margin: 10px 1.25em;
   }
 
   .idea-form {
@@ -294,7 +306,7 @@ main {
   }
 
   .idea-cards {
-    /* flex-direction: column; */
+    flex-direction: column;
   }
 
   .user-cards {
