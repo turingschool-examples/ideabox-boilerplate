@@ -1,6 +1,6 @@
 class Idea {
-  constructor(title, body) {
-    this.id = date.now() + math.random();
+  constructor(title, body) {
+    this.id = Date.now() + Math.random();
     this.title = title;
     this.body = body;
     this.star = true;
@@ -29,15 +29,15 @@ class Idea {
   }
 
 }
-As a user,
-- When I click “Save”,
-- If I entered information in both the “Title” and “Body” input fields,
-- I should see a new idea card with the provided title and body appear in the idea list
+// As a user,
+// - When I click “Save”,
+// - If I entered information in both the “Title” and “Body” input fields,
+// - I should see a new idea card with the provided title and body appear in the idea list
 
-As a user,
-- When I click “Save”,
-- If I entered information in both the “Title” and “Body” input fields,
-- I should see the “Title” and “Body” input fields clear out
+// As a user,
+// - When I click “Save”,
+// - If I entered information in both the “Title” and “Body” input fields,
+// - I should see the “Title” and “Body” input fields clear out
 
 
 
