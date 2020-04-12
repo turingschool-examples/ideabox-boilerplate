@@ -11,6 +11,7 @@ var list = []
 var saveButton = document.querySelector('.save');
 var ideaTitleInput = document.querySelector('.input-title');
 var ideaBodyInput = document.querySelector('.input-body');
+
 // var miniMenuX = document.querySelector('.mini-menu-x');
 
 
@@ -25,7 +26,7 @@ function buttonHandler(event) {
   } else if (event.target === miniMenuX) {
     hideStarredIdeasMenu();
   } else if (event.target === saveButton) {
-    saveNewTitle();
+    validateInputs();
   }
 }
 
@@ -42,10 +43,15 @@ function hideStarredIdeasMenu() {
   burgerButton.style.display = 'flex';
 }
 
+function validateInputs(){
+  if (ideaTitleInput.value !== "" && ideaBodyInput.value !== ""){
+    saveNewIdea()
+  }
+}
 
-function saveNewTitle() {
-var newIdea = new Idea(ideaTitleInput.value, ideaBodyInput.value);
-ideaTitleInput.value = ""
-ideaBodyInput.value = ""
-return list.push(newIdea);
+function saveNewIdea() {
+  var newIdea = new Idea(ideaTitleInput.value, ideaBodyInput.value);
+  ideaTitleInput.value = ""
+  ideaBodyInput.value = ""
+  return list.push(newIdea);
 }
