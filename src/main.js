@@ -86,10 +86,9 @@ function showUsersIdeaCard() {
       </section>
       </section>`;
       ideaGallery.insertAdjacentHTML('afterbegin', ideaCardTemplate);
+      deleteIdeaCard();
     }
   }
-
-  deleteIdeaCard();
 }
 
 function deleteIdeaCard() {
