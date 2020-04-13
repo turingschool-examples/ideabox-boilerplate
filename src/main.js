@@ -54,9 +54,10 @@ function saveNewIdea() {
   ideaTitleInput.value = ""
   ideaBodyInput.value = ""
   list.push(newIdea);
-  return displayIdeaCard()
+  displayIdeaCard();
 }
 function displayIdeaCard() {
+  ideaCards.innerHTML = '';
   for (var i = 0; i < list.length; i++){
     var currentIdea = list[i]
     var currentIdeaDetails =  `<section class="idea-card-unit" id='${currentIdea.id}'>
@@ -74,7 +75,7 @@ function displayIdeaCard() {
             </section>
           </section>`
           ideaCards.insertAdjacentHTML('afterbegin', currentIdeaDetails)
-        
+
   }
 
 }
