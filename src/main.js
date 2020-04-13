@@ -88,7 +88,6 @@ function showUsersIdeaCard() {
       </section>`;
       ideaGallery.insertAdjacentHTML('afterbegin', ideaCardTemplate);
       deleteIdeaCard();
-      favoriteStarToggle();
     }
   }
 }
@@ -100,27 +99,6 @@ function deleteIdeaCard() {
   for(var i=0; i < savedIdeas.length; i++) {
     deleteButton.addEventListener('click', event => {
       createdIdeaCard.remove('id');
-      // JSON.parse(localStorage.getItem('ideas[i]'));
-      localStorage.removeItem('box.id');
     });
-  }
-}
-
-function favoriteStarToggle() {
-  event.preventDefault();
-  var inactiveStarBtn = document.querySelector('.star');
-  var activeStarBtn = document.querySelector('.star-active');
-  var createdIdeaCard = document.querySelector('.box');
-  for(var i=0; i < savedIdeas.length; i++) {
-    inactiveStarBtn.addEventListener('click', event => {
-      inactiveStarBtn.classList.add('hide');
-      activeStarBtn.classList.remove('hide');
-    })
-  }
-  for(var i=0; i < savedIdeas.length; i++) {
-    activeStarBtn.addEventListener('click', event => {
-      activeStarBtn.classList.add('hide');
-      inactiveStarBtn.classList.remove('hide');
-    })
   }
 }
