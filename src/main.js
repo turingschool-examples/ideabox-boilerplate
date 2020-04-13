@@ -30,4 +30,23 @@ function makeIdeaCard(event) {
   ideaListArray.push(currentIdeaCard);
   titleInput.value = '';
   bodyInput.value = '';
+  displayIdea(currentIdeaCard);
+}
+
+function displayIdea(idea) {
+  var ideaCardContainer = document.querySelector(".idea-cards");
+  var newCardTemplate = `<article class="user-cards">
+      <span class="header-card">
+        <img class="hidden comment-card-pic" src="Assets/star.svg"/>
+        <img  class="comment-card-pic" src="Assets/star-active.svg"/>
+        <img class="comment-card-pic" src="Assets/delete.svg"/>
+      </span>
+      <h2 class="title-display">${idea.title}</h2>
+      <p class="body-display">${idea.body}</p>
+      <footer class="purple-3 ">
+        <img  class="comment-card-pic" src="Assets/comment.svg"/>
+        <p class="comment">Comment</p>
+      </footer>
+    </article>`;
+  ideaCardContainer.insertAdjacentHTML("beforeend", newCardTemplate);
 }
