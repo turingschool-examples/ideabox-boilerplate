@@ -71,15 +71,15 @@ function displayIdeaCard() {
     var currentIdea = list[i]
     var currentIdeaDetails =  `<section class="idea-card-unit" id='${currentIdea.id}'>
             <section class="idea-box-top">
-              <img src="assets/star-active.svg" alt="Orange Active Star Icon">
-              <img src="assets/delete.svg" alt=" X delete">
+              <button class="idea-box-top-buttons"><img src="assets/star.svg" alt="Orange Active Star Icon"></button>
+              <button class="idea-box-top-buttons"><img src="assets/delete.svg" alt=" X delete"></button>
             </section>
             <section class="idea-box-mid">
               <h3>${currentIdea.title}</h3>
               <p>${currentIdea.body}</p>
             </section>
             <section class="idea-box-bottom">
-              <img src="assets/comment.svg" alt="Plus Icon add a comment">
+              <button class="idea-box-bottom-button"><img src="assets/comment.svg" alt="Plus Icon add a comment"></button>
               <p>Comment</p>
             </section>
           </section>`
