@@ -65,7 +65,7 @@ footer {
 }
 
 .overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -251,6 +251,7 @@ main {
   padding-left: 1em;
   padding-top: 1em;
   padding-bottom: .5em;
+  overflow-wrap: break-word;
 }
 
 .body-display {
@@ -258,6 +259,7 @@ main {
   padding-left: 1em;
   padding-bottom: .5em;
   background-color: white;
+  overflow-wrap: break-word;
 }
 
 .comment {
