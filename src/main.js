@@ -1,7 +1,6 @@
 var ideaListArray = [];
 
 var menuIcon = document.querySelector(".menu-icon");
-var menu = document.querySelector(".menu");
 var overlay = document.querySelector(".overlay");
 var saveButton = document.querySelector(".save-button");
 var form = document.querySelector('.idea-form');
@@ -23,6 +22,7 @@ function checkInputs(e) {
 
 
 function expandMenu() {
+  var menu = document.querySelector(".menu");
   if (menu.classList.contains("menu-expanded")) {
     overlay.classList.add('hidden');
     menu.classList.remove("menu-expanded");
