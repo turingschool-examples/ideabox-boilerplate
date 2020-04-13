@@ -12,7 +12,7 @@ menuIcon.addEventListener('click', expandMenu);
 saveButton.addEventListener('click', makeIdeaCard);
 form.addEventListener('keyup', checkInputs);
 
-function checkInputs(e) {
+function checkInputs() {
   if(!titleInput.value || !bodyInput.value) {
     saveButton.setAttribute('disabled', true)
   } else {
@@ -36,12 +36,10 @@ function expandMenu() {
 
 function makeIdeaCard(e) {
   e.preventDefault();
-  var currentIdeaCard = new Idea(titleInput.value, bodyInput.value)
+  var currentIdeaCard = new Idea(titleInput.value, bodyInput.value);
   ideaListArray.push(currentIdeaCard);
   form.reset();
-  // titleInput.value = '';
-  // bodyInput.value = '';
-  checkInputs(e)
+  checkInputs();
   displayIdea(currentIdeaCard);
 }
 
