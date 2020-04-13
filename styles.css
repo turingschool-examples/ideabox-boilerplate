@@ -303,7 +303,8 @@ button[disabled] {
   }
 
   .menu-expanded {
-    height: 100%;
+   z-index: 11;
+   height: 100%;
   }
 
   .menu-icon {

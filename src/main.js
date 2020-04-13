@@ -27,9 +27,7 @@ function expandMenu() {
     overlay.classList.add('hidden');
     menu.classList.remove("menu-expanded");
     menuIcon.src = 'Assets/menu.svg';
-    menu.style.removeProperty('z-index');
   } else {
-    menu.style.zIndex = '11';
     overlay.classList.remove('hidden');
     menu.classList.add("menu-expanded");
     menuIcon.src = 'Assets/delete.svg';
