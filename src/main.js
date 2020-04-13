@@ -8,7 +8,7 @@ var userNewBody = document.querySelector('.input-body');
 var userForm = document.querySelector('.form');
 var ideaGallery = document.querySelector('.card-grid');
 
-window.onload = retrieveMadeIdeaCards;
+// window.onload = retrieveMadeIdeaCards;
 menuButton.addEventListener('click', showMobileMenu);
 menuCloseButton.addEventListener('click', closeMenu);
 saveIdeaButton.addEventListener('click', saveIdea);
@@ -48,18 +48,18 @@ function verifyForm() {
 function createNewIdea() {
   var currentIdea = new Idea(userNewTitle.value, userNewBody.value);
   savedIdeas.push(currentIdea);
-  saveIdeaToStorage();
+  // saveIdeaToStorage();
 }
 
-function saveIdeaToStorage() {
-  localStorage.setItem('ideas', JSON.stringify(savedIdeas));
-}
-
-function retrieveMadeIdeaCards() {
-  savedIdeas = JSON.parse(localStorage.getItem('ideas')) || [];
-
-  showUsersIdeaCard();
-}
+// function saveIdeaToStorage() {
+//   localStorage.setItem('ideas', JSON.stringify(savedIdeas));
+// }
+//
+// function retrieveMadeIdeaCards() {
+//   savedIdeas = JSON.parse(localStorage.getItem('ideas')) || [];
+//
+//   showUsersIdeaCard();
+// }
 
 function clearFields() {
   userNewTitle.value = "";
@@ -73,7 +73,8 @@ function showUsersIdeaCard() {
       var ideaCardTemplate =
       `<section class="box id=${savedIdeas[i].id}">
       <section class="card-top">
-      <input type="image" src="assets/star-active.svg" name="star-active" class="star-active" id="star-active" />
+      <input type="image" src="assets/star.svg" name="star" class="star" id="star" />
+      <input type="image" src="assets/star-active.svg" name="star-active" class="star-active hide" id="star-active" />
       <input type="image" src="assets/delete.svg" name="delete" class="delete" id="delete" align="right"/>
       </section>
       <section class="card-body">
@@ -86,10 +87,10 @@ function showUsersIdeaCard() {
       </section>
       </section>`;
       ideaGallery.insertAdjacentHTML('afterbegin', ideaCardTemplate);
+      deleteIdeaCard();
+      favoriteStarToggle();
     }
   }
-
-  deleteIdeaCard();
 }
 
 function deleteIdeaCard() {
@@ -98,7 +99,28 @@ function deleteIdeaCard() {
   var createdIdeaCard = document.querySelector('.box');
   for(var i=0; i < savedIdeas.length; i++) {
     deleteButton.addEventListener('click', event => {
-      createdIdeaCard.remove('id')
+      createdIdeaCard.remove('id');
+      // JSON.parse(localStorage.getItem('ideas[i]'));
+      localStorage.removeItem('box.id');
     });
+  }
+}
+
+function favoriteStarToggle() {
+  event.preventDefault();
+  var inactiveStarBtn = document.querySelector('.star');
+  var activeStarBtn = document.querySelector('.star-active');
+  var createdIdeaCard = document.querySelector('.box');
+  for(var i=0; i < savedIdeas.length; i++) {
+    inactiveStarBtn.addEventListener('click', event => {
+      inactiveStarBtn.classList.add('hide');
+      activeStarBtn.classList.remove('hide');
+    })
+  }
+  for(var i=0; i < savedIdeas.length; i++) {
+    activeStarBtn.addEventListener('click', event => {
+      activeStarBtn.classList.add('hide');
+      inactiveStarBtn.classList.remove('hide');
+    })
   }
 }

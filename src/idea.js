@@ -5,10 +5,4 @@ class Idea {
     this.body = body;
     this.star = undefined ? false : star;
   }
-  deleteFromStoage() {
-
-  }
-  updateIdea() {
-
-  }
 }
