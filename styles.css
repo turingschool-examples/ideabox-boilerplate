@@ -65,7 +65,7 @@ footer {
 }
 
 .overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -165,18 +165,13 @@ main {
   flex-grow: 2;
 }
 
-#title-input {
-  min-height: 5em;
+/* refactored by combining #title-input and body-input */
+#title-input, #body-input {
   height: 100%;
   border: 1px solid #5356A4;
   border-radius: 4px;
-}
-
-#body-input {
-  min-height: 10em;
-  border: 1px solid #5356A4;
-  border-radius: 4px;
-  height: 100%;
+  font-family: 'Open Sans';
+  font-size: 18px;
 }
 
 .search-container {
@@ -211,6 +206,11 @@ main {
   border-radius: 4px;
   font-family: 'Open Sans', Bold;
   font-size: 1.5em;
+}
+
+button[disabled] {
+  background-color: #797584;
+  cursor: no-drop;
 }
 
 .comment-card-pic {
@@ -256,6 +256,7 @@ main {
   padding-left: 1em;
   padding-top: 1em;
   padding-bottom: .5em;
+  overflow-wrap: break-word;
 }
 
 .body-display {
@@ -263,6 +264,7 @@ main {
   padding-left: 1em;
   padding-bottom: .5em;
   background-color: white;
+  overflow-wrap: break-word;
 }
 
 .comment {
@@ -287,9 +289,7 @@ main {
     flex-direction: column;
   }
 
-  .overlay {
-    display: block;
-  }
+
 
   .menu .header-text {
     font-size: 1.1em;
@@ -324,6 +324,15 @@ main {
   .user-cards {
     width: 100%;
   }
+
+  #title-input {
+    min-height: 5em;
+  }
+
+  #body-input {
+    min-height: 10em;
+  }
+
 }
 
 @media only screen and (min-width: 900px) {
