@@ -38,8 +38,9 @@ function makeIdeaCard(e) {
   e.preventDefault();
   var currentIdeaCard = new Idea(titleInput.value, bodyInput.value)
   ideaListArray.push(currentIdeaCard);
-  titleInput.value = '';
-  bodyInput.value = '';
+  form.reset();
+  // titleInput.value = '';
+  // bodyInput.value = '';
   checkInputs(e)
   displayIdea(currentIdeaCard);
 }
