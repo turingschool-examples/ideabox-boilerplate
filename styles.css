@@ -201,6 +201,10 @@ body {
   color: #5356A4;
 }
 
+#save-button:disabled {
+  background-color: rgba(83, 86,	164, 0.5);
+}
+
 .idea-cards {
   flex-grow: 3;
   max-height: 500px;

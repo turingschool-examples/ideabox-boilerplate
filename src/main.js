@@ -35,7 +35,7 @@ function saveIdea(event) {
   createNewIdea();
   clearFields();
   showUsersIdeaCard();
-  verifyForm(); 
+  verifyForm();
 }
 
 function verifyForm() {
@@ -52,8 +52,8 @@ function createNewIdea() {
 }
 
 function clearFields() {
-  userNewTitle.value = " ";
-  userNewBody.value = " ";
+  userNewTitle.value = "";
+  userNewBody.value = "";
 }
 
 function showUsersIdeaCard() {
