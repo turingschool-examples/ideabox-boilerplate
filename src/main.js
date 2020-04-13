@@ -11,8 +11,8 @@ var ideaGallery = document.querySelector('.card-grid');
 menuButton.addEventListener('click', showMobileMenu);
 menuCloseButton.addEventListener('click', closeMenu);
 saveIdeaButton.addEventListener('click', saveIdea);
-userNewTitle.addEventListener('keypress', verifyForm);
-userNewBody.addEventListener('keypress', verifyForm);
+userNewTitle.addEventListener('keyup', verifyForm);
+userNewBody.addEventListener('keyup', verifyForm);
 
 var savedIdeas = [];
 
