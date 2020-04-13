@@ -204,6 +204,12 @@ height: 3em;
   border-radius: 5px;
 }
 
+.save:disabled {
+  background-color:#5356A4;
+  opacity: 50%;
+  cursor: not-allowed;
+}
+
 button {
   outline: none;
 }

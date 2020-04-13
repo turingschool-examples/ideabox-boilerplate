@@ -7,21 +7,20 @@ var hamburgerImg = document.querySelector('.hamburger-img')
 var miniMenuXButton = document.querySelector('.mini-menu-x-button');
 var miniMenuX = document.querySelector('.mini-menu-x');
 var miniMenu = document.querySelector('.mini-menu');
-var list = []
 var saveButton = document.querySelector('.save');
 var ideaTitleInput = document.querySelector('.input-title');
 var ideaBodyInput = document.querySelector('.input-body');
 var ideaCards = document.querySelector('.idea-cards')
-// var miniMenuX = document.querySelector('.mini-menu-x');
+var list = []
 
-
-body.addEventListener("click", buttonHandler)
+body.addEventListener("click", buttonHandler);
+ideaTitleInput.addEventListener('keyup', enableSaveButton);
+ideaBodyInput.addEventListener('keyup', enableSaveButton);
 
 function buttonHandler(event) {
   if(event.target === showIdeas){
-    alert("You clicked me");
+    alert("You clicked me placeholder");
   } else if (event.target === burgerButton) {
-    console.log(event.target);
     displayStarredIdeasMenu();
   } else if (event.target === miniMenuX) {
     hideStarredIdeasMenu();
@@ -45,7 +44,16 @@ function hideStarredIdeasMenu() {
 
 function validateInputs(){
   if (ideaTitleInput.value !== "" && ideaBodyInput.value !== ""){
+    enableSaveButton();
     saveNewIdea()
+  }
+}
+
+function enableSaveButton() {
+  if (ideaTitleInput.value !== "" && ideaBodyInput.value !== ""){
+    saveButton.disabled = false;
+  } else {
+    saveButton.disabled = true;
   }
 }
 
@@ -56,6 +64,7 @@ function saveNewIdea() {
   list.push(newIdea);
   displayIdeaCard();
 }
+
 function displayIdeaCard() {
   ideaCards.innerHTML = '';
   for (var i = 0; i < list.length; i++){
@@ -77,5 +86,4 @@ function displayIdeaCard() {
           ideaCards.insertAdjacentHTML('afterbegin', currentIdeaDetails)
 
   }
-
 }
