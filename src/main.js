@@ -11,7 +11,7 @@ var list = []
 var saveButton = document.querySelector('.save');
 var ideaTitleInput = document.querySelector('.input-title');
 var ideaBodyInput = document.querySelector('.input-body');
-
+var ideaCards = document.querySelector('.idea-cards')
 // var miniMenuX = document.querySelector('.mini-menu-x');
 
 
@@ -53,5 +53,28 @@ function saveNewIdea() {
   var newIdea = new Idea(ideaTitleInput.value, ideaBodyInput.value);
   ideaTitleInput.value = ""
   ideaBodyInput.value = ""
-  return list.push(newIdea);
+  list.push(newIdea);
+  return displayIdeaCard()
+}
+function displayIdeaCard() {
+  for (var i = 0; i < list.length; i++){
+    var currentIdea = list[i]
+    var currentIdeaDetails =  `<section class="idea-card-unit" id='${currentIdea.id}'>
+            <section class="idea-box-top">
+              <img src="assets/star-active.svg" alt="Orange Active Star Icon">
+              <img src="assets/delete.svg" alt=" X delete">
+            </section>
+            <section class="idea-box-mid">
+              <h3>${currentIdea.title}</h3>
+              <p>${currentIdea.body}</p>
+            </section>
+            <section class="idea-box-bottom">
+              <img src="assets/comment.svg" alt="Plus Icon add a comment">
+              <p>Comment</p>
+            </section>
+          </section>`
+          ideaCards.insertAdjacentHTML('afterbegin', currentIdeaDetails)
+        
+  }
+
 }
