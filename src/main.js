@@ -49,11 +49,11 @@ function makeIdeaCard(e) {
 function displayIdea(idea) {
   var ideaCardContainer = document.querySelector(".idea-cards");
   var newCardTemplate = `<article class="user-cards">
-      <span class="header-card">
+      <header class="header-card">
         <img class="hidden comment-card-pic" src="Assets/star.svg"/>
         <img  class="comment-card-pic" src="Assets/star-active.svg"/>
         <img class="comment-card-pic" src="Assets/delete.svg"/>
-      </span>
+      </header>
       <h2 class="title-display">${idea.title}</h2>
       <p class="body-display">${idea.body}</p>
       <footer class="purple-3 ">
