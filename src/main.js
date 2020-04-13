@@ -19,14 +19,14 @@ var savedIdeas = [];
 
 function showMobileMenu() {
   mobileMenu.classList.add('purple-4');
-  mobileMenuBody.classList.add('menu-body-mobile')
+  mobileMenuBody.classList.add('menu-body-mobile');
   menuButton.classList.add('hide');
   menuCloseButton.classList.remove('hide');
 }
 
 function closeMenu() {
   mobileMenu.classList.remove('purple-4');
-  mobileMenuBody.classList.remove('menu-body-mobile')
+  mobileMenuBody.classList.remove('menu-body-mobile');
   menuButton.classList.remove('hide');
   menuCloseButton.classList.add('hide');
 }
@@ -40,7 +40,7 @@ function saveIdea(event) {
 }
 
 function verifyForm() {
-  if(userNewTitle.value && userNewBody.value) {
+  if (userNewTitle.value && userNewBody.value) {
     saveIdeaButton.disabled = false;
   }
 }
@@ -67,9 +67,9 @@ function clearFields() {
 }
 
 function showUsersIdeaCard() {
-  if(savedIdeas.length) {
+  if (savedIdeas.length) {
     ideaGallery.innerHTML = "";
-    for(var i=0; i < savedIdeas.length; i++) {
+    for (var i=0; i < savedIdeas.length; i++) {
       var ideaCardTemplate =
       `<section class="box id=${savedIdeas[i].id}">
       <section class="card-top">
