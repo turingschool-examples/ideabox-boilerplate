@@ -1,8 +1,14 @@
 class Idea {
   constructor(title, body, star) {
-    this.id = this.id = Date.now();
+    this.id = Date.now();
     this.title = title;
     this.body = body;
-    this.star = undefined ? true : star;
+    this.star = undefined ? false : star;
+  }
+  deleteFromStoage() {
+
+  }
+  updateIdea() {
+
   }
 }

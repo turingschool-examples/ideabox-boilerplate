@@ -8,6 +8,7 @@ var userNewBody = document.querySelector('.input-body');
 var userForm = document.querySelector('.form');
 var ideaGallery = document.querySelector('.card-grid');
 
+window.onload = retrieveMadeIdeaCards;
 menuButton.addEventListener('click', showMobileMenu);
 menuCloseButton.addEventListener('click', closeMenu);
 saveIdeaButton.addEventListener('click', saveIdea);
@@ -41,14 +42,23 @@ function saveIdea(event) {
 function verifyForm() {
   if (userNewTitle.value && userNewBody.value) {
     saveIdeaButton.disabled = false;
-  } else {
-    saveIdeaButton.disabled = true;
   }
 }
 
 function createNewIdea() {
   var currentIdea = new Idea(userNewTitle.value, userNewBody.value);
   savedIdeas.push(currentIdea);
+  saveIdeaToStorage();
+}
+
+function saveIdeaToStorage() {
+  localStorage.setItem('ideas', JSON.stringify(savedIdeas));
+}
+
+function retrieveMadeIdeaCards() {
+  savedIdeas = JSON.parse(localStorage.getItem('ideas')) || [];
+
+  showUsersIdeaCard();
 }
 
 function clearFields() {
@@ -61,21 +71,34 @@ function showUsersIdeaCard() {
     ideaGallery.innerHTML = "";
     for (var i=0; i < savedIdeas.length; i++) {
       var ideaCardTemplate =
-        `<section class="box">
-        <section class="card-top">
-        <input type="image" src="assets/star-active.svg" name="star-active" class="star-active" id="star-active" />
-        <input type="image" src="assets/delete.svg" name="delete" class="delete" id="delete" align="right"/>
-        </section>
-        <section class="card-body">
-        <p class= "card-header">${savedIdeas[i].title}</p>
-        <p class= "card-text">${savedIdeas[i].body}</p>
-        </section>
-        <section class="card-bottom">
-        <input type="image" src="assets/comment.svg" name="comment" class="comment" id="comment" align="left"/>
-        <p class= "comment-text">Comment</p>
-        </section>
-        </section>`;
+      `<section class="box id=${savedIdeas[i].id}">
+      <section class="card-top">
+      <input type="image" src="assets/star-active.svg" name="star-active" class="star-active" id="star-active" />
+      <input type="image" src="assets/delete.svg" name="delete" class="delete" id="delete" align="right"/>
+      </section>
+      <section class="card-body">
+      <p class= "card-header">${savedIdeas[i].title}</p>
+      <p class= "card-text">${savedIdeas[i].body}</p>
+      </section>
+      <section class="card-bottom">
+      <input type="image" src="assets/comment.svg" name="comment" class="comment" id="comment" align="left"/>
+      <p class= "comment-text">Comment</p>
+      </section>
+      </section>`;
       ideaGallery.insertAdjacentHTML('afterbegin', ideaCardTemplate);
     }
+  }
+
+  deleteIdeaCard();
+}
+
+function deleteIdeaCard() {
+  event.preventDefault();
+  var deleteButton = document.querySelector('.delete');
+  var createdIdeaCard = document.querySelector('.box');
+  for(var i=0; i < savedIdeas.length; i++) {
+    deleteButton.addEventListener('click', event => {
+      createdIdeaCard.remove('id')
+    });
   }
 }
