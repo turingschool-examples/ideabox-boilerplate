@@ -255,9 +255,14 @@ body {
 
 .comment,
 .delete,
-.star-active {
+.star-active,
+.star {
   height: 6vh;
   width: 5em;
+}
+
+.star {
+  float: left;
 }
 
 /*=== media queries ===*/
@@ -325,7 +330,7 @@ body {
   }
 
   .hide {
-    display: none;
+    display: none!important;
   }
 
   .purple-4 {
