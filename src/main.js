@@ -11,6 +11,8 @@ var ideaGallery = document.querySelector('.card-grid');
 menuButton.addEventListener('click', showMobileMenu);
 menuCloseButton.addEventListener('click', closeMenu);
 saveIdeaButton.addEventListener('click', saveIdea);
+userNewTitle.addEventListener('keypress', verifyForm);
+userNewBody.addEventListener('keypress', verifyForm);
 
 var savedIdeas = [];
 
@@ -30,16 +32,16 @@ function closeMenu() {
 
 function saveIdea(event) {
   event.preventDefault();
-  verifyForm();
   createNewIdea();
   clearFields();
   showUsersIdeaCard();
+  verifyForm(); 
 }
 
 function verifyForm() {
-  if (userNewTitle.value && userNewBody.value) {
+  if(userNewTitle.value && userNewBody.value) {
     saveIdeaButton.disabled = false;
-  } else {
+  } else if (!userNewTitle.value || !userNewBody.value){
     saveIdeaButton.disabled = true;
   }
 }
