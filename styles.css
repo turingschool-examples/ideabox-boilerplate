@@ -165,18 +165,13 @@ main {
   flex-grow: 2;
 }
 
-#title-input {
-  min-height: 5em;
+/* refactored by combining #title-input and body-input */
+#title-input, #body-input {
   height: 100%;
   border: 1px solid #5356A4;
   border-radius: 4px;
-}
-
-#body-input {
-  min-height: 10em;
-  border: 1px solid #5356A4;
-  border-radius: 4px;
-  height: 100%;
+  font-family: 'Open Sans';
+  font-size: 18px;
 }
 
 .search-container {
@@ -287,9 +282,7 @@ main {
     flex-direction: column;
   }
 
-  .overlay {
-    display: block;
-  }
+
 
   .menu .header-text {
     font-size: 1.1em;
@@ -324,6 +317,15 @@ main {
   .user-cards {
     width: 100%;
   }
+
+  #title-input {
+    min-height: 5em;
+  }
+
+  #body-input {
+    min-height: 10em;
+  }
+
 }
 
 @media only screen and (min-width: 900px) {
