@@ -102,7 +102,7 @@ footer {
 
 .menu {
   height: 100%;
-  width: 75%;
+  width: 25%;
   min-width: 17.5em;
 }
 
@@ -115,6 +115,7 @@ footer {
 main {
   display: flex;
   flex-direction: column;
+  width: 75%;
 }
 
 .ideas {
@@ -164,7 +165,6 @@ main {
   flex-grow: 2;
 }
 
-
 #title-input {
   min-height: 5em;
   height: 100%;
@@ -176,9 +176,8 @@ main {
   min-height: 10em;
   border: 1px solid #5356A4;
   border-radius: 4px;
+  height: 100%;
 }
-
-
 
 .search-container {
   border: 1px solid #5356A4;
@@ -187,13 +186,11 @@ main {
   margin-bottom: 2.5em;
   min-height: 3em;
   border-radius: 4px;
-
 }
 
 .search-container img {
   width: 1.4em;
   margin: 0em 1.25em;
-
 }
 
 .search-container input {
@@ -215,9 +212,6 @@ main {
   font-family: 'Open Sans', Bold;
   font-size: 1.5em;
 }
-
-
-/* .search-container input  */
 
 .comment-card-pic {
   width: 1.5em;
@@ -264,7 +258,6 @@ main {
   padding-bottom: .5em;
 }
 
-
 .body-display {
   padding-right: 1.5em;
   padding-left: 1em;
@@ -286,8 +279,16 @@ main {
 /*=== media queries ===*/
 
 @media only screen and (max-width: 900px) {
+  main {
+    width: 100%;
+  }
+
   body {
     flex-direction: column;
+  }
+
+  .overlay {
+    display: block;
   }
 
   .menu .header-text {
