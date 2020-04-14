@@ -17,8 +17,6 @@ userNewBody.addEventListener('keypress', verifyForm);
 userNewTitle.addEventListener('keyup', verifyForm);
 userNewBody.addEventListener('keyup', verifyForm);
 
-
-
 var savedIdeas = [];
 
 function showMobileMenu() {
@@ -40,7 +38,6 @@ function saveIdea(event) {
   createNewIdea();
   clearFields();
   showUsersIdeaCard();
-  verifyForm();
 }
 
 function verifyForm() {
@@ -78,19 +75,19 @@ function showUsersIdeaCard() {
     for (var i=0; i < savedIdeas.length; i++) {
       var ideaCardTemplate =
       `<section class="box id=${savedIdeas[i].id}">
-      <section class="card-top">
-      <input type="image" src="assets/star.svg" name="star-inactive" class="star-inactive" id="star-inactive" />
-      <input type="image" src="assets/star-active.svg" name="star-active" class="star-active hide" id="star-active" />
-      <input type="image" src="assets/delete.svg" name="delete" class="delete" id="delete" align="right"/>
-      </section>
-      <section class="card-body">
-      <p class= "card-header">${savedIdeas[i].title}</p>
-      <p class= "card-text">${savedIdeas[i].body}</p>
-      </section>
-      <section class="card-bottom">
-      <input type="image" src="assets/comment.svg" name="comment" class="comment" id="comment" align="left"/>
-      <p class= "comment-text">Comment</p>
-      </section>
+        <section class="card-top">
+          <input type="image" src="assets/star.svg" name="star-inactive" class="star-inactive" id="star-inactive" />
+          <input type="image" src="assets/star-active.svg" name="star-active" class="star-active hide" id="star-active" />
+          <input type="image" src="assets/delete.svg" name="delete" class="delete" id="delete" align="right"/>
+        </section>
+        <section class="card-body">
+          <p class= "card-header">${savedIdeas[i].title}</p>
+          <p class= "card-text">${savedIdeas[i].body}</p>
+          </section>
+          <section class="card-bottom">
+            <input type="image" src="assets/comment.svg" name="comment" class="comment" id="comment" align="left"/>
+            <p class= "comment-text">Comment</p>
+          </section>
       </section>`;
       ideaGallery.insertAdjacentHTML('afterbegin', ideaCardTemplate);
 
@@ -105,7 +102,7 @@ function toggleFavoriteStar() {
   var activeStarBtn = document.querySelector('.star-active');
   var inactiveStarBtn = document.querySelector('.star-inactive');
 
-  for(var i=0; i < savedIdeas.length; i++) {
+  for (var i = 0; i < savedIdeas.length; i++) {
     inactiveStarBtn.addEventListener('click', event => {
       inactiveStarBtn.classList.add('hide');
       activeStarBtn.classList.remove('hide');
@@ -122,7 +119,7 @@ function deleteIdeaCard() {
   var deleteButton = document.querySelector('.delete');
   var createdIdeaCard = document.querySelector('.box');
 
-  for(var i=0; i < savedIdeas.length; i++) {
+  for (var i = 0; i < savedIdeas.length; i++) {
     deleteButton.addEventListener('click', event => {
       createdIdeaCard.remove('id');
     });

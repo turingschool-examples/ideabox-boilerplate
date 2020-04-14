@@ -3,6 +3,6 @@ class Idea {
     this.id = Date.now();
     this.title = title;
     this.body = body;
-    this.star = undefined ? false : star;
+    this.star = star || undefined;
   }
 }
