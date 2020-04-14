@@ -1,19 +1,23 @@
+var ideaGallery = document.querySelector('.card-grid');
 var menuButton = document.querySelector('.hamburger-menu');
 var menuCloseButton = document.querySelector('.menu-close');
 var mobileMenu = document.querySelector('.menu');
 var mobileMenuBody = document.querySelector('.menu-body-text');
 var saveIdeaButton = document.querySelector('.form-button');
-var userNewTitle = document.querySelector('.input-title');
-var userNewBody = document.querySelector('.input-body');
 var userForm = document.querySelector('.form');
-var ideaGallery = document.querySelector('.card-grid');
+var userNewBody = document.querySelector('.input-body');
+var userNewTitle = document.querySelector('.input-title');
 
 // window.onload = retrieveMadeIdeaCards;
 menuButton.addEventListener('click', showMobileMenu);
 menuCloseButton.addEventListener('click', closeMenu);
 saveIdeaButton.addEventListener('click', saveIdea);
+userNewTitle.addEventListener('keypress', verifyForm);
+userNewBody.addEventListener('keypress', verifyForm);
 userNewTitle.addEventListener('keyup', verifyForm);
 userNewBody.addEventListener('keyup', verifyForm);
+
+
 
 var savedIdeas = [];
 
@@ -73,7 +77,7 @@ function showUsersIdeaCard() {
       var ideaCardTemplate =
       `<section class="box id=${savedIdeas[i].id}">
       <section class="card-top">
-      <input type="image" src="assets/star.svg" name="star" class="star" id="star" />
+      <input type="image" src="assets/star.svg" name="star-inactive" class="star-inactive" id="star-inactive" />
       <input type="image" src="assets/star-active.svg" name="star-active" class="star-active hide" id="star-active" />
       <input type="image" src="assets/delete.svg" name="delete" class="delete" id="delete" align="right"/>
       </section>
@@ -88,9 +92,30 @@ function showUsersIdeaCard() {
       </section>`;
       ideaGallery.insertAdjacentHTML('afterbegin', ideaCardTemplate);
       deleteIdeaCard();
+
+      var favoriteButton = document.querySelector('.star-active');
+      var unfavoriteButton = document.querySelector('.star-inactive');
+
+      favoriteButton.addEventListener('click', favoriteStar);
+      unfavoriteButton.addEventListener('click', unfavoriteStar);
+
+      favoriteStar();
+      unfavoriteStar();
+
+      function favoriteStar() {
+        unfavoriteButton.classList.add('hide');
+        favoriteButton.classList.remove('hide');
+      }
+
+      function unfavoriteStar() {
+        unfavoriteButton.classList.remove('hide');
+        favoriteButton.classList.add('hide');
+      }
     }
   }
 }
+
+
 
 function deleteIdeaCard() {
   event.preventDefault();
