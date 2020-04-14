@@ -66,9 +66,13 @@ function ideaCardsHandler(e) {
     var targetId = e.target.closest('.user-cards').dataset.id;
     deleteIdea(targetId);
     ideaCardsContainer.innerHTML = '';
-    for (var i = 0; i < ideaListArray.length; i++) {
-      displayIdea(ideaListArray[i]);
-    }
+    displayAllIdeas();
+  }
+}
+
+function displayAllIdeas() {
+  for (var i = 0; i < ideaListArray.length; i++) {
+    displayIdea(ideaListArray[i]);
   }
 }
 
