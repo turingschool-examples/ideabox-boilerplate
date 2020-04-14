@@ -129,12 +129,21 @@ ideaCardsGrid.addEventListener("click", function(event) {
 
 
 
-function deleteCard(event){
-  var deletedIdea = [];
-  // delete from the dom
-  // event.target.remove();
-  // remove it from the array
+function deleteCard(element) {
+  var id = element.id;
+  for (var i = 0; i < savedIdeasArray.length; i++ ) {
+    var currentIdea = savedIdeasArray[i];
+    if (currentIdea.id === parseFloat(id)) {
+      // remove from dom and remove fronm array
+      savedIdeasArray.splice(i, 1);
+      element.remove();
+    }
+  }
 }
+// delete from the dom
+// event.target.remove();
+// remove it from the array
+
 function starIdea(id) {
   // var idCard = Number(event.target.parentElement.parentElement.id);
   for(var i = 0; i < savedIdeasArray.length; i++ ) {
