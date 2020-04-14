@@ -297,6 +297,16 @@ button {
     justify-content: center;
   }
 
+  .menu.menu-open .menu-items, 
+  .menu.menu-open .mini-menu-x-button  {
+    display: flex;
+  }
+
+  .menu.menu-open .hamburger-img {
+    display: none;
+  }
+
+
   .menu-items {
     display: flex;
     justify-content: flex-start;
