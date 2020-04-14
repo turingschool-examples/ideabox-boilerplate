@@ -16,6 +16,7 @@ html, body {
 
 body {
   display: flex;
+  height: 100%;
 }
 
 footer {
@@ -221,6 +222,7 @@ button[disabled] {
 }
 
 .idea-cards {
+  overflow-y: auto;
   display: flex;
   flex-wrap: wrap;
   flex-grow: 3;
