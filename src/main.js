@@ -70,9 +70,10 @@ function saveIdeas(event) {
 }
 //every time we add a new card, we need to add html(placeholders in our html) to the page
 function createIdeaHtml(ideaObject) {
-  return ` <div class="idea-cards">
+  return ` <div class="idea-cards" id="${ideaObject.id}">
     <div class="idea-top">
-      <img class="red-star" src="assets/star-active.svg" alt="Active Star">
+      <img class="red-star" src="assets/star.svg" alt="Active Star">
+      <img class="red-star-active hidden" src="assets/star-active.svg" alt="Active Star">
       <img class="delete-white" src="assets/delete.svg" alt="White Delete Icon">
     </div>
     <div class="all-text">
@@ -85,6 +86,44 @@ function createIdeaHtml(ideaObject) {
     </div>
   </div>
   `
+}
+ideaCardsGrid.addEventListener("click", function(event) {
+  var clickedElement = event.target.closest(".idea-cards");
+  if (event.target.classList.contains("delete-white")){
+    deleteCard(clickedElement);
+  }
+  if (event.target.classList.contains("red-star")){
+    event.target.classList.toggle("hidden");
+    document.querySelector(".red-star-active").classList.toggle('hidden');
+    starIdea(clickedElement.id);
+  }
+  if (event.target.classList.contains("red-star-active")){
+    event.target.classList.toggle("hidden");
+    document.querySelector(".red-star").classList.toggle('hidden')
+    starIdea(clickedElement.id);
+  }
+})
+
+function deleteCard(element) {
+  var id = element.id;
+  for (var i = 0; i < savedIdeasArray.length; i++ ) {
+    var currentIdea = savedIdeasArray[i];
+    if (currentIdea.id === parseFloat(id)) {
+      // remove from dom and remove fronm array
+      savedIdeasArray.splice(i, 1);
+      element.remove();
+    }
+  }
+}
+
+function starIdea(id) {
+  for (var i = 0; i < savedIdeasArray.length; i++ ) {
+    var currentIdea = savedIdeasArray[i];
+    if (currentIdea.id === parseFloat(id)) {
+      currentIdea.changeStarred();
+    }
+  }
+
 }
 // Add html to the page
 // array get filled w obj of idea card, so need to populate

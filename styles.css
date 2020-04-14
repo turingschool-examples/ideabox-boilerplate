@@ -202,7 +202,12 @@ label {
   height: 35px;
   width: 35px;
 }
-
+.red-star-active {
+  display: flex;
+  /* background-image: url(./assets/star-active.svg); */
+  height: 35px;
+  width: 35px;
+}
 .comment-circle {
   height: 35px;
   width: 35px;

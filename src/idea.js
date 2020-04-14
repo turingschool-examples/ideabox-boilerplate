@@ -3,8 +3,7 @@ class Idea {
     this.id = Date.now() + Math.random();
     this.title = title;
     this.body = body;
-    this.star = true;
-
+    this.star = false;
   }
 
 // should only have one job which is to save the instance to storage
@@ -27,6 +26,10 @@ class Idea {
     //to turn it back into an obj/update the data
     //save it back into local storage iwth the same key we
   }
+  changeStarred() {
+    this.star = !this.star;
+  }
+  
 
 }
 // As a user,
@@ -42,3 +45,4 @@ class Idea {
 
 
 // Idea methods must include, but are not limited to:
+
