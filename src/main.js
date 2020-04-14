@@ -7,23 +7,39 @@ var showStarredButton = document.querySelector(".show-starred");
 var menuCloseButton = document.querySelector(".menu-close");
 var ideas = document.querySelector(".ideas");
 var form = document.querySelector('.form');
-
 var saveButton = document.querySelector(".save-button");
 var savedIdeasArray = [];
 var titleInput = document.querySelector(".title-box");
 var bodyInput = document.getElementById("body-input-box");
 var ideaCardsGrid = document.querySelector(".idea-cards-grid");
 
+// var deleteWhiteButton = document.querySelector("delete-white");
+// deleteButtonWhite.addEventListener("click", deleteIdea);
+//
+// function deleteIdea() {
+//   savedIdeasArray.pop();
+// }
+//
+// var redStarFavorite = document.querySelector("red-star");
+//
+// redStarFavorite.addEventListener("click", toggleFavoriteColorStar )
+// // favorited star
+//
+// function toggleFavoriteColorStar () {
+//   redStar.classList.toggle("outlineStar")
+// }
+
+
+bodyElement.addEventListener("click", dropNavMenu);
 saveButton.addEventListener("click", saveHandler);
+form.addEventListener("input", enableSubmitButton);
+
 
 function saveHandler(event) {
   if (!saveButton.disabled) {
     saveIdeas(event);
     updatePageHtml();
   }
-  //  else {
-  //   enableSubmitButton();
-  // }
 }
 // put an event listener for mouse over on the save button.
 // event handler will do 3 things.
@@ -32,32 +48,25 @@ function saveHandler(event) {
     // when the button is disabled, a filter or lighter color is applied
   //
 
-
 // function enableSubmitButton() {
 //   if (bodyInput.value !== ""  &&  titleInput.value !== "") {
 //     saveButton.disabled = false;
 //   } else {
 //     saveButton.disabled = true;
-
 //   }
 // }
-form.addEventListener("input", enableSubmitButton)
+
 saveButton.disabled = true;
+
 function enableSubmitButton() {
   if (bodyInput.value !== ""  &&  titleInput.value !== "") {
     saveButton.disabled = false
     saveButton.classList.remove("filter-save-button")
-  } else {
+    } else {
     saveButton.classList.add("filter-save-button")
     saveButton.disabled = true
   }
 }
-
-
-
-
-
-
 
 function saveIdeas(event) {
   event.preventDefault();
@@ -66,15 +75,14 @@ function saveIdeas(event) {
   form.reset();
   saveButton.disabled = true;
   saveButton.classList.add("filter-save-button");
-// make new instance of idea class using the inputs from the page, take that class we are creating from page and put that instance of class into array.
 }
 //every time we add a new card, we need to add html(placeholders in our html) to the page
 function createIdeaHtml(ideaObject) {
+  var starSource = ideaObject.star ? "assets/star-active.svg": "assets/star.svg";
   return ` <div class="idea-cards" id="${ideaObject.id}">
     <div class="idea-top">
-      <img class="red-star" src="assets/star.svg" alt="Active Star">
-      <img class="red-star-active hidden" src="assets/star-active.svg" alt="Active Star">
-      <img class="delete-white" src="assets/delete.svg" alt="White Delete Icon">
+      <img class="red-star" src=${starSource}>
+      <img class="delete-white ${ideaObject.id}" src="assets/delete.svg" alt="White Delete Icon">
     </div>
     <div class="all-text">
     <h1 class="idea-title">${ideaObject.title}</h1><br />
@@ -87,22 +95,39 @@ function createIdeaHtml(ideaObject) {
   </div>
   `
 }
+  // checking id object is .star true or false on 81. source is 1/2 on 81.saved in var starSource
+// line 81 i want to know if ideaobj.star (if) true return above, if not return after :
+// <img class="red-star ${ideaObject.id}" src="assets/star.svg" alt="Active Star">
+// <img class="red-star-active hidden ${ideaObject.id}" src="assets/star-active.svg" alt="Active Star">
+// <svg xmlns="http://www.w3.org/2000/svg"
 ideaCardsGrid.addEventListener("click", function(event) {
   var clickedElement = event.target.closest(".idea-cards");
-  if (event.target.classList.contains("delete-white")){
-    deleteCard(clickedElement);
+  var targetClass = event.target.classList
+  if (targetClass.contains("delete-white")){
+     deleteCard(clickedElement);
   }
-  if (event.target.classList.contains("red-star")){
-    event.target.classList.toggle("hidden");
-    document.querySelector(".red-star-active").classList.toggle('hidden');
+  if (targetClass.contains("red-star")) {
+    targetClass.toggle("star-active");
     starIdea(clickedElement.id);
-  }
-  if (event.target.classList.contains("red-star-active")){
-    event.target.classList.toggle("hidden");
-    document.querySelector(".red-star").classList.toggle('hidden')
-    starIdea(clickedElement.id);
-  }
-})
+    if (targetClass.contains("star-active")){
+      event.target.src = "assets/star-active.svg"
+      } else {
+      event.target.src = "assets/star.svg"
+      }
+    }
+  })
+  // if (event.target.classList.contains("red-star")){
+  //   event.target.classList.toggle("hidden");
+    // document.querySelector(".red-star-active").classList.toggle('hidden')
+
+  //   starIdea(event);
+  // }
+  // if (event.target.classList.contains("red-star")){
+  //   event.target.classList.toggle("hidden");
+  //   document.querySelector(".red-star").classList.toggle('hidden')
+  //   starIdea(event);
+
+
 
 function deleteCard(element) {
   var id = element.id;
@@ -115,20 +140,36 @@ function deleteCard(element) {
     }
   }
 }
+// delete from the dom
+// event.target.remove();
+// remove it from the array
 
 function starIdea(id) {
-  for (var i = 0; i < savedIdeasArray.length; i++ ) {
-    var currentIdea = savedIdeasArray[i];
-    if (currentIdea.id === parseFloat(id)) {
-      currentIdea.changeStarred();
+  // var idCard = Number(event.target.parentElement.parentElement.id);
+  for(var i = 0; i < savedIdeasArray.length; i++ ) {
+
+    if (savedIdeasArray[i].id === parseFloat(id)) {
+       // var currentIdea = savedIdeasArray[i];
+       //     currentIdea.changeStarred(); below is shorthand
+       savedIdeasArray[i].changeStarred();
+         }
+           // should updateTask be updateToDo?
     }
-  }
+
+
+
+    //   savedIdeasArray[i].star = true;
+    //
+    // if (savedIdeasArray[i].id === event.target.id) {
+    //   savedIdeasArray[i].star = false;
+    // }
 
 }
+
+
 // Add html to the page
 // array get filled w obj of idea card, so need to populate
 // run/loop through array and add each element to the dom. Each item/iteratio of loop we send through function to create the new html and then add html timeout the page.
-
 function updatePageHtml() {
   ideaCardsGrid.innerHTML = "";
   for (var i = 0; i < savedIdeasArray.length; i++) {
@@ -137,34 +178,27 @@ function updatePageHtml() {
     ideaCardsGrid.innerHTML += ideaElement
     //take this grid of added html and add to the function what we got to the grid
     // create an idea, put in array and then update page/html with every item in the array
-    //
   }
 
+
 }
-
-
-// bullet 1:
-// - When I click “Save”,
-// - If I entered information in both the “Title” and “Body” input fields,
-// - I should see a new idea card with the provided title and body appear in the idea list
 //make a new instance of idea class
 // save that class in to array of savedIdeasArray
 //put that instance of the class we just made use another function to update html of the dom.
-
-bodyElement.addEventListener("click", dropNavMenu);
 
 function dropNavMenu(event) {
   var isBurger = (hamburgerButton.outerHTML === `<img class="menu-navigate" src="assets/menu.svg" alt="menu">`)
   if(event.target.classList.contains("menu-navigate")) {
     toggleHiddenMenu();
-    if(isBurger) {
+    if (isBurger) {
       hamburgerButton.src = "assets/menu-close.svg";
     } else {
       hamburgerButton.src = "assets/menu.svg"
     }
   }
 }
+
 function toggleHiddenMenu() {
     document.querySelector(".bottom-menu-4").classList.toggle("hidden-small")
-    ideas.classList.toggle("filter")
+    // ideas.classList.toggle("filter")
 }
