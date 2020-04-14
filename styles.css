@@ -102,6 +102,7 @@ body {
   color: #E9E9F3;
   font-size: 130%;
   height: 4vh;
+  min-height: 25px;
   width: 95%;
 }
 
@@ -205,6 +206,7 @@ body {
 
 #save-button:disabled {
   background-color: rgba(83, 86,	164, 0.5);
+  min-height: 33px;
 }
 
 .idea-cards {
@@ -218,6 +220,7 @@ body {
   display: grid;
   flex-grow: 3;
   font-size: 14px;
+  min-height: 200px;
   grid-gap: 15px;
   grid-template-columns: repeat(3, 1fr);
   padding: 30px;
