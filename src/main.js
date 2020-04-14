@@ -6,11 +6,12 @@ var saveButton = document.querySelector(".save-button");
 var form = document.querySelector('.idea-form');
 var titleInput = document.querySelector("#title-input");
 var bodyInput = document.querySelector("#body-input");
-
+var ideaCardsContainer = document.querySelector(".idea-cards");
 
 menuIcon.addEventListener('click', expandMenu);
 saveButton.addEventListener('click', makeIdeaCard);
 form.addEventListener('keyup', checkInputs);
+ideaCardsContainer.addEventListener('click', ideaCardsHandler);
 
 function checkInputs() {
   if(!titleInput.value || !bodyInput.value) {
@@ -45,9 +46,10 @@ function makeIdeaCard(e) {
 
 function displayIdea(idea) {
   var ideaCardContainer = document.querySelector(".idea-cards");
-  var newCardTemplate = `<article class="user-cards">
-      <header class="header-card">
-        <img class="comment-card-pic" src="Assets/star.svg"/>
+  var newCardTemplate = `<article class="user-cards" data-id=${idea.id}>
+      <span class="header-card">
+        <img class="hidden comment-card-pic" src="Assets/star.svg"/>
+        <img  class="comment-card-pic" src="Assets/star-active.svg"/>
         <img class="comment-card-pic" src="Assets/delete.svg"/>
       </header>
       <h2 class="title-display">${idea.title}</h2>
@@ -58,4 +60,8 @@ function displayIdea(idea) {
       </footer>
     </article>`;
   ideaCardContainer.insertAdjacentHTML("beforeend", newCardTemplate);
+}
+
+function ideaCardsHandler(e) {
+  console.log(e.target);
 }
