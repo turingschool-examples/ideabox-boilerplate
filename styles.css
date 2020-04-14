@@ -69,7 +69,6 @@ body {
   margin: 2px;
   background-color: #5356A4;
   border-radius: 1px;
-  color: #E9E9F3;
   margin-left: 12px;
   margin-top: 10px;
   margin-bottom: 25px;
@@ -106,6 +105,7 @@ form {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
 }
+
 .title-box {
   grid-row-start: 2;
 }
@@ -159,10 +159,12 @@ form {
   grid-column-end: 3;
   margin-left: 25px;
 }
+
 label {
   margin-top: auto;
   font-size: small;
 }
+
 .ideas {
   display: flex;
   flex: 1;
@@ -183,7 +185,6 @@ label {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
 }
 
 .all-text {
@@ -197,6 +198,12 @@ label {
 }
 
 .red-star {
+  height: 35px;
+  width: 35px;
+}
+
+.red-star-active {
+  display: flex;
   height: 35px;
   width: 35px;
 }
@@ -227,9 +234,9 @@ label {
 #searchbar {
   margin-left: 15px;
   margin-bottom: 10px;
-
-  /* position: fixed; */
 }
+  /* position: fixed; */
+
 
 .idea-top {
   border: 1px solid #6E646B;
@@ -249,6 +256,7 @@ label {
   font-family: "open sans";
   font-weight: bold;
 }
+
 .hidden {
   display: none;
 }
@@ -274,25 +282,30 @@ label {
     flex-grow: 1; */
     grid-template-columns: repeat(2, 1fr);
   }
+
   .idea-cards-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .form-grid {
     display: block;
   }
+
   form {
     margin: 5px;
     grid-gap: 5px;
   }
-  .bottom-menu-4 {
 
+  .bottom-menu-4 {
   }
+
 }
 
 @media only screen and (max-width: 400px) {
   body {
     flex-direction: column;
   }
+
   .header-text {
     font-size: 18px;
     padding: 10px;
@@ -307,8 +320,8 @@ label {
   .menu-navigate {
     display: flex;
     margin-left: 5px;
-
   }
+
   .filter {
     opacity: 30%;
   }
@@ -334,6 +347,7 @@ label {
     flex-grow: 1; */
     grid-template-columns: repeat(1, 1fr);
   }
+
   .idea-cards-grid {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -344,6 +358,7 @@ label {
     background: purple;
     width: 100%;
     background-color: #1F1F3D;
-    color: #BFBFDD;  }
+    color: #BFBFDD;
+  }
 
 }
