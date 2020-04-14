@@ -46,6 +46,8 @@ function saveIdea(event) {
 function verifyForm() {
   if (userNewTitle.value && userNewBody.value) {
     saveIdeaButton.disabled = false;
+  } else {
+    saveIdeaButton.disabled = true;
   }
 }
 
@@ -91,36 +93,35 @@ function showUsersIdeaCard() {
       </section>
       </section>`;
       ideaGallery.insertAdjacentHTML('afterbegin', ideaCardTemplate);
+
       deleteIdeaCard();
-
-      var favoriteButton = document.querySelector('.star-active');
-      var unfavoriteButton = document.querySelector('.star-inactive');
-
-      favoriteButton.addEventListener('click', favoriteStar);
-      unfavoriteButton.addEventListener('click', unfavoriteStar);
-
-      favoriteStar();
-      unfavoriteStar();
-
-      function favoriteStar() {
-        unfavoriteButton.classList.add('hide');
-        favoriteButton.classList.remove('hide');
-      }
-
-      function unfavoriteStar() {
-        unfavoriteButton.classList.remove('hide');
-        favoriteButton.classList.add('hide');
-      }
+      toggleFavoriteStar();
     }
   }
 }
 
+function toggleFavoriteStar() {
+  event.preventDefault();
+  var activeStarBtn = document.querySelector('.star-active');
+  var inactiveStarBtn = document.querySelector('.star-inactive');
 
+  for(var i=0; i < savedIdeas.length; i++) {
+    inactiveStarBtn.addEventListener('click', event => {
+      inactiveStarBtn.classList.add('hide');
+      activeStarBtn.classList.remove('hide');
+    });
+    activeStarBtn.addEventListener('click', event => {
+      inactiveStarBtn.classList.remove('hide');
+      activeStarBtn.classList.add('hide');
+    });
+  }
+}
 
 function deleteIdeaCard() {
   event.preventDefault();
   var deleteButton = document.querySelector('.delete');
   var createdIdeaCard = document.querySelector('.box');
+
   for(var i=0; i < savedIdeas.length; i++) {
     deleteButton.addEventListener('click', event => {
       createdIdeaCard.remove('id');
