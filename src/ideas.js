@@ -3,7 +3,7 @@ class Idea {
     this.id = Date.now();
     this.title = titleInput;
     this.body = bodyInput;
-    this.star = "Assets/star.svg";
+    this.starred = false;
   }
 
 
@@ -18,5 +18,13 @@ class Idea {
 
   updateIdea() {
 // overwrite existing idea card -- erase and s
+  }
+
+  toggleStarred() {
+    if (this.starred) {
+       this.starred = false
+    } else {
+       this.starred = true
+    }
   }
 }

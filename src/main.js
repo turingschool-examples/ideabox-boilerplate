@@ -45,10 +45,15 @@ function makeIdeaCard(e) {
 }
 
 function displayIdea(idea) {
+  var starSrc;
+  if (idea.starred) {
+    starSrc = 'star-active'
+  } else {
+    starSrc = 'star'
+  }
   var newCardTemplate = `<article class="user-cards" data-id=${idea.id}>
       <header class="header-card">
-        <img class="hidden comment-card-pic" src="Assets/star.svg"/>
-        <img  class="comment-card-pic" src="Assets/star-active.svg"/>
+        <img class="comment-card-pic star-icon" src="Assets/${starSrc}.svg"/>
         <img class="delete-icon comment-card-pic" src="Assets/delete.svg"/>
       </header>
       <h2 class="title-display">${idea.title}</h2>
@@ -65,12 +70,22 @@ function ideaCardsHandler(e) {
   if (e.target.classList.contains('delete-icon')) {
     var targetId = e.target.closest('.user-cards').dataset.id;
     deleteIdea(targetId);
-    ideaCardsContainer.innerHTML = '';
+    displayAllIdeas();
+  }
+  if (e.target.classList.contains('star-icon')) {
+    var targetId = e.target.closest('.user-cards').dataset.id;
+    var targetIdea = findIdea(targetId);
+    targetIdea.toggleStarred();
     displayAllIdeas();
   }
 }
 
+function findIdea(id) {
+  return ideaListArray.find(idea => idea.id == id);
+}
+
 function displayAllIdeas() {
+  ideaCardsContainer.innerHTML = '';
   for (var i = 0; i < ideaListArray.length; i++) {
     displayIdea(ideaListArray[i]);
   }
