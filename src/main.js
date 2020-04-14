@@ -12,10 +12,8 @@ var userNewTitle = document.querySelector('.input-title');
 menuButton.addEventListener('click', showMobileMenu);
 menuCloseButton.addEventListener('click', closeMenu);
 saveIdeaButton.addEventListener('click', saveIdea);
-userNewTitle.addEventListener('keypress', verifyForm);
-userNewBody.addEventListener('keypress', verifyForm);
-userNewTitle.addEventListener('keyup', verifyForm);
-userNewBody.addEventListener('keyup', verifyForm);
+userNewTitle.addEventListener('input', verifyForm);
+userNewBody.addEventListener('input', verifyForm);
 
 var savedIdeas = [];
 
@@ -40,7 +38,10 @@ function saveIdea(event) {
   showUsersIdeaCard();
 }
 
-function verifyForm() {
+function verifyForm(event) {
+  // if(event.target.value) {
+    // saveIdeaButton.disabled= false;
+  // }
   if (userNewTitle.value && userNewBody.value) {
     saveIdeaButton.disabled = false;
   } else {
@@ -50,8 +51,11 @@ function verifyForm() {
 
 function createNewIdea() {
   var currentIdea = new Idea(userNewTitle.value, userNewBody.value);
+  if (userNewTitle.value && userNewBody.value) {
   savedIdeas.push(currentIdea);
+  saveIdeaButton.disabled = true;
   // saveIdeaToStorage();
+  }
 }
 
 // function saveIdeaToStorage() {
