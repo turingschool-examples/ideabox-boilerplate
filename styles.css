@@ -102,6 +102,7 @@ body {
   color: #E9E9F3;
   font-size: 130%;
   height: 4vh;
+  min-height: 25px;
   width: 95%;
 }
 
@@ -175,6 +176,7 @@ body {
 .search-box {
   background-color: #353567;
   height: 7vh;
+  min-height: 33px;
 }
 
 .form-button {
