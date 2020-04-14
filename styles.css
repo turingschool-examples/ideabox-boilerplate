@@ -214,6 +214,16 @@ button {
   outline: none;
 }
 
+.idea-box-top-buttons {
+  background: #1f1f3d;
+  border: none;
+}
+
+.idea-box-bottom-button {
+  background: #5356a4;
+  border: none;
+}
+
 /*=== media queries ===*/
 
 @media only screen and (max-width: 400px) {
@@ -286,6 +296,16 @@ button {
     position: relative;
     justify-content: center;
   }
+
+  .menu.menu-open .menu-items, 
+  .menu.menu-open .mini-menu-x-button  {
+    display: flex;
+  }
+
+  .menu.menu-open .hamburger-img {
+    display: none;
+  }
+
 
   .menu-items {
     display: flex;
