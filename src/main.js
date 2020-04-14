@@ -119,7 +119,6 @@ function deleteCard(element) {
 function starIdea(id) {
   for (var i = 0; i < savedIdeasArray.length; i++ ) {
     var currentIdea = savedIdeasArray[i];
-    debugger
     if (currentIdea.id === parseFloat(id)) {
       currentIdea.changeStarred();
     }
