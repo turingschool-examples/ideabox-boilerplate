@@ -45,12 +45,11 @@ function makeIdeaCard(e) {
 }
 
 function displayIdea(idea) {
-  var ideaCardContainer = document.querySelector(".idea-cards");
   var newCardTemplate = `<article class="user-cards" data-id=${idea.id}>
-      <span class="header-card">
+      <header class="header-card">
         <img class="hidden comment-card-pic" src="Assets/star.svg"/>
         <img  class="comment-card-pic" src="Assets/star-active.svg"/>
-        <img class="comment-card-pic" src="Assets/delete.svg"/>
+        <img class="delete-icon comment-card-pic" src="Assets/delete.svg"/>
       </header>
       <h2 class="title-display">${idea.title}</h2>
       <p class="body-display">${idea.body}</p>
@@ -59,9 +58,26 @@ function displayIdea(idea) {
         <p class="comment">Comment</p>
       </footer>
     </article>`;
-  ideaCardContainer.insertAdjacentHTML("beforeend", newCardTemplate);
+  ideaCardsContainer.insertAdjacentHTML("beforeend", newCardTemplate);
 }
 
 function ideaCardsHandler(e) {
-  console.log(e.target);
+  if (e.target.classList.contains('delete-icon')) {
+    var targetId = e.target.closest('.user-cards').dataset.id;
+    deleteIdea(targetId);
+    ideaCardsContainer.innerHTML = '';
+    for (var i = 0; i < ideaListArray.length; i++) {
+      displayIdea(ideaListArray[i]);
+    }
+  }
+}
+
+function deleteIdea(id) {
+  var newIdeaList = [];
+  for (var i = 0; i < ideaListArray.length; i++) {
+    if(ideaListArray[i].id != id) {
+      newIdeaList.push(ideaListArray[i]);
+    }
+  }
+  ideaListArray = newIdeaList;
 }
