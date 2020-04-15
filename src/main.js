@@ -8,10 +8,11 @@ var menuCloseButton = document.querySelector(".menu-close");
 var ideas = document.querySelector(".ideas");
 var form = document.querySelector('.form');
 var saveButton = document.querySelector(".save-button");
-var savedIdeasArray = [];
 var titleInput = document.querySelector(".title-box");
 var bodyInput = document.getElementById("body-input-box");
 var ideaCardsGrid = document.querySelector(".idea-cards-grid");
+
+var savedIdeasArray = [];
 
 // var deleteWhiteButton = document.querySelector("delete-white");
 // deleteButtonWhite.addEventListener("click", deleteIdea);
@@ -70,8 +71,9 @@ function enableSubmitButton() {
 
 function saveIdeas(event) {
   event.preventDefault();
-  var currentIdea = new Idea(titleInput.value, bodyInput.value);
+  var currentIdea = new Idea(undefined, titleInput.value, bodyInput.value, undefined);
   savedIdeasArray.push(currentIdea);
+  saveToStorage();
   form.reset();
   saveButton.disabled = true;
   saveButton.classList.add("filter-save-button");
@@ -82,7 +84,7 @@ function createIdeaHtml(ideaObject) {
   return ` <div class="idea-cards" id="${ideaObject.id}">
     <div class="idea-top">
       <img class="red-star" src=${starSource}>
-      <img class="delete-white ${ideaObject.id}" src="assets/delete.svg" alt="White Delete Icon">
+      <img class="delete-white" src="assets/delete.svg" alt="White Delete Icon">
     </div>
     <div class="all-text">
     <h1 class="idea-title">${ideaObject.title}</h1><br />
@@ -126,18 +128,23 @@ ideaCardsGrid.addEventListener("click", function(event) {
   //   event.target.classList.toggle("hidden");
   //   document.querySelector(".red-star").classList.toggle('hidden')
   //   starIdea(event);
+  //
 
 
 
 function deleteCard(element) {
+  retrieveFromStorage();
   var id = element.id;
   for (var i = 0; i < savedIdeasArray.length; i++ ) {
-    var currentIdea = savedIdeasArray[i];
-    if (currentIdea.id === parseFloat(id)) {
+    if (savedIdeasArray[i].id === parseFloat(id)) {
       // remove from dom and remove fronm array
       savedIdeasArray.splice(i, 1);
       element.remove();
+      // remove from local storage
+      
+      
     }
+    saveToStorage();
   }
 }
 // delete from the dom
@@ -147,15 +154,14 @@ function deleteCard(element) {
 function starIdea(id) {
   // var idCard = Number(event.target.parentElement.parentElement.id);
   for(var i = 0; i < savedIdeasArray.length; i++ ) {
-
-    if (savedIdeasArray[i].id === parseFloat(id)) {
-       // var currentIdea = savedIdeasArray[i];
-       //     currentIdea.changeStarred(); below is shorthand
-       savedIdeasArray[i].changeStarred();
-         }
-           // should updateTask be updateToDo?
+    var currentIdea = savedIdeasArray[i];
+    if (currentIdea.id === parseFloat(id)) {
+      // below is shorthand
+      currentIdea.changeStarred();
     }
-
+    // should updateTask be updateToDo?
+  }
+  saveToStorage();
 
 
     //   savedIdeasArray[i].star = true;
@@ -172,6 +178,7 @@ function starIdea(id) {
 // run/loop through array and add each element to the dom. Each item/iteratio of loop we send through function to create the new html and then add html timeout the page.
 function updatePageHtml() {
   ideaCardsGrid.innerHTML = "";
+  // retrieveFromStorage();
   for (var i = 0; i < savedIdeasArray.length; i++) {
     var ideaElement = createIdeaHtml(savedIdeasArray[i])
     //for each item in array (i), creating html, for next iteration next html
@@ -202,3 +209,32 @@ function toggleHiddenMenu() {
     document.querySelector(".bottom-menu-4").classList.toggle("hidden-small")
     // ideas.classList.toggle("filter")
 }
+
+window.onload = retrieveFromStorage();
+// fuction upDateStorage() {}
+
+function deleteFromStorage() {
+
+}
+
+function saveToStorage() {
+  localStorage.clear();
+  localStorage.setItem('savedIdeasArray', JSON.stringify(savedIdeasArray));
+  updatePageHtml();
+}
+function retrieveFromStorage() {
+  savedIdeasArray = JSON.parse(localStorage.getItem('savedIdeasArray')) || [];
+  for(var i = 0; i < savedIdeasArray.length; i++) {
+    var currentIdea = savedIdeasArray[i]
+    var reinstatedIdea = new Idea(currentIdea.id, currentIdea.title, currentIdea.body, currentIdea.star);
+    savedIdeasArray[i] = reinstatedIdea;
+
+  }
+  updatePageHtml();
+}
+
+function persistLocalStorage() {
+
+}
+
+
