@@ -233,10 +233,6 @@ label {
   margin-bottom: 5px;
 } */
 
-#searchbar {
-  margin-left: 15px;
-  margin-bottom: 10px;
-}
   /* position: fixed; */
 
 
@@ -276,6 +272,18 @@ label {
 }
 
 /*=== media queries ===*/
+@media only screen and (max-width: 1000px) {
+
+
+  .form-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  form {
+    grid-column-end: 4;
+  }
+
+}
+
 
 @media only screen and (max-width: 800px) {
   .idea-form-grid {
@@ -287,19 +295,21 @@ label {
   .idea-cards-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .form-grid {
-    display: block;
-  }
-
+  
   form {
     margin: 5px;
     grid-gap: 5px;
   }
 
-  .bottom-menu-4 {
+  .bottom-menu-4 { 
+
   }
 
+}
+@media only screen and (max-width: 600px) {
+  .form-grid {
+    display: block;
+  }
 }
 
 @media only screen and (max-width: 400px) {
