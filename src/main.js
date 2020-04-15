@@ -10,16 +10,19 @@ var saveButton = document.querySelector('.save');
 var ideaTitleInput = document.querySelector('.input-title');
 var ideaBodyInput = document.querySelector('.input-body');
 var ideaCards = document.querySelector('.idea-cards');
-var inactiveStar = document.querySelector('.inactive-star');
+
 var list = []
 
 body.addEventListener("click",buttonHandler);
 
 ideaTitleInput.addEventListener('keyup', validateInputs);
 ideaBodyInput.addEventListener('keyup', validateInputs);
-ideaCards.addEventListener('click', function(event) {
-  console.log(event);
-})
+ideaCards.addEventListener('click', function(){
+  ideaCardsHandler(event)
+}
+)
+
+
 
 function buttonHandler(event) {
   if(event.target === showIdeas){
@@ -30,9 +33,20 @@ function buttonHandler(event) {
     hideStarredIdeasMenu();
   } else if (event.target === saveButton) {
     saveNewIdea()
-    
+
   }
 }
+
+function ideaCardsHandler(event){
+  if(event.target.className === 'inactive-star'){
+    favoriteIdea()
+  } else if(event.target.className === 'x-button'){
+    deleteIdea(event);
+  } else if(event.target.className === 'comment-button'){
+    console.log("comment button")
+  }
+}
+
 
 function displayStarredIdeasMenu() {
   var menu = document.querySelector('.menu');
@@ -65,20 +79,63 @@ function displayIdeaCard() {
     var currentIdea = list[i]
     var currentIdeaDetails =  `<section class="idea-card-unit" id='${currentIdea.id}'>
     <section class="idea-box-top">
-    <button class="idea-box-top-buttons inactive-star"><img src="assets/star.svg" alt="Inactive Star Icon"></button>
-    <button class="idea-box-top-buttons"><img src="assets/delete.svg" alt=" X delete"></button>
+    <button class="idea-box-top-buttons"><img class="inactive-star" src="assets/star.svg" alt="Inactive Star Icon"></button>
+    <button class="idea-box-top-buttons"><img class="x-button" src="assets/delete.svg" alt=" X delete"></button>
     </section>
     <section class="idea-box-mid">
     <h3>${currentIdea.title}</h3>
     <p>${currentIdea.body}</p>
     </section>
     <section class="idea-box-bottom">
-    <button class="idea-box-bottom-button"><img src="assets/comment.svg" alt="Plus Icon add a comment"></button>
+    <button class="idea-box-bottom-button"><img class="comment-button" src="assets/comment.svg" alt="Plus Icon add a comment"></button>
     <p>Comment</p>
     </section>
     </section>`
     ideaCards.insertAdjacentHTML('afterbegin', currentIdeaDetails)
-    
+
   }
 }
 
+function favoriteIdea(){
+ var inactiveStar = document.querySelector('.inactive-star').src;
+ // alert(document.querySelector('.inactive-star').src)
+  if(inactiveStar === "/Users/keithcrofton/projects/ideabox-boilerplate/assets/star.svg"){
+    inactiveStar = "/Users/keithcrofton/projects/ideabox-boilerplate/assets/star-active.svg";
+  }
+}
+  // var img1 = "assets/star-active.svg"
+  // var img2 = "assets/star.svg"
+//   var inactiveStar = document.querySelector('.inactive-star');
+//   inactiveStar.src = (inactiveStar.src === "assets/star.svg")? "assets/star-active.svg" : "assets/star.svg";
+// }
+// function favoriteIdea(){
+//   var inactiveStar = document.querySelector('.inactive-star');
+//   inactiveStar.src = "assets/star-active.svg"
+// }
+
+
+
+
+//
+// function unfavoriteIdea(){
+//   inactiveStar.src = "assets/star.svg"
+// }
+// function deleteIdea() {
+//   let idea = document.getElementById(this.id)
+//   idea.remove();
+// }
+
+
+
+
+function deleteIdea(event){
+
+  for (var i = 0; i < list.length; i++){
+    var idea = list[i]
+    var clickedId = event.target.closest(".idea-card-unit").id
+    if(clickedId == idea.id){
+      var currentIdea = document.getElementById(idea.id)
+      ideaCards.removeChild(currentIdea)
+    }
+  }
+}
