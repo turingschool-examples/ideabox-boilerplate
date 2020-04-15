@@ -223,6 +223,9 @@ button {
   background: #5356a4;
   border: none;
 }
+.active-star {
+  content:url('assets/star-active.svg')
+}
 
 /*=== media queries ===*/
 
@@ -297,7 +300,7 @@ button {
     justify-content: center;
   }
 
-  .menu.menu-open .menu-items, 
+  .menu.menu-open .menu-items,
   .menu.menu-open .mini-menu-x-button  {
     display: flex;
   }

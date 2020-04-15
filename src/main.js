@@ -34,7 +34,7 @@ function buttonHandler(event) {
 
 function ideaCardsHandler(event){
   if(event.target.className === 'inactive-star'){
-    favoriteIdea()
+    favoriteIdea(event)
   } else if(event.target.className === 'x-button'){
     deleteIdea(event);
   } else if(event.target.className === 'comment-button'){
@@ -87,36 +87,29 @@ function displayIdeaCard() {
   }
 }
 
-function favoriteIdea(){
- var inactiveStar = document.querySelector('.inactive-star').src;
- // alert(document.querySelector('.inactive-star').src)
-  if(inactiveStar === "/Users/keithcrofton/projects/ideabox-boilerplate/assets/star.svg"){
-    inactiveStar = "/Users/keithcrofton/projects/ideabox-boilerplate/assets/star-active.svg";
-  }
+function favoriteIdea(event){
+    if (event.target.src.match("assets/star.svg")) {
+   event.target.src = "assets/star-active.svg"
+ } else {
+   event.target.src = "assets/star.svg"
+ }
+ updateFavorite(event)
 }
-  // var img1 = "assets/star-active.svg"
-  // var img2 = "assets/star.svg"
-//   var inactiveStar = document.querySelector('.inactive-star');
-//   inactiveStar.src = (inactiveStar.src === "assets/star.svg")? "assets/star-active.svg" : "assets/star.svg";
-// }
-// function favoriteIdea(){
-//   var inactiveStar = document.querySelector('.inactive-star');
-//   inactiveStar.src = "assets/star-active.svg"
-// }
 
-
-
-
-//
-// function unfavoriteIdea(){
-//   inactiveStar.src = "assets/star.svg"
-// }
-// function deleteIdea() {
-//   let idea = document.getElementById(this.id)
-//   idea.remove();
-// }
-
-
+function updateFavorite(event){
+  for (var i = 0; i < list.length; i++){
+    var idea = list[i]
+    var clickedId = event.target.closest('.idea-card-unit').id
+    if(clickedId == idea.id){
+      var currentIdea = document.getElementById(idea.id)
+      if(idea.star === true){
+        idea.star = false
+      } else if (idea.star === false){
+        idea.star = true
+      }
+}
+}
+}
 
 
 function deleteIdea(event){
