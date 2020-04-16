@@ -9,25 +9,38 @@ class Idea {
   changeStarred() {
     this.star = !this.star;
   }
-
-
-// should only have one job which is to save the instance to storage
-  saveToStorage() {
-
+  saveToLocalStorage() {
+    localStorage.setItem('savedIdeasArray', JSON.stringify(savedIdeasArray));
   }
-    //take obj and save to local saveToStorage
-    // use window.localStorage.setItem(keyword to save the item), JSON.stringify(item to save).
-
+  retrieveFromLocalStorage() {
+    savedIdeasArray = JSON.parse(localStorage.getItem('savedIdeasArray')) || [];
+    for(var i = 0; i < savedIdeasArray.length; i++) {
+      var currentIdea = savedIdeasArray[i];
+      var reinstatedIdea = new Idea(currentIdea.id, currentIdea.title, currentIdea.body, currentIdea.star);
+      savedIdeasArray[i] = reinstatedIdea;
+    }
+    return savedIdeasArray;
+  }
   deleteFromStorage() {
+    this.retrieveFromLocalStorage();
+    for(var i = 0; i < savedIdeasArray.length; i++) {
+      var currentIdea = savedIdeasArray[i]
+      if (currentIdea.id === this.id) {
+        savedIdeasArray.splice(i, 1);
+        this.saveToLocalStorage();
+      }
+    }
   }
-    //use localStorage.removeItem() to remove from local storage
-
-  updateIdea() {
-      // should be able to update the idea’s title, body, or starred state
+  updateIdea(id, title, body, star) {
+    this.retrieveFromLocalStorage();
+    for(var i = 0; i < savedIdeasArray.length; i++) {
+      if (savedIdeasArray[i].id === id) {
+        savedIdeasArray.splice(i, 1); 
+        var updatedIdea = new Idea(id, title, body, star)
+        savedIdeasArray.push(updatedIdea);
+        updatedIdea.saveToLocalStorage();
+      }
+      return savedIdeasArray;
+    }
   }
-
 }
-//get the item from local storage by calling getItem(name we saved it as)
-    //take string that getItem() returns and use JASON.parse()
-    //to turn it back into an obj/update the data
-    //save it back into local storage iwth the same key we
