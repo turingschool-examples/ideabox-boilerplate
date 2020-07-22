@@ -137,7 +137,6 @@ img {
 .box-star {
   height: 2em;
   width: 2em;
-  filter: invert(46%) sepia(20%) saturate(2977%) hue-rotate(334deg) brightness(98%) contrast(93%);
 }
 .box-x {
   height: 2em;
