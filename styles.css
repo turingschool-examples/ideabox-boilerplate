@@ -126,6 +126,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0px 20px;
 }
 
 .box-content {
@@ -138,5 +139,6 @@ img {
 }
 .box-footer h3 {
   color: #FFFFFF;
+  padding: 0px 20px;
   display: flex;
 }
