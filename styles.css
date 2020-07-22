@@ -96,3 +96,16 @@ img {
     flex-grow: 1;
   }
 }
+
+.idea-cards {
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2%;
+  width: 90%;
+}
+
+.idea-box {
+  width: 100%;
+  background-color: #FFFFFF;
+}
