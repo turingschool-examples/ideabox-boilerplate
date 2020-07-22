@@ -87,16 +87,28 @@ body {
   }
 
   .hamburger {
-    
+
   }
 
-
   .idea-form {
+    display: flex;
+    flex-direction: column;
     flex-grow: 1;
   }
 
-  .title-input {
+  .idea-form input {
+    justify-content: center;
     margin-left: 10px;
     margin-right: 10px;
+    outline-color: #353567;
   }
+
+  .title-input {
+    height: 30px;
+  }
+
+.body-input {
+  height: 4em;
+}
+
 }
