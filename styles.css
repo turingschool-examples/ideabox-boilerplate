@@ -108,9 +108,15 @@ img {
 .idea-box {
   width: 100%;
   background-color: #FFFFFF;
+    border-color: #6E646B;
 }
 
 .box-header {
   background-color: #1F1F3D;
-  border-color: #6E646B;
+}
+.box-footer {
+  background-color: #5356A4
+}
+.box-footer h3 {
+  color: #FFFFFF;
 }
