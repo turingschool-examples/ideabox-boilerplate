@@ -86,9 +86,7 @@ body {
     padding: 10px;
   }
 
-  .hamburger {
-
-  }
+  .hamburger {}
 
   .idea-form {
     display: flex;
@@ -98,17 +96,57 @@ body {
 
   .idea-form input {
     justify-content: center;
-    margin-left: 10px;
-    margin-right: 10px;
     outline-color: #353567;
   }
 
+.idea-form h2 {
+  margin-bottom: 5px;
+  margin-top: 20px;
+}
+  .title {
+    margin-left: 10px;
+  }
+
+  .body {
+    margin-left: 10px;
+  }
+
   .title-input {
+    margin-left: 10px;
+    margin-right: 10px;
     height: 30px;
   }
 
-.body-input {
-  height: 4em;
-}
+  .body-input {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    height: 4em;
+  }
 
+  .save-button {
+    height: 2em;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+  }
+
+  .search-bar {
+    display: flex;
+    flex-direction: row;
+    height: 2em;
+  }
+
+  .search-button {
+    margin-left: 10px;
+    float: left;
+    width: 10%;
+  }
+
+  .search-input {
+    margin-left: none;
+    margin-right: 10px;
+    float: left;
+    width: 90%;
+  }
 }
