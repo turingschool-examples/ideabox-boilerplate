@@ -109,3 +109,8 @@ img {
   width: 100%;
   background-color: #FFFFFF;
 }
+
+.box-header {
+  background-color: #1F1F3D;
+  border-color: #6E646B;
+}
