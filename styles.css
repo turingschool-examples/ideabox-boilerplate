@@ -108,14 +108,27 @@ img {
 .idea-box {
   width: 100%;
   background-color: #FFFFFF;
-    border-color: #6E646B;
+  border-color: #6E646B;
+}
+
+.idea-box h4 {
+  color: #1F1F3D;
+}
+
+.idea-box p {
+  color: #1F1F3D;
 }
 
 .box-header {
   background-color: #1F1F3D;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .box-footer {
-  background-color: #5356A4
+  background-color: #5356A4;
+  height: 40px;
 }
 .box-footer h3 {
   color: #FFFFFF;
