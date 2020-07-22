@@ -70,9 +70,9 @@ img {
   flex-grow: 2;
 }
 
-.idea-cards {
+/* .idea-cards {
   flex-grow: 3;
-}
+} */
 
 /*=== media queries ===*/
 
@@ -110,16 +110,18 @@ img {
   width: 100%;
   background-color: #FFFFFF;
   border: 1px solid #6E646B;
-  margin-top:
+  display: flex;
+  flex-direction: column;
 }
 
 .idea-box h2 {
   color: #1F1F3D;
-  padding-bottom: 10px;
+  padding: 20px;
 }
 
 .idea-box p {
   color: #1F1F3D;
+  padding: 20px;
 }
 
 .box-header {
@@ -140,10 +142,6 @@ img {
 .box-x {
   height: 2em;
   width: 2em;
-}
-
-.box-content {
-  padding: 20px;
 }
 
 .box-footer {
