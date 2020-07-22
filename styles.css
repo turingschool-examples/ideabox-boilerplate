@@ -86,7 +86,9 @@ body {
     padding: 10px;
   }
 
-  .hamburger {}
+  .hamburger {
+    background: none;
+  }
 
   .idea-form {
     display: flex;
@@ -149,4 +151,21 @@ body {
     float: left;
     width: 90%;
   }
+
+  .idea-cards {
+    display: flex;
+    justify-content: center;
+  }
+
+  .card {
+    outline-style: solid;
+    margin: 10px;
+    width: 100%;
+    height: 150px;
+  }
+
+  .card header {
+    height: 30px;
+  }
+
 }
