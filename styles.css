@@ -109,6 +109,7 @@ img {
   width: 100%;
   background-color: #FFFFFF;
   border-color: #6E646B;
+  margin-top:
 }
 
 .idea-box h4 {
@@ -126,10 +127,16 @@ img {
   justify-content: space-between;
   align-items: center;
 }
+
+.box-content {
+  padding: 20px;
+}
+
 .box-footer {
   background-color: #5356A4;
   height: 40px;
 }
 .box-footer h3 {
   color: #FFFFFF;
+  display: flex;
 }
