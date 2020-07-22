@@ -1,5 +1,4 @@
 /*=== Reset ===*/
-
 html, body, h1, h2, h3, h4, h5, h6, p {
   margin: 0;
   padding: 0;
@@ -14,7 +13,6 @@ body {
 }
 
 /*=== Background Colors ===*/
-
 .purple-1 {
   background: #EAEAF4;
 }
@@ -28,12 +26,11 @@ body {
 }
 
 .purple-4 {
-  background: #1F1F3D;;
+  background: #1F1F3D;
+  ;
 }
 
-
 /*=== Fonts ===*/
-
 .header-text {
   color: #EAEAF4;
   font-family: 'Open Sans';
@@ -42,19 +39,16 @@ body {
 }
 
 .body-text {
-  font: 'Open Sans' light;
+  font: 'Open Sans'light;
 }
 
-
 /*=== menu section ===*/
-
 .menu {
   height: 100%;
   width: 380px;
 }
 
 /*=== main section ===*/
-
 .ideas {
   display: flex;
   flex: 1;
@@ -70,21 +64,26 @@ body {
 }
 
 /*=== media queries ===*/
-
 @media only screen and (max-width: 400px) {
   body {
     flex-direction: column;
   }
 
+  .menu {
+    height: 40px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center space-between;
+  }
+
   .header-text {
     font-size: 18px;
     padding: 10px;
+    margin-left: 5.5em;
   }
 
-  .menu {
-    height: 40px;
-    text-align: center;
-    width: 100%;
+  .menu button {
   }
 
   .idea-form {
