@@ -60,43 +60,6 @@ img {
 
 /*=== main section ===*/
 
-.ideas {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-}
-
-.idea-form {
-  flex-grow: 2;
-}
-
-/* .idea-cards {
-  flex-grow: 3;
-} */
-
-/*=== media queries ===*/
-
-@media only screen and (max-width: 450px) {
-  body {
-    flex-direction: column;
-  }
-
-  .header-text {
-    font-size: 18px;
-    padding: 10px;
-  }
-
-  .menu {
-    height: 40px;
-    text-align: center;
-    width: 100%;
-  }
-
-  .idea-form {
-    flex-grow: 1;
-  }
-}
-
 .idea-cards {
   margin: 25px auto;
   display: grid;
@@ -157,4 +120,41 @@ img {
 .box-footer img {
   height: 2em;
   width: 2em;
+}
+
+.ideas {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.idea-form {
+  flex-grow: 2;
+}
+
+/* .idea-cards {
+  flex-grow: 3;
+} */
+
+/*=== media queries ===*/
+
+@media only screen and (max-width: 450px) {
+  body {
+    flex-direction: column;
+  }
+
+  .header-text {
+    font-size: 18px;
+    padding: 10px;
+  }
+
+  .menu {
+    height: 40px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .idea-form {
+    flex-grow: 1;
+  }
 }
