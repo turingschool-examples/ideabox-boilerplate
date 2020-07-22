@@ -61,6 +61,8 @@ body {
 
 
 
+
+
 /*=== main section ===*/
 
 .ideas {
@@ -96,7 +98,6 @@ body {
     background-color: transparent;
     border: none;
     margin-right: 5.5em;
-    /* margin-top:.5em; */
     width: 3.5em;
     height: 2.5em;
   }
@@ -105,12 +106,12 @@ body {
     height: 40px;
     text-align: center;
     width: 100%;
+    flex-direction: row-reverse;
+    justify-content: space-around;
   }
-
 
   .idea-form {
     flex-grow: 1;
   }
-
 
 }
