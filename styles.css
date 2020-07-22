@@ -98,7 +98,7 @@ img {
 }
 
 .idea-cards {
-  margin: 50px auto;
+  margin: 25px auto;
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 2%;
@@ -113,8 +113,9 @@ img {
   margin-top:
 }
 
-.idea-box h4 {
+.idea-box h2 {
   color: #1F1F3D;
+  padding-bottom: 10px;
 }
 
 .idea-box p {
