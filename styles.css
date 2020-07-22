@@ -48,6 +48,10 @@ body {
   width: 380px;
 }
 
+.phantom {
+  background-color: #1F1F3D
+}
+
 /*=== main section ===*/
 .ideas {
   display: flex;
@@ -74,19 +78,25 @@ body {
     width: 100%;
     text-align: center;
     display: flex;
-    justify-content: center space-between;
+    justify-content: space-between;
   }
 
   .header-text {
     font-size: 18px;
     padding: 10px;
-    margin-left: 5.5em;
   }
 
-  .menu button {
+  .hamburger {
+    
   }
+
 
   .idea-form {
     flex-grow: 1;
+  }
+
+  .title-input {
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }
