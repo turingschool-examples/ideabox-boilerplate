@@ -16,18 +16,18 @@ body {
 /*=== Background Colors ===*/
 
 .purple-1 {
-  background: #EAEAF4;
+  background: #EAEAF4;       /*body*/
 }
 
-.purple-2 {
+.purple-2 {                  /*idea-form*/
   background: #A9AAD2;
 }
 
-.purple-3 {
+.purple-3 {                  /*show starred ideas / comments*/
   background: #5356A4;
 }
 
-.purple-4 {
+.purple-4 {                  /*menu / save button / ideas header*/
   background: #1F1F3D;;
 }
 
