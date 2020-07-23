@@ -142,4 +142,9 @@ body {
     border-radius: .15em;
     border-right: none;
   }
+  .search-idea-button img {
+    vertical-align: middle;
+    height: 75%;
+    width: 75%;
+  }
 }
