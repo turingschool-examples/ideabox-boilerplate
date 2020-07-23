@@ -92,22 +92,23 @@ body {
     /* padding: 10px; */
     display: inline;
     margin-right: 8.2em;
-  }
+    }
 
   .hamburger-button {
     background-color: transparent;
     border: none;
     margin-right: 5.5em;
-    width: 3.5em;
+    width: 3em;
     height: 2.5em;
   }
 
   .menu {
     height: 40px;
-    text-align: center;
+    /* text-align: center; */
     width: 100%;
-    flex-direction: row-reverse;
-    justify-content: space-around;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    align-items: stretch;
   }
 
   .idea-form {
