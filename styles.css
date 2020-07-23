@@ -6,7 +6,7 @@ html, body, h1, h2, h3, h4, h5, h6, p {
 }
 
 html, body {
-  height: 100%
+  height: 100%;
 }
 
 body {
@@ -55,15 +55,24 @@ body {
 
 /*=== main section ===*/
 
-.hamburger {
+.hidden {
+  display: none;
+}
+
+.menu-open {
   width: 35%;
   height: 90%;
 }
 
-nav {
+.navigation {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr 1fr 1fr;
+}
+
+.filter-card {
+  display: grid;
+  grid
 }
 
 .form-text {
