@@ -43,7 +43,6 @@ body {
   color: #EAEAF4;
   font-family: 'Open Sans';
   font-weight: bolder;
-  padding: 20px;
 }
 
 .body-text {
@@ -71,6 +70,7 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
   width: 95%;
+  min-width: inherit;
 }
 
 .idea-box {
@@ -94,14 +94,9 @@ body {
   font-size: 1.75em;
 }
 
-.idea-box h3 {
-  padding-left: 5px;
-  font-size: 1.5em;
-}
-
 .box-header {
   background-color: #1F1F3D;
-  height: 40px;
+  height: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -120,7 +115,7 @@ body {
 
 .box-footer {
   background-color: #5356A4;
-  height: 40px;
+  height: 50px;
   display: flex;
   align-items: center;
   padding: 0px 3px;
@@ -128,6 +123,8 @@ body {
 }
 .box-footer h3 {
   color: #FFFFFF;
+  padding-bottom: 3px;
+  font-size: 1.5em;
 }
 .box-footer img {
   height: 3em;
