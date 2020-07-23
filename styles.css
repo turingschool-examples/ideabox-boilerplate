@@ -91,4 +91,15 @@ body {
     justify-content: flex-start;
     padding: .5em;
   }
+  .h3-title {
+    margin-top: .5em;
+    padding: .2em;
+    color: #1F1F3D;
+    opacity: .65;
+  }
+  .title-input {
+    padding-bottom: .5em;
+    border: 2px solid #5356A4;
+    border-radius: .15em;
+  }
 }
