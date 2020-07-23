@@ -73,6 +73,18 @@ body {
   margin-bottom: 2%;
 }
 
+.search {
+  display: flex;
+  flex-direction: row;
+  height: 10%;
+}
+
+.icon-search {
+  height: 100%;
+  width: 15%;
+  margin: 0;
+  background: #353567;
+}
 .input-search {
   width: 95%;
   padding: 2%;
@@ -87,6 +99,8 @@ body {
 }
 
 .card {
+  display: grid;
+  grid-template-columns:
   padding-bottom: 2rem;
   border: 0.2rem solid grey;
   border-style: double;
@@ -94,9 +108,35 @@ body {
   background-color: #FFFFFF;
 }
 
-.card-1 {
-  padding-top: 2rem;
+.card img {
+  width: 10%;
 }
+
+.card-banner-top {
+  display: flex;
+  justify-content: space-between;
+  /* flex-direction: row; */
+  background-color: #1F1F3D;
+}
+
+/* .banner-star {
+  display: flex;
+  justify-content: space-between; */
+  /* position: absolute; */
+  /* top: -15%;
+  left: -65%;
+  height: 150%;
+  width: 150%; */
+/* } */
+
+/* .banner-x {
+  display: flex;
+  justify-content: space-between;
+} */
+
+/* .card-1 {
+  padding-top: 2rem;
+} */
 
 .ideas {
   display: flex;
