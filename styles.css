@@ -85,11 +85,6 @@ body {
     align-items: center;
   }
 
-  /* .header-text {
-    font-size: 18px;
-     padding: 10px;
-  } */
-
   .hamburger {
     background: none;
     border: none;
@@ -117,7 +112,6 @@ body {
   }
 
   .idea-form input {
-    /* justify-content: center; */
     outline-color: #353567;
   }
 
@@ -127,36 +121,27 @@ body {
   }
 
   .input-title {
-    /* margin-left: 10px; */
     color: #1f1f3d;
   }
 
   .input-body {
-    /* margin-left: 10px; */
     color: #1f1f3d;
   }
 
   .title-input {
-    /* margin-left: 10px;
-    margin-right: 10px; */
     height: 40px;
     border-color: #5356a4;
   }
 
   .body-input {
-    /* margin-left: 10px;
-    margin-right: 10px; */
     margin-bottom: 20px;
     height: 87.5px;
     border-color: #5356a4;
   }
 
   .save-button {
-    /* font-weight: bold; */
     height: 48px;
     font-size: 20px;
-    /* margin-left: 10px;
-    margin-right: 10px; */
     margin-bottom: 20px;
     background-color: #353567;
     border-style: solid;
@@ -172,7 +157,6 @@ body {
   }
 
   .search-button {
-    /* margin-left: 10px; */
     float: left;
     width: 48px;
     background: none;
@@ -183,12 +167,9 @@ body {
   .search-button img {
     width: 24px;
     height: auto;
-    /* todo: center img */
   }
 
   .search-input {
-    /* margin-left: none; */
-    /* margin-right: 10px; */
     float: left;
     width: 90%;
     border-style: solid;
@@ -239,7 +220,6 @@ body {
     border-left-style: solid;
     border-left-width: 2px;
     border-color: #353567
-    /* padding: 10px; */
   }
 
   .header-star {
@@ -257,7 +237,6 @@ body {
   }
 
   .card-title {
-    /* margin: 10px; */
     color: #1f1f3d
   }
 
