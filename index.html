@@ -10,12 +10,20 @@
 <body class="purple-1">
 
   <section class="menu purple-4">
-    <button class="hamburger" type="button" name="button">
+    <button class="hamburger" type="button" name="button" onclick="openNav()">
       <img class='icon' src='./assets/menu.svg'>
     </button>
     <h3 class="header-text">IdeaBox</h3>
     <div class="phantom"></div>
   </section>
+
+  <div class="dropdown-menu">
+    <div class="slide header-text">
+      <h4>Filter Starred Ideas</h4>
+      <button class="header-text" stype="button" name="button">Show Starred Ideas</button>
+    </div>
+    <div class="grayout"></div>
+  </div>
 
   <main class="ideas">
     <section class="idea-form purple-2">
@@ -52,6 +60,7 @@
         </footer>
       </div>
     </section>
+
   </main>
 
 </body>
