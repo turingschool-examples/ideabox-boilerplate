@@ -84,11 +84,13 @@ body {
 .idea-box h2 {
   color: #1F1F3D;
   padding: 15px 15px 0px 15px;
+  font-size: 2em;
 }
 
 .idea-box p {
   color: #1F1F3D;
   padding: 15px;
+  font-size: 1.25em;
 }
 
 .box-header {
@@ -159,14 +161,6 @@ body {
    grid-template-columns: 1fr;
    width: 90%;
  }
-  .header-text {
-    font-size: 16px;
-    font-weight: 900;
-    /* padding: 10px; */
-    display: inline;
-    margin-right: 8.2em;
-    }
-
   .hamburger-button {
     background-color: transparent;
     border: none;
