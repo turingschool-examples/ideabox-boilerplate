@@ -127,15 +127,15 @@ body {
   width: 2em;
 }
 
-.ideas {
+/* .ideas {
   display: flex;
   flex: 1;
   flex-direction: column;
-}
+} */
 
-.idea-form {
+/* .idea-form {
   flex-grow: 2;
-}
+} */
 
 /* .idea-cards {
   flex-grow: 3;
@@ -146,6 +146,7 @@ body {
 @media only screen and (max-width: 450px) {
   body {
     flex-direction: column;
+    /* justify-content: center; */
   }
   .header-text {
     font-size: 16px;
@@ -174,8 +175,8 @@ body {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    padding: .5em;
+    align-items: center;
+    /* padding: .5em; */
   }
   .h3-title {
     /* margin-top: .5em; */
@@ -184,23 +185,22 @@ body {
     opacity: .65;
   }
   .title-input {
-    padding-bottom: .5em;
     border: 2px solid #5356A4;
     border-radius: .15em;
   }
   .h3-body {
-    /* margin-top: .5em; */
     padding-top: 1em;
     padding: .2em;
     color: #1F1F3D;
     opacity: .65;
   }
   .body-input {
-    padding: 1.3em;
+    padding-bottom: 15%;
     border: 2px solid #5356A4;
     border-radius: .15em;
   }
   .save-idea-button {
+    width: 90%;
     text-align: center;
     height: 13%;
     margin-top: 1em;
@@ -213,6 +213,7 @@ body {
     border-radius: .15em;
   }
   .search {
+    width: 90%;
     height: 20%;
     display: flex;
     justify-content: flex-start;
