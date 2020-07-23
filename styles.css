@@ -75,19 +75,20 @@ body {
   body {
     flex-direction: column;
   }
-
   .header-text {
-    font-size: 18px;
+    font-size: 16px;
     padding: 10px;
   }
-
   .menu {
     height: 40px;
     text-align: center;
     width: 100%;
   }
-
   .idea-form {
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: .5em;
   }
 }
