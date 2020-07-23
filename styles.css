@@ -70,7 +70,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
-  width: 90%;
+  width: 95%;
 }
 
 .idea-box {
@@ -157,6 +157,7 @@ body {
   .idea-cards {
    margin: 25px auto;
    grid-template-columns: 1fr;
+   width: 90%;
  }
   .header-text {
     font-size: 16px;
