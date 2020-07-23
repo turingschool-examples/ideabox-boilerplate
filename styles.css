@@ -102,4 +102,16 @@ body {
     border: 2px solid #5356A4;
     border-radius: .15em;
   }
+  .h3-body {
+    margin-top: .75em;
+    padding-top: 1em;
+    padding: .2em;
+    color: #1F1F3D;
+    opacity: .65;
+  }
+  .body-input {
+    padding: 1.3em;
+    border: 2px solid #5356A4;
+    border-radius: .15em;
+  }
 }
