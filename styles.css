@@ -54,6 +54,18 @@ body {
 }
 
 /*=== main section ===*/
+
+.hamburger {
+  width: 35%;
+  height: 90%;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
 .form-text {
   text-align: left;
   padding: 3% 0 1% 0;
@@ -109,7 +121,9 @@ body {
 }
 
 .card img {
-  width: 10%;
+  width: 7%;
+  padding-left: 2%;
+  padding-right: 2%;
 }
 
 .card-banner-top {
@@ -119,6 +133,22 @@ body {
   background-color: #1F1F3D;
 }
 
+.card-footer {
+  display: flex;
+  justify-content:flex-start;
+  background-color: #5357A5;
+  color: #E9E9F3;
+}
+
+.comment-text {
+  margin-top: 0;
+  display: flex;
+  align-self: center;
+}
+
+/* #icon-comment {
+
+} */
 /* .banner-star {
   display: flex;
   justify-content: space-between; */
