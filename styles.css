@@ -147,4 +147,14 @@ body {
     height: 75%;
     width: 75%;
   }
+  .search-idea-input {
+    height: 90%;
+    width: 100%;
+    border: 2px solid #5356A4;
+  }
+  ::placeholder {
+    padding: 5%;
+    opacity: 0.8;
+    color: #5356A4;
+  }
 }
