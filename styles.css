@@ -132,4 +132,14 @@ body {
     justify-content: flex-start;
     align-items: center;
   }
+  .search-idea-button {
+    background-color: #1F1F3D;
+    background-position: center center;
+    height: 110%;
+    width: 13%;
+    opacity: .6;
+    border: 2px solid #5356A4;
+    border-radius: .15em;
+    border-right: none;
+  }
 }
