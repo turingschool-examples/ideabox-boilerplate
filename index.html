@@ -1,18 +1,59 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link href="https://fonts.googleapis.com/css?family=Open%20Sans" rel='stylesheet'>
-    <link rel="stylesheet" type="text/css" href="./styles.css">
-  </head>
-  <body class="purple-1">
-    <section class="menu purple-4">
-      <h1 class="header-text">IdeaBox</h1>
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Open%20Sans" rel='stylesheet'>
+  <link rel="stylesheet" type="text/css" href="./styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body class="purple-1">
+
+  <section class="menu purple-4">
+    <button class="hamburger" type="button" name="button">
+      <img class='icon' src='./assets/menu.svg'>
+    </button>
+    <h3 class="header-text">IdeaBox</h3>
+    <div class="phantom"></div>
+  </section>
+
+  <main class="ideas">
+    <section class="idea-form purple-2">
+      <h4 class="input-title header-text">Title</h4>
+      <input class="title-input" type="text" name="" value="">
+      <h4 class="input-body header-text">Body</h4>
+      <input class="body-input" type="text" name="" value="">
+      <button class="save-button header-text" type="button" name="button">Save</button>
+      <div class="search-bar">
+        <button class="search-button" type="button" name="button">
+          <img src="./assets/search.svg" alt="">
+        </button>
+        <input class="search-input" type="text" name="" placeholder="Search Ideas" value="">
+      </div>
     </section>
-    <main class="ideas">
-      <section class="idea-form purple-2">
-      </section>
-      <section class="idea-cards">
-      </section>
-    </main>
-  </body>
+
+    <section class="idea-cards">
+      <div class="card">
+        <header>
+          <button class="header-star" type="button" name="button">
+            <img src="./assets/star-active.svg" alt="">
+          </button>
+          <button class="header-close" type="button" name="button">
+            <img src="./assets/menu-close.svg" alt="">
+          </button>
+        </header>
+        <section class="card-body">
+          <h4 class="card-title header-text">Idea title</h4>
+          <p class="body-text">Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth talk.</p>
+        </section>
+        <footer>
+          <button class="footer-button" type="button" name="button"><img class="comment-img" src="./assets/comment.svg" alt=""> Comment</button>
+          <!-- for it5, this is where we will add functionality for input field. -->
+        </footer>
+      </div>
+    </section>
+  </main>
+
+</body>
+
 </html>
