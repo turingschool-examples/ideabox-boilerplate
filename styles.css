@@ -13,11 +13,6 @@ body {
   display: flex;
 }
 
-/* img {
-  width: 20px;
-  height: 20px;
-} */
-
 /*=== Background Colors ===*/
 
 .purple-1 {
@@ -137,8 +132,6 @@ body {
   body {
     /* flex-direction: row; */
   }
-  .idea-cards {
-   margin: 25px auto;
 
  }
  .menu {
@@ -151,7 +144,6 @@ body {
     flex-direction: column;
   }
    .idea-cards {
-    margin: 25px auto;
     grid-template-columns: 1fr 1fr;
   }
  }
@@ -160,7 +152,6 @@ body {
     flex-direction: column;
   }
   .idea-cards {
-   margin: 25px auto;
    grid-template-columns: 1fr;
    width: 90%;
  }
