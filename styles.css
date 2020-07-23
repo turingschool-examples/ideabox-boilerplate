@@ -60,6 +60,68 @@ img {
 
 /*=== main section ===*/
 
+.idea-cards {
+  margin: 25px auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2%;
+  width: 90%;
+
+}
+
+.idea-box {
+  width: 100%;
+  background-color: #FFFFFF;
+  border: 1px solid #6E646B;
+  display: flex;
+  flex-direction: column;
+}
+
+.idea-box h2 {
+  color: #1F1F3D;
+  padding: 15px 15px 0px 15px;
+}
+
+.idea-box p {
+  color: #1F1F3D;
+  padding: 15px;
+}
+
+.box-header {
+  background-color: #1F1F3D;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 3px;
+  border: 1px solid #6E646B;
+}
+
+.box-star {
+  height: 2em;
+  width: 2em;
+}
+.box-x {
+  height: 2em;
+  width: 2em;
+}
+
+.box-footer {
+  background-color: #5356A4;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0px 3px;
+  border: 1px solid #6E646B;
+}
+.box-footer h3 {
+  color: #FFFFFF;
+}
+.box-footer img {
+  height: 2em;
+  width: 2em;
+}
+
 .ideas {
   display: flex;
   flex: 1;
@@ -70,13 +132,13 @@ img {
   flex-grow: 2;
 }
 
-.idea-cards {
+/* .idea-cards {
   flex-grow: 3;
-}
+} */
 
 /*=== media queries ===*/
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 450px) {
   body {
     flex-direction: column;
   }
