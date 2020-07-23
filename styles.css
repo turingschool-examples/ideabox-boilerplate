@@ -69,9 +69,8 @@ body {
   margin: 25px auto;
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 2%;
+  grid-gap: 20px;
   width: 90%;
-
 }
 
 .idea-box {
@@ -127,26 +126,41 @@ body {
   width: 2em;
 }
 
-.ideas {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-}
-
-.idea-form {
-  flex-grow: 2;
-}
-
-/* .idea-cards {
-  flex-grow: 3;
-} */
 
 /*=== media queries ===*/
-
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 1200px) {
+  body {
+    /* flex-direction: row; */
+  }
+  .idea-cards {
+   margin: 25px auto;
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+ }
+ .menu {
+   height: 100%;
+   width: 380px;
+   flex-direction: row;
+ }
+ @media only screen and (max-width: 900px) {
   body {
     flex-direction: column;
   }
+   .idea-cards {
+    margin: 25px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+ }
+@media only screen and (max-width: 600px) {
+  body {
+    flex-direction: column;
+  }
+  .idea-cards {
+   margin: 25px auto;
+   display: grid;
+   grid-template-columns: 1fr;
+ }
   .header-text {
     font-size: 16px;
     font-weight: 900;
@@ -171,36 +185,38 @@ body {
     align-items: stretch;
   }
   .idea-form {
+    padding: 6% 0;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    padding: .5em;
+    align-items: center;
   }
-  .h3-title {
-    /* margin-top: .5em; */
-    padding: .2em;
+  .h3-title {           /*refactor*/
+    align-self: start;
+    padding-left: 6%;
     color: #1F1F3D;
     opacity: .65;
   }
   .title-input {
-    padding-bottom: .5em;
+    height: 55px;
+    width: 85%;
     border: 2px solid #5356A4;
     border-radius: .15em;
   }
   .h3-body {
-    /* margin-top: .5em; */
-    padding-top: 1em;
-    padding: .2em;
+    align-self: start;
+    padding: 6% 0 0 6%;
     color: #1F1F3D;
     opacity: .65;
   }
   .body-input {
-    padding: 1.3em;
+    height: 105px;
+    width: 85%;
     border: 2px solid #5356A4;
     border-radius: .15em;
   }
   .save-idea-button {
+    width: 90%;
     text-align: center;
     height: 13%;
     margin-top: 1em;
@@ -213,11 +229,11 @@ body {
     border-radius: .15em;
   }
   .search {
+    width: 90%;
     height: 20%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-bottom: 6%;
   }
   .search-idea-button {
     background-color: #1F1F3D;
@@ -244,5 +260,4 @@ body {
     opacity: 0.6;
     color: #5356A4;
   }
-
 }
