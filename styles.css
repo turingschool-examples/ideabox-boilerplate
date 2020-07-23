@@ -126,4 +126,10 @@ body {
     border: 2px solid #5356A4;
     border-radius: .15em;
   }
+  .search {
+    height: 20%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
 }
