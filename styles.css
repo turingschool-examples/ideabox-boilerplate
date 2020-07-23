@@ -114,4 +114,16 @@ body {
     border: 2px solid #5356A4;
     border-radius: .15em;
   }
+  .save-idea-button{
+    text-align: center;
+    height: 13%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    background-color: #1F1F3D;
+    color: #FFFFFF;
+    opacity: 0.65;
+    padding: .5em;
+    border: 2px solid #5356A4;
+    border-radius: .15em;
+  }
 }
