@@ -8,20 +8,23 @@
   </head>
   <body class="purple-1">
     <section class="menu purple-4">
-      <nav>
-        <img class="hamburger" src="assets/menu.svg" alt="menu">
+      <nav class="navigation">
+        <img class="menu-open" src="assets/menu.svg" alt="menu">
+        <img class="menu-close" src="assets/menu-close.svg" alt="menu-close"/>
         <h1 class="header-text">IdeaBox</h1>
-        <h3>Filter Starred Ideas</h3>
-        <button>Show Starred Ideas</button>
+        <section class="open-menu hidden">
+          <h3 class="filter-card">Filter Starred Ideas</h3>
+          <button class="button-show-starred">Show Starred Ideas</button>
+        </section>
       </nav>
     </section>
     <main class="ideas">
       <section class="idea-form purple-2">
         <h4 class="form-text">Title</h4>
-        <input class=" input-title"> </input>
+        <input class="input-title"> </input>
         <h4 class="form-text">Body</h4>
-        <input class=" input-body"></input>
-        <button class=" button-save">Save</button>
+        <input class="input-body"></input>
+        <button class="button-save">Save</button>
         <div class="search">
           <img class="icon-search" src="assets/search.svg"/>
           <input class="input-search" placeholder="Search Ideas"></input>
@@ -72,5 +75,7 @@
         </article>
       </section>
     </main>
+    <script src="./src/main.js"></script>
+    <script src="./src/ideas.js"></script>
   </body>
 </html>
