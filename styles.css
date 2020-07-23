@@ -135,7 +135,7 @@ body {
   .search-idea-button {
     background-color: #1F1F3D;
     background-position: center center;
-    height: 110%;
+    height: 65%;
     width: 13%;
     opacity: .6;
     border: 2px solid #5356A4;
@@ -148,7 +148,7 @@ body {
     width: 75%;
   }
   .search-idea-input {
-    height: 90%;
+    height: 50%;
     width: 100%;
     border: 2px solid #5356A4;
   }
