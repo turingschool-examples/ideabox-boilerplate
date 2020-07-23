@@ -68,7 +68,7 @@ body {
 .idea-cards {
   margin: 25px auto;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
   width: 90%;
 }
@@ -134,8 +134,7 @@ body {
   }
   .idea-cards {
    margin: 25px auto;
-   display: grid;
-   grid-template-columns: 1fr 1fr 1fr;
+
  }
  .menu {
    height: 100%;
@@ -148,7 +147,6 @@ body {
   }
    .idea-cards {
     margin: 25px auto;
-    display: grid;
     grid-template-columns: 1fr 1fr;
   }
  }
@@ -158,7 +156,6 @@ body {
   }
   .idea-cards {
    margin: 25px auto;
-   display: grid;
    grid-template-columns: 1fr;
  }
   .header-text {
