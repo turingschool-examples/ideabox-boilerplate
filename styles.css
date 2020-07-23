@@ -35,7 +35,7 @@ body {
   color: #EAEAF4;
   font-family: 'Open Sans';
   font-weight: bold;
-  padding: 20px;
+  /* padding: 20px; */
 }
 
 .body-text {
@@ -88,6 +88,21 @@ body {
 
   .hamburger {
     background: none;
+    border: none;
+  }
+
+  .icon {
+    width: 24px;
+    height: auto;
+  }
+
+  .phantom {
+    width: 36px;
+    height: auto;
+  }
+
+  input {
+    border-radius: 2px
   }
 
   .idea-form {
@@ -101,22 +116,26 @@ body {
     outline-color: #353567;
   }
 
-.idea-form h2 {
-  margin-bottom: 5px;
-  margin-top: 20px;
-}
+  .idea-form h4 {
+    margin-bottom: 5px;
+    margin-top: 20px;
+  }
+
   .title {
     margin-left: 10px;
+    color: #1f1f3d;
   }
 
   .body {
     margin-left: 10px;
+    color: #1f1f3d;
   }
 
   .title-input {
     margin-left: 10px;
     margin-right: 10px;
     height: 30px;
+    border-color: #353567;
   }
 
   .body-input {
@@ -124,6 +143,7 @@ body {
     margin-right: 10px;
     margin-bottom: 20px;
     height: 4em;
+    border-color: #353567;
   }
 
   .save-button {
@@ -131,6 +151,10 @@ body {
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 20px;
+    background-color: #353567;
+    border-style: solid;
+    border-color: #353567;
+    color: #E9E9F3
   }
 
   .search-bar {
@@ -142,7 +166,16 @@ body {
   .search-button {
     margin-left: 10px;
     float: left;
-    width: 10%;
+    width: 35px;
+    background: none;
+    border: none;
+    background-color: #353567;
+  }
+
+  .search-button img {
+    width: 18px;
+    height: auto;
+    /* todo: center img */
   }
 
   .search-input {
@@ -150,6 +183,8 @@ body {
     margin-right: 10px;
     float: left;
     width: 90%;
+    border-style: solid;
+    border-color: #353567;
   }
 
   .idea-cards {
@@ -158,14 +193,66 @@ body {
   }
 
   .card {
-    outline-style: solid;
     margin: 10px;
     width: 100%;
     height: 150px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows:1fr 5fr 1fr;
   }
 
   .card header {
-    height: 30px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #353567;
+    display: flex;
+    justify-content: space-between;
+    background-color: #1F1F3D;
   }
 
+  .card footer {
+    border-style: solid;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #353567;
+    background-color: #5356A4;
+  }
+
+  .card section {
+    border-right-style: solid;
+    border-right-width: 2px;
+    border-left-style: solid;
+    border-left-width: 2px;
+    border-color: #353567
+    padding: 10px;
+  }
+
+  .header-star {
+    width: 30px;
+    height: auto;
+    background: none;
+    border: none;
+  }
+
+  .header-close {
+    width: 30px;
+    height: auto;
+    background: none;
+    border: none;
+  }
+
+  .card-title {
+    margin: 10px;
+  }
+
+  .card-body{
+    margin: 10px;
+  }
+
+
+  .footer-button {
+    background: none;
+    border: none;
+    color: #E9E9F3;
+  }
 }
