@@ -60,6 +60,14 @@ body {
 }
 
 .menu-open {
+  padding: 2%;
+  width: 35%;
+  height: 90%;
+}
+
+.menu-close {
+  display: hidden;
+  padding: 2%;
   width: 35%;
   height: 90%;
 }
@@ -67,13 +75,24 @@ body {
 .navigation {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
 }
 
 .filter-card {
   color: #BFBFDD;
-  display: grid;
+  padding-bottom: 3%;
+  margin: 2%;
 }
+
+.button-show-starred {
+  background-color: #353567;
+  border-style: none;
+  width: 96%;
+  padding: 3%;
+  color: #E9E9F3;
+  margin: 2%;
+}
+
 
 .form-text {
   text-align: left;
@@ -94,10 +113,6 @@ body {
   margin-bottom: 2%;
 }
 
-.button-show-starred {
-  background-color: #353567;
-  color: #E9E9F3;
-}
 
 .search {
   display: flex;
@@ -106,12 +121,15 @@ body {
 }
 
 .icon-search {
-  height: 100%;
-  width: 15%;
+  height: 20px;
+  width: 35px;
+  padding: 3px;
   margin: 0;
   background: #353567;
 }
+
 .input-search {
+  height: 10px;
   width: 95%;
   padding: 2%;
 }
@@ -122,6 +140,14 @@ body {
   display: grid;
   grid-template-columns: 80%;
   grid-column-gap: 1rem;
+}
+
+.card-body {
+  padding: 2%;
+}
+
+.card-title {
+  padding: 2%;
 }
 
 .card {
@@ -143,7 +169,6 @@ body {
 .card-banner-top {
   display: flex;
   justify-content: space-between;
-  /* flex-direction: row; */
   background-color: #1F1F3D;
 }
 
@@ -195,7 +220,6 @@ body {
   padding: 0 5% 0 5%;
   flex-grow: 2;
   text-align: center;
-
 }
 
 /*=== media queries ===*/
@@ -205,15 +229,38 @@ body {
     flex-direction: column;
   }
 
+  .banner-1 {
+  background-color: #1F1F3D;
+  }
+
   .header-text {
     font-size: 18px;
     padding: 10px;
+  }
+
+  .shadow {
+    background: black;
+    opacity: .25;
+  }
+
+  .banner {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .filter-card {
+    background-color: #1F1F3D;
+    display: flex;
+    padding: 2%;
+    justify-content: flex-start;
   }
 
   .menu {
     height: 40px;
     text-align: center;
     width: 100%;
+    position: relative;
+    z-index: 1;
   }
 
   .idea-form {
