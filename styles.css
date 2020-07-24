@@ -70,6 +70,10 @@ body {
   font: 'Open Sans'light;
 }
 
+.main {
+
+}
+
 /*=== media queries ===*/
 @media only screen and (max-width: 400px) {
   body {
@@ -288,7 +292,7 @@ body {
     display: flex;
     flex-direction: column;
   }
-  
+
   .slide h4 {
     color: #BFBFDD;
     margin-bottom: 24px;
