@@ -71,8 +71,8 @@ body {
 }
 
 .filter-card {
+  color: #BFBFDD;
   display: grid;
-  grid
 }
 
 .form-text {
@@ -92,6 +92,11 @@ body {
 .button-save {
   padding: 2%;
   margin-bottom: 2%;
+}
+
+.button-show-starred {
+  background-color: #353567;
+  color: #E9E9F3;
 }
 
 .search {
