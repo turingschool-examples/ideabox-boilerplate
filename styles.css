@@ -90,7 +90,12 @@ body {
     border: none;
   }
 
-  .icon {
+  .menu-icon {
+    width: 48px;
+    height: auto;
+  }
+
+  .menu-close-icon {
     width: 48px;
     height: auto;
   }
@@ -272,8 +277,9 @@ body {
     height: 100%;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 150px .75fr;
+    grid-template-rows: 150px 1fr;
   }
+
   .slide {
     background: #1F1F3D;
     height: 135px;
@@ -282,6 +288,7 @@ body {
     display: flex;
     flex-direction: column;
   }
+  
   .slide h4 {
     color: #BFBFDD;
     margin-bottom: 24px;
@@ -297,6 +304,11 @@ body {
 
   .grayout {
     background-color: rgba(80, 80, 80, 0.65);
+
+  }
+
+  .hidden {
+    display: none;
   }
 
 }
