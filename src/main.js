@@ -14,7 +14,18 @@ function toggleHidden() {
 
 
 function formValidation() {
-  if (titleInput.value !=== '' && bodyInput.value !== '') {
-
+  if (titleInput.value !== '' && bodyInput.value !== '') {
+    enableSaveButton();
+  } else {
+    disableSaveButton();
   }
+}
+
+function enableSaveButton() {
+  saveButton.disabled = false;
+  saveButton.classList.add("enabled")
+}
+
+function disableSaveButton() {
+  saveButton.disabled = true;
 }
