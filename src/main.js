@@ -14,7 +14,15 @@ function toggleHidden() {
 
 
 function formValidation() {
-  if (titleInput.value !=== '' && bodyInput.value !== '') {
+  if (titleInput.value !== '' && bodyInput.value !== '') {
 
+
+    clearForm();
+    // we want this function to be run last, as we still want access to the inputs before we clear them
   }
+}
+
+function clearForm() {
+  titleInput.value = '';
+  bodyInput.value = '';
 }
