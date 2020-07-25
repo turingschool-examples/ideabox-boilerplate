@@ -1,4 +1,4 @@
-var buttonMenu = document.querySelector('.menu-open');
+var buttonMenu     = document.querySelector('.menu-open');
 var menuOpen = document.querySelector('.open-menu');
 var menuClose = document.querySelector('.menu-close');
 var shadow = document.querySelector('.ideas');
@@ -13,6 +13,7 @@ function toggleMenu() {
   menuOpen.classList.remove('hidden');
   shadow.classList.add('shadow');
 }
+
 
 function displayBack() {
   displayOff();
