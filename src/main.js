@@ -8,3 +8,10 @@ function toggleHidden() {
   menuCloseIcon.classList.toggle("hidden");
   dropDownMenu.classList.toggle("hidden");
 }
+
+
+function formValidation() {
+  if (titleInput.value !=== '' && bodyInput.value !== '') {
+
+  }
+}
