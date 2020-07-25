@@ -16,9 +16,7 @@ function toggleHidden() {
 
 saveButton.addEventListener('click', formValidation);
 
-// function createCard() {
-//
-// }
+
 
 
 function addText() {
