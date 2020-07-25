@@ -6,12 +6,13 @@ var titleInput = document.querySelector('.title-input');
 var bodyInput = document.querySelector('.body-input');
 var ideaFormSection = document.querySelector('.idea-form');
 
+window.addEventListener('keydown', formValidation);
+
 function toggleHidden() {
   menuIcon.classList.toggle("hidden");
   menuCloseIcon.classList.toggle("hidden");
   dropDownMenu.classList.toggle("hidden");
 }
-
 
 function formValidation() {
   if (titleInput.value !== '' && bodyInput.value !== '') {
@@ -22,10 +23,11 @@ function formValidation() {
 }
 
 function enableSaveButton() {
+  saveButton.classList.remove("disable-style");
   saveButton.disabled = false;
-  saveButton.classList.add("enabled")
 }
 
 function disableSaveButton() {
   saveButton.disabled = true;
+  saveButton.classList.add("disable-style");
 }
