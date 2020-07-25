@@ -274,6 +274,10 @@ body {
   color: #E9E9F3;
 }
 
+.disable-style {
+  background-color: pink;
+}
+
 /*=== media queries ===*/
 
 @media only screen and (max-width: 400px) {
