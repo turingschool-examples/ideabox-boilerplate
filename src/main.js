@@ -11,7 +11,7 @@ var ideaCardSection = document.querySelector('.idea-cards');
 
 var ideaArray = [];
 
-window.addEventListener('keydown', formValidation);
+window.addEventListener('keyup', formValidation);
 saveButton.addEventListener('click', createIdeaObject);
 
 function toggleHidden() {
