@@ -12,6 +12,6 @@ class Idea {
 
   }
   updateIdea() {
-    
+
   }
 };

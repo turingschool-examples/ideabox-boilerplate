@@ -8,6 +8,8 @@ var ideaFormSection = document.querySelector('.idea-form');
 var cardTitle = document.querySelector('.card-title');
 var bodyText = document.querySelector('.body-text');
 
+var ideaArray = [];
+
 function toggleHidden() {
   menuIcon.classList.toggle("hidden");
   menuCloseIcon.classList.toggle("hidden");
@@ -17,16 +19,16 @@ function toggleHidden() {
 saveButton.addEventListener('click', formValidation);
 
 
-
-
-function addText() {
-  cardTitle.innerText = titleInput.value;
-  bodyText.innerText = bodyInput.value;
+function createIdeaObject() {
+  var newIdea = new Idea(titleInput.value, bodyInput.value);
+  ideaArray.unshift(newIdea);
 }
+
+
 
 
 function formValidation() {
   if (titleInput.value !== '' && bodyInput.value !== '') {
-    addText();
+    createIdeaObject();
   }
 }
