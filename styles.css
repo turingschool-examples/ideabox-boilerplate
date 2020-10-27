@@ -15,3 +15,92 @@ Button Border: #353567
 Button Text: #E9E9F3
 Unselected Text: #BFBFDD
 */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  display: flex;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+h2 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+img {
+  max-width: 25px;
+  max-height: auto;
+}
+
+aside {
+  float: left;
+  min-width: 170px;
+  height: 100vh;
+  background-color: #1F1F3D;
+  color: #FFFFFF;
+}
+
+aside > button {
+  font-weight: 700;
+  color: #E9E9F3;
+  background-color: #5356A4;
+}
+
+main > section {
+  min-width: 100%;
+  display: flex;
+  max-width: 70%;
+}
+
+.input-fields {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  min-height: 40%;
+  background-color: #A9AAD2;
+}
+
+div > input,
+section > input {
+  border: 1px solid #353567;
+}
+
+div > h2 {
+  font-size: 14px;
+  color: #1F1F3D;
+  font-weight: 700;
+}
+
+.input-fields > button {
+  background-color: #1F1F3D;
+  width: 300px;
+  height: 40px;
+  color: white;
+  border: 1px solid #353567;
+  border-radius: 2px;
+}
+
+.cards-display {
+  height: 60%;
+  background-color: #EAEAF4;
+}
+
+input {
+  line-height: 250%;
+  width: 300px;
+}
