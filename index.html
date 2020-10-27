@@ -6,37 +6,43 @@
     <link rel="stylesheet" type="text/css" href="./styles.css">
   </head>
   <body>
-<!-- Pseudocode
-Nav Bar
-HEADER: IdeaBox
-Line
-TEXT: Filter Starred Ideas
-BUTTON: Show Starred Ideas
-LINE
-
-Create Section
-FLEXBOX:
-
-DIV - TEXT Title
-      INPUT Text Input
-DIV - TEXT Body
-      INPUT Body Input
-BUTTON SAVE
-INPUT - Image
-        Placeholder Text
-
-Display Section
-FLEXBOX:
-
-Card: 
-HEADER - Star img
-         Delete img
-HEADING - Idea title
-TEXT - Idea body sample text
-FOOTER - Comment img
-         TEXT Comment
--->
-
+  <aside>
+    <h1>IdeaBox</h1>
+    <hr>
+    <h2>Filter Starred Ideas</h2>
+    <button>Show Starred Ideas</button>
+    <hr>
+  </aside>
+  <main>
+    <section>
+      <!-- FLEXBOX -->
+      <div>
+        <h2>Title</h2>
+        <input type="text">
+      </div>
+      <div>
+        <h2>Body</h2>
+        <input type="text">
+      </div>
+      <button>Save</button>
+      <input type="text" placeholder="Search ideas">
+    </section>
+    <section>
+      <!-- FLEXBOX -->
+      <article>
+        <header>
+          <img src="./assets/star-active.svg" alt="">
+          <img src="./assets/delete.svg" alt="">
+        </header>
+        <h1>Idea Title</h1>
+        <p>Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth talk.</p>
+        <footer>
+          <img src="./assets/comment.svg" alt="">
+          <p>Comment</p>
+        </footer>
+      </article>
+    </section>
+  </main>
     <script src="./src/main.js"></script>
   </body>
 </html>
