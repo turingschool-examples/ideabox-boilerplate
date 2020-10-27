@@ -8,20 +8,24 @@
   <body>
     <section class="menu-bar">
       <h1>IdeaBox</h1>
-      <h2>Filter Starred Ideas</h2>
-      <button id="button-starred" type="button" name="button">Show Starred Ideas</button>
+      <div class="menu-filter-border">
+        <h2 id="menu-bar-filter">Filter Starred Ideas</h2>
+        <button id="button-starred" type="button" name="button">Show Starred Ideas</button>
+      </div>
     </section>
     <section class="main-page">
-      <section class="user-form">
-        <h2>Title</h2>
-        <input type="text" name="" value="">
-        <h2>Body</h2>
-        <input type="text" name="" value="">
-        <button id="button-save" type="button" name="button">Save</button>
-        <img src="./assets/search.svg" alt="">
-        <input type="text" name="" value="" placeholder="Search ideas">
+      <section class="user-form wrapper">
+        <div class="container-user-form">
+          <h2>Title</h2>
+          <input type="text" name="" value="">
+          <h2>Body</h2>
+          <input type="text" name="" value="">
+          <button id="button-save" type="button" name="button">Save</button>
+          <img src="./assets/search.svg" alt="">
+          <input type="text" name="" value="" placeholder="Search ideas">
+        </div>
       </section>
-      <section class="user-ideas">
+      <section class="user-ideas wrapper">
         <article class="idea-card">
           <div class="card-header">
             <img src="./assets/star.svg" alt="">
@@ -32,7 +36,7 @@
             <p>Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth talk.</p>
           </div>
           <div class="card-footer">
-            <img src=".assets/comment.svg" alt="">
+            <img src="./assets/comment.svg" alt="">
             <p>Comment</p>
           </div>
         </article>
