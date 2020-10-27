@@ -1,0 +1,36 @@
+img {
+  height: 15px;
+  width: 15px;
+}
+
+body,html {
+  font-family: "Open Sans", sans-serif;
+}
+
+button {
+  color: #E9E9F3;
+  background-color: #5356A4;
+  border-color: #353567;
+}
+
+.menu-bar {
+  background-color: #1F1F3D;
+  color: #FFFFFF;
+}
+
+.main-page {
+  background-color: #A9AAD2;
+}
+
+.user-ideas {
+  background-color: #EAEAF4;
+}
+
+#button-starred {
+
+}
+
+#button-save {
+  background-color: #353567;
+  border-color: #5C5FA8;
+}
