@@ -19,20 +19,25 @@
       <section class="input-fields">
         <div>
           <h2>Title</h2>
-          <input type="text">
+          <input class="title-input" type="text">
         </div>
         <div>
           <h2>Body</h2>
-          <input type="text">
+          <textarea class="body-input" type="text" rows="3" cols="40">
+          </textarea>
         </div>
         <button>Save</button>
-        <input type="text" placeholder="Search ideas">
+        <div id="search-bar">
+          <div class="search-image">
+          </div>
+          <input class="search-input" type="text" placeholder=" Search ideas">
+        </div>
       </section>
       <section class="cards-display">
         <article>
           <header>
-            <img src="./assets/star-active.svg" alt="">
-            <img src="./assets/delete.svg" alt="">
+            <img src="./assets/star-active.svg" alt="A red star">
+            <img src="./assets/delete.svg" alt="An X">
           </header>
           <h1>Idea Title</h1>
           <p>Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth talk.</p>

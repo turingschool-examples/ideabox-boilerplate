@@ -23,6 +23,10 @@ body {
   height: 100%;
 }
 
+main {
+  width: 950px;
+}
+
 * {
   font-family: "Open Sans", sans-serif;
 }
@@ -32,13 +36,20 @@ body {
 }
 
 h1 {
+  font-size: 16px;
   font-weight: 700;
+  color: #E1E2EA;
 }
 
-h2 {
+hr + h2 {
   margin: 0;
-  font-size: 14px;
-  font-weight: 300;
+  font-size: 12px;
+  font-weight: 700;
+  color: #BFBFDD;
+}
+
+div > h2 {
+  margin: 0;
 }
 
 img {
@@ -48,16 +59,32 @@ img {
 
 aside {
   float: left;
-  min-width: 170px;
+  padding-left: 10px;
+  min-width: 27vw;
   height: 100vh;
+  border-right: 2px solid #EAEAF4;
   background-color: #1F1F3D;
   color: #FFFFFF;
 }
 
+hr {
+  margin-left: -10px;
+  border: 1px solid #353567;
+}
+
 aside > button {
   font-weight: 700;
+  font-size: 16px;
+  width: 95%;
+  height: 5%;
+  border: 1px solid #353567;
+  margin: 20px auto;
   color: #E9E9F3;
   background-color: #5356A4;
+}
+
+aside > h2 {
+  margin: 20px 0 0 0;
 }
 
 main > section {
@@ -71,26 +98,74 @@ main > section {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  min-height: 40%;
+  padding: 10px 0;
+  min-height: 40vh;
   background-color: #A9AAD2;
+}
+
+input:focus {
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+
+textarea:focus {
+  outline: none;
 }
 
 div > input,
 section > input {
   border: 1px solid #353567;
+  border-radius: 3px;
+}
+
+.body-input {
+  min-height: 70px;
+}
+
+.title-input,
+.search-input {
+  min-height: 35px;
+}
+
+.search-input {
+  border: 1px 1px 1px 0 solid #353567;
+  border-radius: 0 0 2px 0;
+  max-width: 260px;
+}
+
+.search-image {
+  height: 37px;
+  width: 37px;
+  border: 1px solid #353567;
+  background-image: url(./assets/search.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px 20px;
+  background-color: #353567;
+}
+
+#search-bar {
+  display:flex;
+  align-items: center;
 }
 
 div > h2 {
+  margin-bottom: 5px;
   font-size: 14px;
   color: #1F1F3D;
   font-weight: 700;
 }
 
 .input-fields > button {
-  background-color: #1F1F3D;
-  width: 300px;
+  font-size: 18px;
+  font-weight: 700;
+  width: 305px;
   height: 40px;
   color: white;
+  background-color: #353567;
   border: 1px solid #353567;
   border-radius: 2px;
 }
