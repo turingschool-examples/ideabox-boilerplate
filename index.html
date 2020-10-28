@@ -7,7 +7,7 @@
   <link rel="stylesheet" type="text/css" href="./styles.css">
 </head>
 
-<body>
+<body class="parent">
   <!-- we know we need 3 sections
   <header> => h1, <nav> => h2, show button
 <main> => form, inputs, labels, save button, search field, search button
@@ -20,7 +20,7 @@
     </nav>
   </header>
 
-  <main>
+  <main class="main-section">
 
     <form class="" action="index.html" method="post">
       <label for="">Title</label>
@@ -28,31 +28,32 @@
       <label for="">Body</label>
       <input type="text" name="" value="">
       <button type="button" name="button">Save</button>
-      <button type="button" name="button"><img src="assets/search.svg" alt=""> </button>
+      <button type="button" name="button"><img src="assets/search.svg" class="search-image" alt=""> </button>
       <input type="text" name="" value="">
     </form>
 
   </main>
 
-  <section>
+  <section class="main-section">
     <article class="">
 
       <div class="">
-        <img src='assets/star.svg' alt="">
+        <img src='assets/star.svg' class="idea-images" alt="">
         <!-- svg tag or img tag? -->
-        <img src="assets/delete.svg" alt="">
+        <img src="assets/delete.svg" class="idea-images" alt="">
       </div>
 
       <h3>Idea Title</h3>
       <p>Idea body</p>
 
       <div class="">
-        <img src="assets/comment.svg" alt="">
+        <img src="assets/comment.svg" class="idea-images" alt="">
         <h4>Comment</h4>
       </div>
 
     </article>
   </section>
+
 
   <script src="./src/main.js"></script>
 </body>
