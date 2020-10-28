@@ -1,5 +1,6 @@
 html {
   height: 100vh;
+  font-family: 'Open Sans', sans-serif;
 }
 
 body {
@@ -11,10 +12,39 @@ body {
     "sidebox cardbox cardbox";
 }
 
+
 .side-box {
   background-color: #1f1f3d;
   grid-area: sidebox;
+  font-weight: bold;
 }
+
+h1 {
+  color: #ffffff;
+  margin-left: 10px;
+}
+
+#filter-section {
+  border-top: 1px solid #353567;
+  border-bottom: 1px solid #353567;
+}
+
+.side-box p {
+  color: #bfbfdd;
+  margin-left: 10px;
+}
+
+#filter-button {
+  color: #ffffff;
+  background-color: #5356a4;
+  border: 1px solid #353567;
+  height: 30px;
+  width: 80%;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+
 
 .form-box {
   background-color: #a9aad2;
@@ -26,12 +56,7 @@ body {
 }
 
 .idea-form {
-  /* height: 100%; */
   width: 50%;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
 }
 
 .labels {
