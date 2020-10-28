@@ -26,5 +26,7 @@ class Idea {
 
 }
 
-var idea1 = new Idea("A New Title", "Something brilliant!");
-idea1.saveToStorage(idea1);
+// var idea1 = new Idea("A New Title", "Something brilliant!");
+// idea1.saveToStorage(idea1);
+//
+// var idea1 = new Idea(${inputTitle.value}, "Something brilliant!");
