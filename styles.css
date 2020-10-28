@@ -13,6 +13,7 @@ body {
     "sidebox cardbox cardbox";
 }
 
+/* Side Bar Section Styles */
 
 .side-box {
   background-color: #1f1f3d;
@@ -48,7 +49,7 @@ h1 {
   font-size: 1.1em;
 }
 
-
+/* Form Box Section Styles */
 
 .form-box {
   background-color: #a9aad2;
@@ -63,15 +64,18 @@ h1 {
   width: 50%;
 }
 
-.labels {
-  align-self: flex-start;
-}
-
 #input-box {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   margin-bottom: 10px;
+}
+
+.label-text {
+  color: #353567;
+  font-weight: bold;
+  font-size: .9em;
+  margin-bottom: 5px;
 }
 
 .search-form {
@@ -91,9 +95,9 @@ h1 {
 }
 
 .search-bar {
-grid-column: 2 / 4;
-height: 50px;
-/* width: 80%; */
+  grid-column: 2 / 4;
+  height: 50px;
+  /* width: 80%; */
 }
 
 #title {
@@ -164,13 +168,9 @@ article {
   width: 30px;
 }
 
-
-
-
 .hidden {
   display: none;
 }
-
 
 /* display: grid;
 grid-template-columns: repeat (3, 1fr); */
