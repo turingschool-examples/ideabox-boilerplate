@@ -9,9 +9,50 @@
 
 <body>
   <!-- we know we need 3 sections
+  <header> => h1, <nav> => h2, show button
 <main> => form, inputs, labels, save button, search field, search button
-<header> => h1, <nav> => h2, show button
 <section> => <article> => (div => img star, image close out) h3, p (div => plus svg, h4)-->
+  <header>
+    <h1>IdeaBox</h1>
+    <nav>
+      <h2>Filter Starred Ideas</h2>
+      <button type="button" name="button">Show Starred Ideas</button>
+    </nav>
+  </header>
+
+  <main>
+
+    <form class="" action="index.html" method="post">
+      <label for="">Title</label>
+      <input type="text" name="" value="">
+      <label for="">Body</label>
+      <input type="text" name="" value="">
+      <button type="button" name="button">Save</button>
+      <button type="button" name="button"><img src="assets/search.svg" alt=""> </button>
+      <input type="text" name="" value="">
+    </form>
+
+  </main>
+
+  <section>
+    <article class="">
+
+      <div class="">
+        <img src='assets/star.svg' alt="">
+        <!-- svg tag or img tag? -->
+        <img src="assets/delete.svg" alt="">
+      </div>
+
+      <h3>Idea Title</h3>
+      <p>Idea body</p>
+
+      <div class="">
+        <img src="assets/comment.svg" alt="">
+        <h4>Comment</h4>
+      </div>
+
+    </article>
+  </section>
 
   <script src="./src/main.js"></script>
 </body>
