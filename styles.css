@@ -1,0 +1,65 @@
+html {
+  height: 100vh;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 2fr 3fr 3fr;
+  grid-template-rows: 2fr 3fr;
+  grid-template-areas:
+    "sidebox formbox formbox"
+    "sidebox cardbox cardbox";
+}
+
+.side-box {
+  background-color: #1f1f3d;
+  grid-area: sidebox;
+}
+
+.form-box {
+  background-color: #a9aad2;
+  grid-area: formbox;
+}
+
+.idea-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-box {
+  background-color: #eaeaf4;
+  grid-area: cardbox;
+}
+
+.card-display {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+article {
+  border: 2px solid #1f1f3d;
+}
+
+.card-button-bar {
+  background-color: #1f1f3d;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-text {
+  background-color: #ffffff;
+  padding: 10px;
+}
+
+.comment-button-bar {
+  background-color: #5356a4;
+  color: #ffffff;
+}
+
+
+
+/* display: grid;
+grid-template-columns: repeat (3, 1fr); */
