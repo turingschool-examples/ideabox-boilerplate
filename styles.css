@@ -35,7 +35,7 @@ input {
   min-width: 332px; */
   height: 2.5em;
   width: 100%;
-  border: solid #5356A4 2px;
+  border: solid #5356A4 1.5px;
 }
 
 .card-footer {
