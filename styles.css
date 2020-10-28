@@ -9,7 +9,7 @@
     'header section section section section'
     'header section section section section'
     'header section section section section'
-    
+
 }
 
 header {
@@ -30,8 +30,23 @@ section {
   display: grid;
   grid-row: 3 / span 3;
   grid-column: 2 / span 4;
+  border: solid;
 }
 
+article{
+  height: 30vh;
+  width: 25vw;
+  border: solid;
+}
+
+/* Add div class name for styling/color */
+div{
+  border: solid;
+}
+
+nav{
+  border: solid;
+}
 
 .idea-images,
 .search-image {
@@ -43,8 +58,8 @@ section {
 
 
 form {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  align-items: center;
   justify-content: center;
   border: solid;
 }
