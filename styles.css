@@ -49,7 +49,7 @@ h1 {
   font-size: 1.1em;
 }
 
-/* Form Box Section Styles */
+/* Form Box Styles */
 
 .form-box {
   background-color: #a9aad2;
@@ -71,12 +71,37 @@ h1 {
   margin-bottom: 10px;
 }
 
+#title, #body {
+  border: 2px solid #7274B5;
+  border-radius: 2px;
+}
+
+#title {
+  height: 50px;
+}
+
+#body {
+  height: 100px;
+}
+
 .label-text {
   color: #353567;
   font-weight: bold;
   font-size: .9em;
   margin-bottom: 5px;
 }
+
+#save-button {
+  height: 50px;
+  width: 100%;
+  padding: 2px;
+  border: 2px solid #7274B5;
+  background-color: #353567;
+  color: #ffffff;
+  font-size: 1.1em;
+}
+
+/* Search Box Styles */
 
 .search-form {
   display: grid;
@@ -98,22 +123,6 @@ h1 {
   grid-column: 2 / 4;
   height: 50px;
   /* width: 80%; */
-}
-
-#title {
-  height: 50px;
-}
-
-#body {
-  height: 100px;
-}
-
-#save-button {
-  height: 50px;
-  width: 100%;
-  padding: 2px;
-  background-color: #353567;
-  color: #ffffff;
 }
 
 .card-box {
