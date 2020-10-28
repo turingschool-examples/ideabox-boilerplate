@@ -1,6 +1,7 @@
 html {
   height: 100vh;
   font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
 }
 
 body {
@@ -25,23 +26,26 @@ h1 {
 }
 
 #filter-section {
-  border-top: 1px solid #353567;
-  border-bottom: 1px solid #353567;
+  border-top: 2px solid #353567;
+  border-bottom: 2px solid #353567;
 }
 
 .side-box p {
   color: #bfbfdd;
   margin-left: 10px;
+  margin-top: 25px;
+  font-size: .9em;
 }
 
 .filter-button {
   color: #ffffff;
   background-color: #5356a4;
-  border: 1px solid #353567;
+  border: 2px solid #353567;
+  border-radius: 2px;
   height: 50px;
-  width: 80%;
-  margin-left: 10px;
-  margin-bottom: 20px;
+  width: 90%;
+  margin: 10px 10px 30px 10px;
+  font-size: 1.1em;
 }
 
 
