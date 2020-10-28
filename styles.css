@@ -171,7 +171,11 @@ div > h2 {
 }
 
 .cards-display {
-  height: 60%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  height: 57vh;
   background-color: #EAEAF4;
 }
 
@@ -179,3 +183,71 @@ input {
   line-height: 250%;
   width: 300px;
 }
+
+/* Card Styling */
+/* .cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 15px auto 0 auto;
+  height: 20vh;
+  width: 20vw;
+  border: 1px solid #1F1F3D;
+  background: white;
+} */
+
+.cards-display {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  grid-auto-flow: row dense;
+  grid-row-gap: 0;
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+article > header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 15%;
+  background-color: #1F1F3D;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 15%;
+  background-color: #5356A4;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 12px;
+  border: 1px solid #1F1F3D;
+  margin-left: -1px;
+  margin-top: -5px;
+}
+
+.idea-title {
+  margin: 5px 0 0 0;
+  color: #1F1F3D;
+  padding: 0 18px;
+}
+
+.idea-body {
+  margin-top: 3px;
+  padding: 0 18px;
+}
+
+.comment {
+  margin-top: 5px;
+  margin-bottom: 3px;
+}
+
+.idea-text {
+  font-size: 14px;
+}
+
+/* .idea-body {
+  height: 60%;
+} */
