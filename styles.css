@@ -20,28 +20,28 @@ button {
   color: #E9E9F3;
   background-color: #5356A4;
   border-color: #353567;
-  height: 50px;
+  height: 42px;
 }
 
 h1 {
   font-size: 18px;
-  margin-top: 26px;
-  border-bottom: solid #353567 2px;
-  padding-bottom: 28px;
+  margin-top: 22px;
+  margin-left: .5em;
 }
 
 h2 {
   font-size: 16px;
+  margin: 0.5em;
   margin-bottom: 5px;
   margin-top: 1.5em;
 }
 
 input {
   max-width: 50%;
-  min-width: 400px;
+  min-width: 340px;
   margin-bottom: 4%;
   border-width: 1px;
-  height: 2.5em;
+  height: 3em;
 }
 
 .container-user-form {
@@ -71,9 +71,12 @@ input {
 
 .menu-filter-border {
   border-bottom: solid #353567 2px;
+  border-top: solid #353567 2px;
   margin-bottom: 28px;
-  margin-top: 28px;
+  margin-top: 20px;
   padding-bottom: 28px;
+  display: flex;
+  flex-direction: column;
 }
 .user-ideas {
   background-color: #EAEAF4;
@@ -89,17 +92,23 @@ input {
 
 #button-starred {
   min-width: 190px;
+  margin: .4em;
+  border: none;
 }
 
 #button-save {
   background-color: #353567;
   border-color: #5C5FA8;
   max-width: 50%;
-  min-width: 407px;
+  min-width: 345px;
+}
+
+#input-body {
+  height: 9em;
 }
 
 #menu-bar-filter {
   font-size: 14px;
-  margin-bottom: 28px;
+  margin-bottom: 18px;
   color: #BFBFDD;
 }
