@@ -50,16 +50,17 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 29%;
+    width: 18em;
+    height: 18em;
     border: 2px solid #1F1F3D;
     margin: 1.5%;
 }
 
-#star {
+.star {
     width: 2em;
 }
 
-#delete-card {
+.delete-card {
     width: 2em
 }
 
@@ -111,109 +112,94 @@ h1 {
 }
 
 .title-input {
-  height: 2em;
+    height: 2em;
 }
 
 .body-input {
-  height: 6em;
+    height: 6em;
 }
 
 .input-boxes {
-  border: 1.5px solid #353567;
-  border-radius: 3px;
+    border: 1.5px solid #353567;
+    border-radius: 3px;
 }
 
-
 .text-inputs {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  color: #1F1F3D;
-  font-family: Open Sans;
-  font-size: .75em;
-  font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #1F1F3D;
+    font-family: Open Sans;
+    font-size: .75em;
+    font-weight: bold;
 }
 
 .save-button {
-  background-color: #353567;
-  height: 2.5em;
-  border-radius: 3px;
-  color: #ffffff;
-  font-family: Open Sans;
-  font-weight: bold;
-  font-size: .8em;
+    background-color: #353567;
+    height: 2.5em;
+    border-radius: 3px;
+    color: #ffffff;
+    font-family: Open Sans;
+    font-weight: bold;
+    font-size: .8em;
 }
 
 .search {
-  display: flex;
-  align-items: center;
-  width: 100%;
+    display: flex;
+    align-items: center;
+    width: 100%;
 }
 
 .search-ideas-box {
-  height: 32px;
-  width: 90%;
-  border: 1.5px solid #353567;
-  border-radius: 0px 3px 3px 0px;
+    height: 32px;
+    width: 90%;
+    border: 1.5px solid #353567;
+    border-radius: 0px 3px 3px 0px;
 }
 
 .search-icon-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 32px;
-  width: 32px;
-  background: #353567;
-  border-radius: 3px 0px 0px 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 32px;
+    width: 32px;
+    background: #353567;
+    border-radius: 3px 0px 0px 3px;
 }
+
 .search-icon {
-  height: 20px;
-  width: 20px;
-  /* padding: 2% */
+    height: 20px;
+    width: 20px;
+    /* padding: 2% */
 }
 
 .fav-delete-header {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 .comment-strip {
-  display: flex;
-  align-items: center;
-  color: #ffffff;
-  font-weight: bold;
-  font-size: 0.7em;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 0.7em;
 }
 
 .idea-content {
-  padding: 0% 5% 0% 5%;
+    padding: 0% 5% 0% 5%;
 }
 
 .idea-title {
-  font-weight: bold;
-  color: #1f1f3d;
-  margin: 8px 0px 0px 0px;
+    font-weight: bold;
+    color: #1f1f3d;
+    margin: 8px 0px 0px 0px;
 }
 
 .idea-body {
- margin: 8px 0px 8px 0px;
+    margin: 8px 0px 8px 0px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-f
+.hidden {
+    display: none!important;
+}
