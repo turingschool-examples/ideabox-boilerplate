@@ -56,11 +56,11 @@ body {
     margin: 1.5%;
 }
 
-#star {
+.star {
     width: 2em;
 }
 
-#delete-card {
+.delete-card {
     width: 2em
 }
 
