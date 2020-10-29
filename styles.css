@@ -200,4 +200,6 @@ h1 {
     margin: 8px 0px 8px 0px;
 }
 
-f
+.hidden {
+    display: none!important;
+}
