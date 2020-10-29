@@ -1,28 +1,54 @@
 var ideas = JSON.parse(localStorage.getItem('ideas')) || [];
 var starredIdeas = JSON.parse(localStorage.getItem('starredIdeas')) || [];
-
+var titleInput = document.querySelector('.title-input');
+var bodyInput = document.querySelector('.body-input');
+var cardsDisplay = document.querySelector('.cards-display');
 
 var saveButton = document.querySelector('.save-button');
 saveButton.addEventListener('click', saveIdea);
 
 function saveIdea() {
-  var titleInput = document.querySelector('.title-input').value;
-  var bodyInput = document.querySelector('.body-input').value;
-  var newIdea = new Idea(titleInput, bodyInput)
+  var newIdea = new Idea(titleInput.value, bodyInput.value)
   ideas.push(newIdea);
-  clearInputs(titleInput, bodyInput);
   newIdea.saveToStorage('ideas');
+  displayCard();
+  clearInputs(titleInput, bodyInput);
 }
 
 function clearInputs(titleInput, bodyInput) {
-  titleInput = '';
-  bodyInput = '';
+  titleInput.value = '';
+  bodyInput.value = '';
+}
+
+function displayCard() {
+  cardsDisplay.innerHTML += `
+    <article class="cards">
+      <header>
+        <img src="./assets/star-active.svg" alt="A red star">
+        <img src="./assets/delete.svg" alt="An X">
+      </header>
+      <div class="idea-text">
+        <h1 class="idea-title">${titleInput.value}</h1>
+        <p class="idea-body">${bodyInput.value}</p>
+      </div>
+      <div class="card-footer">
+        <img src="./assets/comment.svg" alt="">
+        <p class="comment">Comment</p>
+      </div>
+    </article>`
 }
 
 
+//Pseudocode - Iteration 2
+// 1. Utilize new idea class to populate our HTML element that is the card
+// 2. Need to take newIdea.title/body and iterpolate that into HTML
+// 3. Update cards display area HTML with our new card
 
 
-//Pseudocode
+
+
+
+//Pseudocode - iteration 1
 //1. saveButton should only use class constructor and push data to the arrays
 //2. verify inputs have required inputs for error handling when a user clicks the save button
 //3. once the save button is pushed, idea title/body are being pushed into new array
