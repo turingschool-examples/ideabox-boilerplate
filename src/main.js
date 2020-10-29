@@ -1,19 +1,16 @@
 var saveButton = document.querySelector('.save-button');
 var cardGrid = document.querySelector('.card-grid');
-
+var titleInput = document.querySelector('.title-input');
+var bodyInput = document.querySelector('.body-input');
 
 //add event listeners here 🍊
 saveButton.addEventListener('click', makeNewIdeaCard);
 
 
-
 //add functions here 🍊
 function makeNewIdeaCard() {
-  var titleInput = document.querySelector('.title-input').value;
-  var bodyInput = document.querySelector('.body-input').value;
+  var newIdea = new Idea(titleInput.value, bodyInput.value);
 
-  var newIdea = new Idea(titleInput, bodyInput);
-  console.log(titleInput);
   cardGrid.innerHTML +=
   `<section class="idea-card">
       <div class="fav-delete-header">
@@ -30,4 +27,24 @@ function makeNewIdeaCard() {
       </div>
   </section>`;
 
+  clearFields(titleInput, bodyInput);
 };
+
+function clearFields(title, body) {
+  title.value = '';
+  body.value= '';
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+//delte line when done
