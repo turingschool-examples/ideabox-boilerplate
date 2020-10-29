@@ -6,6 +6,9 @@ var cardDisplay = document.querySelector(".card-display")
 var list = [];
 
 inputButton.addEventListener("click", makeNewCard);
+inputTitle.addEventListener("keyup", checkInputs);
+inputBody.addEventListener("keyup", checkInputs);
+
 
 function addToList(title, body){
   var newIdea = new Idea(title, body);
@@ -18,6 +21,19 @@ function addToList(title, body){
 //   var parsedObject = JSON.parse(retrievedObject);
 //   list.push(parsedObject);
 // }
+
+function clearInputs () {
+  inputTitle.value = "";
+  inputBody.value = "";
+}
+
+
+function checkInputs (event) {
+  if (inputTitle.value !== "" && inputBody.value !== "") {
+    inputButton.disabled = false;
+  }
+}
+
 
 function makeNewCard(event) {
   event.preventDefault();
@@ -44,4 +60,8 @@ function makeNewCard(event) {
       </article>
       `
     }
+    clearInputs();
   };
+
+
+  
