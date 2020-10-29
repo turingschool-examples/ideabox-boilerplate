@@ -65,7 +65,7 @@ function testForMatchAmongIdeas(targetID, index) {
 
 function deleteIdea() {
   for (var i = 0; i < ideas.length; i++) {
-      if (testforMatch(`delete-card`, i)) {
+      if (testForMatchAmongIdeas(`delete-card`, i)) {
           ideas.splice(i, 1);
       }
     }
@@ -73,7 +73,7 @@ function deleteIdea() {
 
   function starIdea() {
     for (var i = 0; i < ideas.length; i++) {
-        if (testforMatch(`star`, i)) {
+        if (testForMatchAmongIdeas(`star`, i)) {
             ideas[i].toggleStar();
         }
       }
