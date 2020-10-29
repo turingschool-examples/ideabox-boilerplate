@@ -6,6 +6,8 @@ var cardsDisplay = document.querySelector('.cards-display');
 
 var saveButton = document.querySelector('.save-button');
 saveButton.addEventListener('click', saveIdea);
+titleInput.addEventListener('keyup', toggleSaveButton);
+bodyInput.addEventListener('keyup', toggleSaveButton);
 
 function saveIdea() {
   var newIdea = new Idea(titleInput.value, bodyInput.value)
@@ -13,9 +15,10 @@ function saveIdea() {
   newIdea.saveToStorage('ideas');
   displayCard();
   clearInputs(titleInput, bodyInput);
+  toggleSaveButton()
 }
 
-function clearInputs(titleInput, bodyInput) {
+function clearInputs() {
   titleInput.value = '';
   bodyInput.value = '';
 }
@@ -36,6 +39,16 @@ function displayCard() {
         <p class="comment">Comment</p>
       </div>
     </article>`
+}
+
+function toggleSaveButton() {
+  if (titleInput.value === '' || bodyInput.value === '') {
+    saveButton.disabled = true;
+    saveButton.classList.add('disabled');
+  } else {
+    saveButton.disabled = false;
+    saveButton.classList.remove('disabled');
+  }
 }
 
 
