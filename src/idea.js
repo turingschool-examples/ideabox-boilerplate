@@ -17,12 +17,12 @@ class Idea {
     localStorage.removeItem(`ideaCard`);
   }
 
-// remove from storage, adding to storage, or favorited:
-  // updateIdea(newIdea) {
-  //   this.title = newIdea.title;
-  //   this.body = newIdea.body;
-  //   this.star = true;
-  // }
+// comments, remove from storage, adding to storage, or favorited:
+  updateIdea(newIdea) {
+    // this.title = newIdea.title;
+    // this.body = newIdea.body;
+    newIdea.star = true;
+  }
 
 }
 
