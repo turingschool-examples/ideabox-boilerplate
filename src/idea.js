@@ -10,18 +10,18 @@ class Idea {
 // change innerHTML
   saveToStorage(newIdea) {
     var stringifiedObject = JSON.stringify(newIdea);
-    localStorage.setItem(`${this.id}`, stringifiedObject);
+    localStorage.setItem("ideaCard", stringifiedObject);
   }
 
   deleteFromStorage() {
-    localStorage.removeItem(`${this.id}`);
+    localStorage.removeItem(`ideaCard`);
   }
 
 // remove from storage, adding to storage, or favorited:
   // updateIdea(newIdea) {
   //   this.title = newIdea.title;
   //   this.body = newIdea.body;
-  //   this.star = newIdea.star;
+  //   this.star = true;
   // }
 
 }
