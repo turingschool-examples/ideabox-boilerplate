@@ -7,8 +7,10 @@ class Idea {
   }
 
 //take in array as a parameter
-  saveToStorage() {
-
+  saveToStorage(array) {
+    var tempArray = JSON.parse(localStorage.getItem(array)) || [];
+    tempArray.push(this);
+    localStorage.setItem(array, JSON.stringify(tempArray));
   }
 
   deleteFromStorage() {
