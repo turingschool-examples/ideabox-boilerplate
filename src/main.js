@@ -12,12 +12,12 @@ function addToList(title, body){
   list.push(newIdea);
 };
 
-function retrieveFromLocalStorage() {
-  debugger;
-  var retrievedObject = localStorage.getItem("ideaCard");
-  var parsedObject = JSON.parse(retrievedObject);
-  list.push(parsedObject);
-}
+// function retrieveFromLocalStorage() {
+//   debugger;
+//   var retrievedObject = localStorage.getItem("ideaCard");
+//   var parsedObject = JSON.parse(retrievedObject);
+//   list.push(parsedObject);
+// }
 
 function makeNewCard(event) {
   event.preventDefault();
