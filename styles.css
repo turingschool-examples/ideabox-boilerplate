@@ -1,6 +1,7 @@
 html {
   height: 100vh;
   font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
 }
 
 body {
@@ -12,6 +13,11 @@ body {
     "sidebox cardbox cardbox";
 }
 
+.hidden {
+  display: none;
+}
+
+/* Side Bar Section Styles */
 
 .side-box {
   background-color: #1f1f3d;
@@ -25,26 +31,29 @@ h1 {
 }
 
 #filter-section {
-  border-top: 1px solid #353567;
-  border-bottom: 1px solid #353567;
+  border-top: 2px solid #353567;
+  border-bottom: 2px solid #353567;
 }
 
 .side-box p {
   color: #bfbfdd;
   margin-left: 10px;
+  margin-top: 25px;
+  font-size: .9em;
 }
 
 .filter-button {
   color: #ffffff;
   background-color: #5356a4;
-  border: 1px solid #353567;
+  border: 2px solid #353567;
+  border-radius: 2px;
   height: 50px;
-  width: 80%;
-  margin-left: 10px;
-  margin-bottom: 20px;
+  width: 90%;
+  margin: 10px 10px 30px 10px;
+  font-size: 1.1em;
 }
 
-
+/* Form Box Styles */
 
 .form-box {
   background-color: #a9aad2;
@@ -53,14 +62,13 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  grid-gap: 20px;
+  padding-top: 3%;
+  padding-bottom: 3%;
 }
 
 .idea-form {
   width: 50%;
-}
-
-.labels {
-  align-self: flex-start;
 }
 
 #input-box {
@@ -70,26 +78,9 @@ h1 {
   margin-bottom: 10px;
 }
 
-.search-form {
-  display: grid;
-  grid-template-columns: 1fr 6fr 1fr;
-  width: 50%;
-}
-
-#search-button {
-  grid-column: 1 / 2;
-  background: none;
-  border: none;
-  background-color: #353567;
-  padding: 12.5px;
-  height: 50px;
-  /* width: 20%; */
-}
-
-.search-bar {
-grid-column: 2 / 4;
-height: 50px;
-/* width: 80%; */
+#title, #body {
+  border: 2px solid #7274B5;
+  border-radius: 2px;
 }
 
 #title {
@@ -100,13 +91,50 @@ height: 50px;
   height: 100px;
 }
 
+.label-text {
+  color: #353567;
+  font-weight: bold;
+  font-size: .9em;
+  margin-bottom: 5px;
+}
+
 #save-button {
   height: 50px;
   width: 100%;
   padding: 2px;
+  border: 2px solid #7274B5;
+  border-radius: 2px;
   background-color: #353567;
   color: #ffffff;
+  font-size: 1.1em;
 }
+
+/* Search Box Styles */
+
+.search-form {
+  display: grid;
+  grid-template-columns: 1fr 6fr 1fr;
+  width: 50%;
+  border: 2px solid #7274B5;
+  border-radius: 2px;
+}
+
+#search-button {
+  grid-column: 1 / 2;
+  background: none;
+  border: none;
+  background-color: #353567;
+  padding: 10px; /* changes size of actual icon */
+  width: 50px;
+}
+
+.search-bar {
+  grid-column: 2 / 4;
+  height: 50px;
+  font-size: 1em;
+}
+
+/* Card Box Styles */
 
 .card-box {
   background-color: #eaeaf4;
@@ -131,9 +159,22 @@ article {
   width: 100%;
 }
 
+.delete-button, .favorite-button {
+  background: none;
+  border: none;
+  padding: 0px;
+  height: 30px;
+  width: 30px;
+}
+
 .card-text {
   background-color: #ffffff;
   padding: 10px;
+  color: #1F1F3D;
+}
+
+.card-text p {
+  font-size: 1.1em;
 }
 
 .comment-button-bar {
@@ -151,22 +192,3 @@ article {
   height: 40px;
   width: 40px;
 }
-
-.delete-button, .favorite-button {
-  background: none;
-  border: none;
-  padding: 0px;
-  height: 30px;
-  width: 30px;
-}
-
-
-
-
-.hidden {
-  display: none;
-}
-
-
-/* display: grid;
-grid-template-columns: repeat (3, 1fr); */
