@@ -13,6 +13,10 @@ body {
     "sidebox cardbox cardbox";
 }
 
+.hidden {
+  display: none;
+}
+
 /* Side Bar Section Styles */
 
 .side-box {
@@ -58,6 +62,9 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  grid-gap: 20px;
+  padding-top: 3%;
+  padding-bottom: 3%;
 }
 
 .idea-form {
@@ -96,6 +103,7 @@ h1 {
   width: 100%;
   padding: 2px;
   border: 2px solid #7274B5;
+  border-radius: 2px;
   background-color: #353567;
   color: #ffffff;
   font-size: 1.1em;
@@ -107,6 +115,8 @@ h1 {
   display: grid;
   grid-template-columns: 1fr 6fr 1fr;
   width: 50%;
+  border: 2px solid #7274B5;
+  border-radius: 2px;
 }
 
 #search-button {
@@ -114,16 +124,17 @@ h1 {
   background: none;
   border: none;
   background-color: #353567;
-  padding: 12.5px;
-  height: 50px;
-  /* width: 20%; */
+  padding: 10px; /* changes size of actual icon */
+  width: 50px;
 }
 
 .search-bar {
   grid-column: 2 / 4;
   height: 50px;
-  /* width: 80%; */
+  font-size: 1em;
 }
+
+/* Card Box Styles */
 
 .card-box {
   background-color: #eaeaf4;
@@ -148,9 +159,22 @@ article {
   width: 100%;
 }
 
+.delete-button, .favorite-button {
+  background: none;
+  border: none;
+  padding: 0px;
+  height: 30px;
+  width: 30px;
+}
+
 .card-text {
   background-color: #ffffff;
   padding: 10px;
+  color: #1F1F3D;
+}
+
+.card-text p {
+  font-size: 1.1em;
 }
 
 .comment-button-bar {
@@ -168,18 +192,3 @@ article {
   height: 40px;
   width: 40px;
 }
-
-.delete-button, .favorite-button {
-  background: none;
-  border: none;
-  padding: 0px;
-  height: 30px;
-  width: 30px;
-}
-
-.hidden {
-  display: none;
-}
-
-/* display: grid;
-grid-template-columns: repeat (3, 1fr); */
