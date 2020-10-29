@@ -208,3 +208,8 @@ article > header {
   border-left: 1px solid #1F1F3D;
   border-right: 1px solid #1F1F3D;
 }
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
