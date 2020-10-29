@@ -1,0 +1,2 @@
+var ideas = [];
+var starredIdeas = [];
