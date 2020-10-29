@@ -3,42 +3,47 @@ var inputBody = document.querySelector("#body")
 var inputButton = document.querySelector("#save-button")
 var cardDisplay = document.querySelector(".card-display")
 var favoriteButton = document.querySelector(".favorite-button")
+var favoriteButtonRed = document.querySelector(".favorite-button-red")
 var deleteButton = document.querySelector(".delete-button")
+var deleteButton = document.querySelector(".delete-button-red")
+
 
 var list = [];
+
 
 inputButton.addEventListener("click", makeNewCard);
 inputTitle.addEventListener("keyup", checkInputs);
 inputBody.addEventListener("keyup", checkInputs);
 cardDisplay.addEventListener("click", function (event) {
-  debugger
-  if (event.target === favoriteButton) {
-    addStar()
+
+  if (event.target.closest(".favorite-button")) {
+    addStar();
+
   }
-  if (event.target === deleteButton) {
-    deleteIdea()
+  if (event.target.closest(".delete-button")) {
+    deleteIdea();
   }
 });
 
 function addStar() {
   for (var i = 0; i < list.length; i++) {
     if (list[i].star === false) {
-      list[i].updateIdea(list[i])
+      list[i].updateIdea(list[i]);
     }
   }
-  // showHide(favoriteButton)
 }
 
 function deleteIdea() {
   for (var i = 0; i < list.length; i++) {
     list.splice(i, 1);
   }
-  // showHide(deleteButton)
 }
 
-function showHide(button) {
-  button.classList.toggle("hidden")
-}
+// function showHide() {
+//   favoriteButton.classList.add("hidden");
+//   favoriteButtonRed.classList.remove("hidden");
+
+// }
 
 // when you click delete, the X turns red (innerHTML the red svg) (FUNCTION 1)
 // hidden class gets added/removed (ITS OWN FUNCTION (3))
@@ -81,10 +86,10 @@ function makeNewCard(event) {
       `
       <article id="${list[i].id}">
         <div class="card-button-bar">
-          <button class="favorite-button" id="star-white"><img src="svg-files/star.svg"/></button>
-          <button class="favorite-button hidden" id="star-red"><img src="svg-files/star-active.svg"/></button>
-          <button class="delete-button" id="x-white"><img src="svg-files/delete.svg"/></button>
-          <button class="delete-button hidden" id="x-red"><img src="svg-files/delete-active.svg"/></button>
+          <button class="favorite-button" id="star"><img src="svg-files/star.svg"/></button>
+          <button class="favorite-button-red hidden" id="star"><img src="svg-files/star-active.svg"/></button>
+          <button class="delete-button" id="clear-idea"><img src="svg-files/delete.svg"/></button>
+          <button class="delete-button-red hidden" id="clear-idea"><img src="svg-files/delete-active.svg"/></button>
         </div>
         <div class="card-text">
           <h2>${list[i].title}</h2>
