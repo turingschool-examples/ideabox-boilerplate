@@ -77,6 +77,7 @@ function deleteIdea() {
     for (var i = 0; i < ideas.length; i++) {
         if (testForMatchAmongIdeas(`star`, i)) {
             ideas[i].toggleStar();
+            ideas[i].updateIdea();
         }
       }
     };
