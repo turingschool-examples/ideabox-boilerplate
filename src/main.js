@@ -13,6 +13,7 @@ cardGrid.addEventListener('click', upDateIdea);
 function makeNewIdeaCard() {
     var newIdea = new Idea(titleInput.value, bodyInput.value);
     ideas.push(newIdea);
+    newIdea.saveToStorage();
     upDateCardGrid();
     clearFields(titleInput, bodyInput);
 };
@@ -67,6 +68,7 @@ function deleteIdea() {
   for (var i = 0; i < ideas.length; i++) {
       if (testForMatchAmongIdeas(`delete-card`, i)) {
           ideas.splice(i, 1);
+          ideas[i].deleteFromStorage();
       }
     }
   };
