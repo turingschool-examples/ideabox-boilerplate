@@ -17,23 +17,36 @@ var list = [];
 inputButton.addEventListener("click", makeNewCard);
 inputTitle.addEventListener("keyup", checkInputs);
 inputBody.addEventListener("keyup", checkInputs);
-cardDisplay.addEventListener("click", function (event) {
+
+cardDisplay.addEventListener("click", function(event) {
   if (event.target.closest(".favorite-button")) {
-    addStar();
-    fillStar();
+    for (var i = 0; i < list.length; i++) {
+      if (parseInt(event.target.closest("article").id) === list[i].id) {
+        addStar(list[i]);
+        fillStar();
+      }
+    }
   }
 
-  // for (var i = 0; i < list.length; i++) {
-  //   event.target.closest("article").id === list[i].id;
-  //   addStar();
-  //   fillStar();
-  // }
+  if (event.target.closest(".delete-button")) {
+    deleteIdea();
+
+  }
+
+function checkInputs() {
+  if (inputTitle.value !== "" && inputBody.value !== "") {
+    inputButton.disabled = false;
+  }
+}
+
 
 
   if (event.target.closest(".delete-button")) {
     deleteIdea();
   }
-});
+
+}
+
 
 function checkInputs() {
   if (inputTitle.value !== "" && inputBody.value !== "") {
@@ -83,28 +96,28 @@ function refreshCard() {
       `
   }
   clearInputs();
-}
+
+};
+
 
 function clearInputs() {
   inputTitle.value = "";
   inputBody.value = "";
 }
 
-//if statement is not specific enough
-//when to call updateIdea?
 
-function addStar() {
-  for (var i = 0; i < list.length; i++) {
-    if (list[i].star === false) {
-      list[i].updateIdea(list[i]);
-    }
+function addStar(favoritedIdea) {
+  favoritedIdea.updateIdea(favoritedIdea);
+}
+
+function fillStar(event) {
+  if (event.target.closest("button").className.toString() === "favorite-button") {
+    event.target.closest("div").innerHTML = `<button class="favorite-button" id="star"><img src="svg-files/star-active.svg"/></button>`;
   }
 }
 
-function fillStar() {
-  var favoriteContainer = document.querySelector('.favorite-container');
-  favoriteContainer.innerHTML = `<button class="favorite-button" id="star"><img src="svg-files/star-active.svg"/></button>`;
-}
+var favoriteContainer = document.querySelector('.favorite-container');
+favoriteContainer.innerHTML = `<button class="favorite-button" id="star"><img src="svg-files/star-active.svg"/></button>`;
 
 //deleting every other card, why is it skipping?
 
