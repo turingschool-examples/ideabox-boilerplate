@@ -67,8 +67,8 @@ function testForMatchAmongIdeas(targetID, index) {
 function deleteIdea() {
   for (var i = 0; i < ideas.length; i++) {
       if (testForMatchAmongIdeas(`delete-card`, i)) {
-          ideas.splice(i, 1);
-          ideas[i].deleteFromStorage();
+        ideas[i].deleteFromStorage();
+        ideas.splice(i, 1);
       }
     }
   };
