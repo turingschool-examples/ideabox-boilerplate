@@ -12,12 +12,22 @@ window.onload = redrawCardsDisplay()
 
 cardsDisplay.addEventListener('click', function (event) {
   if (event.target.className === "delete-button") {
-    deleteCard()
+    deleteCard();
+    createTempIdea();
   }
   if (event.target.classList.contains("favorite")) {
-    toggleElement()
+    toggleElement();
   }
 })
+
+function createTempIdea() {
+  var curTitle = event.target.parentNode.nextElementSibling.firstElementChild.innerText
+  var curBody = event.target.parentNode.nextElementSibling.lastElementChild.innerText
+  var curId = event.target.parentNode.parentNode.id
+  var curStar = event.target.parentNode.id
+  var tempIdea = new Idea(curTitle, curBody, curId, curStar);
+  console.log(tempIdea)
+}
 
 function deleteCard() {
   for (var i = 0; i < ideas.length; i++) {
@@ -57,7 +67,7 @@ function toggleElement() {
 function displayCard(newIdea) {
   cardsDisplay.innerHTML += `
     <article class="cards" id=${newIdea.id}>
-      <header>
+      <header id=${newIdea.star}>
         <img src="./assets/star.svg" class="favorite star" alt="A white star">
         <img src="./assets/star-active.svg" class="favorite star-active hidden" alt="A red star">
         <img src="./assets/delete.svg" class="delete-button" alt="An X">
