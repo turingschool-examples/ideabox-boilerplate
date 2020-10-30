@@ -21,7 +21,11 @@ class Idea {
   updateIdea(newIdea) {
     // this.title = newIdea.title;
     // this.body = newIdea.body;
-    newIdea.star = true;
+    if (newIdea.star = true) {
+      newIdea.star = false;
+    } else {
+      newIdea.star = true;
+    }
   }
 
 }
@@ -30,3 +34,11 @@ class Idea {
 // idea1.saveToStorage(idea1);
 //
 // var idea1 = new Idea(${inputTitle.value}, "Something brilliant!");
+
+
+
+// function retrieveFromLocalStorage() {
+//   var retrievedObject = localStorage.getItem("ideaCard");
+//   var parsedObject = JSON.parse(retrievedObject);
+//   list.push(parsedObject);
+// }

@@ -10,30 +10,33 @@ var list = [];
 inputButton.addEventListener("click", makeNewCard);
 inputTitle.addEventListener("keyup", checkInputs);
 inputBody.addEventListener("keyup", checkInputs);
-cardDisplay.addEventListener("click", function (event) {
-  debugger
-  if (event.target === favoriteButton) {
-    addStar()
+
+cardDisplay.addEventListener("click", function(event) {
+  if (event.target.closest(".favorite-button")) {
+    for (var i = 0; i < list.length; i++) {
+      if (parseInt(event.target.closest("article").id) === list[i].id) {
+        addStar(list[i]);
+        fillStar();
+      }
+    }
   }
-  if (event.target === deleteButton) {
-    deleteIdea()
+
+  if (event.target.closest(".delete-button")) {
+    deleteIdea();
   }
 });
 
-function addStar() {
-  for (var i = 0; i < list.length; i++) {
-    if (list[i].star === false) {
-      list[i].updateIdea(list[i])
-    }
+
+function checkInputs() {
+  if (inputTitle.value !== "" && inputBody.value !== "") {
+    inputButton.disabled = false;
   }
-  // showHide(favoriteButton)
 }
 
 function deleteIdea() {
   for (var i = 0; i < list.length; i++) {
     list.splice(i, 1);
   }
-  // showHide(deleteButton)
 }
 
 function showHide(button) {
@@ -102,3 +105,30 @@ function makeNewCard(event) {
   }
   clearInputs();
 };
+
+function clearInputs() {
+  inputTitle.value = "";
+  inputBody.value = "";
+}
+
+function addStar(favoritedIdea) {
+  favoritedIdea.updateIdea(favoritedIdea);
+}
+
+function fillStar(event) {
+  if (event.target.closest("button").className.toString() === "favorite-button") {
+    event.target.closest("div").innerHTML = `<button class="favorite-button" id="star"><img src="svg-files/star-active.svg"/></button>`;
+  }
+}
+
+var favoriteContainer = document.querySelector('.favorite-container');
+favoriteContainer.innerHTML = `<button class="favorite-button" id="star"><img src="svg-files/star-active.svg"/></button>`;
+
+//deleting every other card, why is it skipping?
+
+function deleteIdea() {
+  for (var i = 0; i < list.length; i++) {
+    list.splice(i, 1);
+  }
+  refreshCard();
+}
