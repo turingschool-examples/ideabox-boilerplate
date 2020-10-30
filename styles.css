@@ -1,3 +1,8 @@
+/* go through chrome dev tools and
+see what's not being used.
+and change the cursor to a pointer
+when it's on a button */
+
 html,
 body {
   margin: 0;
@@ -63,6 +68,10 @@ aside > button {
   margin: 20px auto;
   color: #E9E9F3;
   background-color: #5356A4;
+}
+
+button:focus {
+  outline: none;
 }
 
 aside > h2 {

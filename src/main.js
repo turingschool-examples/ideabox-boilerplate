@@ -11,24 +11,25 @@ bodyInput.addEventListener('keyup', toggleSaveButton);
 
 cardsDisplay.addEventListener('click', function (event) {
   if (event.target.className === "delete-button") {
-    for (var i = 0; i < ideas.length; i++) {
-      if (parseInt(this.children[i].id) === ideas[i].id) {
-        console.log("localStorage", parseInt(this.children[i].id))
-        console.log("ideas array", ideas[i].id)
-      }
-      // figure out how to grab the card's ID without iterating through this.children
-      // then replace the first part of line 15 with that
-      // then remove it from the array it's in
-    }
+    deleteCard()
   }
 })
 
-// clear the HTML
-// redraw the HTML cardsDisplay
-// remove innerHTML stuff from cardsDisplay
-// re-write the localStorage array
-// })
+function deleteCard() {
+  for (var i = 0; i < ideas.length; i++) {
+    if (parseInt(event.target.closest('article').id) === ideas[i].id) {
+      ideas.splice(i, 1)
+      redrawCardsDisplay()
+    }
+  }
+}
 
+function redrawCardsDisplay() {
+  cardsDisplay.innerHTML = ""
+  for (var i = 0; i < ideas.length; i++) {
+    displayCard(ideas[i])
+  }
+}
 
 function saveIdea() {
   var newIdea = new Idea(titleInput.value, bodyInput.value)
@@ -52,8 +53,8 @@ function displayCard(newIdea) {
         <img src="./assets/delete.svg" class="delete-button" alt="An X">
       </header>
       <div class="idea-text">
-        <h1 class="idea-title">${titleInput.value}</h1>
-        <p class="idea-body">${bodyInput.value}</p>
+        <h1 class="idea-title">${newIdea.title}</h1>
+        <p class="idea-body">${newIdea.body}</p>
       </div>
       <div class="card-footer">
         <img src="./assets/comment.svg" alt="">
