@@ -136,9 +136,19 @@ h1 {
 
 .save-button {
     background-color: #353567;
-    height: 2.5em;
-    border-radius: 3px;
     color: #ffffff;
+
+}
+
+.save-button-disabled {
+    background-color: #e2c9f0;
+    color: #817487;
+}
+
+.save-button,
+.save-button-disabled {
+    height: 2.5em;
+    border-radius: 4px;
     font-family: Open Sans;
     font-weight: bold;
     font-size: .8em;
@@ -170,7 +180,6 @@ h1 {
 .search-icon {
     height: 20px;
     width: 20px;
-    /* padding: 2% */
 }
 
 .fav-delete-header {

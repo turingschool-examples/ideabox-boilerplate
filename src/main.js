@@ -1,15 +1,28 @@
-var saveButton = document.querySelector('.save-button');
+var saveButton = document.querySelector('#save-button');
 var cardGrid = document.querySelector('.card-grid');
 var titleInput = document.querySelector('.title-input');
 var bodyInput = document.querySelector('.body-input');
 var ideas = [];
+var ideaForm = document.querySelector('.idea-form');
 
 //add event listeners here 🍊
 saveButton.addEventListener('click', makeNewIdeaCard);
 cardGrid.addEventListener('click', upDateIdea);
+ideaForm.addEventListener('keyup', toggleSaveButton);
 
 
 //add functions here 🍊
+function toggleSaveButton() {
+  if (titleInput.value === '' || bodyInput.value === '') {
+    saveButton.disabled = true;
+    saveButton.className = 'save-button-disabled';
+  } else if (titleInput.value !== '' && bodyInput.value !== '') {
+    saveButton.disabled = false;
+    saveButton.className = 'save-button';
+  }
+};
+
+
 function makeNewIdeaCard() {
     var newIdea = new Idea(titleInput.value, bodyInput.value);
     ideas.push(newIdea);
@@ -21,6 +34,7 @@ function makeNewIdeaCard() {
 function clearFields(title, body) {
     title.value = '';
     body.value = '';
+    toggleSaveButton();
 };
 
 function upDateCardGrid() {
