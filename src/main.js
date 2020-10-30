@@ -9,11 +9,36 @@ saveButton.addEventListener('click', saveIdea);
 titleInput.addEventListener('keyup', toggleSaveButton);
 bodyInput.addEventListener('keyup', toggleSaveButton);
 
+cardsDisplay.addEventListener('click', function (event) {
+  if (event.target.className === "delete-button") {
+    deleteCard()
+  }
+  if (event.target.classList.contains("favorite")) {
+    toggleElement()
+  }
+})
+
+function deleteCard() {
+  for (var i = 0; i < ideas.length; i++) {
+    if (parseInt(event.target.closest('article').id) === ideas[i].id) {
+      ideas.splice(i, 1)
+      redrawCardsDisplay()
+    }
+  }
+}
+
+function redrawCardsDisplay() {
+  cardsDisplay.innerHTML = ""
+  for (var i = 0; i < ideas.length; i++) {
+    displayCard(ideas[i])
+  }
+}
+
 function saveIdea() {
   var newIdea = new Idea(titleInput.value, bodyInput.value)
   ideas.push(newIdea);
   newIdea.saveToStorage('ideas');
-  displayCard();
+  displayCard(newIdea);
   clearInputs(titleInput, bodyInput);
   toggleSaveButton()
 }
@@ -23,16 +48,22 @@ function clearInputs() {
   bodyInput.value = '';
 }
 
-function displayCard() {
+function toggleElement() {
+  document.querySelector(".star").classList.toggle("hidden")
+  document.querySelector(".star-active").classList.toggle("hidden")
+}
+
+function displayCard(newIdea) {
   cardsDisplay.innerHTML += `
-    <article class="cards">
+    <article class="cards" id=${newIdea.id}>
       <header>
-        <img src="./assets/star-active.svg" alt="A red star">
-        <img src="./assets/delete.svg" alt="An X">
+        <img src="./assets/star.svg" class="favorite star" alt="A white star">
+        <img src="./assets/star-active.svg" class="favorite star-active hidden" alt="A red star">
+        <img src="./assets/delete.svg" class="delete-button" alt="An X">
       </header>
       <div class="idea-text">
-        <h1 class="idea-title">${titleInput.value}</h1>
-        <p class="idea-body">${bodyInput.value}</p>
+        <h1 class="idea-title">${newIdea.title}</h1>
+        <p class="idea-body">${newIdea.body}</p>
       </div>
       <div class="card-footer">
         <img src="./assets/comment.svg" alt="">
@@ -52,14 +83,16 @@ function toggleSaveButton() {
 }
 
 
+//Pseudocode - Iteration 3
+// 1. Delete button should delete the card
+// 2. Star should toggle on click and save to favorites array
+// 3. all without refreshing the page
+
+
 //Pseudocode - Iteration 2
 // 1. Utilize new idea class to populate our HTML element that is the card
 // 2. Need to take newIdea.title/body and iterpolate that into HTML
 // 3. Update cards display area HTML with our new card
-
-
-
-
 
 //Pseudocode - iteration 1
 //1. saveButton should only use class constructor and push data to the arrays
