@@ -8,6 +8,7 @@ var saveButton = document.querySelector('.save-button');
 saveButton.addEventListener('click', saveIdea);
 titleInput.addEventListener('keyup', toggleSaveButton);
 bodyInput.addEventListener('keyup', toggleSaveButton);
+window.onload = redrawCardsDisplay()
 
 cardsDisplay.addEventListener('click', function (event) {
   if (event.target.className === "delete-button") {
@@ -82,6 +83,11 @@ function toggleSaveButton() {
   }
 }
 
+//Pseudocode - Iteration 4
+// 1. Add window on load listener
+// 2. Populate card display
+// 3. send deletion to local storage
+//
 
 //Pseudocode - Iteration 3
 // 1. Delete button should delete the card
