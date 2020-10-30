@@ -13,6 +13,9 @@ cardsDisplay.addEventListener('click', function (event) {
   if (event.target.className === "delete-button") {
     deleteCard()
   }
+  if (event.target.classList.contains("favorite")) {
+    toggleElement()
+  }
 })
 
 function deleteCard() {
@@ -45,11 +48,17 @@ function clearInputs() {
   bodyInput.value = '';
 }
 
+function toggleElement() {
+  document.querySelector(".star").classList.toggle("hidden")
+  document.querySelector(".star-active").classList.toggle("hidden")
+}
+
 function displayCard(newIdea) {
   cardsDisplay.innerHTML += `
     <article class="cards" id=${newIdea.id}>
       <header>
-        <img src="./assets/star-active.svg" alt="A red star">
+        <img src="./assets/star.svg" class="favorite star" alt="A white star">
+        <img src="./assets/star-active.svg" class="favorite star-active hidden" alt="A red star">
         <img src="./assets/delete.svg" class="delete-button" alt="An X">
       </header>
       <div class="idea-text">
