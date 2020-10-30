@@ -30,3 +30,12 @@ class Idea {
 // idea1.saveToStorage(idea1);
 //
 // var idea1 = new Idea(${inputTitle.value}, "Something brilliant!");
+
+
+
+// function retrieveFromLocalStorage() {
+//   debugger;
+//   var retrievedObject = localStorage.getItem("ideaCard");
+//   var parsedObject = JSON.parse(retrievedObject);
+//   list.push(parsedObject);
+// }
