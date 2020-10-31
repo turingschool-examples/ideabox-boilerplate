@@ -11,6 +11,24 @@ inputButton.addEventListener("click", makeNewCard);
 inputTitle.addEventListener("keyup", checkInputs);
 inputBody.addEventListener("keyup", checkInputs);
 
+// cardDisplay.addEventListener("mouseover", function(event) {
+//   var deleteButton = document.querySelector(".delete-button");
+//   if (event.target.className === "delete-box") {
+//     deleteButton.classList.toggle("hidden");
+//   }
+// })
+
+// cardDisplay.addEventListener("mouseover", function(event) {
+//   debugger
+//   var deleteRed = document.querySelector(".delete-red");
+//   var deleteWhite = document.querySelector(".delete-white");
+//   if (event.target.closest("delete-box")) {
+//     deleteWhite.classList.add(".hidden");
+//     deleteRed.classList.remove(".hidden");
+//   }
+
+// })
+
 cardDisplay.addEventListener("click", function(event) {
   if (event.target.closest(".favorite-button")) {
     for (var i = 0; i < list.length; i++) {
@@ -61,8 +79,8 @@ function refreshCard() {
           <button class="favorite-button hidden" id="${list[i].id}"><img class="favorite-button" src="svg-files/star-active.svg"/></button>
         </div>
         <div class="delete-box">
-          <button class="delete-white"><img class="delete-img" src="svg-files/delete.svg"/></button>
-          <button class="delete-button delete-red" id="${list[i].id}><img class="delete-img" src="svg-files/delete-active.svg"/></button>
+          <button class="delete-button delete-red" id="${list[i].id}"><img class="delete-img" src="svg-files/delete-active.svg"/></button>
+          <button class="delete-button delete-white"><img class="delete-img" src="svg-files/delete.svg"/></button>  
         </div>
       </div>
       <div class="card-text">
@@ -100,7 +118,7 @@ function fillStar(favoritedIdea) {
   }
 }
 
-function deleteIdea(deleteCard, event) {
+function deleteIdea(deleteCard) {
   var deleteButtonRed = document.querySelectorAll('.delete-red');
   for (var i = 0; i < deleteButtonRed.length; i++) {
     if(deleteCard === parseInt(deleteButtonRed[i].id)) {
