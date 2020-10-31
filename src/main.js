@@ -3,20 +3,29 @@ var ideas = JSON.parse(localStorage.getItem('ideas')) || [];
 var titleInput = document.querySelector('.title-input');
 var bodyInput = document.querySelector('.body-input');
 var cardsDisplay = document.querySelector('.cards-display');
+var searchInput = document.querySelector('.search-input')
 
 var saveButton = document.querySelector('.save-button');
 var showFavButton = document.querySelector('.show-stars');
 
+window.onload = redrawCardsDisplay()
 saveButton.addEventListener('click', saveIdea);
 titleInput.addEventListener('keyup', toggleSaveButton);
 bodyInput.addEventListener('keyup', toggleSaveButton);
+searchInput.addEventListener('keyup', filterCards)
 showFavButton.addEventListener('click', function (event) {
-  showFavorites(event);
+  if (showFavButton.innerText === "Show Starred Ideas") {
+    showFavButton.innerText = "Show All Ideas"
+    toggleFavorites(event);
+  } else {
+    showFavButton.innerText = "Show Starred Ideas";
+    redrawCardsDisplay();
+  }
 })
-window.onload = redrawCardsDisplay()
+
 cardsDisplay.addEventListener('click', function (event) {
   if (event.target.className === "delete-button") {
-    deleteCard();
+    deleteCard(event);
     var tempIdea = createTempIdea();
     tempIdea.deleteFromStorage('ideas', tempIdea);
   }
@@ -26,9 +35,18 @@ cardsDisplay.addEventListener('click', function (event) {
   }
 })
 
-function showFavorites(event) {
+function filterCards() {
+  cardsDisplay.innerHTML = '';
+  var input = searchInput.value.toUpperCase();
+  for (var i = 0; i < ideas.length; i++) {
+    if (ideas[i].title.toUpperCase().includes(input) || ideas[i].body.toUpperCase().includes(input)) {
+      displayCard(ideas[i])
+    }
+  }
+}
+
+function toggleFavorites(event) {
   cardsDisplay.innerHTML = ""
-  showFavButton.innerText = "Show All Ideas"
     for (var i = 0; i < ideas.length; i++) {
       if (ideas[i].star) {
         displayCard(ideas[i])
@@ -36,13 +54,13 @@ function showFavorites(event) {
   }
 }
 
-
 function updateStar(event) {
   cardIndex = findCardIndex(event);
   var ideasArray = JSON.parse(localStorage.getItem('ideas'))
   var currentIdea = ideasArray[cardIndex]
-  currentIdea.star = !currentIdea.star
-  currentIdea = new Idea(currentIdea.title, currentIdea.body, currentIdea.id, currentIdea.star)
+  currentIdea.star = !currentIdea.star;
+  currentIdea = new Idea(currentIdea.title, currentIdea.body, currentIdea.id, currentIdea.star);
+  ideas.splice(cardIndex, 1, currentIdea);
   currentIdea.updateIdea('ideas', currentIdea, cardIndex)
 }
 
@@ -61,7 +79,7 @@ function createTempIdea() {
   return new Idea(curTitle, curBody, curId, curStar);
 }
 
-function deleteCard() {
+function deleteCard(event) {
   for (var i = 0; i < ideas.length; i++) {
     if (parseInt(event.target.closest('article').id) === ideas[i].id) {
       ideas.splice(i, 1)
@@ -70,7 +88,7 @@ function deleteCard() {
   }
 }
 
-function redrawCardsDisplay(event) {
+function redrawCardsDisplay() {
   cardsDisplay.innerHTML = ""
   for (var i = 0; i < ideas.length; i++) {
     displayCard(ideas[i])
@@ -145,10 +163,15 @@ function toggleSaveButton() {
 // 6. update local storage ideas array
 // 7. check if idea.star is true for each idea on page load
 // 8. display card only if true
-
 // 9. Redraw cards display based on this.star value
 //    - check if this.star
 //    - redraw display with this.star = true cards
+
+// 10. On keyup, check title and body (to upper case) of each card for search input value (to upper case)
+// 11. Display cards that match
+
+
+// ADDITION => Add message if no cards are favorited
 
 
 //Pseudocode - Iteration 3
