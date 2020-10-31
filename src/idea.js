@@ -13,10 +13,12 @@ class Idea {
     localStorage.setItem(array, JSON.stringify(tempArray));
   }
 
-  deleteFromStorage(array) {
+  deleteFromStorage(array, idea) {
     var tempArray = JSON.parse(localStorage.getItem(array));
-    var currentIdea = new Idea(this.title, this.body);
-    tempArray.splice(tempArray.findIndex(element => element.title === currentIdea.title), 1);
+    var indexOfIdea = tempArray.findIndex(function (element) {
+      return element.id === idea.id;
+    })
+    tempArray.splice(indexOfIdea, 1)
     localStorage.setItem(array, JSON.stringify(tempArray));
   }
 

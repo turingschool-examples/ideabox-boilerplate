@@ -13,7 +13,8 @@ window.onload = redrawCardsDisplay()
 cardsDisplay.addEventListener('click', function (event) {
   if (event.target.className === "delete-button") {
     deleteCard();
-    createTempIdea();
+    var tempIdea = createTempIdea();
+    tempIdea.deleteFromStorage('ideas', tempIdea);
   }
   if (event.target.classList.contains("favorite")) {
     toggleElement();
@@ -25,8 +26,7 @@ function createTempIdea() {
   var curBody = event.target.parentNode.nextElementSibling.lastElementChild.innerText
   var curId = event.target.parentNode.parentNode.id
   var curStar = event.target.parentNode.id
-  var tempIdea = new Idea(curTitle, curBody, curId, curStar);
-  console.log(tempIdea)
+  return new Idea(curTitle, curBody, curId, curStar);
 }
 
 function deleteCard() {
