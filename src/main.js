@@ -3,8 +3,6 @@ var inputTitle = document.querySelector("#title")
 var inputBody = document.querySelector("#body")
 var inputButton = document.querySelector("#save-button")
 var cardDisplay = document.querySelector(".card-display")
-// var favoriteButton = document.querySelector(".favorite-button")
-// var deleteButton = document.querySelector(".delete-button")
 
 var list = [];
 
@@ -12,23 +10,7 @@ inputButton.addEventListener("click", makeNewCard);
 inputTitle.addEventListener("keyup", checkInputs);
 inputBody.addEventListener("keyup", checkInputs);
 
-// cardDisplay.addEventListener("mouseover", function(event) {
-//   var deleteButton = document.querySelector(".delete-button");
-//   if (event.target.className === "delete-box") {
-//     deleteButton.classList.toggle("hidden");
-//   }
-// })
 
-// cardDisplay.addEventListener("mouseover", function(event) {
-//   debugger
-//   var deleteRed = document.querySelector(".delete-red");
-//   var deleteWhite = document.querySelector(".delete-white");
-//   if (event.target.closest("delete-box")) {
-//     deleteWhite.classList.add(".hidden");
-//     deleteRed.classList.remove(".hidden");
-//   }
-
-// })
 
 cardDisplay.addEventListener("click", function(event) {
   if (event.target.closest(".favorite-button")) {
@@ -68,6 +50,7 @@ function makeNewCard(event) {
   addToList(inputTitle.value, inputBody.value);
   refreshCard();
   clearInputs();
+  checkInputs();
 };
 
 function refreshCard() {
