@@ -164,12 +164,29 @@ article {
   width: 100%;
 }
 
-.delete-button, .favorite-button {
+.delete-button, .favorite-button, .delete-white {
   background: none;
   border: none;
   padding: 0px;
   height: 30px;
   width: 30px;
+}
+
+.delete-box {
+  position: relative;
+  display: inline-block;
+}
+
+.delete-box .delete-red {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.delete-box:hover .delete-red{
+  display: inline;
 }
 
 .card-text {

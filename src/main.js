@@ -56,10 +56,14 @@ function refreshCard() {
       `
     <article id="${list[i].id}">
       <div class="card-button-bar">
-        <button class="favorite-button" id="${list[i].id}"><img class="favorite-button" src="svg-files/star.svg"/></button>
-        <button class="favorite-button hidden" id="${list[i].id}"><img class="favorite-button" src="svg-files/star-active.svg"/></button>
-        <button class="delete-button"><img class="delete-img" src="svg-files/delete.svg"/></button>
-        <button class="delete-button delete-red" id="${list[i].id}><img class="delete-img" src="svg-files/delete-active.svg"/></button>
+        <div class="favorite-box">
+          <button class="favorite-button" id="${list[i].id}"><img class="favorite-button" src="svg-files/star.svg"/></button>
+          <button class="favorite-button hidden" id="${list[i].id}"><img class="favorite-button" src="svg-files/star-active.svg"/></button>
+        </div>
+        <div class="delete-box">
+          <button class="delete-white"><img class="delete-img" src="svg-files/delete.svg"/></button>
+          <button class="delete-button delete-red" id="${list[i].id}><img class="delete-img" src="svg-files/delete-active.svg"/></button>
+        </div>
       </div>
       <div class="card-text">
         <h2>${list[i].title}</h2>
