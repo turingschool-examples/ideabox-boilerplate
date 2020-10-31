@@ -111,6 +111,12 @@ h1 {
   font-size: 1.1em;
 }
 
+#save-button:disabled {
+  background-color: #5356a4;
+  cursor: help;
+}
+
+
 /* Search Box Styles */
 
 .search-form {
