@@ -164,7 +164,7 @@ article {
   width: 100%;
 }
 
-.delete-button, .favorite-button, .delete-white {
+.delete-button, .favorite-button {
   background: none;
   border: none;
   padding: 0px;
