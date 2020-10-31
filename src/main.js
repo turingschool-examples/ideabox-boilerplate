@@ -5,11 +5,15 @@ var bodyInput = document.querySelector('.body-input');
 var cardsDisplay = document.querySelector('.cards-display');
 
 var saveButton = document.querySelector('.save-button');
+var showFavButton = document.querySelector('.show-stars');
+
 saveButton.addEventListener('click', saveIdea);
 titleInput.addEventListener('keyup', toggleSaveButton);
 bodyInput.addEventListener('keyup', toggleSaveButton);
+showFavButton.addEventListener('click', function (event) {
+  showFavorites(event);
+})
 window.onload = redrawCardsDisplay()
-
 cardsDisplay.addEventListener('click', function (event) {
   if (event.target.className === "delete-button") {
     deleteCard();
@@ -21,6 +25,17 @@ cardsDisplay.addEventListener('click', function (event) {
     updateStar(event)
   }
 })
+
+function showFavorites(event) {
+  cardsDisplay.innerHTML = ""
+  showFavButton.innerText = "Show All Ideas"
+    for (var i = 0; i < ideas.length; i++) {
+      if (ideas[i].star) {
+        displayCard(ideas[i])
+      }
+  }
+}
+
 
 function updateStar(event) {
   cardIndex = findCardIndex(event);
@@ -55,7 +70,7 @@ function deleteCard() {
   }
 }
 
-function redrawCardsDisplay() {
+function redrawCardsDisplay(event) {
   cardsDisplay.innerHTML = ""
   for (var i = 0; i < ideas.length; i++) {
     displayCard(ideas[i])
@@ -128,9 +143,12 @@ function toggleSaveButton() {
 // 4. change current idea this.star to true
 // 5. update ideas array with current idea
 // 6. update local storage ideas array
-
 // 7. check if idea.star is true for each idea on page load
 // 8. display card only if true
+
+// 9. Redraw cards display based on this.star value
+//    - check if this.star
+//    - redraw display with this.star = true cards
 
 
 //Pseudocode - Iteration 3
