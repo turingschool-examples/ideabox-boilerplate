@@ -21,7 +21,7 @@ cardDisplay.addEventListener("click", function(event) {
     }
   }
 
-  if (event.target.closest(".delete-button")) {
+  if (event.target.closest(".delete-red")) {
     for (var i = 0; i < list.length; i++) {
       if (parseInt(event.target.closest("article").id) === list[i].id) {
         deleteIdea(list[i].id);
@@ -58,7 +58,8 @@ function refreshCard() {
       <div class="card-button-bar">
         <button class="favorite-button" id="${list[i].id}"><img class="favorite-button" src="svg-files/star.svg"/></button>
         <button class="favorite-button hidden" id="${list[i].id}"><img class="favorite-button" src="svg-files/star-active.svg"/></button>
-        <button class="delete-button" id="${list[i].id}"><img class="delete-img" src="svg-files/delete.svg"/></button>
+        <button class="delete-button"><img class="delete-img" src="svg-files/delete.svg"/></button>
+        <button class="delete-button delete-red" id="${list[i].id}><img class="delete-img" src="svg-files/delete-active.svg"/></button>
       </div>
       <div class="card-text">
         <h2>${list[i].title}</h2>
@@ -96,9 +97,9 @@ function fillStar(favoritedIdea) {
 }
 
 function deleteIdea(deleteCard, event) {
-  var deleteButton = document.querySelectorAll('.delete-button');
-  for (var i = 0; i < deleteButton.length; i++) {
-    if(deleteCard === parseInt(deleteButton[i].id)) {
+  var deleteButtonRed = document.querySelectorAll('.delete-red');
+  for (var i = 0; i < deleteButtonRed.length; i++) {
+    if(deleteCard === parseInt(deleteButtonRed[i].id)) {
       list.splice(i, 1);
     }
   }
