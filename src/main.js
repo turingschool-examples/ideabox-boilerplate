@@ -1,24 +1,85 @@
 var ideas = JSON.parse(localStorage.getItem('ideas')) || [];
-var starredIdeas = JSON.parse(localStorage.getItem('starredIdeas')) || [];
+// var starredIdeas = JSON.parse(localStorage.getItem('starredIdeas')) || [];
 var titleInput = document.querySelector('.title-input');
 var bodyInput = document.querySelector('.body-input');
 var cardsDisplay = document.querySelector('.cards-display');
+var searchInput = document.querySelector('.search-input')
 
 var saveButton = document.querySelector('.save-button');
+var showFavButton = document.querySelector('.show-stars');
+
+window.onload = redrawCardsDisplay()
 saveButton.addEventListener('click', saveIdea);
 titleInput.addEventListener('keyup', toggleSaveButton);
 bodyInput.addEventListener('keyup', toggleSaveButton);
-
-cardsDisplay.addEventListener('click', function (event) {
-  if (event.target.className === "delete-button") {
-    deleteCard()
-  }
-  if (event.target.classList.contains("favorite")) {
-    toggleElement()
+searchInput.addEventListener('keyup', filterCards)
+showFavButton.addEventListener('click', function (event) {
+  if (showFavButton.innerText === "Show Starred Ideas") {
+    showFavButton.innerText = "Show All Ideas"
+    toggleFavorites(event);
+  } else {
+    showFavButton.innerText = "Show Starred Ideas";
+    redrawCardsDisplay();
   }
 })
 
-function deleteCard() {
+cardsDisplay.addEventListener('click', function (event) {
+  if (event.target.className === "delete-button") {
+    deleteCard(event);
+    var tempIdea = createTempIdea();
+    tempIdea.deleteFromStorage('ideas', tempIdea);
+  }
+  if (event.target.classList.contains("favorite")) {
+    toggleElement(event);
+    updateStar(event)
+  }
+})
+
+function filterCards() {
+  cardsDisplay.innerHTML = '';
+  var input = searchInput.value.toUpperCase();
+  for (var i = 0; i < ideas.length; i++) {
+    if (ideas[i].title.toUpperCase().includes(input) || ideas[i].body.toUpperCase().includes(input)) {
+      displayCard(ideas[i])
+    }
+  }
+}
+
+function toggleFavorites(event) {
+  cardsDisplay.innerHTML = ""
+    for (var i = 0; i < ideas.length; i++) {
+      if (ideas[i].star) {
+        displayCard(ideas[i])
+      }
+  }
+}
+
+function updateStar(event) {
+  cardIndex = findCardIndex(event);
+  var ideasArray = JSON.parse(localStorage.getItem('ideas'))
+  var currentIdea = ideasArray[cardIndex]
+  currentIdea.star = !currentIdea.star;
+  currentIdea = new Idea(currentIdea.title, currentIdea.body, currentIdea.id, currentIdea.star);
+  ideas.splice(cardIndex, 1, currentIdea);
+  currentIdea.updateIdea('ideas', currentIdea, cardIndex)
+}
+
+function findCardIndex(event) {
+  return ideas.findIndex(function (element) {
+    return element.id === parseInt(event.target.closest('article').id);
+  })
+
+}
+
+function createTempIdea() {
+  var curTitle = event.target.parentNode.nextElementSibling.firstElementChild.innerText
+  var curBody = event.target.parentNode.nextElementSibling.lastElementChild.innerText
+  var curId = event.target.parentNode.parentNode.id
+  var curStar = event.target.parentNode.id
+  return new Idea(curTitle, curBody, curId, curStar);
+}
+
+function deleteCard(event) {
   for (var i = 0; i < ideas.length; i++) {
     if (parseInt(event.target.closest('article').id) === ideas[i].id) {
       ideas.splice(i, 1)
@@ -48,17 +109,28 @@ function clearInputs() {
   bodyInput.value = '';
 }
 
-function toggleElement() {
-  document.querySelector(".star").classList.toggle("hidden")
-  document.querySelector(".star-active").classList.toggle("hidden")
+function toggleElement(event) {
+  if (event.target.attributes.src.nodeValue === "./assets/star.svg") {
+    event.target.attributes.src.nodeValue = "./assets/star-active.svg";
+  } else {
+    event.target.attributes.src.nodeValue = "./assets/star.svg";
+  }
+}
+
+function checkStar(idea) {
+  if (idea.star) {
+    return "./assets/star-active.svg"
+  } else {
+    return "./assets/star.svg"
+  }
 }
 
 function displayCard(newIdea) {
+  var imageSource = checkStar(newIdea);
   cardsDisplay.innerHTML += `
     <article class="cards" id=${newIdea.id}>
-      <header>
-        <img src="./assets/star.svg" class="favorite star" alt="A white star">
-        <img src="./assets/star-active.svg" class="favorite star-active hidden" alt="A red star">
+      <header class="card-header" id=${newIdea.star}>
+        <img src=${imageSource} class="favorite star" alt="A white star">
         <img src="./assets/delete.svg" class="delete-button" alt="An X">
       </header>
       <div class="idea-text">
@@ -81,6 +153,25 @@ function toggleSaveButton() {
     saveButton.classList.remove('disabled');
   }
 }
+
+//Pseudocode - Iteration 4
+// 1. Add window on load listener
+// 2. Populate card display
+// 3. send deletion to local storage
+// 4. change current idea this.star to true
+// 5. update ideas array with current idea
+// 6. update local storage ideas array
+// 7. check if idea.star is true for each idea on page load
+// 8. display card only if true
+// 9. Redraw cards display based on this.star value
+//    - check if this.star
+//    - redraw display with this.star = true cards
+
+// 10. On keyup, check title and body (to upper case) of each card for search input value (to upper case)
+// 11. Display cards that match
+
+
+// ADDITION => Add message if no cards are favorited
 
 
 //Pseudocode - Iteration 3
