@@ -6,8 +6,8 @@ class Idea {
     this.star = false;
   }
 
-// create a new instance of our idea class w/ a new id, new title, and new body
-// change innerHTML
+  // create a new instance of our idea class w/ a new id, new title, and new body
+  // change innerHTML
   saveToStorage(newIdea) {
     var stringifiedObject = JSON.stringify(newIdea);
     localStorage.setItem("ideaCard", stringifiedObject);
@@ -17,7 +17,7 @@ class Idea {
     localStorage.removeItem(`ideaCard`);
   }
 
-// comments, remove from storage, adding to storage, or favorited:
+  // comments, remove from storage, adding to storage, or favorited:
   updateIdea(newIdea) {
     // this.title = newIdea.title;
     // this.body = newIdea.body;
@@ -30,23 +30,8 @@ class Idea {
 
 }
 
-// var idea1 = new Idea("A New Title", "Something brilliant!");
-// idea1.saveToStorage(idea1);
-//
-// var idea1 = new Idea(${inputTitle.value}, "Something brilliant!");
-
-
-
 // function retrieveFromLocalStorage() {
-<<<<<<< HEAD
 //   var retrievedObject = localStorage.getItem("ideaCard");
 //   var parsedObject = JSON.parse(retrievedObject);
 //   list.push(parsedObject);
 // }
-=======
-//   debugger;
-//   var retrievedObject = localStorage.getItem("ideaCard");
-//   var parsedObject = JSON.parse(retrievedObject);
-//   list.push(parsedObject);
-// }
->>>>>>> main
