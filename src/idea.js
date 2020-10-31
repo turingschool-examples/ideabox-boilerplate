@@ -38,7 +38,15 @@ class Idea {
 
 
 // function retrieveFromLocalStorage() {
+<<<<<<< HEAD
 //   var retrievedObject = localStorage.getItem("ideaCard");
 //   var parsedObject = JSON.parse(retrievedObject);
 //   list.push(parsedObject);
 // }
+=======
+//   debugger;
+//   var retrievedObject = localStorage.getItem("ideaCard");
+//   var parsedObject = JSON.parse(retrievedObject);
+//   list.push(parsedObject);
+// }
+>>>>>>> main
