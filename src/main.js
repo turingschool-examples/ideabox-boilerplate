@@ -14,7 +14,6 @@ cardsDisplay.addEventListener('click', function (event) {
   if (event.target.className === "delete-button") {
     deleteCard();
     var tempIdea = createTempIdea();
-    console.log(tempIdea)
     tempIdea.deleteFromStorage('ideas', tempIdea);
   }
   if (event.target.classList.contains("favorite")) {
@@ -85,11 +84,20 @@ function toggleElement(event) {
   }
 }
 
+function checkStar(idea) {
+  if (idea.star) {
+    return "./assets/star-active.svg"
+  } else {
+    return "./assets/star.svg"
+  }
+}
+
 function displayCard(newIdea) {
+  var imageSource = checkStar(newIdea);
   cardsDisplay.innerHTML += `
     <article class="cards" id=${newIdea.id}>
       <header class="card-header" id=${newIdea.star}>
-        <img src="./assets/star.svg" class="favorite star" alt="A white star">
+        <img src=${imageSource} class="favorite star" alt="A white star">
         <img src="./assets/delete.svg" class="delete-button" alt="An X">
       </header>
       <div class="idea-text">
@@ -117,10 +125,13 @@ function toggleSaveButton() {
 // 1. Add window on load listener
 // 2. Populate card display
 // 3. send deletion to local storage
-
 // 4. change current idea this.star to true
 // 5. update ideas array with current idea
 // 6. update local storage ideas array
+
+// 7. check if idea.star is true for each idea on page load
+// 8. display card only if true
+
 
 //Pseudocode - Iteration 3
 // 1. Delete button should delete the card
