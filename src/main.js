@@ -53,6 +53,8 @@ cardDisplay.addEventListener("click", function(event) {
 function checkInputs() {
   if (inputTitle.value !== "" && inputBody.value !== "") {
     inputButton.disabled = false;
+  } else {
+    inputButton.disabled = true;
   }
 }
 
@@ -66,7 +68,6 @@ function makeNewCard(event) {
   addToList(inputTitle.value, inputBody.value);
   refreshCard();
   clearInputs();
-  inputButton.disabled = true;
 };
 
 function refreshCard() {
