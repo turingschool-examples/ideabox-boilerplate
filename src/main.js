@@ -1,3 +1,4 @@
+var ideaForm = document.querySelector('.idea-form')
 var inputTitle = document.querySelector("#title")
 var inputBody = document.querySelector("#body")
 var inputButton = document.querySelector("#save-button")
@@ -65,6 +66,7 @@ function makeNewCard(event) {
   addToList(inputTitle.value, inputBody.value);
   refreshCard();
   clearInputs();
+  inputButton.disabled = true;
 };
 
 function refreshCard() {
@@ -101,8 +103,7 @@ function refreshCard() {
 };
 
 function clearInputs() {
-  inputTitle.value = "";
-  inputBody.value = "";
+  ideaForm.reset();
 }
 
 function addStar(favoritedIdea) {
