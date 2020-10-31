@@ -1,5 +1,5 @@
 var ideas = JSON.parse(localStorage.getItem('ideas')) || [];
-var starredIdeas = JSON.parse(localStorage.getItem('starredIdeas')) || [];
+// var starredIdeas = JSON.parse(localStorage.getItem('starredIdeas')) || [];
 var titleInput = document.querySelector('.title-input');
 var bodyInput = document.querySelector('.body-input');
 var cardsDisplay = document.querySelector('.cards-display');
@@ -14,12 +14,30 @@ cardsDisplay.addEventListener('click', function (event) {
   if (event.target.className === "delete-button") {
     deleteCard();
     var tempIdea = createTempIdea();
+    console.log(tempIdea)
     tempIdea.deleteFromStorage('ideas', tempIdea);
   }
   if (event.target.classList.contains("favorite")) {
-    toggleElement();
+    toggleElement(event);
+    updateStar(event)
   }
 })
+
+function updateStar(event) {
+  cardIndex = findCardIndex(event);
+  var ideasArray = JSON.parse(localStorage.getItem('ideas'))
+  var currentIdea = ideasArray[cardIndex]
+  currentIdea.star = !currentIdea.star
+  currentIdea = new Idea(currentIdea.title, currentIdea.body, currentIdea.id, currentIdea.star)
+  currentIdea.updateIdea('ideas', currentIdea, cardIndex)
+}
+
+function findCardIndex(event) {
+  return ideas.findIndex(function (element) {
+    return element.id === parseInt(event.target.closest('article').id);
+  })
+
+}
 
 function createTempIdea() {
   var curTitle = event.target.parentNode.nextElementSibling.firstElementChild.innerText
@@ -59,17 +77,19 @@ function clearInputs() {
   bodyInput.value = '';
 }
 
-function toggleElement() {
-  document.querySelector(".star").classList.toggle("hidden")
-  document.querySelector(".star-active").classList.toggle("hidden")
+function toggleElement(event) {
+  if (event.target.attributes.src.nodeValue === "./assets/star.svg") {
+    event.target.attributes.src.nodeValue = "./assets/star-active.svg";
+  } else {
+    event.target.attributes.src.nodeValue = "./assets/star.svg";
+  }
 }
 
 function displayCard(newIdea) {
   cardsDisplay.innerHTML += `
     <article class="cards" id=${newIdea.id}>
-      <header id=${newIdea.star}>
+      <header class="card-header" id=${newIdea.star}>
         <img src="./assets/star.svg" class="favorite star" alt="A white star">
-        <img src="./assets/star-active.svg" class="favorite star-active hidden" alt="A red star">
         <img src="./assets/delete.svg" class="delete-button" alt="An X">
       </header>
       <div class="idea-text">
@@ -97,7 +117,10 @@ function toggleSaveButton() {
 // 1. Add window on load listener
 // 2. Populate card display
 // 3. send deletion to local storage
-//
+
+// 4. change current idea this.star to true
+// 5. update ideas array with current idea
+// 6. update local storage ideas array
 
 //Pseudocode - Iteration 3
 // 1. Delete button should delete the card

@@ -16,13 +16,15 @@ class Idea {
   deleteFromStorage(array, idea) {
     var tempArray = JSON.parse(localStorage.getItem(array));
     var indexOfIdea = tempArray.findIndex(function (element) {
-      return element.id === idea.id;
-    })
-    tempArray.splice(indexOfIdea, 1)
+      return element.id === parseInt(idea.id);
+    });
+    tempArray.splice(indexOfIdea, 1);
     localStorage.setItem(array, JSON.stringify(tempArray));
   }
 
-  updateIdea(title, body, star) {
-
+  updateIdea(array, idea, index) {
+    var tempArray = JSON.parse(localStorage.getItem(array));
+    tempArray.splice(index, 1, idea)
+    localStorage.setItem(array, JSON.stringify(tempArray));
   }
 }
