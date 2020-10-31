@@ -21,10 +21,10 @@ class Idea {
   updateIdea(newIdea) {
     // this.title = newIdea.title;
     // this.body = newIdea.body;
-    if (newIdea.star = true) {
-      newIdea.star = false;
-    } else {
+    if (newIdea.star === false) {
       newIdea.star = true;
+    } else {
+      newIdea.star = false;
     }
   }
 

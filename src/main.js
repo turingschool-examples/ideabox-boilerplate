@@ -21,10 +21,11 @@ cardDisplay.addEventListener("click", function(event) {
     }
   }
 
-  if (event.target.closest(".delete-button")) {
+  if (event.target.closest(".delete-red")) {
     for (var i = 0; i < list.length; i++) {
-      if (event.target.classList.contains("delete-button")) {
-        deleteIdea(event);
+      if (parseInt(event.target.closest("article").id) === list[i].id) {
+        deleteIdea(list[i].id);
+        event.target.closest("article").remove();
       }
     }
   }
@@ -55,10 +56,14 @@ function refreshCard() {
       `
     <article id="${list[i].id}">
       <div class="card-button-bar">
-        <button class="favorite-button" id="${list[i].id}"><img class="favorite-button" src="svg-files/star.svg"/></button>
-        <button class="favorite-button hidden" id="${list[i].id}"><img class="favorite-button" src="svg-files/star-active.svg"/></button>
-        <button class="delete-button" id="x-white"><img class="delete-button" src="svg-files/delete.svg"/></button>
-        <button class="delete-button hidden" id="x-red"><img class="delete-button" src="svg-files/delete-active.svg"/></button>
+        <div class="favorite-box">
+          <button class="favorite-button" id="${list[i].id}"><img class="favorite-button" src="svg-files/star.svg"/></button>
+          <button class="favorite-button hidden" id="${list[i].id}"><img class="favorite-button" src="svg-files/star-active.svg"/></button>
+        </div>
+        <div class="delete-box">
+          <button class="delete-white"><img class="delete-img" src="svg-files/delete.svg"/></button>
+          <button class="delete-button delete-red" id="${list[i].id}><img class="delete-img" src="svg-files/delete-active.svg"/></button>
+        </div>
       </div>
       <div class="card-text">
         <h2>${list[i].title}</h2>
@@ -95,12 +100,11 @@ function fillStar(favoritedIdea) {
   }
 }
 
-function deleteIdea(event) {
-  for (var i = 0; i < list.length; i++) {
-    if (event.target.closest("article").id === list[i].id) {
+function deleteIdea(deleteCard, event) {
+  var deleteButtonRed = document.querySelectorAll('.delete-red');
+  for (var i = 0; i < deleteButtonRed.length; i++) {
+    if(deleteCard === parseInt(deleteButtonRed[i].id)) {
       list.splice(i, 1);
-      event.target.closest("article").remove();
     }
   }
-  refreshCard();
-}
+};
