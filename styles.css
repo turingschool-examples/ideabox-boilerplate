@@ -78,7 +78,7 @@ aside > h2 {
   margin: 20px 0 0 0;
 }
 
-.input-fields {
+.input-fields, .comment-form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -144,7 +144,7 @@ div > h2 {
   font-weight: 700;
 }
 
-.input-fields > button {
+.input-fields > button, .comment-form > button {
   font-size: 18px;
   font-weight: 700;
   width: 305px;
@@ -154,6 +154,7 @@ div > h2 {
   border: 1px solid #353567;
   border-radius: 2px;
 }
+
 
 input {
   line-height: 250%;

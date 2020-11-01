@@ -4,15 +4,21 @@ var titleInput = document.querySelector('.title-input');
 var bodyInput = document.querySelector('.body-input');
 var cardsDisplay = document.querySelector('.cards-display');
 var searchInput = document.querySelector('.search-input')
+var inputFields = document.querySelector('.input-fields');
+var commentForm = document.querySelector('.comment-form');
+var commentInput = document.querySelector('.comment-input');
 
 var saveButton = document.querySelector('.save-button');
 var showFavButton = document.querySelector('.show-stars');
+var saveCommentButton = document.querySelector('.comment-save-button');
+
 
 window.onload = redrawCardsDisplay()
 saveButton.addEventListener('click', saveIdea);
 titleInput.addEventListener('keyup', toggleSaveButton);
 bodyInput.addEventListener('keyup', toggleSaveButton);
 searchInput.addEventListener('keyup', filterCards)
+commentInput.addEventListener('keyup', toggleSaveCommentButton);
 showFavButton.addEventListener('click', function (event) {
   if (showFavButton.innerText === "Show Starred Ideas") {
     showFavButton.innerText = "Show All Ideas"
@@ -23,17 +29,30 @@ showFavButton.addEventListener('click', function (event) {
   }
 })
 
+
 cardsDisplay.addEventListener('click', function (event) {
   if (event.target.className === "delete-button") {
     deleteCard(event);
     var tempIdea = createTempIdea();
     tempIdea.deleteFromStorage('ideas', tempIdea);
-  }
-  if (event.target.classList.contains("favorite")) {
+  } else if (event.target.classList.contains("favorite")) {
     toggleElement(event);
     updateStar(event)
+  } else if (event.target.classList.contains("card-footer")) {
+    inputFields.classList.toggle('hidden');
+    commentForm.classList.toggle('hidden');
   }
 })
+
+function toggleSaveCommentButton() {
+  if (commentInput.value === '') {
+    saveCommentButton.disabled = true;
+    saveCommentButton.classList.add('disabled');
+  } else {
+    saveCommentButton.disabled = false;
+    saveCommentButton.classList.remove('disabled');
+  }
+}
 
 function filterCards() {
   cardsDisplay.innerHTML = '';
@@ -153,6 +172,12 @@ function toggleSaveButton() {
     saveButton.classList.remove('disabled');
   }
 }
+
+//Pseudocode - Iteration 5
+// 8. display text that the user inputted on the comment card
+// 9. clear input field after comment has been added
+// 10. when the comment card is empty, disable the comment card button and make it a ligher color and change cursor when pointer over it
+// 11. make sure comment still stays on the page when it refreshes
 
 //Pseudocode - Iteration 4
 // 1. Add window on load listener
