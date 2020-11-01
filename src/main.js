@@ -5,20 +5,22 @@ var bodyInput = document.querySelector('.body-input');
 var ideas = [];
 var ideaForm = document.querySelector('.idea-form');
 
+
 //add event listeners here 🍊
 saveButton.addEventListener('click', makeNewIdeaCard);
 cardGrid.addEventListener('click', upDateIdea);
 ideaForm.addEventListener('keyup', toggleSaveButton);
 
 
+
+
 //add functions here 🍊
+
 function toggleSaveButton() {
   if (titleInput.value === '' || bodyInput.value === '') {
     saveButton.disabled = true;
-    saveButton.className = 'save-button-disabled';
   } else if (titleInput.value !== '' && bodyInput.value !== '') {
     saveButton.disabled = false;
-    saveButton.className = 'save-button';
   }
 };
 
