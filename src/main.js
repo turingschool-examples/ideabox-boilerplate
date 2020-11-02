@@ -6,11 +6,10 @@ var cardDisplay = document.querySelector(".card-display")
 
 var list = [];
 
+window.addEventListener("load", retrieveFromLocalStorage);
 inputButton.addEventListener("click", makeNewCard);
 inputTitle.addEventListener("keyup", checkInputs);
 inputBody.addEventListener("keyup", checkInputs);
-
-
 
 cardDisplay.addEventListener("click", function(event) {
   if (event.target.closest(".favorite-button")) {
@@ -43,6 +42,7 @@ function checkInputs() {
 function addToList(title, body) {
   var newIdea = new Idea(title, body);
   list.push(newIdea);
+  newIdea.saveToStorage(list);
 };
 
 function makeNewCard(event) {
@@ -66,7 +66,7 @@ function refreshCard() {
         </div>
         <div class="delete-box">
           <button class="delete-button delete-red" id="${list[i].id}"><img class="delete-img" src="svg-files/delete-active.svg"/></button>
-          <button class="delete-button delete-white"><img class="delete-img" src="svg-files/delete.svg"/></button>  
+          <button class="delete-button delete-white"><img class="delete-img" src="svg-files/delete.svg"/></button>
         </div>
       </div>
       <div class="card-text">
@@ -111,3 +111,18 @@ function deleteIdea(deleteCard) {
     }
   }
 };
+
+function retrieveFromLocalStorage() {
+  var retrievedObject = localStorage.getItem("ideaCards");
+  var parsedObject = JSON.parse(retrievedObject);
+  console.log(parsedObject);
+  for (var i = 0; i < parsedObject.length; i++) {
+    var parsedId = parsedObject[i].id;
+    var parsedTitle = parsedObject[i].title;
+    var parsedBody = parsedObject[i].body;
+    var parsedStar = parsedObject[i].star;
+    var newObject = {id: parsedId, title: parsedTitle, body: parsedBody, star: parsedStar};
+    list.push(newObject);
+  }
+  refreshCard();
+}

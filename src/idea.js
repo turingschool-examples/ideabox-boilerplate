@@ -10,11 +10,11 @@ class Idea {
   // change innerHTML
   saveToStorage(newIdea) {
     var stringifiedObject = JSON.stringify(newIdea);
-    localStorage.setItem("ideaCard", stringifiedObject);
+    localStorage.setItem("ideaCards", stringifiedObject);
   }
 
   deleteFromStorage() {
-    localStorage.removeItem(`ideaCard`);
+    localStorage.removeItem(`ideaCards`); //backticks?
   }
 
   // comments, remove from storage, adding to storage, or favorited:
@@ -29,9 +29,3 @@ class Idea {
   }
 
 }
-
-// function retrieveFromLocalStorage() {
-//   var retrievedObject = localStorage.getItem("ideaCard");
-//   var parsedObject = JSON.parse(retrievedObject);
-//   list.push(parsedObject);
-// }
