@@ -7,7 +7,6 @@ class Idea {
     this.comments = [];
   }
 
-//take in array as a parameter
   saveToStorage(array) {
     var tempArray = JSON.parse(localStorage.getItem(array)) || [];
     tempArray.push(this);

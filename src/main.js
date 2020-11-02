@@ -1,5 +1,4 @@
 var ideas = JSON.parse(localStorage.getItem('ideas')) || [];
-// var starredIdeas = JSON.parse(localStorage.getItem('starredIdeas')) || [];
 var titleInput = document.querySelector('.title-input');
 var bodyInput = document.querySelector('.body-input');
 var cardsDisplay = document.querySelector('.cards-display');
@@ -16,10 +15,20 @@ var saveCommentButton = document.querySelector('.comment-save-button');
 
 window.onload = redrawCardsDisplay()
 saveButton.addEventListener('click', saveIdea);
-titleInput.addEventListener('keyup', toggleSaveButton);
-bodyInput.addEventListener('keyup', toggleSaveButton);
 searchInput.addEventListener('keyup', filterCards)
-commentInput.addEventListener('keyup', toggleSaveCommentButton);
+titleInput.addEventListener('keyup', function () {
+  if (bodyInput.value !== '') {
+    toggleButton(saveButton, titleInput)
+  }
+});
+bodyInput.addEventListener('keyup', function () {
+  if (titleInput.value !== '') {
+    toggleButton(saveButton, bodyInput)
+  }
+});
+commentInput.addEventListener('keyup', function () {
+  toggleButton(saveCommentButton, commentInput)
+});
 saveCommentButton.addEventListener('click', function (event) {
   saveComment(event);
 });
@@ -33,11 +42,10 @@ showFavButton.addEventListener('click', function (event) {
   }
 })
 
-
 cardsDisplay.addEventListener('click', function (event) {
   if (event.target.className === "delete-button") {
     deleteCard(event);
-    var tempIdea = createTempIdea();
+    var tempIdea = createTempIdea(event);
     tempIdea.deleteFromStorage('ideas', tempIdea);
   } else if (event.target.classList.contains("favorite")) {
     toggleElement(event);
@@ -48,16 +56,6 @@ cardsDisplay.addEventListener('click', function (event) {
     cardId.innerText = event.target.parentNode.id;
   }
 })
-
-function toggleSaveCommentButton() {
-  if (commentInput.value === '') {
-    saveCommentButton.disabled = true;
-    saveCommentButton.classList.add('disabled');
-  } else {
-    saveCommentButton.disabled = false;
-    saveCommentButton.classList.remove('disabled');
-  }
-}
 
 function filterCards() {
   cardsDisplay.innerHTML = '';
@@ -71,10 +69,10 @@ function filterCards() {
 
 function toggleFavorites(event) {
   cardsDisplay.innerHTML = ""
-    for (var i = 0; i < ideas.length; i++) {
-      if (ideas[i].star) {
-        displayCard(ideas[i])
-      }
+  for (var i = 0; i < ideas.length; i++) {
+    if (ideas[i].star) {
+      displayCard(ideas[i])
+    }
   }
 }
 
@@ -89,17 +87,17 @@ function updateStar(event) {
 }
 
 function findCardIndex(event) {
-    if (event.target.classList.contains('star')) {
-      var currentId = parseInt(event.target.closest('article').id)
-    } else if (event.target.className === 'comment-save-button') {
-      var currentId = parseInt(cardId.innerText);
-    }
-    return ideas.findIndex(function (element) {
+  if (event.target.classList.contains('star')) {
+    var currentId = parseInt(event.target.closest('article').id)
+  } else if (event.target.className === 'comment-save-button') {
+    var currentId = parseInt(cardId.innerText);
+  }
+  return ideas.findIndex(function (element) {
     return element.id === currentId;
   })
 }
 
-function createTempIdea() {
+function createTempIdea(event) {
   var curTitle = event.target.parentNode.nextElementSibling.firstElementChild.innerText
   var curBody = event.target.parentNode.nextElementSibling.lastElementChild.innerText
   var curId = event.target.parentNode.parentNode.id
@@ -174,20 +172,20 @@ function displayCard(newIdea) {
         <h1 class="idea-title">${newIdea.title}</h1>
         <p class="idea-body">${newIdea.body}</p>
       </div>
-      <div class="card-footer">
-        <img src="./assets/comment.svg" alt="">
-        <p class="comment">Comment</p>
+      <div class="card-footer card-footer-box">
+        <img src="./assets/comment.svg" class="card-footer" alt="A plus sign">
+        <p class="comment card-footer">Comment</p>
       </div>
     </article>`
 }
 
-function toggleSaveButton() {
-  if (titleInput.value === '' || bodyInput.value === '') {
-    saveButton.disabled = true;
-    saveButton.classList.add('disabled');
+function toggleButton(button, input) {
+  if (input.value === "") {
+    button.disabled = true;
+    button.classList.add('disabled');
   } else {
-    saveButton.disabled = false;
-    saveButton.classList.remove('disabled');
+    button.disabled = false;
+    button.classList.remove('disabled');
   }
 }
 
@@ -195,44 +193,3 @@ function toggleSaveButton() {
 // 8. display text that the user inputted on the comment card
 // 9. clear input field after comment has been added
 // 11. make sure comment still stays on the page when it refreshes
-
-//Pseudocode - Iteration 4
-// 1. Add window on load listener
-// 2. Populate card display
-// 3. send deletion to local storage
-// 4. change current idea this.star to true
-// 5. update ideas array with current idea
-// 6. update local storage ideas array
-// 7. check if idea.star is true for each idea on page load
-// 8. display card only if true
-// 9. Redraw cards display based on this.star value
-//    - check if this.star
-//    - redraw display with this.star = true cards
-
-// 10. On keyup, check title and body (to upper case) of each card for search input value (to upper case)
-// 11. Display cards that match
-
-
-// ADDITION => Add message if no cards are favorited
-
-
-//Pseudocode - Iteration 3
-// 1. Delete button should delete the card
-// 2. Star should toggle on click and save to favorites array
-// 3. all without refreshing the page
-
-
-//Pseudocode - Iteration 2
-// 1. Utilize new idea class to populate our HTML element that is the card
-// 2. Need to take newIdea.title/body and iterpolate that into HTML
-// 3. Update cards display area HTML with our new card
-
-//Pseudocode - iteration 1
-//1. saveButton should only use class constructor and push data to the arrays
-//2. verify inputs have required inputs for error handling when a user clicks the save button
-//3. once the save button is pushed, idea title/body are being pushed into new array
-// title input/body input = new Idea. helper function
-//4. instantiating new instance of Idea class
-//5. push new instance of Idea class to the ideas array (an array of objects)
-//6. add save to localStorage
-//7. clear out input boxes - call function inside saveIdea function

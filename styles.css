@@ -1,8 +1,3 @@
-/* go through chrome dev tools and
-see what's not being used.
-and change the cursor to a pointer
-when it's on a button */
-
 html,
 body {
   margin: 0;
@@ -186,7 +181,11 @@ article > header {
   background-color: #1F1F3D;
 }
 
-.card-footer {
+/* .delete-button:hover {
+  background-image: url(./assets/delete-button-active.svg);
+} */
+
+.card-footer-box {
   display: flex;
   justify-content: flex-start;
   align-items: center;
