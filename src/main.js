@@ -6,11 +6,10 @@ var cardDisplay = document.querySelector(".card-display")
 
 var list = [];
 
+window.addEventListener("load", retrieveFromLocalStorage);
 inputButton.addEventListener("click", makeNewCard);
 inputTitle.addEventListener("keyup", checkInputs);
 inputBody.addEventListener("keyup", checkInputs);
-
-
 
 cardDisplay.addEventListener("click", function(event) {
   if (event.target.closest(".favorite-button")) {
@@ -43,6 +42,7 @@ function checkInputs() {
 function addToList(title, body) {
   var newIdea = new Idea(title, body);
   list.push(newIdea);
+  newIdea.saveToStorage(list);
 };
 
 function makeNewCard(event) {
@@ -66,7 +66,7 @@ function refreshCard() {
         </div>
         <div class="delete-box">
           <button class="delete-button delete-red" id="${list[i].id}"><img class="delete-img" src="svg-files/delete-active.svg"/></button>
-          <button class="delete-button delete-white"><img class="delete-img" src="svg-files/delete.svg"/></button>  
+          <button class="delete-button delete-white"><img class="delete-img" src="svg-files/delete.svg"/></button>
         </div>
       </div>
       <div class="card-text">
@@ -91,7 +91,11 @@ function clearInputs() {
 }
 
 function addStar(favoritedIdea) {
-  favoritedIdea.updateIdea(favoritedIdea);
+  if (favoritedIdea.star === false) {
+    favoritedIdea.star = true;
+  } else {
+    favoritedIdea.star = false;
+  }
 }
 
 function fillStar(favoritedIdea) {
@@ -111,3 +115,10 @@ function deleteIdea(deleteCard) {
     }
   }
 };
+
+function retrieveFromLocalStorage() {
+  var newIdea = new Idea(title, body);
+  // list.push(newIdea.updateIdea());
+  newIdea.updateIdea();
+  refreshCard();
+}
