@@ -91,7 +91,11 @@ function clearInputs() {
 }
 
 function addStar(favoritedIdea) {
-  favoritedIdea.updateIdea(favoritedIdea);
+  if (favoritedIdea.star === false) {
+    favoritedIdea.star = true;
+  } else {
+    favoritedIdea.star = false;
+  }
 }
 
 function fillStar(favoritedIdea) {
@@ -113,16 +117,8 @@ function deleteIdea(deleteCard) {
 };
 
 function retrieveFromLocalStorage() {
-  var retrievedObject = localStorage.getItem("ideaCards");
-  var parsedObject = JSON.parse(retrievedObject);
-  console.log(parsedObject);
-  for (var i = 0; i < parsedObject.length; i++) {
-    var parsedId = parsedObject[i].id;
-    var parsedTitle = parsedObject[i].title;
-    var parsedBody = parsedObject[i].body;
-    var parsedStar = parsedObject[i].star;
-    var newObject = {id: parsedId, title: parsedTitle, body: parsedBody, star: parsedStar};
-    list.push(newObject);
-  }
+  var newIdea = new Idea(title, body);
+  // list.push(newIdea.updateIdea());
+  newIdea.updateIdea();
   refreshCard();
 }

@@ -6,8 +6,6 @@ class Idea {
     this.star = false;
   }
 
-  // create a new instance of our idea class w/ a new id, new title, and new body
-  // change innerHTML
   saveToStorage(newIdea) {
     var stringifiedObject = JSON.stringify(newIdea);
     localStorage.setItem("ideaCards", stringifiedObject);
@@ -18,14 +16,32 @@ class Idea {
   }
 
   // comments, remove from storage, adding to storage, or favorited:
-  updateIdea(newIdea) {
-    // this.title = newIdea.title;
-    // this.body = newIdea.body;
-    if (newIdea.star === false) {
-      newIdea.star = true;
-    } else {
-      newIdea.star = false;
+  updateIdea() {
+    var retrievedObject = localStorage.getItem("ideaCards");
+    var parsedObject = JSON.parse(retrievedObject);
+    for (var i = 0; i < parsedObject.length; i++) {
+      var parsedId = parsedObject[i].id;
+      var parsedTitle = parsedObject[i].title;
+      var parsedBody = parsedObject[i].body;
+      var parsedStar = parsedObject[i].star;
+      var newObject = {
+        id: parsedId,
+        title: parsedTitle,
+        body: parsedBody,
+        star: parsedStar
+      };
+      list.push(newObject);
+      // return newObject;
     }
   }
-
 }
+
+// updateIdea(newIdea) {
+//   // this.title = newIdea.title;
+//   // this.body = newIdea.body;
+//   if (newIdea.star === false) {
+//     newIdea.star = true;
+//   } else {
+//     newIdea.star = false;
+//   }
+// }
