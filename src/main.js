@@ -7,6 +7,7 @@ var searchInput = document.querySelector('.search-input')
 var inputFields = document.querySelector('.input-fields');
 var commentForm = document.querySelector('.comment-form');
 var commentInput = document.querySelector('.comment-input');
+var cardId = document.querySelector('.card-id');
 
 var saveButton = document.querySelector('.save-button');
 var showFavButton = document.querySelector('.show-stars');
@@ -19,6 +20,9 @@ titleInput.addEventListener('keyup', toggleSaveButton);
 bodyInput.addEventListener('keyup', toggleSaveButton);
 searchInput.addEventListener('keyup', filterCards)
 commentInput.addEventListener('keyup', toggleSaveCommentButton);
+saveCommentButton.addEventListener('click', function (event) {
+  saveComment(event);
+});
 showFavButton.addEventListener('click', function (event) {
   if (showFavButton.innerText === "Show Starred Ideas") {
     showFavButton.innerText = "Show All Ideas"
@@ -41,6 +45,7 @@ cardsDisplay.addEventListener('click', function (event) {
   } else if (event.target.classList.contains("card-footer")) {
     inputFields.classList.toggle('hidden');
     commentForm.classList.toggle('hidden');
+    cardId.innerText = event.target.parentNode.id;
   }
 })
 
@@ -84,10 +89,14 @@ function updateStar(event) {
 }
 
 function findCardIndex(event) {
-  return ideas.findIndex(function (element) {
-    return element.id === parseInt(event.target.closest('article').id);
+    if (event.target.classList.contains('star')) {
+      var currentId = parseInt(event.target.closest('article').id)
+    } else if (event.target.className === 'comment-save-button') {
+      var currentId = parseInt(cardId.innerText);
+    }
+    return ideas.findIndex(function (element) {
+    return element.id === currentId;
   })
-
 }
 
 function createTempIdea() {
@@ -119,13 +128,24 @@ function saveIdea() {
   ideas.push(newIdea);
   newIdea.saveToStorage('ideas');
   displayCard(newIdea);
-  clearInputs(titleInput, bodyInput);
+  clearInputs(bodyInput, titleInput);
   toggleSaveButton()
 }
 
-function clearInputs() {
-  titleInput.value = '';
-  bodyInput.value = '';
+function saveComment(event) {
+  var message = commentInput.value;
+  var id = cardId.innerText;
+  var index = findCardIndex(event);
+  var newComment = new Comment(id, message)
+  ideas[index].comments.push(message);
+  // newComment.saveToStorage();
+  clearInputs(commentInput, commentInput);
+  console.log('find me', findCardIndex(event))
+}
+
+function clearInputs(body, title) {
+  body.value = '';
+  title.value = '';
 }
 
 function toggleElement(event) {
@@ -176,7 +196,6 @@ function toggleSaveButton() {
 //Pseudocode - Iteration 5
 // 8. display text that the user inputted on the comment card
 // 9. clear input field after comment has been added
-// 10. when the comment card is empty, disable the comment card button and make it a ligher color and change cursor when pointer over it
 // 11. make sure comment still stays on the page when it refreshes
 
 //Pseudocode - Iteration 4
