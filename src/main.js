@@ -134,13 +134,11 @@ function saveIdea() {
 
 function saveComment(event) {
   var message = commentInput.value;
-  var id = cardId.innerText;
   var index = findCardIndex(event);
-  var newComment = new Comment(id, message)
+  var newComment = new Comment(message)
   ideas[index].comments.push(message);
-  // newComment.saveToStorage();
+  newComment.saveToStorage('ideas', index);
   clearInputs(commentInput, commentInput);
-  console.log('find me', findCardIndex(event))
 }
 
 function clearInputs(body, title) {
