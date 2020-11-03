@@ -7,11 +7,17 @@ var inputFields = document.querySelector('.input-fields');
 var commentForm = document.querySelector('.comment-form');
 var commentInput = document.querySelector('.comment-input');
 var cardId = document.querySelector('.card-id');
+var modal = document.querySelector(".modal");
+var commentDisplay = document.querySelector(".comment-display")
+var modalDisplayId = document.querySelector(".modal-display-id")
 
 var saveButton = document.querySelector('.save-button');
 var showFavButton = document.querySelector('.show-stars');
 var saveCommentButton = document.querySelector('.comment-save-button');
+var showCommentsButton = document.querySelector('.view-comment');
+var closeCommentsButton = document.querySelector('.close-comments-button')
 
+// add delete functionality (removefromstorage) in the comment class
 
 window.onload = redrawCardsDisplay()
 saveButton.addEventListener('click', saveIdea);
@@ -31,6 +37,7 @@ commentInput.addEventListener('keyup', function () {
 });
 saveCommentButton.addEventListener('click', function (event) {
   saveComment(event);
+  toggleButton(saveCommentButton, commentInput)
 });
 showFavButton.addEventListener('click', function (event) {
   if (showFavButton.innerText === "Show Starred Ideas") {
@@ -53,18 +60,46 @@ cardsDisplay.addEventListener('click', function (event) {
   } else if (event.target.classList.contains("card-footer")) {
     inputFields.classList.toggle('hidden');
     commentForm.classList.toggle('hidden');
-    cardId.innerText = event.target.parentNode.id;
+    cardId.innerText = event.target.parentNode.parentNode.parentNode.id;
   } else if (event.target.classList.contains("view-comment")) {
-    // do things here
-    // get comments event.target.attributes.comments.all ish
-    // write them into this new <p>
-    // open the modal
-    // event listener on the new comment button
-    // add a delete button to each comment
-    // so easy
+    showComments(event)
   }
-
 })
+
+modal.addEventListener('click', function (event) {
+  if (event.target.id === "close-comments-button") {
+    modal.classList.add("hidden")
+  } else if (event.target.className === "comment-hand") {
+    var commentMessage = event.target.parentNode.innerText.slice(3)
+    var commentIndex = findCommentIndex(event, commentMessage)
+    console.log(commentIndex)
+    // deleteFromStorage(ideas, modalDisplayId, ideas.modalDisplayId[commentIndex])
+  }
+})
+
+function openModal() {
+  modal.classList.remove("hidden")
+}
+
+function findCommentIndex(event, commentMessage) {
+  var modalCardIndex = findCardIndex(event, modalDisplayId.innerText)
+  for (var i = 0; i < ideas[modalCardIndex].comments.length; i++) {
+    if (ideas[modalCardIndex].comments[i] === commentMessage) {
+      return i
+    }
+  }
+}
+
+function showComments(event) {
+  var index = findCardIndex(event, event.target.parentNode.parentNode.id);
+  commentDisplay.innerHTML = ""
+  for (var i = 0; i < ideas[index].comments.length; i++) {
+    ideas[index].comments[i]
+    commentDisplay.innerHTML += `<p class="comment-text"><span class="comment-hand">👉</span> ${ideas[index].comments[i]}</p>`
+  }
+  document.querySelector(".modal-display-id").innerText = event.target.parentNode.parentNode.id;
+  openModal()
+}
 
 function filterCards() {
   cardsDisplay.innerHTML = '';
@@ -86,7 +121,7 @@ function toggleFavorites(event) {
 }
 
 function updateStar(event) {
-  cardIndex = findCardIndex(event);
+  cardIndex = findCardIndex(event, event.target.closest('article').id);
   var ideasArray = JSON.parse(localStorage.getItem('ideas'))
   var currentIdea = ideasArray[cardIndex]
   currentIdea.star = !currentIdea.star;
@@ -95,12 +130,8 @@ function updateStar(event) {
   currentIdea.updateIdea('ideas', currentIdea, cardIndex)
 }
 
-function findCardIndex(event) {
-  if (event.target.classList.contains('star')) {
-    var currentId = parseInt(event.target.closest('article').id)
-  } else if (event.target.className === 'comment-save-button') {
-    var currentId = parseInt(cardId.innerText);
-  }
+function findCardIndex(event, path) {
+  var currentId = parseInt(path)
   return ideas.findIndex(function (element) {
     return element.id === currentId;
   })
@@ -151,7 +182,7 @@ function toggleButton(button, input) {
 
 function saveComment(event) {
   var message = commentInput.value;
-  var index = findCardIndex(event);
+  var index = findCardIndex(event, cardId.innerText);
   var newComment = new Comment(message)
   ideas[index].comments.push(message);
   newComment.saveToStorage('ideas', index);
@@ -191,12 +222,12 @@ function displayCard(newIdea) {
         <h1 class="idea-title">${newIdea.title}</h1>
         <p class="idea-body">${newIdea.body}</p>
       </div>
-      <div class="card-footer card-footer-box">
+      <div class="card-footer-box">
         <div id="comment-word">
           <img src="./assets/comment.svg" class="card-footer" alt="A plus sign">
           <p class="comment card-footer">Comment</p>
         </div>
-        <img src="./assets/comment-active.png" class="view-comment" id="comment-bubble" alt="A speech bubble"
+        <img src="./assets/comment-active.png" class="view-comment" id="comment-bubble" alt="A speech bubble">
       </div>
     </article>`
 }

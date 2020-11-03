@@ -65,6 +65,10 @@ aside > button {
   background-color: #5356A4;
 }
 
+aside > button:hover {
+  cursor: pointer;
+}
+
 button:focus {
   outline: none;
 }
@@ -191,8 +195,10 @@ article > header {
   background-size: 25px 25px;
 }
 
-.delete-button:hover {
+.delete-button:hover,
+#close-comments-button:hover {
   background-image: url(./assets/delete-active.svg);
+  cursor: pointer;
 }
 
 .card-footer-box {
@@ -239,45 +245,37 @@ article > header {
   overflow: auto;
 }
 
-/*
 .modal {
-  display: none;
   position: fixed;
-  z-index: 1;
-  padding-top: 100px;
   left: 0;
   top: 0;
+  z-index: 1;
   width: 100%;
   height: 100%;
-  overflow: auto;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4);
+  background-color: #1F1F3D;
+  background-color: rgba(31, 31, 61, .4);
+  /* opacity: 50%; */
 }
 
-      Modal Content
 .modal-content {
-  background-color: #fefefe;
+  background-color: #5356A4;
   margin: auto;
+  margin-top: 20%;
   padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
+  border: 2px solid #353567;
+  max-height: 400px;
+  width: 75%;
+  overflow: auto;
 }
 
-      The Close Button
-.close {
-  color: #aaaaaa;
+.comment-display {
+  color: #ffffff
+}
+
+#close-comments-button {
   float: right;
-  font-size: 28px;
-  font-weight: bold;
+  /* and stay at the top thanks*/
 }
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-*/
 
 .disabled {
   opacity: 0.5;
