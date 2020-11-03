@@ -25,10 +25,10 @@ cardDisplay.addEventListener("click", function(event) {
   if (event.target.closest(".favorite-button")) {
     for (var i = 0; i < list.length; i++) {
       if (parseInt(event.target.closest("article").id) === list[i].id) {
-        addStar(list[i]);
         addToFavorites(list[i]);
+        changeStarColor(list[i]);
       }
-    }
+    };
   };
 
   if (event.target.closest(".delete-red")) {
@@ -102,12 +102,12 @@ function clearInputs() {
   ideaForm.reset();
 };
 
-function addStar(favoritedIdea) {
+function addToFavorites(favoritedIdea) {
   favoritedIdea.updateIdea(favoritedIdea);
   sendToLocalStorage();
 };
 
-function addToFavorites(favoritedIdea) {
+function changeStarColor(favoritedIdea) {
   var favoriteButton = document.querySelectorAll('.favorite-button');
   for (var i = 0; i < favoriteButton.length; i++) {
     if (favoritedIdea.id === parseInt(favoriteButton[i].id)) {
@@ -180,11 +180,11 @@ function toggleFavorites() {
   };
 };
 
-function searchValues(element) {
+function searchValues(idea) {
   var currentString = event.target.value.toLowerCase();
   return (
-    element.title.toLowerCase().includes(currentString) ||
-    element.body.toLowerCase().includes(currentString)
+    idea.title.toLowerCase().includes(currentString) ||
+    idea.body.toLowerCase().includes(currentString)
   );
 };
 
