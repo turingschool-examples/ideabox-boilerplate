@@ -11,26 +11,12 @@ saveButton.addEventListener('click', makeNewIdeaCard);
 cardGrid.addEventListener('click', upDateIdea);
 ideaForm.addEventListener('keyup', toggleSaveButton);
 window.addEventListener('load', updateFromStorage);
-// window.onload
 
 //add functions here 🍊
-function updateFromStorage () {
-  for (var i = 0; i < localStorage.length; i++) {
-    var keyName = localStorage.key(i);
-    var retrievedIdea = localStorage.getItem(keyName);
-    var parsedIdea = JSON.parse(retrievedIdea);
-
-    var oldIdeaFromStorage = new Idea(parsedIdea.title, parsedIdea.body, parsedIdea.id, parsedIdea.star, parsedIdea.comments);
-
-    ideas.push(oldIdeaFromStorage);
-  }
-  upDateCardGrid();
-};
-
 function toggleSaveButton() {
   if (titleInput.value === '' || bodyInput.value === '') {
     saveButton.disabled = true;
-  } else if (titleInput.value !== '' && bodyInput.value !== '') {
+  } else {
     saveButton.disabled = false;
   }
 };
@@ -51,7 +37,7 @@ function clearFields(title, body) {
 };
 
 function upDateCardGrid() {
-    newGrid = "";
+    newGrid = ""; // need to set this with a var
     for (var i = 0; i < ideas.length; i++) {
         newGrid +=
             `<section class="idea-card">
@@ -70,7 +56,7 @@ function upDateCardGrid() {
           </section>`;
     }
     cardGrid.innerHTML = newGrid;
-}
+};
 
 function upDateIdea() {
     if (checkForButtonType('delete-card')) {
@@ -85,8 +71,8 @@ function checkForButtonType(iDPrefix) {
   return event.target.id.includes(iDPrefix);
 };
 
-function testForMatchAmongIdeas(targetID, index) {
-  if (`${targetID}-${ideas[index].id}` === event.target.id) {
+function testForMatchAmongIdeas(targetIDPrefix, index) {
+  if (`${targetIDPrefix}-${ideas[index].id}` === event.target.id) {
     return true
   }
 };
@@ -94,9 +80,6 @@ function testForMatchAmongIdeas(targetID, index) {
 function deleteIdea() {
   for (var i = 0; i < ideas.length; i++) {
       if (testForMatchAmongIdeas(`delete-card`, i)) {
-        // console.log(ideas);
-        // console.log(ideas[i]);
-
         ideas[i].deleteFromStorage();
         ideas.splice(i, 1);
       }
@@ -107,7 +90,7 @@ function deleteIdea() {
     for (var i = 0; i < ideas.length; i++) {
         if (testForMatchAmongIdeas(`star`, i)) {
             ideas[i].toggleStar();
-            ideas[i].updateIdea();
+            ideas[i].updateLocallyStoredIdea();
         }
       }
     };
@@ -118,4 +101,17 @@ function testForStar(idea) {
     } else {
         return './assets/star.svg';
     }
-}
+};
+
+function updateFromStorage () {
+  for (var i = 0; i < localStorage.length; i++) {
+    var keyName = localStorage.key(i);
+    var retrievedIdea = localStorage.getItem(keyName);
+    var parsedIdea = JSON.parse(retrievedIdea);
+
+    var oldIdeaFromStorage = new Idea(parsedIdea.title, parsedIdea.body, parsedIdea.id, parsedIdea.star, parsedIdea.comments);
+
+    ideas.push(oldIdeaFromStorage);
+  }
+  upDateCardGrid();
+};

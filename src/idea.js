@@ -5,24 +5,24 @@ class Idea {
         this.body = body;
         this.star = star;
         this.comments = comments;
-
     }
+
     toggleStar() {
         this.star = !this.star;
     }
+
     saveToStorage() {
       var stringifiedIdea = JSON.stringify(this);
       var storedIdea = localStorage.setItem(`${this.id}`, stringifiedIdea);
     }
 
     deleteFromStorage() {
-      var retrievedIdea = localStorage.removeItem(`${this.id}`);
+      localStorage.removeItem(`${this.id}`);
     }
 
-    updateIdea() {
-        var retrievedIdea = localStorage.removeItem(`${this.id}`);
+    updateLocallyStoredIdea() {
+        localStorage.removeItem(`${this.id}`);
         var stringifiedIdea = JSON.stringify(this);
         var storedIdea = localStorage.setItem(`${this.id}`, stringifiedIdea);
     }
-
 };
