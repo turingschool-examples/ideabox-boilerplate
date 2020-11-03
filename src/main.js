@@ -54,7 +54,16 @@ cardsDisplay.addEventListener('click', function (event) {
     inputFields.classList.toggle('hidden');
     commentForm.classList.toggle('hidden');
     cardId.innerText = event.target.parentNode.id;
+  } else if (event.target.classList.contains("view-comment")) {
+    // do things here
+    // get comments event.target.attributes.comments.all ish
+    // write them into this new <p>
+    // open the modal
+    // event listener on the new comment button
+    // add a delete button to each comment
+    // so easy
   }
+
 })
 
 function filterCards() {
@@ -127,7 +136,17 @@ function saveIdea() {
   newIdea.saveToStorage('ideas');
   displayCard(newIdea);
   clearInputs(bodyInput, titleInput);
-  toggleSaveButton()
+  toggleButton(saveButton, bodyInput)
+}
+
+function toggleButton(button, input) {
+  if (input.value === "") {
+    button.disabled = true;
+    button.classList.add('disabled');
+  } else {
+    button.disabled = false;
+    button.classList.remove('disabled');
+  }
 }
 
 function saveComment(event) {
@@ -166,27 +185,20 @@ function displayCard(newIdea) {
     <article class="cards" id=${newIdea.id}>
       <header class="card-header" id=${newIdea.star}>
         <img src=${imageSource} class="favorite star" alt="A white star">
-        <img src="./assets/delete.svg" class="delete-button" alt="An X">
+        <div class="delete-button"></div>
       </header>
       <div class="idea-text">
         <h1 class="idea-title">${newIdea.title}</h1>
         <p class="idea-body">${newIdea.body}</p>
       </div>
       <div class="card-footer card-footer-box">
-        <img src="./assets/comment.svg" class="card-footer" alt="A plus sign">
-        <p class="comment card-footer">Comment</p>
+        <div id="comment-word">
+          <img src="./assets/comment.svg" class="card-footer" alt="A plus sign">
+          <p class="comment card-footer">Comment</p>
+        </div>
+        <img src="./assets/comment-active.png" class="view-comment" id="comment-bubble" alt="A speech bubble"
       </div>
     </article>`
-}
-
-function toggleButton(button, input) {
-  if (input.value === "") {
-    button.disabled = true;
-    button.classList.add('disabled');
-  } else {
-    button.disabled = false;
-    button.classList.remove('disabled');
-  }
 }
 
 //Pseudocode - Iteration 5

@@ -169,7 +169,7 @@ input {
 
 .cards {
   width: 100%;
-  height: 65%;
+  height: 150px;
   display: inline-block;
 }
 
@@ -178,16 +178,26 @@ article > header {
   justify-content: space-between;
   width: 100%;
   height: 17%;
+  max-height: 25px;
   background-color: #1F1F3D;
 }
 
-/* .delete-button:hover {
-  background-image: url(./assets/delete-button-active.svg);
-} */
+.delete-button {
+  background-image: url(./assets/delete.svg);
+  background-repeat: no-repeat;
+  width: 25px;
+  height: auto;
+  background-position: center;
+  background-size: 25px 25px;
+}
+
+.delete-button:hover {
+  background-image: url(./assets/delete-active.svg);
+}
 
 .card-footer-box {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   width: 99%;
   height: 17%;
@@ -196,6 +206,16 @@ article > header {
   font-weight: 700;
   font-size: 11px;
   border: 1px solid #1F1F3D;
+}
+
+#comment-word {
+  display: flex;
+}
+
+#comment-bubble {
+  max-width: 18px;
+  margin-right: 3px;
+  filter: invert(100%) sepia(2%) saturate(556%) hue-rotate(292deg) brightness(117%) contrast(100%);
 }
 
 .idea-title {
@@ -216,7 +236,48 @@ article > header {
   font-size: 14px;
   border-left: 1px solid #1F1F3D;
   border-right: 1px solid #1F1F3D;
+  overflow: auto;
 }
+
+/*
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+      Modal Content
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+      The Close Button
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+*/
 
 .disabled {
   opacity: 0.5;
