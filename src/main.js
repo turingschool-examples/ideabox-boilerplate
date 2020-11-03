@@ -3,6 +3,7 @@ var inputTitle = document.querySelector("#title")
 var inputBody = document.querySelector("#body")
 var inputButton = document.querySelector("#save-button")
 var cardDisplay = document.querySelector(".card-display")
+var filterButton = document.querySelector(".filter-button")
 
 var list = [];
 
@@ -10,6 +11,7 @@ window.addEventListener("load", retrieveFromLocalStorage);
 inputButton.addEventListener("click", makeNewCard);
 inputTitle.addEventListener("keyup", checkInputs);
 inputBody.addEventListener("keyup", checkInputs);
+filterButton.addEventListener("click", toggleFavorites);
 cardDisplay.addEventListener("click", function(event) {
   if (event.target.closest(".favorite-button")) {
     for (var i = 0; i < list.length; i++) {
@@ -58,7 +60,7 @@ function refreshCard() {
   for (i = 0; i < list.length; i++) {
     cardDisplay.innerHTML +=
       `
-    <article id="${list[i].id}">
+    <article class="card" id="${list[i].id}">
       <div class="card-button-bar">
         <div class="favorite-box">
           <button class="favorite-button white-star" id="${list[i].id}"><img class="favorite-button" src="svg-files/star.svg"/></button>
@@ -146,3 +148,19 @@ function loadStars() {
     }
   }
 }
+
+function toggleFavorites() {
+  var card = document.querySelectorAll('.card');
+  if (filterButton.innerText === 'Show Starred Ideas') {
+    for (var i = 0; i < list.length; i++) {
+      if (!list[i].star) {
+        card[i].classList.add("hidden");
+      }
+    }
+    filterButton.innerText = 'Show All Ideas';
+  }
+
+}
+// if star is false, classlist.add hidden
+// change button innertext to "Show All Ideas"
+// if it's clicked again, remove hidden class from all...? & change button text back
