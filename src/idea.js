@@ -1,10 +1,11 @@
 class Idea {
-    constructor(title, body) {
-        this.id = Date.now();
+    constructor(title, body, id = Date.now(), star = false, comments = []) {
+        this.id = id;
         this.title = title;
         this.body = body;
-        this.star = false;
-        this.comments = [];
+        this.star = star;
+        this.comments = comments;
+
     }
     toggleStar() {
         this.star = !this.star;

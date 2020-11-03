@@ -1,15 +1,41 @@
-var saveButton = document.querySelector('.save-button');
+var saveButton = document.querySelector('#save-button');
 var cardGrid = document.querySelector('.card-grid');
 var titleInput = document.querySelector('.title-input');
 var bodyInput = document.querySelector('.body-input');
 var ideas = [];
+var ideaForm = document.querySelector('.idea-form');
+
 
 //add event listeners here 🍊
 saveButton.addEventListener('click', makeNewIdeaCard);
 cardGrid.addEventListener('click', upDateIdea);
-
+ideaForm.addEventListener('keyup', toggleSaveButton);
+window.addEventListener('load', updateFromStorage);
+// window.onload
 
 //add functions here 🍊
+function updateFromStorage () {
+  for (var i = 0; i < localStorage.length; i++) {
+    var keyName = localStorage.key(i);
+    var retrievedIdea = localStorage.getItem(keyName);
+    var parsedIdea = JSON.parse(retrievedIdea);
+
+    var oldIdeaFromStorage = new Idea(parsedIdea.title, parsedIdea.body, parsedIdea.id, parsedIdea.star, parsedIdea.comments);
+
+    ideas.push(oldIdeaFromStorage);
+  }
+  upDateCardGrid();
+};
+
+function toggleSaveButton() {
+  if (titleInput.value === '' || bodyInput.value === '') {
+    saveButton.disabled = true;
+  } else if (titleInput.value !== '' && bodyInput.value !== '') {
+    saveButton.disabled = false;
+  }
+};
+
+
 function makeNewIdeaCard() {
     var newIdea = new Idea(titleInput.value, bodyInput.value);
     ideas.push(newIdea);
@@ -21,6 +47,7 @@ function makeNewIdeaCard() {
 function clearFields(title, body) {
     title.value = '';
     body.value = '';
+    toggleSaveButton();
 };
 
 function upDateCardGrid() {
@@ -67,6 +94,9 @@ function testForMatchAmongIdeas(targetID, index) {
 function deleteIdea() {
   for (var i = 0; i < ideas.length; i++) {
       if (testForMatchAmongIdeas(`delete-card`, i)) {
+        // console.log(ideas);
+        // console.log(ideas[i]);
+
         ideas[i].deleteFromStorage();
         ideas.splice(i, 1);
       }
@@ -81,10 +111,6 @@ function deleteIdea() {
         }
       }
     };
-
-
-
-
 
 function testForStar(idea) {
     if (idea.star === true) {
