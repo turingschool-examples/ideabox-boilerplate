@@ -158,9 +158,9 @@ function toggleFavorites() {
       }
     }
     filterButton.innerText = 'Show All Ideas';
+  } else {
+    filterButton.innerText = 'Show Starred Ideas';
+    refreshCard();
+    loadStars();
   }
-
 }
-// if star is false, classlist.add hidden
-// change button innertext to "Show All Ideas"
-// if it's clicked again, remove hidden class from all...? & change button text back
