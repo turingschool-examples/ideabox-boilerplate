@@ -14,11 +14,10 @@ body {
 }
 
 .hidden {
-  display: none!important;
+  display: none !important;
 }
 
 /* Side Bar Section Styles */
-
 .side-box {
   background-color: #1f1f3d;
   grid-area: sidebox;
@@ -56,7 +55,6 @@ h1 {
 }
 
 /* Form Box Styles */
-
 .form-box {
   background-color: #a9aad2;
   grid-area: formbox;
@@ -116,12 +114,9 @@ h1 {
   cursor: help;
 }
 
-
 /* Search Box Styles */
-
 .search-form {
   display: grid;
-
   grid-template-columns: repeat(10, 1fr);
   justify-content: flex-start;
   width: 50%;
@@ -134,7 +129,8 @@ h1 {
   background: none;
   border: 2px solid #7274B5;
   background-color: #353567;
-  padding: 10px; /* changes size of actual icon */
+  padding: 10px;
+  /* changes size of actual icon */
   width: 50px;
 }
 
@@ -146,7 +142,6 @@ h1 {
 }
 
 /* Card Box Styles */
-
 .card-box {
   background-color: #eaeaf4;
   grid-area: cardbox;
@@ -191,7 +186,7 @@ article {
   z-index: 99;
 }
 
-.delete-box:hover .delete-red{
+.delete-box:hover .delete-red {
   display: inline;
 }
 
