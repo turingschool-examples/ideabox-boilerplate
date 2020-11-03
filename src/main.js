@@ -11,6 +11,7 @@ inputButton.addEventListener("click", makeNewCard);
 inputTitle.addEventListener("keyup", checkInputs);
 inputBody.addEventListener("keyup", checkInputs);
 
+
 cardDisplay.addEventListener("click", function(event) {
   if (event.target.closest(".favorite-button")) {
     for (var i = 0; i < list.length; i++) {
@@ -26,6 +27,7 @@ cardDisplay.addEventListener("click", function(event) {
       if (parseInt(event.target.closest("article").id) === list[i].id) {
         deleteIdea(list[i].id);
         event.target.closest("article").remove();
+        list[i].deleteFromStorage(list[i].id);
       }
     }
   }
@@ -113,12 +115,11 @@ function deleteIdea(deleteCard) {
     if(deleteCard === parseInt(deleteButtonRed[i].id)) {
       list.splice(i, 1);
     }
-  }
+  } 
 };
 
 function retrieveFromLocalStorage() {
   var newIdea = new Idea(title, body);
-  // list.push(newIdea.updateIdea());
   newIdea.updateIdea();
   refreshCard();
 }

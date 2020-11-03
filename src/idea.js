@@ -11,8 +11,15 @@ class Idea {
     localStorage.setItem("ideaCards", stringifiedObject);
   }
 
-  deleteFromStorage() {
-    localStorage.removeItem(`ideaCards`); //backticks?
+  deleteFromStorage(listId) {
+    var retrievedObject = localStorage.getItem("ideaCards");
+    var parsedObject = JSON.parse(retrievedObject);
+    console.log(parsedObject);
+    for (var i = 0; i < parsedObject.length; i++) {
+      if (listId === parsedObject[i].id) {
+      parsedObject.splice(i, 1);
+      }
+    } saveToStorage(parsedObject);
   }
 
   // comments, remove from storage, adding to storage, or favorited:
