@@ -10,8 +10,6 @@ window.addEventListener("load", retrieveFromLocalStorage);
 inputButton.addEventListener("click", makeNewCard);
 inputTitle.addEventListener("keyup", checkInputs);
 inputBody.addEventListener("keyup", checkInputs);
-
-
 cardDisplay.addEventListener("click", function(event) {
   if (event.target.closest(".favorite-button")) {
     for (var i = 0; i < list.length; i++) {
@@ -109,7 +107,7 @@ function fillStar(favoritedIdea) {
 function deleteIdea(deleteCard) {
   var deleteButtonRed = document.querySelectorAll('.delete-red');
   for (var i = 0; i < deleteButtonRed.length; i++) {
-    if(deleteCard === parseInt(deleteButtonRed[i].id)) {
+    if (deleteCard === parseInt(deleteButtonRed[i].id)) {
       list.splice(i, 1);
     }
   }
@@ -122,6 +120,9 @@ function sendToLocalStorage() {
 }
 
 function retrieveFromLocalStorage() {
+  if (localStorage.length < 1) {
+    return;
+  }
   var retrievedObject = localStorage.getItem("ideaCards");
   var parsedObject = JSON.parse(retrievedObject);
   for (var i = 0; i < parsedObject.length; i++) {
@@ -136,7 +137,7 @@ function loadStars() {
   var redStar = document.querySelectorAll('.red-star');
   var whiteStar = document.querySelectorAll('.white-star');
   for (var i = 0; i < list.length; i++) {
-    if (list[i].star === true) {
+    if (list[i].star) {
       whiteStar[i].classList.add("hidden");
       redStar[i].classList.remove("hidden");
     } else {
@@ -145,12 +146,3 @@ function loadStars() {
     }
   }
 }
-
-// function loadStars() {
-//   var favoriteButton = document.querySelectorAll('.favorite-button');
-//   for (var i = 0; i < favoriteButton.length; i++) {
-//     if (list[i].star === true) {
-//       favoriteButton[i].classList.remove("hidden");
-//     }
-//   }
-// }
