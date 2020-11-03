@@ -53,6 +53,16 @@ function makeNewCard(event) {
   checkInputs();
 };
 
+/*
+ * I recommend using a variable for the name of the directory holding your SVG
+ * files, whose value is 'svg-files'. That way, if you rename the svg-files
+ * directory for any reason, you don't have to change the src attribute of every
+ * button element. And that name can easily change--for example, you might need
+ * to use some other image format besides SVG.
+ *
+ * Four lines of code to change isn't that big a deal, but even tiny websites
+ * can have hundreds of button elements!
+ */
 function refreshCard() {
   cardDisplay.innerHTML = "";
   for (i = 0; i < list.length; i++) {
