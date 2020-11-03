@@ -3,15 +3,19 @@ var inputTitle = document.querySelector("#title")
 var inputBody = document.querySelector("#body")
 var inputButton = document.querySelector("#save-button")
 var cardDisplay = document.querySelector(".card-display")
-var filterButton = document.querySelector(".filter-button")
+var showFavoritesButton = document.querySelector(".filter-button")
+var searchBar = document.querySelector(".search-bar");
 
 var list = [];
+var filteredCards = [];
 
 window.addEventListener("load", retrieveFromLocalStorage);
 inputButton.addEventListener("click", makeNewCard);
 inputTitle.addEventListener("keyup", checkInputs);
 inputBody.addEventListener("keyup", checkInputs);
-filterButton.addEventListener("click", toggleFavorites);
+showFavoritesButton.addEventListener("click", toggleFavorites);
+searchBar.addEventListener("keyup", searchCards);
+
 cardDisplay.addEventListener("click", function(event) {
   if (event.target.closest(".favorite-button")) {
     for (var i = 0; i < list.length; i++) {
@@ -49,31 +53,31 @@ function addToList(title, body) {
 function makeNewCard(event) {
   event.preventDefault();
   addToList(inputTitle.value, inputBody.value);
-  refreshCard();
+  refreshCard(list);
   clearInputs();
   checkInputs();
-  loadStars();
+  loadStars(list);
 };
 
-function refreshCard() {
+function refreshCard(array) {
   cardDisplay.innerHTML = "";
-  for (i = 0; i < list.length; i++) {
+  for (i = 0; i < array.length; i++) {
     cardDisplay.innerHTML +=
       `
-    <article class="card" id="${list[i].id}">
+    <article class="card" id="${array[i].id}">
       <div class="card-button-bar">
         <div class="favorite-box">
-          <button class="favorite-button white-star" id="${list[i].id}"><img class="favorite-button" src="svg-files/star.svg"/></button>
-          <button class="favorite-button red-star hidden" id="${list[i].id}"><img class="favorite-button" src="svg-files/star-active.svg"/></button>
+          <button class="favorite-button white-star" id="${array[i].id}"><img class="favorite-button" src="svg-files/star.svg"/></button>
+          <button class="favorite-button red-star hidden" id="${array[i].id}"><img class="favorite-button" src="svg-files/star-active.svg"/></button>
         </div>
         <div class="delete-box">
-          <button class="delete-button delete-red" id="${list[i].id}"><img class="delete-img" src="svg-files/delete-active.svg"/></button>
+          <button class="delete-button delete-red" id="${array[i].id}"><img class="delete-img" src="svg-files/delete-active.svg"/></button>
           <button class="delete-button delete-white"><img class="delete-img" src="svg-files/delete.svg"/></button>
         </div>
       </div>
       <div class="card-text">
-        <h2>${list[i].title}</h2>
-        <p>${list[i].body}</p>
+        <h2>${array[i].title}</h2>
+        <p>${array[i].body}</p>
       </div>
       <div class="comment-button-bar">
         <button class="comment-button"><img src="svg-files/comment.svg"/></button>
@@ -131,15 +135,15 @@ function retrieveFromLocalStorage() {
     var newObject = new Idea(parsedObject[i].title, parsedObject[i].body, parsedObject[i].star, parsedObject[i].id);
     list.push(newObject);
   }
-  refreshCard();
-  loadStars();
+  refreshCard(list);
+  loadStars(list);
 }
 
-function loadStars() {
+function loadStars(array) {
   var redStar = document.querySelectorAll('.red-star');
   var whiteStar = document.querySelectorAll('.white-star');
-  for (var i = 0; i < list.length; i++) {
-    if (list[i].star) {
+  for (var i = 0; i < array.length; i++) {
+    if (array[i].star) {
       whiteStar[i].classList.add("hidden");
       redStar[i].classList.remove("hidden");
     } else {
@@ -151,16 +155,40 @@ function loadStars() {
 
 function toggleFavorites() {
   var card = document.querySelectorAll('.card');
-  if (filterButton.innerText === 'Show Starred Ideas') {
+  if (showFavoritesButton.innerText === 'Show Starred Ideas') {
     for (var i = 0; i < list.length; i++) {
       if (!list[i].star) {
         card[i].classList.add("hidden");
       }
     }
-    filterButton.innerText = 'Show All Ideas';
+    showFavoritesButton.innerText = 'Show All Ideas';
   } else {
-    filterButton.innerText = 'Show Starred Ideas';
-    refreshCard();
-    loadStars();
+    showFavoritesButton.innerText = 'Show Starred Ideas';
+    refreshCard(list);
+    loadStars(list);
   }
 }
+
+function searchCards(event){
+  var currentString = event.target.value.toLowerCase();
+  filteredCards =
+    list.filter(idea => {
+      return (
+        idea.title.toLowerCase().includes(currentString) ||
+        idea.body.toLowerCase().includes(currentString)
+      );
+    });
+  refreshCard(filteredCards);
+  loadStars(filteredCards);
+}
+
+// function searchCards(event){
+//   var currentString = event.target.value.toLowerCase();
+//   for (var i = 0; i < list.length; i++){
+//     if(list[i].title.toLowerCase().includes(currentString) ||
+//     list[i].body.toLowerCase().includes(currentString)) {
+//       filteredCards.push(list[i]);
+//     }
+//   }
+//   refreshCard(filteredCards);
+// }
