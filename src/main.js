@@ -11,12 +11,13 @@ inputButton.addEventListener("click", makeNewCard);
 inputTitle.addEventListener("keyup", checkInputs);
 inputBody.addEventListener("keyup", checkInputs);
 
+
 cardDisplay.addEventListener("click", function(event) {
   if (event.target.closest(".favorite-button")) {
     for (var i = 0; i < list.length; i++) {
       if (parseInt(event.target.closest("article").id) === list[i].id) {
         addStar(list[i]);
-        fillStar(list[i].id);
+        fillStar(list[i]);
       }
     }
   }
@@ -26,6 +27,7 @@ cardDisplay.addEventListener("click", function(event) {
       if (parseInt(event.target.closest("article").id) === list[i].id) {
         deleteIdea(list[i].id);
         event.target.closest("article").remove();
+        // list[i].deleteFromStorage(list[i].id);
       }
     }
   }
@@ -42,12 +44,12 @@ function checkInputs() {
 function addToList(title, body) {
   var newIdea = new Idea(title, body);
   list.push(newIdea);
-  newIdea.saveToStorage(list);
+  sendToLocalStorage();
 };
 
 function makeNewCard(event) {
   event.preventDefault();
-  addToList(inputTitle.value, inputBody.value);
+  addToList(inputTitle.value, inputBody.value); 
   refreshCard();
   clearInputs();
   checkInputs();
@@ -55,6 +57,7 @@ function makeNewCard(event) {
 
 function refreshCard() {
   cardDisplay.innerHTML = "";
+  // retrieveFromLocalStorage();
   for (i = 0; i < list.length; i++) {
     cardDisplay.innerHTML +=
       `
@@ -91,21 +94,20 @@ function clearInputs() {
 }
 
 function addStar(favoritedIdea) {
-  if (favoritedIdea.star === false) {
-    favoritedIdea.star = true;
-  } else {
-    favoritedIdea.star = false;
-  }
+  favoritedIdea.updateIdea(favoritedIdea);
+  sendToLocalStorage();
 }
+
 
 function fillStar(favoritedIdea) {
   var favoriteButton = document.querySelectorAll('.favorite-button');
   for (var i = 0; i < favoriteButton.length; i++) {
-    if (favoritedIdea === parseInt(favoriteButton[i].id)) {
-      favoriteButton[i].classList.toggle("hidden");
+    if ((favoritedIdea.id === parseInt(favoriteButton[i].id)) && (favoritedIdea.star === true)) {
+      favoriteButton[i].classList.remove("hidden");
     }
   }
 }
+
 
 function deleteIdea(deleteCard) {
   var deleteButtonRed = document.querySelectorAll('.delete-red');
@@ -113,12 +115,30 @@ function deleteIdea(deleteCard) {
     if(deleteCard === parseInt(deleteButtonRed[i].id)) {
       list.splice(i, 1);
     }
-  }
+  } sendToLocalStorage();
 };
 
+function sendToLocalStorage() {
+  var stringifiedObject = JSON.stringify(list);
+  localStorage.setItem("ideaCards", stringifiedObject);
+}
+
 function retrieveFromLocalStorage() {
-  var newIdea = new Idea(title, body);
-  // list.push(newIdea.updateIdea());
-  newIdea.updateIdea();
+  var retrievedObject = localStorage.getItem("ideaCards");
+  var parsedObject = JSON.parse(retrievedObject);
+  for (var i = 0; i < parsedObject.length; i++) {
+    var newObject = new Idea(parsedObject[i].title, parsedObject[i].body, parsedObject[i].star, parsedObject[i].id);
+    list.push(newObject);
+    fillStar(list[i]);
+  } 
   refreshCard();
 }
+
+// function loadStars() {
+//   var favoriteButton = document.querySelectorAll('.favorite-button');
+//   for (var i = 0; i < favoriteButton.length; i++) {
+//     if (list[i].star === true) {
+//       favoriteButton[i].classList.remove("hidden");
+//     } 
+//   }
+// }

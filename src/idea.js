@@ -1,47 +1,40 @@
 class Idea {
-  constructor(title, body) {
-    this.id = Date.now();
+  constructor(title, body, star, id) {
     this.title = title;
     this.body = body;
-    this.star = false;
+    this.star = star || false;
+    this.id = id || Date.now();
   }
 
-  saveToStorage(newIdea) {
-    var stringifiedObject = JSON.stringify(newIdea);
-    localStorage.setItem("ideaCards", stringifiedObject);
+  updateIdea(newIdea) {
+      if (newIdea.star === false) {
+        newIdea.star = true;
+      } else {
+        newIdea.star = false;
+      }
+    }
+
+  saveToStorage() {
+   
   }
 
   deleteFromStorage() {
-    localStorage.removeItem(`ideaCards`); //backticks?
+    
   }
 
-  // comments, remove from storage, adding to storage, or favorited:
-  updateIdea() {
-    var retrievedObject = localStorage.getItem("ideaCards");
-    var parsedObject = JSON.parse(retrievedObject);
-    for (var i = 0; i < parsedObject.length; i++) {
-      var parsedId = parsedObject[i].id;
-      var parsedTitle = parsedObject[i].title;
-      var parsedBody = parsedObject[i].body;
-      var parsedStar = parsedObject[i].star;
-      var newObject = {
-        id: parsedId,
-        title: parsedTitle,
-        body: parsedBody,
-        star: parsedStar
-      };
-      list.push(newObject);
-      // return newObject;
-    }
-  }
+  
 }
 
-// updateIdea(newIdea) {
-//   // this.title = newIdea.title;
-//   // this.body = newIdea.body;
-//   if (newIdea.star === false) {
-//     newIdea.star = true;
-//   } else {
-//     newIdea.star = false;
-//   }
-// }
+  //   var retrievedObject = localStorage.getItem("ideaCards");
+  //   var parsedObject = JSON.parse(retrievedObject);
+  //   console.log(parsedObject);
+  //   for (var i = 0; i < parsedObject.length; i++) {
+  //     if (listId === parsedObject[i].id) {
+  //     parsedObject.splice(i, 1);
+  //     }
+  //   } this.saveToStorage(parsedObject);
+  // }
+
+  // comments, remove from storage, adding to storage, or favorited:
+
+  
