@@ -37,7 +37,7 @@ cardDisplay.addEventListener("click", function(event) {
         deleteIdea(list[i].id);
         event.target.closest("article").remove();
       }
-    };
+    }
   };
 });
 
@@ -47,7 +47,7 @@ function checkInputs() {
     inputButton.disabled = false;
   } else {
     inputButton.disabled = true;
-  };
+  }
 };
 
 function addToList(title, body) {
@@ -129,7 +129,7 @@ function deleteIdea(deleteCard) {
 function sendToLocalStorage() {
   var stringifiedObject = JSON.stringify(list);
   localStorage.setItem("ideaCards", stringifiedObject);
-}
+};
 
 function retrieveFromLocalStorage() {
   if (localStorage.length < 1) {
@@ -171,24 +171,25 @@ function toggleFavorites() {
       if (!list[i].star) {
         card[i].classList.add("hidden");
       }
-    };
+    }
     showFavoritesButton.innerText = 'Show All Ideas';
   } else {
     showFavoritesButton.innerText = 'Show Starred Ideas';
     refreshCard(list);
     loadStars(list);
   };
-}
+};
 
-function searchCards(event) {
+function searchValues(element) {
   var currentString = event.target.value.toLowerCase();
-  filteredCards =
-    list.filter(idea => {
-      return (
-        idea.title.toLowerCase().includes(currentString) ||
-        idea.body.toLowerCase().includes(currentString)
-      );
-    });
+  return (
+    element.title.toLowerCase().includes(currentString) ||
+    element.body.toLowerCase().includes(currentString)
+  );
+};
+
+function searchCards() {
+  filteredCards = list.filter(searchValues);
   refreshCard(filteredCards);
   loadStars(filteredCards);
 };
