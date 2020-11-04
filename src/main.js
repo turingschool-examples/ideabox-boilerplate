@@ -4,13 +4,16 @@ var titleInput = document.querySelector('.title-input');
 var bodyInput = document.querySelector('.body-input');
 var ideas = [];
 var ideaForm = document.querySelector('.idea-form');
-var makeCommentPopUp = document.querySelector('.make-comment-pop-up');
+var makeCommentPopUp = document.querySelector('#make-comment-pop-up');
+var commentInput = document.querySelector('#comment-input');
+var submitCommentButton = document.querySelector('#submit-comment')
 
 
 //add event listeners here 🍊
 saveButton.addEventListener('click', makeNewIdeaCard);
 cardGrid.addEventListener('click', upDateIdea);
 ideaForm.addEventListener('keyup', toggleSaveButton);
+submitCommentButton.addEventListener('click', addCommentToIdea);
 window.addEventListener('load', updateFromStorage);
 
 //add functions here 🍊
@@ -51,7 +54,7 @@ function upDateCardGrid() {
             <p class="idea-body">${ideas[i].body}</p>
           </div>
           <div class="comment-strip">
-            <input type="image" id="idea-comment" name="comment" src="./assets/comment.svg">
+            <input type="image" id="idea-comment-${ideas[i].id}" name="comment" src="./assets/comment.svg">
             <label for="comment">Comment</label>
           </div>
           </section>`;
@@ -65,23 +68,33 @@ function upDateIdea() {
     } else if (checkForButtonType('star')) {
         starIdea();
     } else if(checkForButtonType('idea-comment')) {
-       addCommentToIdea();
+       openCommentForm();
     }
     upDateCardGrid();
 };
 
-function addCommentToIdea() {
+var commentedIdea = {};
+
+function openCommentForm() {
   //open form in modal box
   makeCommentPopUp.showModal();
+  for (var i = 0; i < ideas.length; i++) {
+      if (testForMatchAmongIdeas(`idea-comment`, i)) {
+        commentedIdea = ideas[i];
+      }
+    }
+};
 
+//Add comment display button
 
-
+function addCommentToIdea() {
   //create new Comment instance based on form input (set content property + id)
-  //Push this instance into the array that is the comments property of idea instance
+  var newComment = new Comment(commentInput.value);
+//Push this instance into the array that is the comments property of idea instance
+  commentedIdea.comments.push(newComment);
   //Save comment to storage
-  //Add comment display button
+  commentedIdea.updateLocallyStoredIdea();
   //display comment(s) when display button is pressed
-
 };
 
 function checkForButtonType(iDPrefix) {

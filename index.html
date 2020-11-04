@@ -1,65 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 
 <head>
     <title>IdeaBox</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <link href='https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap' rel='stylesheet'>
+    <link rel='stylesheet' type='text/css' href='./styles.css'>
 </head>
 
 <body>
     <main>
-        <section class="idea-box">
+        <section class='idea-box'>
             <h1>IdeaBox</h1>
-            <div class="left-side-ideas">
-                <p class="filter">Filter Starred Ideas</p>
-                <button class="show-starred">Show Starred Ideas</button>
+            <div class='left-side-ideas'>
+                <p class='filter'>Filter Starred Ideas</p>
+                <button class='show-starred'>Show Starred Ideas</button>
             </div>
         </section>
-        <article class="right-side">
-            <form class="idea-form">
-                <div class="text-inputs">
-                    <label for="title">Title</label>
-                    <input type="text" name="title" class="title-input input-boxes">
+        <article class='right-side'>
+            <form class='idea-form'>
+                <div class='text-inputs'>
+                    <label for='title'>Title</label>
+                    <input type='text' name='title' class='title-input input-boxes'>
                 </div>
-                <div class="text-inputs">
-                    <label for="body">Body</label>
-                    <input type="text" name="body" class="body-input input-boxes">
+                <div class='text-inputs'>
+                    <label for='body'>Body</label>
+                    <input type='text' name='body' class='body-input input-boxes'>
                 </div>
-                    <button id="save-button" class="save-button" type="button" disabled>Save</button>
-                <div class="search">
-                    <div class="search-icon-box">
-                        <input type="image" src="./assets/search.svg" class="search-icon">
+                    <button id='save-button' class='save-button' type='button' disabled>Save</button>
+                <div class='search'>
+                    <div class='search-icon-box'>
+                        <input type='image' src='./assets/search.svg' class='search-icon'>
                     </div>
-                    <input type="search" class="search-ideas-box" placeholder="Search ideas"></input>
+                    <input type='search' class='search-ideas-box' placeholder='Search ideas'></input>
                 </div>
             </form>
-            <section class="card-grid">
-                <section class="idea-card">
-                    <div class="fav-delete-header">
-                        <input type="image" id="star" class="star" src="./assets/star.svg">
-                        <input type="image" id="delete-card" class="delete-card" src="./assets/delete.svg">
+            <section class='card-grid'>
+                <section class='idea-card'>
+                    <div class='fav-delete-header'>
+                        <input type='image' id='star' class='star' src='./assets/star.svg'>
+                        <input type='image' id='delete-card' class='delete-card' src='./assets/delete.svg'>
                     </div>
-                    <div class="idea-content">
-                        <p class="idea-title">I Am The Title</p>
-                        <p class="idea-body">Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth talk.</p>
+                    <div class='idea-content'>
+                        <p class='idea-title'>I Am The Title</p>
+                        <p class='idea-body'>Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth talk.</p>
                     </div>
-                    <div class="comment-strip">
-                        <input type="image" id="idea-comment" name="comment" src="./assets/comment.svg">
-                        <label for="comment">Comment</label>
+                    <div class='comment-strip'>
+                        <input type='image' id='idea-comment' name='comment' src='./assets/comment.svg'>
+                        <label for='comment'>Comment</label>
                     </div>
                 </section>
             </section>
         </article>
-        <dialog class="make-comment-pop-up">
-          <form>
-            <h3>Hey!</h3>
+        <dialog class='make-comment-pop-up' id='make-comment-pop-up'>
+          <form class='comment-form'>
+            <h3 class='comment-form-header'>Type your comment below:</h3>
+            <input type='text' placeholder='comment' class='comment-input'id='comment-input'></input>
+            <button type='button' class='submit-comment' id='submit-comment'>Submit</button>
           </form>
         </dialog>
     </main>
 </body>
-<script src="./src/comment.js"></script>
-<script src="./src/idea.js"></script>
-<script src="./src/main.js"></script>
+<script src='./src/comment.js'></script>
+<script src='./src/idea.js'></script>
+<script src='./src/main.js'></script>
 
 </html>
