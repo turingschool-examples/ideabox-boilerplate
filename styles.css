@@ -5,6 +5,11 @@ body {
   height: 100%;
 }
 
+label {
+  font-size: 1px;
+  color: #A9AAD2;
+}
+
 main {
   width: 950px;
 }
@@ -36,7 +41,6 @@ div > h2 {
 
 img {
   max-width: 25px;
-  max-height: auto;
 }
 
 aside {
@@ -109,7 +113,6 @@ section > input {
 }
 
 .search-input {
-  border: 1px 1px 1px 0 solid #353567;
   border-radius: 0 0 2px 0;
   max-width: 260px;
 }
@@ -147,6 +150,7 @@ div > h2 {
   background-color: #353567;
   border: 1px solid #353567;
   border-radius: 2px;
+  margin-right: 5px;
 }
 
 input {
@@ -177,6 +181,14 @@ input {
   height: 17%;
   max-height: 25px;
   background-color: #1F1F3D;
+}
+
+.favorite:hover,
+#comment-word:hover,
+.view-comment:hover,
+.comment-save-button:hover,
+.comment-hand {
+  cursor: pointer;
 }
 
 .delete-button {

@@ -17,35 +17,36 @@
     </section>
     <main>
       <section class="comment-form hidden">
-        <textarea class="comment-input" type="text" rows="3" cols="40" placeholder="Enter a comment"></textarea>
+        <textarea class="comment-input" rows="3" cols="40" placeholder="Enter a comment"></textarea>
         <p class="card-id hidden"></p>
         <button class="comment-save-button disabled" disabled>Add Comment</button>
       </section>
       <section class="input-fields">
         <div>
           <h2>Title</h2>
-          <input class="title-input" type="text">
+            <input type="text" class="title-input" id="title-input-field" placeholder="Give your idea a title">
+            <label for="title-input-field">Title</label>
         </div>
         <div>
           <h2>Body</h2>
-          <textarea class="body-input" type="text" rows="3" cols="40"></textarea>
+          <textarea class="body-input" rows="3" cols="40" id="body-input-field" placeholder="Write your idea here"></textarea>
+          <label for="body-input-field">Body</label>
         </div>
         <button class="save-button disabled" disabled>Save</button>
         <div id="search-bar">
-          <div class="search-image">
-          </div>
-          <input class="search-input" type="text" placeholder=" Search ideas">
+          <div class="search-image"></div>
+          <input class="search-input" type="text" id="search-input-field" placeholder=" Search ideas">
+          <label for="search-input-field">Search</label>
         </div>
       </section>
       <section class="cards-display">
       </section>
       <section class="modal hidden">
         <div class="modal-content">
-          <img src="./assets/delete.svg" id="close-comments-button" alt="An X">
+          <img src="./assets/delete.svg" id="close-comments-button" alt="Close pop-up">
           <p class="modal-display-id hidden"></p>
           <p class="modal-display-index hidden"></p>
-          <div class="comment-display">
-          </div>
+          <div class="comment-display"></div>
         </div>
       </section>
     </main>

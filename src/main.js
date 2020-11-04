@@ -14,9 +14,7 @@ var modalDisplayIndex = document.querySelector('.modal-display-index');
 
 var saveButton = document.querySelector('.save-button');
 var showFavButton = document.querySelector('.show-stars');
-var saveCommentButton = document.querySelector('.comment-save-button');
-var showCommentsButton = document.querySelector('.view-comment');
-var closeCommentsButton = document.querySelector('.close-comments-button');
+var addCommentButton = document.querySelector('.comment-save-button');
 
 window.onload = redrawCardsDisplay();
 saveButton.addEventListener('click', saveIdea);
@@ -35,12 +33,12 @@ bodyInput.addEventListener('keyup', function () {
 });
 
 commentInput.addEventListener('keyup', function () {
-  toggleButton(saveCommentButton, commentInput)
+  toggleButton(addCommentButton, commentInput)
 });
 
-saveCommentButton.addEventListener('click', function (event) {
-  saveComment(event);
-  toggleButton(saveCommentButton, commentInput)
+addCommentButton.addEventListener('click', function (event) {
+  addComment(event);
+  toggleButton(addCommentButton, commentInput)
 });
 
 showFavButton.addEventListener('click', function (event) {
@@ -59,7 +57,7 @@ cardsDisplay.addEventListener('click', function (event) {
     var tempIdea = createTempIdea(event);
     tempIdea.deleteFromStorage('ideas', tempIdea);
   } else if (event.target.classList.contains('favorite')) {
-    toggleElement(event);
+    toggleStar(event);
     updateStar(event)
   } else if (event.target.classList.contains('card-footer')) {
     inputFields.classList.toggle('hidden');
@@ -75,7 +73,7 @@ modal.addEventListener('click', function (event) {
     modal.classList.add('hidden')
   } else if (event.target.className === 'comment-hand') {
     var commentMessage = event.target.parentNode.innerText.slice(3)
-    var commentIndex = findCommentIndex(event, commentMessage)
+    var commentIndex = findCommentIndex(commentMessage)
     var tempComment = new Comment(commentMessage)
     tempComment.deleteFromStorage('ideas', modalDisplayIndex.innerText, commentIndex)
     ideas[modalDisplayIndex.innerText].comments.splice(commentIndex, 1)
@@ -87,13 +85,19 @@ function openModal() {
   modal.classList.remove('hidden')
 };
 
-function findCommentIndex(event, commentMessage) {
-  var modalCardIndex = findCardIndex(event, modalDisplayId.innerText)
-  for (var i = 0; i < ideas[modalCardIndex].comments.length; i++) {
-    if (ideas[modalCardIndex].comments[i] === commentMessage) {
+function findCommentIndex(commentMessage) {
+  for (var i = 0; i < ideas[modalDisplayIndex.innerText].comments.length; i++) {
+    if (ideas[modalDisplayIndex.innerText].comments[i] === commentMessage) {
       return i
     }
   }
+};
+
+function findCardIndex(event, path) {
+  var currentId = parseInt(path)
+  return ideas.findIndex(function (element) {
+    return element.id === currentId;
+  })
 };
 
 function redrawComments(index) {
@@ -105,10 +109,7 @@ function redrawComments(index) {
 
 function showComments(event) {
   var index = findCardIndex(event, event.target.parentNode.parentNode.id);
-  commentDisplay.innerHTML = ""
-  for (var i = 0; i < ideas[index].comments.length; i++) {
-    commentDisplay.innerHTML += `<p class="comment-text"><span class="comment-hand">👉</span> ${ideas[index].comments[i]}</p>`
-  }
+  redrawComments(index)
   modalDisplayId.innerText = event.target.parentNode.parentNode.id;
   modalDisplayIndex.innerText = index
   openModal()
@@ -139,15 +140,8 @@ function updateStar(event) {
   var currentIdea = ideasArray[cardIndex]
   currentIdea.star = !currentIdea.star;
   currentIdea = new Idea(currentIdea.title, currentIdea.body, currentIdea.id, currentIdea.star);
-  ideas.splice(cardIndex, 1, currentIdea);
   currentIdea.updateIdea('ideas', currentIdea, cardIndex)
-};
-
-function findCardIndex(event, path) {
-  var currentId = parseInt(path)
-  return ideas.findIndex(function (element) {
-    return element.id === currentId;
-  })
+  ideas.splice(cardIndex, 1, currentIdea);
 };
 
 function createTempIdea(event) {
@@ -193,7 +187,7 @@ function toggleButton(button, input) {
   }
 };
 
-function saveComment(event) {
+function addComment(event) {
   var message = commentInput.value;
   var index = findCardIndex(event, cardId.innerText);
   var newComment = new Comment(message)
@@ -207,7 +201,7 @@ function clearInputs(body, title) {
   title.value = '';
 };
 
-function toggleElement(event) {
+function toggleStar(event) {
   if (event.target.attributes.src.nodeValue === "./assets/star.svg") {
     event.target.attributes.src.nodeValue = "./assets/star-active.svg";
   } else {
@@ -228,7 +222,7 @@ function displayCard(newIdea) {
   cardsDisplay.innerHTML += `
     <article class="cards" id=${newIdea.id}>
       <header class="card-header" id=${newIdea.star}>
-        <img src=${imageSource} class="favorite star" alt="A white star">
+        <img src=${imageSource} class="favorite star" alt="Favorite this idea">
         <div class="delete-button"></div>
       </header>
       <div class="idea-text">
@@ -237,10 +231,10 @@ function displayCard(newIdea) {
       </div>
       <div class="card-footer-box">
         <div id="comment-word">
-          <img src="./assets/comment.svg" class="card-footer" alt="A plus sign">
+          <img src="./assets/comment.svg" class="card-footer" alt="Add a comment">
           <p class="comment card-footer">Comment</p>
         </div>
-        <img src="./assets/comment-active.png" class="view-comment" id="comment-bubble" alt="A speech bubble">
+        <img src="./assets/comment-active.png" class="view-comment" id="comment-bubble" alt="View comments">
       </div>
     </article>`
 };
