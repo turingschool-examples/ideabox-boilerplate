@@ -4,6 +4,7 @@ var titleInput = document.querySelector('.title-input');
 var bodyInput = document.querySelector('.body-input');
 var ideas = [];
 var ideaForm = document.querySelector('.idea-form');
+var makeCommentPopUp = document.querySelector('.make-comment-pop-up');
 
 
 //add event listeners here 🍊
@@ -63,8 +64,24 @@ function upDateIdea() {
         deleteIdea();
     } else if (checkForButtonType('star')) {
         starIdea();
+    } else if(checkForButtonType('idea-comment')) {
+       addCommentToIdea();
     }
     upDateCardGrid();
+};
+
+function addCommentToIdea() {
+  //open form in modal box
+  makeCommentPopUp.showModal();
+
+
+
+  //create new Comment instance based on form input (set content property + id)
+  //Push this instance into the array that is the comments property of idea instance
+  //Save comment to storage
+  //Add comment display button
+  //display comment(s) when display button is pressed
+
 };
 
 function checkForButtonType(iDPrefix) {
