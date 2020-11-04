@@ -6,7 +6,8 @@ var ideaForm = document.querySelector('.idea-form');
 var makeCommentPopUp = document.querySelector('#make-comment-pop-up');
 var commentInput = document.querySelector('#comment-input');
 var submitCommentButton = document.querySelector('#submit-comment');
-var commentForm = document.querySelector('.comment-form')
+var commentForm = document.querySelector('.comment-form');
+var filterIdeasButton = document.querySelector('.show-starred')
 var ideas = [];
 //var commentedIdea = {};
 
@@ -16,6 +17,7 @@ saveButton.addEventListener('click', makeNewIdeaCard);
 cardGrid.addEventListener('click', upDateIdea);
 ideaForm.addEventListener('keyup', toggleSaveButton);
 submitCommentButton.addEventListener('click', addCommentToIdea);
+filterIdeasButton.addEventListener('click', filterStarredIdeas)
 window.addEventListener('load', updateFromStorage);
 
 //add functions here 🍊
@@ -32,7 +34,7 @@ function makeNewIdeaCard() {
     var newIdea = new Idea(titleInput.value, bodyInput.value);
     ideas.push(newIdea);
     newIdea.saveToStorage();
-    upDateCardGrid();
+    upDateCardGrid(ideas);
     clearFields(titleInput, bodyInput);
 };
 
@@ -42,21 +44,21 @@ function clearFields(title, body) {
     toggleSaveButton();
 };
 
-function upDateCardGrid() {
+function upDateCardGrid(array) {
     newGrid = ''; // need to set this with a var
-    for (var i = 0; i < ideas.length; i++) {
+    for (var i = 0; i < array.length; i++) {
         newGrid +=
             `<section class='idea-card'>
           <div class='fav-delete-header'>
-            <input type='image' id='star-${ideas[i].id}' class='star' src='${testForStar(ideas[i])}'>
-            <input type='image' id='delete-card-${ideas[i].id}' class='delete-card' src='./assets/delete.svg'>
+            <input type='image' id='star-${array[i].id}' class='star' src='${testForStar(array[i])}'>
+            <input type='image' id='delete-card-${array[i].id}' class='delete-card' src='./assets/delete.svg'>
           </div>
           <div class='idea-content'>
-            <p class='idea-title'>${ideas[i].title}</p>
-            <p class='idea-body'>${ideas[i].body}</p>
+            <p class='idea-title'>${array[i].title}</p>
+            <p class='idea-body'>${array[i].body}</p>
           </div>
           <div class='comment-strip'>
-            <input type='image' class='idea-comment' id='idea-comment-${ideas[i].id}' name='comment' src='./assets/comment.svg'>
+            <input type='image' class='idea-comment' id='idea-comment-${array[i].id}' name='comment' src='./assets/comment.svg'>
             <label for='comment'>Comment</label>
           </div>
           </section>`;
@@ -72,7 +74,7 @@ function upDateIdea() {
     } else if(checkForButtonType('idea-comment')) {
        openCommentForm();
     }
-    upDateCardGrid();
+    upDateCardGrid(ideas);
 };
 
 function openCommentForm() {
@@ -139,10 +141,24 @@ function updateFromStorage () {
     var keyName = localStorage.key(i);
     var retrievedIdea = localStorage.getItem(keyName);
     var parsedIdea = JSON.parse(retrievedIdea);
-
     var oldIdeaFromStorage = new Idea(parsedIdea.title, parsedIdea.body, parsedIdea.id, parsedIdea.star, parsedIdea.comments);
-
     ideas.push(oldIdeaFromStorage);
   }
-  upDateCardGrid();
+  upDateCardGrid(ideas);
+};
+
+function filterStarredIdeas() {
+  if (filterIdeasButton.innerText === 'Show All Ideas') {
+    upDateCardGrid(ideas);
+    filterIdeasButton.innerText = 'Show Starred Ideas';
+  } else {
+    var starredIdeas = [];
+    for (var i = 0; i < ideas.length; i++) {
+      if (ideas[i].star === true) {
+        starredIdeas.push(ideas[i]);
+      }
+    }
+    upDateCardGrid(starredIdeas);
+    filterIdeasButton.innerText = 'Show All Ideas';
+  }
 };
