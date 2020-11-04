@@ -43,21 +43,21 @@ function clearFields(title, body) {
 };
 
 function upDateCardGrid() {
-    newGrid = ""; // need to set this with a var
+    newGrid = ''; // need to set this with a var
     for (var i = 0; i < ideas.length; i++) {
         newGrid +=
-            `<section class="idea-card">
-          <div class="fav-delete-header">
-            <input type="image" id="star-${ideas[i].id}" class="star" src="${testForStar(ideas[i])}">
-            <input type="image" id="delete-card-${ideas[i].id}" class="delete-card" src="./assets/delete.svg">
+            `<section class='idea-card'>
+          <div class='fav-delete-header'>
+            <input type='image' id='star-${ideas[i].id}' class='star' src='${testForStar(ideas[i])}'>
+            <input type='image' id='delete-card-${ideas[i].id}' class='delete-card' src='./assets/delete.svg'>
           </div>
-          <div class="idea-content">
-            <p class="idea-title">${ideas[i].title}</p>
-            <p class="idea-body">${ideas[i].body}</p>
+          <div class='idea-content'>
+            <p class='idea-title'>${ideas[i].title}</p>
+            <p class='idea-body'>${ideas[i].body}</p>
           </div>
-          <div class="comment-strip">
-            <input type="image" id="idea-comment-${ideas[i].id}" name="comment" src="./assets/comment.svg">
-            <label for="comment">Comment</label>
+          <div class='comment-strip'>
+            <input type='image' class='idea-comment' id='idea-comment-${ideas[i].id}' name='comment' src='./assets/comment.svg'>
+            <label for='comment'>Comment</label>
           </div>
           </section>`;
     }
@@ -87,9 +87,7 @@ function openCommentForm() {
 //Add comment display button
 
 function addCommentToIdea() {
-  //create new Comment instance based on form input (set content property + id)
   var newComment = new Comment(commentInput.value);
-//Push this instance into the array that is the comments property of idea instance
   for (var i = 0; i < ideas.length; i++) {
     console.log(testForMatchAmongIdeas(`form`, i, commentForm.id));
     if (testForMatchAmongIdeas(`form`, i, commentForm.id)) {
@@ -97,7 +95,7 @@ function addCommentToIdea() {
       ideas[i].updateLocallyStoredIdea();
     }
   }
-  //display comment(s) when display button is pressed
+  makeCommentPopUp.close();
 };
 
 function checkForButtonType(iDPrefix) {
