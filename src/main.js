@@ -45,7 +45,7 @@ function clearFields(title, body) {
 };
 
 function upDateCardGrid(array) {
-    newGrid = ''; // need to set this with a var
+    newGrid = '';
     for (var i = 0; i < array.length; i++) {
         newGrid +=
             `<section class='idea-card'>
@@ -86,7 +86,6 @@ function openCommentForm() {
     }
 };
 
-//Add comment display button
 
 function addCommentToIdea() {
   var newComment = new Comment(commentInput.value);
@@ -154,7 +153,7 @@ function filterStarredIdeas() {
   } else {
     var starredIdeas = [];
     for (var i = 0; i < ideas.length; i++) {
-      if (ideas[i].star === true) {
+      if (ideas[i].star) {
         starredIdeas.push(ideas[i]);
       }
     }
