@@ -2,11 +2,13 @@ var saveButton = document.querySelector('#save-button');
 var cardGrid = document.querySelector('.card-grid');
 var titleInput = document.querySelector('.title-input');
 var bodyInput = document.querySelector('.body-input');
-var ideas = [];
 var ideaForm = document.querySelector('.idea-form');
 var makeCommentPopUp = document.querySelector('#make-comment-pop-up');
 var commentInput = document.querySelector('#comment-input');
-var submitCommentButton = document.querySelector('#submit-comment')
+var submitCommentButton = document.querySelector('#submit-comment');
+var commentForm = document.querySelector('.comment-form')
+var ideas = [];
+//var commentedIdea = {};
 
 
 //add event listeners here 🍊
@@ -73,14 +75,11 @@ function upDateIdea() {
     upDateCardGrid();
 };
 
-var commentedIdea = {};
-
 function openCommentForm() {
-  //open form in modal box
   makeCommentPopUp.showModal();
   for (var i = 0; i < ideas.length; i++) {
-      if (testForMatchAmongIdeas(`idea-comment`, i)) {
-        commentedIdea = ideas[i];
+      if (testForMatchAmongIdeas(`idea-comment`, i, event.target.id)) {
+        commentForm.id = `form-${ideas[i].id}`;
       }
     }
 };
@@ -91,9 +90,13 @@ function addCommentToIdea() {
   //create new Comment instance based on form input (set content property + id)
   var newComment = new Comment(commentInput.value);
 //Push this instance into the array that is the comments property of idea instance
-  commentedIdea.comments.push(newComment);
-  //Save comment to storage
-  commentedIdea.updateLocallyStoredIdea();
+  for (var i = 0; i < ideas.length; i++) {
+    console.log(testForMatchAmongIdeas(`form`, i, commentForm.id));
+    if (testForMatchAmongIdeas(`form`, i, commentForm.id)) {
+      ideas[i].comments.push(newComment);
+      ideas[i].updateLocallyStoredIdea();
+    }
+  }
   //display comment(s) when display button is pressed
 };
 
@@ -101,15 +104,15 @@ function checkForButtonType(iDPrefix) {
   return event.target.id.includes(iDPrefix);
 };
 
-function testForMatchAmongIdeas(targetIDPrefix, index) {
-  if (`${targetIDPrefix}-${ideas[index].id}` === event.target.id) {
+function testForMatchAmongIdeas(targetIDPrefix, index, targetID) {
+  if (`${targetIDPrefix}-${ideas[index].id}` === targetID) {
     return true
   }
 };
 
 function deleteIdea() {
   for (var i = 0; i < ideas.length; i++) {
-      if (testForMatchAmongIdeas(`delete-card`, i)) {
+      if (testForMatchAmongIdeas(`delete-card`, i, event.target.id)) {
         ideas[i].deleteFromStorage();
         ideas.splice(i, 1);
       }
@@ -118,7 +121,7 @@ function deleteIdea() {
 
   function starIdea() {
     for (var i = 0; i < ideas.length; i++) {
-        if (testForMatchAmongIdeas(`star`, i)) {
+        if (testForMatchAmongIdeas(`star`, i, event.target.id)) {
             ideas[i].toggleStar();
             ideas[i].updateLocallyStoredIdea();
         }
