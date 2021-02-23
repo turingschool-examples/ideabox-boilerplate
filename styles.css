@@ -155,8 +155,9 @@ article {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 1rem;
-  margin-right: 1.7rem;
+  margin: 1.5rem;
+  margin-right: 1.2rem;
+  margin-bottom: .15rem;
   width: 20%;
 }
 
