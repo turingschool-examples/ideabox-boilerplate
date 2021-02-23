@@ -85,25 +85,32 @@ form {
   padding-top: 0.015rem;
   /* font-family: Open sans; */
   font-weight: bold;
-  background-color: #A9AAD2;
   color: #1F1F3D;
+  background-color: #A9AAD2;
 }
 
-label{
+label {
   display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.2rem;
 }
 
 .title-box,
 .save-button,
-.search-box-input,
 .text-box {
-  height: 2.5rem;
+  border: .13rem solid#5356A4;
+  height: 3rem;
   width: 30.55rem;
+  box-sizing: border-box;
+}
+
+.text-box {
+  height: 5rem;
+  resize: none;
 }
 
 .save-button {
-  margin-top: 0.5rem;
-  margin-bottom: 0.75rem;
+  border: .13rem solid #353567;
   background-color: #353567;
   border-radius: 0.12rem;
 }
@@ -111,27 +118,32 @@ label{
 .search-container {
   display: flex;
   align-items: center;
-}
-
-.text-box {
-  height: 5rem;
-  /* width: 30.55rem; */
-  resize: none;
+  margin-bottom: 1rem;
 }
 
 .search-box-input {
-  border: #1F1F3D .1rem solid;
+  border: .13rem solid #353567;
   display: flex;
-  /* font-family: Open sans; */
-  width: 28.55rem;
+  height: 3rem;
+  width: 27.55rem;
+  font-size: 1rem;
   font-weight: light;
   border-radius: 0.06rem;
 }
 
+.search-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  width: 3rem;
+  background-color:#353567
+}
+
 .search-icon {
-  height: 2.5rem;
-  width: 2rem;
-  background-color:#1F1F3D;
+  height: 1.5rem;
+  width: 2.5rem;
+  font-size: 12rem;
   border-radius: 0.05rem;
 }
 
@@ -183,7 +195,6 @@ article {
 
 .comment-text {
   font-weight: lighter;
-  /* margin: 0; */
   margin-top: 0.75rem;
 }
 
