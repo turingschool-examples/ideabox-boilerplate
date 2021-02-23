@@ -97,11 +97,10 @@ form {
 
 .save-button {
   border-radius: 0.12rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+  background-color: #5356A4;
 }
-
-/* .input-labels {
-  padding-top: 3rem;
-} */
 
 .title-box,
 .body-box {
@@ -115,7 +114,6 @@ form {
 
 .body-box {
   resize: none;
-  margin-bottom: 1rem;
 }
 
 /*
@@ -131,6 +129,7 @@ label{
 }
 
 .search-box-input {
+  width: 19rem;
   display: flex;
   border: #1F1F3D .1rem solid;
   font-family: Open sans;
