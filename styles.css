@@ -80,7 +80,7 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 35vh;
+  height: 55vh;
   margin-left: .1rem;
   padding-top: 0.015rem;
   /* font-family: Open sans; */
@@ -142,8 +142,8 @@ label{
 article {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  height: 60vh;
+  /* justify-content: space-between; */
+  height: 45vh;
   background-color: #EAEAF4;
   overflow:scroll;
 }
@@ -158,10 +158,11 @@ article {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 300px;
+  width: 28%;
   margin: 1.5rem;
   margin-right: 1.2rem;
-  margin-bottom: .15rem;
-  width: 20%;
+  margin-bottom: 0rem;
 }
 
 .idea-box-header {
