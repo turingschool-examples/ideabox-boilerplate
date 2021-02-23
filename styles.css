@@ -1,5 +1,62 @@
-/* BACKGROUND COLORS
-sidebar color #1F1F3D
+*{
+  /* border: solid 2px blue; */
+  font-family: "Open Sans";
+}
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+/*~~~~~~~~NAV BAR~~~~~~~~~*/
+.side-bar {
+  background-color: #1F1F3D;
+  color: #E9E9F3;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  width: 25%;
+  height: 100%;
+  position: absolute;
+}
+
+.side-bar > h1 {
+  margin: 8%;
+}
+
+.filter {
+  border-top: solid 2px #353567;
+  border-bottom: solid 2px #353567;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  height: 196px;
+  font-weight: Light;
+}
+
+.filter > h2 {
+  color: #BFBFDD;
+  margin: 4% 8%;
+  font-size: 120%;
+  font-weight: bold;
+}
+
+.show-starred-ideas {
+  background-color: #5356A4;
+  color: #E9E9F3;
+  width: 85%;
+  margin-left: 8%;
+  padding: 4% 2% 2%;
+  font-size: 175%;
+  font-weight: bold;
+  border-color: #5356A4;
+}
+
+/* BACKGROUND COLORS*/
+ /*sidebar color #1F1F3D
  input box color #A9AAD2
  card section  #EAEAF4*/
 
