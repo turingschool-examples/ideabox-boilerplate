@@ -10,44 +10,45 @@
 <body>
 
   <nav class="side-bar">
-      <h1>IdeaBox</h1>
-      <div class="filter">
-        <h2>Filter Starred Ideas</h2>
-        <button class="show-starred-ideas">Show Starred Ideas</button>
+    <h1>IdeaBox</h1>
+    <div class="filter">
+      <h2>Filter Starred Ideas</h2>
+      <button class="show-starred-ideas">Show Starred Ideas</button>
+    </div>
+  </nav>
+
+  <form class="form">
+    <label class="user-title-label">Title</label>
+    <input class="user-title" type="text">
+    <label class="user-comment-label">Body</label>
+    <input class="user-comment" type="text">
+    <img class="search-icon" src="assets/search.svg" alt="search">
+    <input class="search" type="search" placeholder="Search ideas">
+  </form>
+
+
+  <section class="section">
+
+    <div class="idea-card">
+      <div class="card-controls">
+        <img class="star-unactive" src="assets/star.svg" alt="star">
+        <img class="star-active" src="assets/star-active.svg" alt="active star">
+        <img class="delete" src="assets/delete.svg" alt="delete">
+        <img class="active-delete" src="assets/delete-active.svg" alt="active delete">
       </div>
-    </nav>
+      <article class="idea-content">
+        <h1 class="idea-title"></h1>
+        <p class="idea-body"></p>
+      </article>
+      <div class="comment-body">
+        <img class="comment-icon" src="assets/comment.svg" alt="comment">
+        <h2 class="comment">Comment</h2>
+      </div>
+    </div>
 
-    <form class="form">
-        <label class="user-title-label">Title</label>
-        <input class="user-title" type="text">
-        <label class="user-comment-label">Body</label>
-        <input class="user-comment" type="text">
-        <img class="search-icon" src="assets/search.svg" alt="search">
-        <input class="search" type="search" placeholder="Search ideas">
-      </form>
+  </section>
 
-
-      <section class="section">
-
-          <div class="idea-card">
-            <div class="card-controls">
-              <img class="star-unactive" src="assets/star.svg" alt="star">
-              <img class="star-active" src="assets/star-active.svg" alt="active star">
-              <img class="delete" src="assets/delete.svg" alt="delete">
-              <img class="active-delete" src="assets/delete-active.svg" alt="active delete">
-            </div>
-            <article class="idea-content">
-              <h1 class="idea-title"></h1>
-              <p class="idea-body"></p>
-            </article>
-            <div class="comment-body">
-              <img class="comment-icon" src="assets/comment.svg" alt="comment">
-              <h2 class="comment">Comment</h2>
-            </div>
-          </div>
-
-        </section>
-
+  <script src="./src/idea.js"></script>
   <script src="./src/main.js"></script>
 </body>
 
