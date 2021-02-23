@@ -1,27 +1,26 @@
-//Query Selectors
+//query qelectors
 var title = document.querySelector(".title-box");
 var textBox = document.querySelector(".text-box");
-var submitButton = document.querySelector(".save-button");
-
+var formInformation = document.querySelector("form");
 
 // Event Listeners
-submitButton.addEventListener("submit", generateNewIdea);
+formInformation.addEventListener("submit", submitNewIdea);
 
-
-
-// Global variables
-
+// global variables
 var newIdea = [];
 
+// functions below
+function submitNewIdea(event) {
+  event.preventDefault();
+  createIdeaList();
+  updateIdeaList();
+  //single responsibility function...
+}
 
-// Event handlers
-
-// function getTitleText() {
-
-// }
-
-function generateNewIdea(event) {
-  event.preventDefault()
-
+function createIdeaList() {
   newIdea = new Idea(title.value, textBox.value);
+}
+
+function updateIdeaList() {
+  ideaList.unshift(newIdea);
 }
