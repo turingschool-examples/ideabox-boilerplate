@@ -13,17 +13,20 @@
     <h1>IdeaBox</h1>
     <div class="filter">
       <h2>Filter Starred Ideas</h2>
-      <button class="show-starred-ideas">Show Starred Ideas</button>
+      <button class="show-starred-ideas" id="showStarred">Show Starred Ideas</button>
     </div>
   </nav>
 
   <form class="form">
     <label class="user-title-label">Title</label>
-    <input class="user-title" type="text">
+    <input class="user-title" id="titleInput" type="text">
     <label class="user-comment-label">Body</label>
-    <input class="user-comment" type="text">
-    <img class="search-icon" src="assets/search.svg" alt="search">
-    <input class="search" type="search" placeholder="Search ideas">
+    <input class="user-comment" id="bodyInput" type="text">
+    <button class="save-button" id="saveButton">Save</button>
+    <span class="search-bar">
+      <img class="search-icon" src="assets/search.svg" alt="search">
+      <input class="search" id="searchInput" type="search" placeholder="Search ideas">
+    </span>
   </form>
 
 
@@ -31,18 +34,18 @@
 
     <div class="idea-card">
       <div class="card-controls">
-        <img class="star-unactive" src="assets/star.svg" alt="star">
-        <img class="star-active" src="assets/star-active.svg" alt="active star">
-        <img class="delete" src="assets/delete.svg" alt="delete">
-        <img class="active-delete" src="assets/delete-active.svg" alt="active delete">
+        <img class="star-unactive" id="starIcon" src="assets/star.svg" alt="star">
+        <img class="star-active" id="starIcon" src="assets/star-active.svg" alt="active star">
+        <img class="delete" id="deleteIcon" src="assets/delete.svg" alt="delete">
+        <img class="active-delete" id="deleteIcon" src="assets/delete-active.svg" alt="active delete">
       </div>
       <article class="idea-content">
         <h1 class="idea-title"></h1>
         <p class="idea-body"></p>
       </article>
       <div class="comment-body">
-        <img class="comment-icon" src="assets/comment.svg" alt="comment">
-        <h2 class="comment">Comment</h2>
+        <img class="comment-icon hidden" id="commentIcon" src="assets/comment.svg" alt="comment">
+        <h2 class="comment" id="commentIcon">Comment</h2>
       </div>
     </div>
 

@@ -3,6 +3,17 @@ class Idea {
     this.id = Date.now();
     this.title = title;
     this.body = body;
-    this.star = false;
+    this.isStarred = false;
+  }
+  saveToStorage() {
+    localStorage.setItem("ideas", JSON.stringify(ideas));
+  }
+
+  deleteFromStorage() {
+   saveToStorage()
+  }
+
+  updateIdea(title, body) {
+   saveToStorage()
   }
 }
