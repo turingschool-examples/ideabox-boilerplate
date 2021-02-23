@@ -34,10 +34,13 @@ p {
 button {
   background-color: #5356A4;
   border: none;
+  color: #E9E9F3;
 }
 
 .idea-header{
   font-size: 1.5rem;
+  border-bottom: 0.1rem solid;
+  border-color: #353567;
 }
 
 .filter-starred {
