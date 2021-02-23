@@ -36,12 +36,12 @@ p {
 button {
   /* font-family: Open sans; */
   text-align: center;
-  background-color: #5356A4;
   width: 16.20rem;
   height: 2.75rem;
-  color: #E9E9F3;
   font-weight: bold;
   font-size: 1rem;
+  color: #E9E9F3;
+  background-color: #5356A4;
   border-radius: 0.05rem;
   border: none;
 }
@@ -76,17 +76,17 @@ section {
 
 /*--------------------------RIGHT SIDE FORM---------------------*/
 form {
-  background-color: #A9AAD2;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 50vh;
+  height: 40vh;
   margin-left: .1rem;
+  padding-top: 0.015rem;
   /* font-family: Open sans; */
   font-weight: bold;
   color: #1F1F3D;
-  padding-top: 0.015rem;
+  background-color: #A9AAD2;
 }
 
 .title-box,
@@ -98,10 +98,10 @@ form {
 
 .save-button {
   width: 20.55rem;
-  border-radius: 0.12rem;
   margin-top: 0.5rem;
   margin-bottom: 0.75rem;
   background-color: #5356A4;
+  border-radius: 0.12rem;
 }
 
 .title-box,
@@ -123,10 +123,10 @@ label{
 }
 
 .search-box-input {
-  width: 18.55rem;
-  display: flex;
   border: #1F1F3D .1rem solid;
+  display: flex;
   /* font-family: Open sans; */
+  width: 18.55rem;
   font-weight: light;
   border-radius: 0.06rem;
 }
@@ -145,8 +145,8 @@ article {
 }
 
 .icon {
-  width: 2rem;
   height: 2rem;
+  width: 2rem;
 }
 
 .idea-box-header {
@@ -159,16 +159,16 @@ article {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: .75rem;
   height: 15.35rem;
   width: 12rem;
+  margin: .75rem;
   border:#1F1F3D .1rem solid;
 }
 
 .comment-block {
   display: flex;
   background-color: #5356A4;
-  align-items:center;
+  align-items: center;
 }
 
 h4 {
