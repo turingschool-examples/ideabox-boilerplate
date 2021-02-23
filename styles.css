@@ -22,7 +22,7 @@ aside {
   flex-direction: row;
   padding-left: 1rem;
   height: 100vh;
-  width: 20vw;
+  width: 35vw;
   margin: 0;
   background-color: #1F1F3D;
 }
@@ -80,13 +80,13 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 40vh;
+  height: 35vh;
   margin-left: .1rem;
   padding-top: 0.015rem;
   /* font-family: Open sans; */
   font-weight: bold;
-  color: #1F1F3D;
   background-color: #A9AAD2;
+  color: #1F1F3D;
 }
 
 .title-box,
@@ -140,8 +140,10 @@ label{
 
 /*--------------------------RIGHT SIDE ARTICLE---------------------*/
 article {
+  display: flex;
+  flex-wrap: wrap;
   background-color: #EAEAF4;
-  height: 60vh;
+  /* height: 60vh; */
 }
 
 .icon {
@@ -149,15 +151,14 @@ article {
   width: 2rem;
 }
 
-
 .idea-boxes {
+  border: .13rem solid #1F1F3D;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 50%;
-  width: 33%;
+  /* height: 50%; */
   margin: 1rem;
-  border: .1rem solid #1F1F3D;
+  width: 20%;
 }
 
 .idea-box-header {
@@ -182,7 +183,7 @@ article {
 }
 
 .comment-footer {
-  border: .1rem solid #1F1F3D;
+  border-top: .13rem solid #1F1F3D;
   display: flex;
   background-color: #5356A4;
   align-items: center;
