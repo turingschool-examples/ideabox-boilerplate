@@ -33,8 +33,15 @@ p {
 }
 
 button {
+  font-family: Open sans;
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
   background-color: #5356A4;
   border: none;
+  color: #E9E9F3;
+  width: 14.625rem;
+  height: 2.75rem;
   color: #E9E9F3;
 }
 
