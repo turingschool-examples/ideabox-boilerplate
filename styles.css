@@ -1,0 +1,61 @@
+/* * {
+  border: .1rem solid red;
+} */
+
+/*--------------------------BODY---------------------*/
+body {
+  margin: 0;
+}
+
+/*--------------------------MAIN---------------------*/
+main {
+  display: flex;
+  background-color: #EAEAF4;
+  height: 100vh;
+  width: 100vw;
+}
+
+/*--------------------------LEFT SIDE ASIDE---------------------*/
+aside {
+  /* display: inline-block */
+  background-color: #1F1F3D;
+  flex-direction: row;
+  height: 100vh;
+  width: 20vw;
+  margin: 0;
+}
+
+p {
+  color: #E9E9F3;
+}
+
+button {
+  background-color: #5356A4;
+  border: none;
+}
+
+/*--------------------------RIGHT SIDE SECTION---------------------*/
+section {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 80vw;
+  margin: 0;
+}
+
+/*--------------------------RIGHT SIDE FORM---------------------*/
+form {
+  background-color: #A9AAD2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  margin-left: .1rem;
+}
+
+/*--------------------------RIGHT SIDE ARTICLE---------------------*/
+article {
+  background-color: #EAEAF4;
+  height: 50vh;
+}
