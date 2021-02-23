@@ -1,8 +1,8 @@
 class Idea {
-  constructor(title, text, star) {
+  constructor(title, input, star) {
     this.id = Date.now();
     this.title = title;
-    this.text = text;
+    this.text = input;
     this.isStar = star || false;
  }
   saveToStorage() {
