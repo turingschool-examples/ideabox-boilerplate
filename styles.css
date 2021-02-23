@@ -145,6 +145,7 @@ article {
 .idea-boxes {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   margin: .75rem;
   height: 14rem;
   width: 12rem;
