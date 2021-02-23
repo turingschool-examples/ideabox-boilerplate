@@ -86,6 +86,7 @@ form {
   font-family: Open sans;
   font-weight: bold;
   color: #1F1F3D;
+  padding-top: 0.015rem;
 }
 
 .title-box,
@@ -95,8 +96,13 @@ form {
   width: 20rem;
 }
 
+/* .search-box-input {
+  width: 18.45rem;
+  height: 2rem;
+} */
+
 .save-button {
-  width: 20.75rem;
+  width: 20.55rem;
   border-radius: 0.12rem;
   margin-top: 0.5rem;
   margin-bottom: 0.75rem;
@@ -126,11 +132,10 @@ form {
 
 label{
   display: block;
-  color:
 }
 
 .search-box-input {
-  width: 19rem;
+  width: 18.55rem;
   display: flex;
   border: #1F1F3D .1rem solid;
   font-family: Open sans;
