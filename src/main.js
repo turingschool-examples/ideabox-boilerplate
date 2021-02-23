@@ -1,8 +1,8 @@
 //  Global Variables:
 var newIdea;
-var ideas = [];
+var ideas = localStorage.getItem("ideas") ? JSON.parse(localStorage.getItem("ideas")) : [];
 var newComment;
-var comments = [];
+var comments = localStorage.getItem("comments") ? JSON.parse(localStorage.getItem("comments")) : [];
 
 //  Query Selectors:
 var showStarred = document.querySelector("#showStarred");
@@ -25,9 +25,27 @@ deleteIcon.addEventListener("mouseup", removeIdea);
 commentIcon.addEventListener("click", addComment);
 
 //  Functions:
+function showStarred() {
+  // Hides instances where `isStarred = false`
+}
+
+function enableSaved(){
+  if (titleInput.value.length>0 && bodyInput.value.length>0) {
+    // enable the saved button (should default as disabled first [css])
+  }
+
+function saveIdea() {
+  if (!ideas.includes(newIdea)) {
+    ideas.push(newIdea);
+  //creates new instance of idea class
+    saveToStorage();
+  } else {
+    window.alert("You already had that idea!")
+  }
+}
+
 /*
-- Show Starred Ideas - Hides instances where `isStarred = false`
-- Save button - creates new instance of idea class *enabled upon conditions met*
+
 - Search (filter) - takes form string and scans our instances for it (both title and body)
 - Star icon - Sets the instance isStarred value to `true`/ changes icon
   *toggles value and icon upon conditions met*
