@@ -17,21 +17,52 @@ main {
 
 /*--------------------------LEFT SIDE ASIDE---------------------*/
 aside {
-  /* display: inline-block */
+  display: inline inline-block;
   background-color: #1F1F3D;
   flex-direction: row;
+  padding-left: 1rem;
   height: 100vh;
   width: 20vw;
   margin: 0;
 }
 
-/* p {
+p {
+  font-family: Open Sans;
+  font-weight: bold;
   color: #E9E9F3;
-} */
+}
 
 button {
+  font-family: Open sans;
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 0.05rem;
   background-color: #5356A4;
   border: none;
+  color: #E9E9F3;
+  width: 16.20rem;
+  height: 2.75rem;
+  color: #E9E9F3;
+}
+
+.idea-header,
+.show-starred {
+  border-bottom: 0.1rem solid;
+  border-color: #353567;
+}
+
+.idea-header{
+  font-size: 1.5rem;
+}
+
+.filter-starred {
+  font-size: 1rem;
+  color: #BFBFDD;
+}
+
+.show-starred {
+  padding-bottom: 2rem;
 }
 
 /*--------------------------RIGHT SIDE SECTION---------------------*/
@@ -52,6 +83,10 @@ form {
   align-items: center;
   height: 50vh;
   margin-left: .1rem;
+  font-family: Open sans;
+  font-weight: bold;
+  color: #1F1F3D;
+  padding-top: 0.015rem;
 }
 
 .title-box,
@@ -61,17 +96,36 @@ form {
   width: 20rem;
 }
 
+/* .search-box-input {
+  width: 18.45rem;
+  height: 2rem;
+} */
+
+.save-button {
+  width: 20.55rem;
+  border-radius: 0.12rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+  background-color: #5356A4;
+}
+
+.title-box,
+.body-box {
+  margin-top: 0.25rem;
+}
+
 .input-icon-container {
   display: flex;
-  
+  /* border: 2px solid red; */
+  align-items: center;
 }
 
 .body-box {
   resize: none;
 }
 
-/* 
-.search-box-button {
+
+/* .search-box-button {
   display: flex;
   border: #1F1F3D;
   border-width: 10px;
@@ -79,18 +133,22 @@ form {
 
 label{
   display: block;
-  color:
 }
 
 .search-box-input {
+  width: 18.55rem;
   display: flex;
   border: #1F1F3D .1rem solid;
+  font-family: Open sans;
+  font-weight: light;
+  border-radius: 0.06rem;
 }
 
 .search-icon {
   height: 2rem;
   width: 2rem;
   background-color:#1F1F3D;
+  border-radius: 0.05rem;
 }
 
 
@@ -115,8 +173,9 @@ article {
 .idea-boxes {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   margin: .75rem;
-  height: 14rem;
+  height: 15.35rem;
   width: 12rem;
   border:#1F1F3D .1rem solid;
 }
@@ -128,7 +187,7 @@ article {
 }
 
 h4 {
-  margin: 0;
+  margin: 0
 }
 
 .comment-body {
