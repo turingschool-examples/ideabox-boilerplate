@@ -94,6 +94,11 @@ form {
   width: 20rem;
 }
 
+.title-box,
+.body-box {
+  margin-top: 0.25rem;
+}
+
 .input-icon-container {
   display: flex;
 
