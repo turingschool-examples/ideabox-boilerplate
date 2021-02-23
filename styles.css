@@ -1,6 +1,6 @@
-/* * {
+* {
   border: .1rem solid red;
-} */
+}
 
 /*--------------------------BODY---------------------*/
 body {
@@ -172,7 +172,7 @@ article {
   flex-direction: column;
   justify-content: space-between;
   margin: .75rem;
-  height: 14rem;
+  height: 15.35rem;
   width: 12rem;
   border:#1F1F3D .1rem solid;
 }
