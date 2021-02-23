@@ -141,7 +141,7 @@ label{
 /*--------------------------RIGHT SIDE ARTICLE---------------------*/
 article {
   background-color: #EAEAF4;
-  height: 50vh;
+  height: 60vh;
 }
 
 .icon {
@@ -149,20 +149,23 @@ article {
   width: 2rem;
 }
 
-.idea-box-header {
-  display: flex;
-  justify-content: space-between;
-  background-color: #1F1F3D;
-}
 
 .idea-boxes {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 15.35rem;
-  width: 12rem;
+  /* height: 15.35rem;
+  width: 12rem; */
+  height: 50%;
+  width: 33%;
   margin: .75rem;
   border:#1F1F3D .1rem solid;
+}
+
+.idea-box-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #1F1F3D;
 }
 
 .comment-block {
@@ -176,7 +179,7 @@ h4 {
 }
 
 .comment-body {
-  padding: 0 .6rem;
-  margin: 0;
-  margin-top: 1rem;
+  /* padding: 0 .6rem; */
+  /* margin: 0;
+  margin-top: 1rem; */
 }
