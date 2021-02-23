@@ -141,10 +141,8 @@ label{
 /*--------------------------RIGHT SIDE ARTICLE---------------------*/
 article {
   display: flex;
-  justify-content: space-evenly;
   flex-wrap: wrap;
   background-color: #EAEAF4;
-  /* height: 60vh; */
 }
 
 .icon {
@@ -157,8 +155,8 @@ article {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* height: 50%; */
   margin: 1rem;
+  margin-right: 1.7rem;
   width: 20%;
 }
 
@@ -177,11 +175,14 @@ article {
 
 .comment-title {
   margin: 0;
+  margin-top: 0.75rem;
   font-weight: bold;
 }
 
 .comment-text {
   font-weight: lighter;
+  /* margin: 0; */
+  margin-top: 0.75rem;
 }
 
 .comment-footer {
@@ -190,5 +191,4 @@ article {
   background-color: #5356A4;
   align-items: center;
   height: 2rem;
-  /* margin: 0; */
 }
