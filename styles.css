@@ -25,13 +25,24 @@ aside {
   margin: 0;
 }
 
-/* p {
+p {
+  font-family: Open Sans;
+  font-weight: bold;
   color: #E9E9F3;
-} */
+}
 
 button {
   background-color: #5356A4;
   border: none;
+}
+
+.idea-header{
+  font-size: 1.5rem;
+}
+
+.filter-starred {
+  font-size: 1rem;
+  color: #BFBFDD;
 }
 
 /*--------------------------RIGHT SIDE SECTION---------------------*/
@@ -63,14 +74,14 @@ form {
 
 .input-icon-container {
   display: flex;
-  
+
 }
 
 .body-box {
   resize: none;
 }
 
-/* 
+/*
 .search-box-button {
   display: flex;
   border: #1F1F3D;
@@ -128,7 +139,7 @@ article {
 }
 
 h4 {
-  margin: 0;
+  margin: 0
 }
 
 .comment-body {
