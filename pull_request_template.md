@@ -1,7 +1,7 @@
 ## What is the Change?
 
 
-## Is this a feature of a fix?
+## Is this a feature or a fix?
 
 
 ## (if fix, what does this fix?)
