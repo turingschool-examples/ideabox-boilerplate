@@ -142,7 +142,9 @@ label{
 article {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   background-color: #EAEAF4;
+  overflow:scroll;
 }
 
 .icon {
