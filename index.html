@@ -16,24 +16,36 @@
         <form>
           <div>
             <div>
-              <label for="name">Name:</label>
-              <input type="text" id="name" name="user_name">
+              <label for="title">Title</label>
+              <input class="title-box" type="text" id="title" name="user_name">
             </div>
              <div>
-               <label for="msg">Message:</label>
-               <textarea id="msg" name="user_message"></textarea>
+               <label for="body">Body</label>
+               <textarea class="body-box" id="body" name="user_message"></textarea>
              </div>
           </div>
           <div>
-            <button type="submit">Submit</button>
+            <button class="save-button" type="submit">Save</button>
           </div>
-          <div>
-            <label for="name">Search Bar</label>
-            <input type="text" id="name" name="user_name">
+          <div class="input-icon-container">
+            <img class="search-icon" src="./assets/search.svg"/>
+            <input type="search" class="search-box-input" placeholder="Search ideas" id="name" name="user_name">
           </div>
         </form>
         <article>
-          <h2>idea boxes</h2>
+          <div class="idea-boxes">
+            <div class="idea-box-header">
+              <img class="star-active-icon icon" src="./assets/star-active.svg"/>
+              <img class="delete-icon icon" src="./assets/delete.svg"/>
+            </div>
+            <p class="comment-body">Idea title</p>
+            
+            <p class="comment-body">Idea body. Don't ever play yourself. Every chance. get, i water the plant, Lion! Cloth talk</p>
+              <div class="comment-block">
+                <img class="comment-icon icon" src="./assets/comment.svg"/>
+                <h4 class="comment-class">Comment</h4>
+              </div>
+          </div>
         </article>
       </section>
     </main>

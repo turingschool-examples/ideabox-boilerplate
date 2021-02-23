@@ -25,9 +25,9 @@ aside {
   margin: 0;
 }
 
-p {
+/* p {
   color: #E9E9F3;
-}
+} */
 
 button {
   background-color: #5356A4;
@@ -54,8 +54,85 @@ form {
   margin-left: .1rem;
 }
 
+.title-box,
+.save-button,
+.search-box-input {
+  height: 2rem;
+  width: 20rem;
+}
+
+.input-icon-container {
+  display: flex;
+  
+}
+
+.body-box {
+  resize: none;
+}
+
+/* 
+.search-box-button {
+  display: flex;
+  border: #1F1F3D;
+  border-width: 10px;
+} */
+
+label{
+  display: block;
+  color:
+}
+
+.search-box-input {
+  display: flex;
+  border: #1F1F3D .1rem solid;
+}
+
+.search-icon {
+  height: 2rem;
+  width: 2rem;
+  background-color:#1F1F3D;
+}
+
+
+
 /*--------------------------RIGHT SIDE ARTICLE---------------------*/
 article {
   background-color: #EAEAF4;
   height: 50vh;
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.idea-box-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #1F1F3D;
+}
+
+.idea-boxes {
+  display: flex;
+  flex-direction: column;
+  margin: .75rem;
+  height: 14rem;
+  width: 12rem;
+  border:#1F1F3D .1rem solid;
+}
+
+.comment-block {
+  display: flex;
+  background-color: #5356A4;
+  align-items:center;
+}
+
+h4 {
+  margin: 0;
+}
+
+.comment-body {
+  padding: 0 .6rem;
+  margin: 0;
+  margin-top: 1rem;
 }
