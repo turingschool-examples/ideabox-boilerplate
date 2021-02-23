@@ -82,6 +82,9 @@ form {
   align-items: center;
   height: 50vh;
   margin-left: .1rem;
+  font-family: Open sans;
+  font-weight: bold;
+  color: #1F1F3D;
 }
 
 .title-box,
@@ -115,6 +118,8 @@ label{
 .search-box-input {
   display: flex;
   border: #1F1F3D .1rem solid;
+  font-family: Open sans;
+  /* font-weight: light; */
 }
 
 .search-icon {
