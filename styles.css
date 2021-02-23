@@ -167,11 +167,13 @@ article {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 300px;
-  width: 28%;
+  height: 330px;
+  /* width: 28%; */
+  width: 275px;
   margin: 1.5rem;
   margin-right: 1.2rem;
   margin-bottom: 0rem;
+  background-color: #FFFFFF;
 }
 
 .idea-box-header {
@@ -184,24 +186,30 @@ article {
 .comment-title,
 .comment-text {
   color: black;
-  padding: 0 0.6rem;
+  padding: 0 1rem;
+}
+
+.comment-information {
+  display: flex;
+  flex-direction: column;
+  /* height: 100px; */
+  margin: 0;
 }
 
 .comment-title {
   margin: 0;
-  margin-top: 0.75rem;
   font-weight: bold;
 }
 
 .comment-text {
+  margin: 0;
   font-weight: lighter;
-  margin-top: 0.75rem;
 }
 
 .comment-footer {
   border-top: .13rem solid #1F1F3D;
   display: flex;
-  background-color: #5356A4;
   align-items: center;
   height: 2rem;
+  background-color: #5356A4;
 }
