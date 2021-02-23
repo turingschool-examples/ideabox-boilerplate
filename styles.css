@@ -141,6 +141,7 @@ label{
 /*--------------------------RIGHT SIDE ARTICLE---------------------*/
 article {
   display: flex;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   background-color: #EAEAF4;
   /* height: 60vh; */
