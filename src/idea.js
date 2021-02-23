@@ -3,6 +3,15 @@ class Idea {
     this.id = Date.now();
     this.title = title;
     this.body = body;
-    this.star = false;
+    this.isStarred = false;
   }
+  // saveToStorage() {
+  //
+  // }
+  // deleteFromStorage() {
+  //  saveToStorage()
+  // }
+  // updateIdea(title, body) {
+  //  saveToStorage()
+  // }
 }
