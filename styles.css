@@ -45,10 +45,14 @@ button {
   color: #E9E9F3;
 }
 
-.idea-header{
-  font-size: 1.5rem;
+.idea-header,
+.show-starred {
   border-bottom: 0.1rem solid;
   border-color: #353567;
+}
+
+.idea-header{
+  font-size: 1.5rem;
 }
 
 .filter-starred {
@@ -57,8 +61,6 @@ button {
 }
 
 .show-starred {
-  border-bottom:  0.1rem solid;
-  border-color: #353567;
   padding-bottom: 2rem;
 }
 
