@@ -1,6 +1,6 @@
-* {
+/* * {
   border: .1rem solid red;
-}
+} */
 
 /*--------------------------BODY---------------------*/
 body {
@@ -116,15 +116,16 @@ form {
 
 .input-icon-container {
   display: flex;
-
+  /* border: 2px solid red; */
+  align-items: center;
 }
 
 .body-box {
   resize: none;
 }
 
-/*
-.search-box-button {
+
+/* .search-box-button {
   display: flex;
   border: #1F1F3D;
   border-width: 10px;
@@ -140,12 +141,14 @@ label{
   border: #1F1F3D .1rem solid;
   font-family: Open sans;
   font-weight: light;
+  border-radius: 0.06rem;
 }
 
 .search-icon {
   height: 2rem;
   width: 2rem;
   background-color:#1F1F3D;
+  border-radius: 0.05rem;
 }
 
 
