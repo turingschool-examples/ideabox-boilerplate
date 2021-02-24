@@ -136,6 +136,13 @@ body {
   outline: none;
 }
 
+.search-icon {
+  width: 6%;
+  height: auto;
+  vertical-align: middle;
+  margin-left: 3%;
+  margin-right: 2%;
+}
 
 /* BACKGROUND COLORS*/
 /*sidebar color #1F1F3D
