@@ -73,7 +73,6 @@ body {
   justify-content: center
 }
 
-
 .user-title-label {
   font-size: 20px;
   margin-right: 42%;
@@ -83,7 +82,6 @@ body {
   margin-bottom: .3%;
 }
 
-
 .user-title {
   width: 46%;
   height: 10%;
@@ -91,8 +89,6 @@ body {
   border-radius: 5px;
   outline: none;
 }
-
-
 
 .user-comment-label {
   font-size: 20px;
@@ -103,8 +99,6 @@ body {
   margin-bottom: .3%;
 }
 
-
-
 .user-comment {
   width: 46%;
   height: 22%;
@@ -112,7 +106,6 @@ body {
   border-radius: 5px;
   outline: none;
 }
-
 
 .save-button {
   width: 46.5%;
@@ -149,6 +142,7 @@ body {
   height: 100%;
   outline: none;
 }
+
 /* BACKGROUND COLORS*/
 /*sidebar color #1F1F3D
  input box color #A9AAD2
