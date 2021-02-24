@@ -36,10 +36,10 @@ function updateIdeaList() {
 }
 
 function renderIdea() {
-  if (title.value && inputText.value) {
     var createList = "";
-    renderIdeaBox.innerHTML = ""
-    for (var i = 0; i < ideaList.length; i++){
+    renderIdeaBox.innerHTML = "";
+
+    for (var i = 0; i < ideaList.length; i++) {
     createList += `<div class="idea-boxes">
       <div class="idea-box-header">
         <img class="star-active-icon icon" src="./assets/star-active.svg"/>
@@ -56,7 +56,6 @@ function renderIdea() {
       </div>`
     }
     renderIdeaBox.innerHTML = createList
-  }
 }
 
 function clearTextBoxes() {
