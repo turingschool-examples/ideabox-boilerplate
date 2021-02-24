@@ -93,6 +93,16 @@ body {
 }
 
 
+
+.user-comment-label {
+  font-size: 20px;
+  margin-right: 41%;
+  font-size: 27px;
+  font-weight: bold;
+  margin-top: 2.5%;
+  margin-bottom: .3%;
+}
+
 /* BACKGROUND COLORS*/
 /*sidebar color #1F1F3D
  input box color #A9AAD2
