@@ -144,6 +144,11 @@ body {
   margin-right: 2%;
 }
 
+.search {
+  width: 88.38%;
+  height: 100%;
+  outline: none;
+}
 /* BACKGROUND COLORS*/
 /*sidebar color #1F1F3D
  input box color #A9AAD2
