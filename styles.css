@@ -113,10 +113,13 @@ label {
   border-radius: 0.12rem;
 }
 
+.save-button:hover {
+  background-color: #5356A4;
+}
+
 .save-button:disabled {
   cursor: not-allowed;
 }
-
 .search-container {
   display: flex;
   align-items: center;
