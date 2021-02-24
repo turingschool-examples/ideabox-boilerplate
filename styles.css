@@ -1,0 +1,161 @@
+/*
+Need cursor styling when conditions are met in js function
+Need hidden !important styling for later use of icon switches and search filtering
+*/
+/* Add Hidden */
+/*overflow: auto;*/
+* {
+  /* border: solid 2px blue; */
+  font-family: "Open Sans";
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans";
+}
+
+/*~~~~~~~~NAV BAR~~~~~~~~~*/
+.side-bar {
+  background-color: #1F1F3D;
+  color: #E9E9F3;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  width: 25%;
+  height: 100%;
+  position: absolute;
+}
+
+.side-bar>h1 {
+  margin: 8%;
+}
+
+.filter {
+  border-top: solid 2px #353567;
+  border-bottom: solid 2px #353567;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  height: 196px;
+  font-weight: Light;
+}
+
+.filter>h2 {
+  color: #BFBFDD;
+  margin: 4% 8%;
+  font-size: 150%;
+  font-weight: bold;
+}
+
+.show-starred-ideas {
+  background-color: #5356A4;
+  color: #E9E9F3;
+  width: 85%;
+  margin-left: 8%;
+  padding: 4% 2% 2%;
+  font-size: 175%;
+  font-weight: bold;
+  border-color: #2D2C55;
+  border: solid 3px #7375B5;
+  border-radius: 5px;
+  /* outline: none; */
+}
+
+/*~~~~~~INPUT BOX~~~~~~~~~*/
+.form {
+  background-color: #A9AAD2;
+  margin-left: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 700px;
+  justify-content: center
+}
+
+.user-title-label {
+  font-size: 20px;
+  margin-right: 42%;
+  font-size: 27px;
+  font-weight: bold;
+  margin-top: 2.5%;
+  margin-bottom: .3%;
+}
+
+.user-title {
+  width: 46%;
+  height: 10%;
+  border: solid 3px #7375B5;
+  border-radius: 5px;
+  outline: none;
+}
+
+.user-comment-label {
+  font-size: 20px;
+  margin-right: 41%;
+  font-size: 27px;
+  font-weight: bold;
+  margin-top: 2.5%;
+  margin-bottom: .3%;
+}
+
+.user-comment {
+  width: 46%;
+  height: 22%;
+  border: solid 3px #7375B5;
+  border-radius: 5px;
+  outline: none;
+}
+
+.save-button {
+  width: 46.5%;
+  height: 11%;
+  background-color: #353667;
+  font-size: 40px;
+  color: white;
+  font-weight: bold;
+  margin-top: 2.5%;
+  border: solid 3px #7375B5;
+  border-radius: 5px;
+}
+
+.search-bar {
+  width: 46.5%;
+  height: 10%;
+  background-color: #353667;
+  margin-top: 2.5%;
+  border: solid 3px #7375B5;
+  border-radius: 5px;
+  outline: none;
+}
+
+.search-icon {
+  width: 6%;
+  height: auto;
+  vertical-align: middle;
+  margin-left: 3%;
+  margin-right: 2%;
+}
+
+.search {
+  width: 88.38%;
+  height: 100%;
+  outline: none;
+}
+
+/* BACKGROUND COLORS*/
+/*sidebar color #1F1F3D
+ input box color #A9AAD2
+ card section  #EAEAF4*/
+/* CARD COLORS */
+/* top section #1F1F3D
+  background color #FFFFFF
+  text #F1F3D
+  comment text #E9E9F3
+  footer #5356A4*/
+/* NAV BAR
+  IdeaBox text #E9E9F3
+  border #353567
+  filter text #BFBFDD
+  show starred idea #E9E9F3
+  button color #5356A4#*/
