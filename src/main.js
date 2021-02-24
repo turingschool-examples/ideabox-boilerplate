@@ -2,10 +2,14 @@
 var title = document.querySelector(".title-box");
 var inputText = document.querySelector(".text-box");
 var formInformation = document.querySelector("form");
-var renderIdeaBox = document.querySelector("#populatedIdea")
+var renderIdeaBox = document.querySelector("#populatedIdea");
+var saveButton = document.querySelector('#saveButton');
 
 // Event Listeners
 formInformation.addEventListener("submit", submitNewIdea);
+window.addEventListener("load", loadWindow);
+title.addEventListener("input", enableButton);
+inputText.addEventListener("input", enableButton);
 
 // global variables
 var newIdea = [];
@@ -17,6 +21,7 @@ function submitNewIdea(event) {
   updateIdeaList();
   renderIdea();
   clearTextBoxes();
+  disableButton();
   // formInputValidation();
 
   //single responsibility function...
@@ -57,4 +62,28 @@ function renderIdea() {
 function clearTextBoxes() {
   title.value = ""
   inputText.value = ""
+}
+
+function loadWindow(event) {
+  event.preventDefault();
+  disableButton();
+  // disable button on load 
+}
+
+function disableButton() {
+  saveButton.disabled = true;
+}
+
+function enableButton(event) {
+  event.preventDefault();
+
+  var monitorTitleInput = title.value;
+  var monitorTextBoxInput = inputText.value;
+
+  if (monitorTitleInput.length !== 0 && monitorTextBoxInput.length !== 0) {
+    saveButton.disabled = false
+  }
+  if (monitorTitleInput.length === 0 || monitorTextBoxInput.length === 0) {
+    saveButton.disabled = true
+  }
 }
