@@ -144,26 +144,69 @@ body {
 /*~~~~~~~~~CARD SECTION~~~~~~~~~~~~*/
 
 
+
 .section {
-  background-color: #EAEAF4;
-}
-/* .section {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
-  width: 25%;
+  justify-content: space-evenly;
+  margin-left: 20%;
   height: 100%;
   border: dashed red;
+  overflow: auto;
 }
+
 .idea-card {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  height: 20%;
+  border: 1px solid #1F1F3D;
+}
+
+.card-controls {
+  display: flex;
+  background-color: #1F1F3D;
+  justify-content: space-between;
+
+}
+/*~~~~~~~PICTURES~~~~~~~*/
+.star-inactive,
+.star-active,
+.delete-inactive,
+.delete-active,
+.comment-icon {
+  width: 15%;
+}
+
+.idea-content {
+  overflow: auto;
+  background-color: #E9E9F3;
+  color: #1F1F3D;
+}
+
+.idea-title {
+  margin: 0;
+}
+
+.comment-body {
+  display: flex;
+  background-color: #5356A4;
+  color: #1F1F3D;
+}
+
+.comment {
+  color: #1F1F3D;
+  margin: 1%;
+}
+ /* .idea-card {
   display: flex;
   justify-content: center;
   width: 100px;
   height: 150px;
   border: dashed red;
-}
-.card-controls {
+} */
+/* .card-controls {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -195,7 +238,7 @@ body {
 }
 .comment {
   font-size: 13pt;
-} */
+} */ */
 
 /* BACKGROUND COLORS*/
 /*sidebar color #1F1F3D
@@ -212,4 +255,4 @@ body {
   border #353567
   filter text #BFBFDD
   show starred idea #E9E9F3
-  button color #5356A4#*/
+  button color #5356A4#
