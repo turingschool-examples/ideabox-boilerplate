@@ -22,8 +22,8 @@ body {
   flex-direction: column;
   align-content: flex-start;
   width: 20%;
-  height: 100%;
-  position: absolute;
+  height: 184%;
+  position: fixed;
 }
 
 .side-bar>h1 {
@@ -154,7 +154,7 @@ body {
   flex-wrap: wrap;
   justify-content: space-evenly;
   margin-left: 20%;
-  height: 100%;
+  height: 763px;
   overflow: auto;
   background-color: #EAEAF4;
 
@@ -164,7 +164,6 @@ body {
   display: flex;
   flex-direction: column;
   width: 28%;
-  height: 20%;
   border: 2px solid #1F1F3D;
   margin: 2%;
 }
@@ -185,7 +184,7 @@ body {
 }
 /*~~~~~~~MIDDLE SECTION~~~~~~~*/
 .idea-content {
-  overflow: scroll;
+  overflow: auto;
   background-color: #FFFFFF;
   color: #1F1F3D;
   padding-left: 3%;
