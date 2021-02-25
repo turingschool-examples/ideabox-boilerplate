@@ -10,21 +10,20 @@ var titleInput = document.querySelector("#titleInput");
 var bodyInput = document.querySelector("#bodyInput");
 var saveButton = document.querySelector("#saveButton");
 var searchInput = document.querySelector("#searchInput");
-var starIcon = document.querySelector("#starIcon");
-var activeStarIcon = document.querySelector("#activateStarIcon");
-var deleteIcon = document.querySelector("#deleteIcon");
-var activeDeleteIcon = document.querySelector("#activeDeleteIcon");
+var starActive = document.querySelector("#starActive");
+var starInactive = document.querySelector("#starInactive");
+var deleteActive = document.querySelector("#deleteActive");
+var deleteInactive = document.querySelector("#deleteInactive");
 var commentIcon = document.querySelector("#commentIcon");
 
 //  Event Listeners:
-showStarred.addEventListener("click", showStarred);
-saveButton.addEventListener("click", saveIdea);
-searchInput.addEventListener("keydown", filterIdeas);
-starIcon.addEventListener("mousedown", activateStar);
-activeStarIcon.addEventListener("mouseup", starIdea);
-deleteIcon.addEventListener("mousedown", activateDelete);
-deleteIcon.addEventListener("mouseup", removeIdea);
-commentIcon.addEventListener("click", addComment);
+// showStarred.addEventListener("click", showStarred);
+// searchInput.addEventListener("keydown", filterIdeas);
+// starInactive.addEventListener("mousedown", activateStar);
+// starActive.addEventListener("mouseup", starIdea);
+// deleteInactive.addEventListener("mousedown", activateDelete);
+// deleteActive.addEventListener("mouseup", removeIdea);
+// commentIcon.addEventListener("click", addComment);
 
 //  Functions:
 function showStarred() {
@@ -35,16 +34,20 @@ function enableSaved(){
   if (titleInput.value.length>0 && bodyInput.value.length>0) {
     // enable the saved button (should default as disabled first [css])
   }
+}
 
-function saveIdea() {
+saveButton.addEventListener("click", function(e) {
+  e.preventDefault();
+  newIdea = new Idea(titleInput.value, bodyInput.value)
   if (!ideas.includes(newIdea)) {
     ideas.push(newIdea);
-  //creates new instance of idea class
-    saveToStorage();
+    newIdea.saveToStorage();
   } else {
-    window.alert("You already had that idea!")
+      window.alert("You already had that idea!")
+    }
   }
-}
+);
+
 
 //change grey star to red star
 function activateStar() {
