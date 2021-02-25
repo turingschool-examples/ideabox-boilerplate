@@ -22,8 +22,8 @@ body {
   flex-direction: column;
   align-content: flex-start;
   width: 20%;
-  height: 100%;
-  position: absolute;
+  height: 184%;
+  position: fixed;
 }
 
 .side-bar>h1 {
@@ -59,7 +59,7 @@ body {
   border-color: #2D2C55;
   border: solid 3px #7375B5;
   border-radius: 5px;
-  /* outline: none; */
+  outline: none;
 }
 
 /*~~~~~~INPUT BOX~~~~~~~~~*/
@@ -81,11 +81,12 @@ body {
 }
 
 .user-title {
-  width: 36%;
-  height: 10%;
+  width: 40%;
+  height: 2em;
   border: solid 3px #7375B5;
   border-radius: 5px;
   outline: none;
+  font-size: 20px;
 }
 
 .user-comment-label {
@@ -97,15 +98,17 @@ body {
 }
 
 .user-comment {
-  width: 36%;
-  height: 22%;
+  width: 40%;
+  height: 4em;
   border: solid 3px #7375B5;
   border-radius: 5px;
   outline: none;
+  font-size: 20px;
+  padding: 2% 0 2% 0;
 }
 
 .save-button {
-  width: 36%;
+  width: 40%;
   height: 11%;
   background-color: #353667;
   font-size: 250%;
@@ -114,11 +117,12 @@ body {
   margin-top: 2.5%;
   border: solid 3px #7375B5;
   border-radius: 5px;
+  outline: none;
 }
 
 .search-bar {
   display: flex;
-  width: 36%;
+  width: 40%;
   margin: 3% 3%;
   border: solid 3px #7375B5;
   border-radius: 5px;
@@ -137,79 +141,80 @@ body {
 
 .search {
   width: 90%;
-  height: 100%;
+  height: 2em;
   outline: none;
+  font-size: 20px;
 }
 
 /*~~~~~~~~~CARD SECTION~~~~~~~~~~~~*/
 
-
 .section {
-  background-color: #EAEAF4;
-}
-/* .section {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
-  width: 25%;
-  height: 100%;
-  border: dashed red;
+  justify-content: space-evenly;
+  margin-left: 20%;
+  height: 763px;
+  overflow: auto;
+  background-color: #EAEAF4;
+
 }
+
 .idea-card {
   display: flex;
-  justify-content: center;
-  width: 100px;
-  height: 150px;
-  border: dashed red;
+  flex-direction: column;
+  width: 28%;
+  border: 2px solid #1F1F3D;
+  margin: 2%;
 }
+/*~~~~~~~~HEADER~~~~~~~~*/
 .card-controls {
   display: flex;
+  background-color: #1F1F3D;
   justify-content: space-between;
-  width: 100%;
-  height: 100px;
-  border: dashed red;
+  border-bottom: 2px solid #1F1F3D;
 }
-.star-inactive, .star-active,
-.delete-inactive, .delete-active {
-  transform: scale(.3);
+/*~~~~~~~PICTURES~~~~~~~*/
+.star-inactive,
+.star-active,
+.delete-inactive,
+.delete-active,
+.comment-icon {
+  width: 15%;
 }
-.delete-inactive {
-  transform: scale(.3);
-}
+/*~~~~~~~MIDDLE SECTION~~~~~~~*/
 .idea-content {
-  display: flex;
-  justify-content: space-around;
-  border: dashed red;
+  overflow: auto;
+  background-color: #FFFFFF;
+  color: #1F1F3D;
+  padding-left: 3%;
 }
-.idea-title, .idea-body{
-  font-size: 13pt;
+
+.idea-title {
+  margin-top: 5%;
   font-weight: bold;
+  font-size: 169%; /*NICE*/
 }
+
+.idea-body {
+  overflow: auto;
+  height: 6em;
+  font-size: 169%; /*NICE*/
+
+}
+
+/*~~~~~~FOOTER~~~~~~~~~~~*/
 .comment-body {
   display: flex;
-  justify-content: flex-start;
+  background-color: #5356A4;
+  color: #1F1F3D;
+  align-items: center;
+  border-top: 2px solid #1F1F3D;
 }
-.comment-icon {
-  transform: scale(.3);
-}
-.comment {
-  font-size: 13pt;
-} */
 
-/* BACKGROUND COLORS*/
-/*sidebar color #1F1F3D
- input box color #A9AAD2
- card section  #EAEAF4*/
-/* CARD COLORS */
-/* top section #1F1F3D
-  background color #FFFFFF
-  text #F1F3D
-  comment text #E9E9F3
-  footer #5356A4*/
-/* NAV BAR
-  IdeaBox text #E9E9F3
-  border #353567
-  filter text #BFBFDD
-  show starred idea #E9E9F3
-  button color #5356A4#*/
+.comment {
+  color: #E9E9FE;
+  margin: 1%;
+  font-weight: bold;
+  font-size: 85%;
+}
