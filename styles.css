@@ -1,28 +1,18 @@
 *{
   margin: 0;
   padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  /* border: 1px solid hotpink; */
 }
-html, body, main {
+body, main {
   height: 100%;
 }
 main{
   display: flex;
 }
 
-/* WHOLE PAGE */
-/* * {
-  border: 1px solid lavender;
-  font-family: 'Open Sans', sans-serif;
-  margin: 0;
-}
-
-main {
-  display: flex;
-  flex-direction: row;
-} */
-
-
         /* 👈🏽~~~~~~~~~~~~~~~~Left-Section~~~~~~~~~~~~~~~~~~👈🏽 */
+
 .left-section{
   display: flex;
   flex-direction: column;
@@ -68,11 +58,6 @@ p{
 
         /* ☝🏼~~~~~~~~~~~~~~~~Top-Section~~~~~~~~~~~~~~~~~~☝🏼 */
 
-* {
-    /* border: 1px solid lavender; */
-    font-family: 'Open Sans', sans-serif;
-    margin: 0;
-    }
 
 section {
     border: solid;
@@ -88,8 +73,7 @@ section {
     display: flex;
     flex-direction:column;
     justify-content: center;
-    /* width: 100%; */
-      width: 75%;
+    width: 100%;
 }
 
 .top-section {
@@ -98,9 +82,9 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 400px;
-    /*  height: 60%; */
+    height: auto;
     color: #E9E9F3;
+
 }
 
 .top-form {
@@ -135,7 +119,25 @@ section {
 .search-bar {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    height: 40px;
+}
 
+.search-bar > input {
+  margin: 0;
+  padding-left: 2%;
+}
+
+.please-fuckin-work {
+  background-color: #5356A4;
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.magnifying-glass{
+  height: 25px;
 }
 
 form {
@@ -157,7 +159,7 @@ input {
     width: 90%;
 }
 
-.top-form-btn {
+.top-form-btn{
     width: 40%;
     height: 40px;
     color: #E9E9F3;
@@ -168,7 +170,9 @@ input {
     font-weight: 700;
 }
 
-/* BOTTOM SECTION */
+
+        /* 👇🏼~~~~~~~~~~~~~~~~Bottom-Section~~~~~~~~~~~~~~~~~~👇🏼 */
+
 .bottom-section {
   display: flex;
   flex-flow: wrap;
@@ -181,9 +185,9 @@ input {
   flex-direction: column;
   justify-content: space-between;
   margin: 30px 15px 0 15px;
-  width: 30%;
+  width: 30%; */
   /* height: 250px; */
-  height: 400px;
+  /* height: 400px;
   background-color: #ffffff;
   border: 2px solid #1f1f3d;
 }
