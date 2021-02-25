@@ -13,17 +13,20 @@
     <h1>IdeaBox</h1>
     <div class="filter">
       <h2>Filter Starred Ideas</h2>
-      <button class="show-starred-ideas">Show Starred Ideas</button>
+      <button class="show-starred-ideas" id="showStarred">Show Starred Ideas</button>
     </div>
   </nav>
 
   <form class="form">
     <label class="user-title-label">Title</label>
-    <input class="user-title" type="text">
+    <input class="user-title" id="titleInput" type="text" style="font-size:30px;">
     <label class="user-comment-label">Body</label>
-    <input class="user-comment" type="text">
-    <img class="search-icon" src="assets/search.svg" alt="search">
-    <input class="search" type="search" placeholder="Search ideas">
+    <textarea class="user-comment" id="bodyInput" type="text" style="font-size:30px;"></textarea>
+    <button class="save-button" id="saveButton">Save</button>
+    <span class="search-bar">
+      <img class="search-icon" src="assets/search.svg" alt="search">
+      <input class="search" id="searchInput" type="search" placeholder="Search ideas" style="font-size:30px;">
+    </span>
   </form>
 
 
@@ -34,6 +37,7 @@
         <img class="star-active" id="starActive" src="assets/star-active.svg" alt="active star" hidden>
         <img class="delete-inactive" id="deleteInactive" src="assets/delete.svg" alt="delete">
         <img class="delete-active" id="deleteActive" src="assets/delete-active.svg" alt="active delete" hidden>
+
       </div>
       <article class="idea-content">
         <h1 class="idea-title"><strong>Idea Title</strong></h1>
@@ -41,6 +45,7 @@
       </article>
       <div class="comment-body">
         <img class="comment-icon" id="commentIcon" src="assets/comment.svg" alt="comment">
+
         <h2 class="comment" id="commentIcon">Comment</h2>
       </div>
     </div>
