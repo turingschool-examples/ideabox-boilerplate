@@ -51,13 +51,13 @@ saveButton.addEventListener("click", function(e) {
 
 //change grey star to red star
 function activateStar() {
-  starIcon.hidden = true;
-  activeStarIcon.hidden = false;
+  starInactive.hidden = true;
+  starActive.hidden = false;
 }
 
 function activateDelete() {
-  deleteIcon.hidden = true;
-  activeDeleteIcon.hidden = false;
+  deleteInactive.hidden = true;
+  deleteActive.hidden = false;
 }
 
 
