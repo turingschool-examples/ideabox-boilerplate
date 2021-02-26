@@ -15,14 +15,17 @@ var starInactive = document.querySelector("#starInactive");
 var deleteActive = document.querySelector("#deleteActive");
 var deleteInactive = document.querySelector("#deleteInactive");
 var commentIcon = document.querySelector("#commentIcon");
+var cardSection = document.querySelectorAll(".cardSection");
+
+var savedIdeas = [];
 
 //  Event Listeners:
 // showStarred.addEventListener("click", showStarred);
 // searchInput.addEventListener("keydown", filterIdeas);
-// starInactive.addEventListener("mousedown", activateStar);
-// starActive.addEventListener("mouseup", starIdea);
-// deleteInactive.addEventListener("mousedown", activateDelete);
-// deleteActive.addEventListener("mouseup", removeIdea);
+starInactive.addEventListener("click", activateStar);
+starActive.addEventListener("click", removeStar);
+deleteInactive.addEventListener("mousedown", activateDelete);
+deleteActive.addEventListener("mouseup", removeIdea);
 // commentIcon.addEventListener("click", addComment);
 
 //  Functions:
@@ -36,8 +39,8 @@ function enableSaved(){
   }
 }
 
-saveButton.addEventListener("click", function(e) {
-  e.preventDefault();
+saveButton.addEventListener("click", function(event) {
+  event.preventDefault();
   newIdea = new Idea(titleInput.value, bodyInput.value)
   if (!ideas.includes(newIdea)) {
     ideas.push(newIdea);
@@ -50,14 +53,57 @@ saveButton.addEventListener("click", function(e) {
 
 
 //change grey star to red star
+//have card save in Local storage.
 function activateStar() {
-  starInactive.hidden = true;
-  starActive.hidden = false;
+  togglePictures(starInactive, starActive)
+
 }
 
-function activateDelete() {
-  deleteInactive.hidden = true;
-  deleteActive.hidden = false;
+function removeStar() {
+  togglePictures(starActive, starInactive);
+}
+
+//
+function activateDelete(event) {
+  togglePictures(deleteInactive, deleteActive);
+}
+
+
+
+//delete desired card from screen and local storage
+function removeIdea() {
+  if (event.target.classList.contains("delete-active")) {
+     event.target.closest(".idea-card").remove();
+  }
+}
+
+
+function togglePictures(pic1, pic2) {
+  pic1.hidden = true;
+  pic2.hidden= false;
+}
+
+function displayCards(){
+  cardSection.innerHTML = "";
+  for(var i = 0; i < ideas.length; i++){
+  cardSection= `
+  <div class="idea-card">
+    <div class="card-controls" id=${idea[i].id}>
+      <img class="star-inactive" id="starInactive" src="assets/star.svg" alt="star">
+      <img class="star-active" id="starActive" src="assets/star-active.svg" alt="active star" hidden>
+      <img class="delete-inactive" id="deleteInactive" src="assets/delete.svg" alt="delete">
+      <img class="delete-active" id="deleteActive" src="assets/delete-active.svg" alt="active delete" hidden>
+    </div>
+    <article class="idea-content">
+      <h1 class="idea-title"><strong>${ideas[i].title}</strong></h1>
+      <p class="idea-body">${ideas[i].body}</p>
+    </article>
+    <div class="comment-body">
+      <img class="comment-icon" id="commentIcon" src="assets/comment.svg" alt="comment">
+      <h2 class="comment" id="commentIcon">Comment</h2>
+    </div>
+  </div>`
+  }
 }
 
 
