@@ -1,12 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>IdeaBox</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./styles.css">
-  </head>
-  <body>
 
-    <script src="./src/main.js"></script>
-  </body>
+<head>
+  <title>IdeaBox</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+
+<body>
+
+  <nav class="side-bar">
+    <h1>IdeaBox</h1>
+    <div class="filter">
+      <h2>Filter Starred Ideas</h2>
+      <button class="show-starred-ideas" id="showStarred">Show Starred Ideas</button>
+    </div>
+  </nav>
+
+  <form class="form">
+    <label class="user-title-label">Title</label>
+    <input class="user-title" id="titleInput" type="text" style="font-size:30px;">
+    <label class="user-comment-label">Body</label>
+    <textarea class="user-comment" id="bodyInput" type="text" style="font-size:30px;"></textarea>
+    <button class="save-button" id="saveButton">Save</button>
+    <span class="search-bar">
+      <img class="search-icon" src="assets/search.svg" alt="search">
+      <input class="search" id="searchInput" type="search" placeholder="Search ideas" style="font-size:30px;">
+    </span>
+  </form>
+
+
+  <section class="section" id=cardSecion>
+
+      <section class="idea-card">
+        <div class="card-controls">
+          <img class="star-inactive" id="starInactive" src="assets/star.svg" alt="star">
+          <img class="star-active" id="starActive" src="assets/star-active.svg" alt="active star" hidden>
+          <img class="delete-inactive" id="deleteInactive" src="assets/delete.svg" alt="delete">
+          <img class="delete-active" id="deleteActive" src="assets/delete-active.svg" alt="active delete" hidden>
+        </div>
+        <article class="idea-content">
+          <h1 class="idea-title"><strong>Idea Title</strong></h1>
+          <p class="idea-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth Talk.</p>
+        </article>
+        <div class="comment-body">
+          <img class="comment-icon" id="commentIcon" src="assets/comment.svg" alt="comment">
+          <h2 class="comment" id="commentIcon">Comment</h2>
+        </div>
+      </section>
+
+      <section class="idea-card">
+        <div class="card-controls">
+          <img class="star-inactive" id="starInactive" src="assets/star.svg" alt="star">
+          <img class="star-active" id="starActive" src="assets/star-active.svg" alt="active star" hidden>
+          <img class="delete-inactive" id="deleteInactive" src="assets/delete.svg" alt="delete">
+          <img class="delete-active" id="deleteActive" src="assets/delete-active.svg" alt="active delete" hidden>
+        </div>
+        <article class="idea-content">
+          <h1 class="idea-title"><strong>Idea Title</strong></h1>
+          <p class="idea-body">Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth Talk.</p>
+        </article>
+        <div class="comment-body">
+          <img class="comment-icon" id="commentIcon" src="assets/comment.svg" alt="comment">
+          <h2 class="comment" id="commentIcon">Comment</h2>
+        </div>
+      </section>
+
+      <section class="idea-card">
+        <div class="card-controls">
+          <img class="star-inactive" id="starInactive" src="assets/star.svg" alt="star">
+          <img class="star-active" id="starActive" src="assets/star-active.svg" alt="active star" hidden>
+          <img class="delete-inactive" id="deleteInactive" src="assets/delete.svg" alt="delete">
+          <img class="delete-active" id="deleteActive" src="assets/delete-active.svg" alt="active delete" hidden>
+        </div>
+        <article class="idea-content">
+          <h1 class="idea-title"><strong>Idea Title</strong></h1>
+          <p class="idea-body">Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth Talk.</p>
+        </article>
+        <div class="comment-body">
+          <img class="comment-icon" id="commentIcon" src="assets/comment.svg" alt="comment">
+          <h2 class="comment" id="commentIcon">Comment</h2>
+        </div>
+      </section>
+
+      <section class="idea-card">
+        <div class="card-controls">
+          <img class="star-inactive" id="starInactive" src="assets/star.svg" alt="star">
+          <img class="star-active" id="starActive" src="assets/star-active.svg" alt="active star" hidden>
+          <img class="delete-inactive" id="deleteInactive" src="assets/delete.svg" alt="delete">
+          <img class="delete-active" id="deleteActive" src="assets/delete-active.svg" alt="active delete" hidden>
+        </div>
+        <article class="idea-content">
+          <h1 class="idea-title"><strong>Idea Title</strong></h1>
+          <p class="idea-body">Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth Talk.</p>
+        </article>
+        <div class="comment-body">
+          <img class="comment-icon" id="commentIcon" src="assets/comment.svg" alt="comment">
+          <h2 class="comment" id="commentIcon">Comment</h2>
+        </div>
+      </section>
+
+      <section class="idea-card">
+        <div class="card-controls">
+          <img class="star-inactive" id="starInactive" src="assets/star.svg" alt="star">
+          <img class="star-active" id="starActive" src="assets/star-active.svg" alt="active star" hidden>
+          <img class="delete-inactive" id="deleteInactive" src="assets/delete.svg" alt="delete">
+          <img class="delete-active" id="deleteActive" src="assets/delete-active.svg" alt="active delete" hidden>
+        </div>
+        <article class="idea-content">
+          <h1 class="idea-title"><strong>Idea Title</strong></h1>
+          <p class="idea-body">Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth Talk.</p>
+        </article>
+        <div class="comment-body">
+          <img class="comment-icon" id="commentIcon" src="assets/comment.svg" alt="comment">
+          <h2 class="comment" id="commentIcon">Comment</h2>
+        </div>
+      </section>
+
+      <section class="idea-card">
+        <div class="card-controls">
+          <img class="star-inactive" id="starInactive" src="assets/star.svg" alt="star">
+          <img class="star-active" id="starActive" src="assets/star-active.svg" alt="active star" hidden>
+          <img class="delete-inactive" id="deleteInactive" src="assets/delete.svg" alt="delete">
+          <img class="delete-active" id="deleteActive" src="assets/delete-active.svg" alt="active delete" hidden>
+        </div>
+        <article class="idea-content">
+          <h1 class="idea-title"><strong>Idea Title</strong></h1>
+          <p class="idea-body">Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth Talk.</p>
+        </article>
+        <div class="comment-body">
+          <img class="comment-icon" id="commentIcon" src="assets/comment.svg" alt="comment">
+          <h2 class="comment" id="commentIcon">Comment</h2>
+        </div>
+      </section>
+
+      <section class="idea-card">
+        <div class="card-controls">
+          <img class="star-inactive" id="starInactive" src="assets/star.svg" alt="star">
+          <img class="star-active" id="starActive" src="assets/star-active.svg" alt="active star" hidden>
+          <img class="delete-inactive" id="deleteInactive" src="assets/delete.svg" alt="delete">
+          <img class="delete-active" id="deleteActive" src="assets/delete-active.svg" alt="active delete" hidden>
+        </div>
+        <article class="idea-content">
+          <h1 class="idea-title"><strong>Idea Title</strong></h1>
+          <p class="idea-body">Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth Talk.</p>
+        </article>
+        <div class="comment-body">
+          <img class="comment-icon" id="commentIcon" src="assets/comment.svg" alt="comment">
+          <h2 class="comment" id="commentIcon">Comment</h2>
+        </div>
+      </section>
+
+      <section class="idea-card">
+        <div class="card-controls">
+          <img class="star-inactive" id="starInactive" src="assets/star.svg" alt="star">
+          <img class="star-active" id="starActive" src="assets/star-active.svg" alt="active star" hidden>
+          <img class="delete-inactive" id="deleteInactive" src="assets/delete.svg" alt="delete">
+          <img class="delete-active" id="deleteActive" src="assets/delete-active.svg" alt="active delete" hidden>
+        </div>
+        <article class="idea-content">
+          <h1 class="idea-title"><strong>Idea Title</strong></h1>
+          <p class="idea-body">Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth Talk.</p>
+        </article>
+        <div class="comment-body">
+          <img class="comment-icon" id="commentIcon" src="assets/comment.svg" alt="comment">
+          <h2 class="comment" id="commentIcon">Comment</h2>
+        </div>
+      </section>
+
+      <section class="idea-card">
+        <div class="card-controls">
+          <img class="star-inactive" id="starInactive" src="assets/star.svg" alt="star">
+          <img class="star-active" id="starActive" src="assets/star-active.svg" alt="active star" hidden>
+          <img class="delete-inactive" id="deleteInactive" src="assets/delete.svg" alt="delete">
+          <img class="delete-active" id="deleteActive" src="assets/delete-active.svg" alt="active delete" hidden>
+        </div>
+        <article class="idea-content">
+          <h1 class="idea-title"><strong>Idea Title</strong></h1>
+          <p class="idea-body">Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth Talk.</p>
+        </article>
+        <div class="comment-body">
+          <img class="comment-icon" id="commentIcon" src="assets/comment.svg" alt="comment">
+          <h2 class="comment" id="commentIcon">Comment</h2>
+        </div>
+      </section>
+
+      <section class="idea-card">
+        <div class="card-controls">
+          <img class="star-inactive" id="starInactive" src="assets/star.svg" alt="star">
+          <img class="star-active" id="starActive" src="assets/star-active.svg" alt="active star" hidden>
+          <img class="delete-inactive" id="deleteInactive" src="assets/delete.svg" alt="delete">
+          <img class="delete-active" id="deleteActive" src="assets/delete-active.svg" alt="active delete" hidden>
+        </div>
+        <article class="idea-content">
+          <h1 class="idea-title"><strong>Idea Title</strong></h1>
+          <p class="idea-body">Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth Talk.</p>
+        </article>
+        <div class="comment-body">
+          <img class="comment-icon" id="commentIcon" src="assets/comment.svg" alt="comment">
+          <h2 class="comment" id="commentIcon">Comment</h2>
+        </div>
+      </section>
+
+      <section class="idea-card">
+        <div class="card-controls">
+          <img class="star-inactive" id="starInactive" src="assets/star.svg" alt="star">
+          <img class="star-active" id="starActive" src="assets/star-active.svg" alt="active star" hidden>
+          <img class="delete-inactive" id="deleteInactive" src="assets/delete.svg" alt="delete">
+          <img class="delete-active" id="deleteActive" src="assets/delete-active.svg" alt="active delete" hidden>
+        </div>
+        <article class="idea-content">
+          <h1 class="idea-title"><strong>Idea Title</strong></h1>
+          <p class="idea-body">Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth Talk.</p>
+        </article>
+        <div class="comment-body">
+          <img class="comment-icon" id="commentIcon" src="assets/comment.svg" alt="comment">
+          <h2 class="comment" id="commentIcon">Comment</h2>
+        </div>
+      </section>
+
+      <section class="idea-card">
+        <div class="card-controls">
+          <img class="star-inactive" id="starInactive" src="assets/star.svg" alt="star">
+          <img class="star-active" id="starActive" src="assets/star-active.svg" alt="active star" hidden>
+          <img class="delete-inactive" id="deleteInactive" src="assets/delete.svg" alt="delete">
+          <img class="delete-active" id="deleteActive" src="assets/delete-active.svg" alt="active delete" hidden>
+        </div>
+        <article class="idea-content">
+          <h1 class="idea-title"><strong>Idea Title</strong></h1>
+          <p class="idea-body">Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth Talk.</p>
+        </article>
+        <div class="comment-body">
+          <img class="comment-icon" id="commentIcon" src="assets/comment.svg" alt="comment">
+          <h2 class="comment" id="commentIcon">Comment</h2>
+        </div>
+      </section>
+
+      <section class="idea-card">
+        <div class="card-controls">
+          <img class="star-inactive" id="starInactive" src="assets/star.svg" alt="star">
+          <img class="star-active" id="starActive" src="assets/star-active.svg" alt="active star" hidden>
+          <img class="delete-inactive" id="deleteInactive" src="assets/delete.svg" alt="delete">
+          <img class="delete-active" id="deleteActive" src="assets/delete-active.svg" alt="active delete" hidden>
+        </div>
+        <article class="idea-content">
+          <h1 class="idea-title"><strong>Idea Title</strong></h1>
+          <p class="idea-body">Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth Talk.</p>
+        </article>
+        <div class="comment-body">
+          <img class="comment-icon" id="commentIcon" src="assets/comment.svg" alt="comment">
+          <h2 class="comment" id="commentIcon">Comment</h2>
+        </div>
+      </section>
+
+      <section class="idea-card">
+        <div class="card-controls">
+          <img class="star-inactive" id="starInactive" src="assets/star.svg" alt="star">
+          <img class="star-active" id="starActive" src="assets/star-active.svg" alt="active star" hidden>
+          <img class="delete-inactive" id="deleteInactive" src="assets/delete.svg" alt="delete">
+          <img class="delete-active" id="deleteActive" src="assets/delete-active.svg" alt="active delete" hidden>
+        </div>
+        <article class="idea-content">
+          <h1 class="idea-title"><strong>Idea Title</strong></h1>
+          <p class="idea-body">Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth Talk.</p>
+        </article>
+        <div class="comment-body">
+          <img class="comment-icon" id="commentIcon" src="assets/comment.svg" alt="comment">
+          <h2 class="comment" id="commentIcon">Comment</h2>
+        </div>
+      </section>
+
+  </section>
+
+  <script src="./src/idea.js"></script>
+  <script src="./src/main.js"></script>
+</body>
+
 </html>

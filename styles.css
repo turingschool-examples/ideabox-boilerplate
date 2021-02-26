@@ -1,0 +1,241 @@
+/*
+Need cursor styling when conditions are met in js function
+Need hidden !important styling for later use of icon switches and search filtering
+*/
+/* Add Hidden */
+/*overflow: auto;*/
+* {
+  /* border: solid 2px blue; */
+  font-family: "Open Sans";
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans";
+}
+
+/*~~~~~~~~NAV BAR~~~~~~~~~*/
+.side-bar {
+  background-color: #1F1F3D;
+  color: #E9E9F3;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  width: 20%;
+  height: 100%;
+  position: fixed;
+}
+
+.side-bar>h1 {
+  margin: 6%;
+}
+
+.filter {
+  border-top: solid 2px #353567;
+  border-bottom: solid 2px #353567;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 10em;
+  font-weight: Light;
+}
+
+.filter>h2 {
+  color: #BFBFDD;
+  margin-left: 6%;
+  margin-top: 6%;
+  font-size: 15pt;
+  font-weight: bold;
+}
+
+.show-starred-ideas {
+  background-color: #5356A4;
+  color: #E9E9F3;
+  width: 85%;
+  margin-top: 6%;
+  margin-left: 6%;
+  padding: 2% 2% 2%;
+  font-size: 116%;
+  font-weight: bold;
+  border-color: #2D2C55;
+  border: solid 3px #7375B5;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+/*~~~~~~INPUT BOX~~~~~~~~~*/
+.form {
+  background-color: #A9AAD2;
+  height: 27em;
+  margin-left: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center
+}
+
+.user-title-label {
+  font-size: 17px;
+  margin-right: 38%;
+  color: #353667;
+  font-weight: bold;
+  margin-top: 2%;
+  margin-bottom:.3%;
+  /* margin-bottom: .2%; */
+}
+
+.user-title {
+  width: 41%;
+  height: 2em;
+  border: solid 3px #7375B5;
+  color: #1F1F3D;
+  border-radius: 5px;
+  outline: none;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.user-comment-label {
+  font-size: 17px;
+  margin-right: 38%;
+  color: #353667;
+  font-weight: bold;
+  margin-top: 1.5%;
+  margin-bottom: .3%;
+}
+
+.user-comment {
+  width: 41%;
+  height: 97%;
+  border: solid 3px #7375B5;
+  color: #1F1F3D;
+  border-radius: 5px;
+  outline: none;
+  font-size: 10px;
+  box-sizing: border-box;
+}
+
+.save-button {
+  width: 41%;
+  height: 9em;
+  font-size: 18pt;
+  color: white;
+  font-weight: bold;
+  margin-top:  1.5%;
+  border: solid 3px #7375B5;
+  border-radius: 5px;
+  outline: none;
+  background-color: #5356A4;
+}
+
+.purple {
+  background-color: #353667;
+  cursor: pointer;
+}
+
+.search-bar {
+  display: flex;
+  width: 41%;
+  height: 3em;
+  margin-top: 1.5%;
+  margin-bottom:2%;
+  border: solid 3px #7375B5;
+  border-radius: 5px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.search-icon {
+  width: 6%;
+  height: auto;
+  vertical-align: middle;
+  padding-left: 2%;
+  background-color: #353667;
+  padding-right: 3%;
+}
+
+
+.search {
+  width: 90%;
+  height: 100%;
+  outline: none;
+  font-size: 15px;
+  color: #1F1F3D;
+}
+
+/*~~~~~~~~~CARD SECTION~~~~~~~~~~~~*/
+
+.section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-left: 20%;
+  height: 100%;
+  /* overflow: auto; */
+  background-color: #EAEAF4;
+
+}
+
+.idea-card {
+  display: flex;
+  flex-direction: column;
+  width: 28%;
+  border: 2px solid #1F1F3D;
+  margin: 2%;
+}
+/*~~~~~~~~HEADER~~~~~~~~*/
+.card-controls {
+  height: 3em;
+  display: flex;
+  background-color: #1F1F3D;
+  justify-content: space-between;
+  border-bottom: 2px solid #1F1F3D;
+}
+/*~~~~~~~PICTURES~~~~~~~*/
+.star-inactive,
+.star-active,
+.delete-inactive,
+.delete-active,
+.comment-icon {
+  width: 15%;
+}
+/*~~~~~~~MIDDLE SECTION~~~~~~~*/
+.idea-content {
+  /* overflow: auto; */
+  background-color: #FFFFFF;
+  color: #1F1F3D;
+  padding-left: 3%;
+  /* margin-bottom:1.64em; */
+}
+
+.idea-title {
+  margin-top: 5%;
+  font-weight: bold;
+  font-size: 169%; /*NICE*/
+}
+
+.idea-body {
+  overflow: auto;
+  height: 7.03em;
+  font-size: 169%; /*NICE*/
+
+}
+
+/*~~~~~~FOOTER~~~~~~~~~~~*/
+.comment-body {
+  display: flex;
+  height: 3em;
+  background-color: #5356A4;
+  color: #1F1F3D;
+  align-items: center;
+  border-top: 2px solid #1F1F3D;
+}
+
+.comment {
+  color: #E9E9FE;
+  margin: 1%;
+  font-weight: bold;
+  font-size: 85%;
+}
