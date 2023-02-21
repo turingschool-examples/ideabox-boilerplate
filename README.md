@@ -13,3 +13,9 @@ Throughout the project, one of our focuses will be on providing a fluid and resp
 * Craft code with clean style, using small functions that show trends toward DRYness and SRP
 
 The project spec & rubric can be found [here](https://frontend.turing.io/projects/module-1/ideabox-group.html)
+
+## LinkedIn Pages
+- (Dustin) [https://www.linkedin.com/in/dustin-gouner/]
+- (Chris) [https://www.linkedin.com/in/chris-cole-5559b684/]
+- (Noah) [https://www.linkedin.com/in/noah-byers-a067b8260/]
+- (Trey) []
