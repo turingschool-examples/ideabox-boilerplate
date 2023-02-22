@@ -6,19 +6,23 @@
     <link rel="stylesheet" type="text/css" href="./styles.css">
   </head>
   <body>
-    <aside>
-      <h1>Idea Box</h1>
-      <h2>Filter Starred Ideas</h2>
-      <button>Show Starred Ideas</button>
-    </aside>
+    <header>
+      <h1>IdeaBox</h1>
+      <h2>Filter Starred Ideas<button class="starred-ideas-btn">Show Starred Ideas</button></h2>    
+    </header>
     <main>
       <form>
-        <label>Title</label>
-        <input type="text">
-        <label>Body</label>
-        <input type="text">
-        <button>Save</button>
-        <!-- <input class='search-img' type="image" src="assets/search.svg" alt="Search"> -->
+        <div class="title-container">
+          <label for="title">Title</label>
+          <input id="title" type="text">
+        </div>
+        <div class="body-container">  
+          <label for="body">Body</label>
+          <input id="body" type="text">
+        </div>
+        <div>
+          <button class="save-btn" id="save-btn">Save</button>
+        </div>  
         <div class="search-div">
           <img src='assets/search.svg' class="search-img">
           <input type="text" class="image-box" placeholder="Search ideas">
@@ -30,7 +34,3 @@
   <script src="./src/main.js"></script>
 </body>
 </html>
-
-<!-- <label class="image-box"><img src='assets/search.svg' class="search-img"><input type="text" class="image-box" placeholder="Search ideas">
-</label> -->
-<!-- <input type="text" placeholder="Search Ideas">
