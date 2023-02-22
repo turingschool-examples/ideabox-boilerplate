@@ -21,8 +21,24 @@ aside {
 }
 form {
     height: 40%;
+    display: flex;
+    flex-direction: column
 
 }
 .idea-box {
     height: 60%;
+}
+.search-img {
+    height: 20px;
+    width: 30px;
+    border: 2px solid rgb(6, 0, 128)
+}
+.image-box {
+    /* display: inline-block; */
+    height: 100%;
+    width: 100%;
+}
+.search-div {
+    display: flex;
+    flex-direction: row;
 }
