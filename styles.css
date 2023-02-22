@@ -1,0 +1,28 @@
+* {
+    border: 2px solid green
+
+}
+html, body {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100vw;
+
+}
+main {
+    display: flex;
+    flex-direction: column;
+    width: 75vw;  
+}
+aside {
+    display: flex;
+    flex-direction: column;
+    width: 25vw;    
+}
+form {
+    height: 40%;
+
+}
+.idea-box {
+    height: 60%;
+}
