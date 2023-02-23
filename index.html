@@ -13,22 +13,38 @@
     <main>
       <form>
         <div class="title-container">
-          <label for="title">Title</label>
-          <input id="title" type="text">
+          <label class="title-text" for="title">Title</label> <br>
+          <input class="title-input" id="title" type="text">
         </div>
         <div class="body-container">  
-          <label for="body">Body</label>
-          <input id="body" type="text">
+          <label for="body">Body</label> <br>
+          <input class="body-input" id="body" type="text">
         </div>
-        <div>
+        <div class="save-btn-container">
           <button class="save-btn" id="save-btn">Save</button>
         </div>  
-        <div class="search-div">
-          <img src='assets/search.svg' class="search-img">
-          <input type="text" class="image-box" placeholder="Search ideas">
+        <div class="search-img-container">
+          <div class="search-box">
+            <img class="search-img" src='assets/search.svg' >
+          </div>
+          <input class="search-image-box"type="text" placeholder="Search ideas">
         </div>
     </form>
-    <section class="idea-box">
+    <section class="idea-box-container">
+      <section class="idea-card" id="dateNow">
+        <section class="top-bar">
+          <img class="star" src="assets/star-active.svg" alt="Orange Star">
+          <img class="delete-x" src="assets/delete.svg" alt="delete X">
+        </section>
+        <section class="card-description">
+          <h3>IdeaTitle</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, reiciendis?</p>
+        </section>
+        <section class="bottom-bar">
+          <img class="comment-img" src="assets/comment.svg" alt="comment-img">
+          <h4>Comment</h4>
+        </section>
+      </section>
     </section>
   </main>
   <script src="./src/main.js"></script>
