@@ -31,7 +31,6 @@ h1 {
 }
 
 h2 {
-    /* font-weight: 'Open Sans'; */
     display: flex;
     color: #BFBFDD;
     flex-direction: column;
@@ -59,7 +58,6 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
     background-color: #A9AAD2;   
 }
 
@@ -152,6 +150,46 @@ form {
   flex-direction: row;
 }
 
-.idea-box {
+.idea-box-container{
     height: 60%;
+    display: flex;
+    flex-wrap: wrap;
 }
+
+.idea-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #353567;
+  height: 45%;
+  width: 25%;
+  margin: 16px 16px 16px 16px;
+}
+
+.top-bar {
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1F1F3D;
+}
+
+.star, .delete-x, .comment-img {
+  height: 70%;
+}
+
+.card-description {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.bottom-bar {
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #5356A4;
+
+}
+
