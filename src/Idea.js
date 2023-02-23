@@ -5,4 +5,9 @@ class Idea{
     this.body = body;
     this.star = false;
   }
+  updateIdea(){
+  if(star === true) {
+  star = false
+  }
+ }
 }
