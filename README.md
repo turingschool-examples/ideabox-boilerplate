@@ -15,7 +15,7 @@ Throughout the project, one of our focuses will be on providing a fluid and resp
 The project spec & rubric can be found [here](https://frontend.turing.io/projects/module-1/ideabox-group.html)
 
 ## LinkedIn Pages
-- (Dustin) [https://www.linkedin.com/in/dustin-gouner/]
-- (Chris) [https://www.linkedin.com/in/chris-cole-5559b684/]
-- (Noah) [https://www.linkedin.com/in/noah-byers-a067b8260/]
-- (Trey) [https://www.linkedin.com/in/trey-marshall-32ab01260/]
+- [Dustin](https://www.linkedin.com/in/dustin-gouner/)
+- [Chris](https://www.linkedin.com/in/chris-cole-5559b684/)
+- [Noah](https://www.linkedin.com/in/noah-byers-a067b8260/)
+- [Trey](https://www.linkedin.com/in/trey-marshall-32ab01260/)
