@@ -177,6 +177,7 @@ form {
 
 .star, .delete-x, .comment-img {
     height: 70%;
+    cursor: pointer
 }
 
 .card-description {
