@@ -113,6 +113,7 @@ form {
     font-size: 20px;
     background-color: #1F1F3D;
     color: #E9E9F3;
+    cursor: pointer;
 }
 
 .body-container {
@@ -201,4 +202,5 @@ form {
     background-color: dimgrey;
     color: linen;
     opacity: 1;
+    cursor: not-allowed;
 }

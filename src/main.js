@@ -3,20 +3,28 @@ var savedButton = document.querySelector(".save-btn")
 var titleInput = document.querySelector(".title-input")
 var bodyInput = document.querySelector(".body-input")
 var ideaContainer = document.querySelector(".idea-box-container")
+var form = document.querySelector(".form-container")
 
 // Variables
 var currentIdea
 var savedIdeas = []
 // Event Listeners
 
+window.addEventListener('load', pageLoad)
 savedButton.addEventListener('click', function(event){
   event.preventDefault()
   saveCard()
   clearInput()
   disableSaveButton()
 })
+form.addEventListener('keydown', toggleSaveBtn)
 
 // Functions
+
+
+function pageLoad() {
+  disableSaveButton()
+}
 
 
 function createCard(){
@@ -52,5 +60,14 @@ function clearInput() {
 }
 
 function disableSaveButton() {
+  savedButton.disabled = true
+}
+
+function toggleSaveBtn() {
+  if (titleInput.value !== '' && bodyInput.value !== '') {
+    savedButton.disabled = false
+  } else  {
+    savedButton.disabled = true
+  }
 
 }
