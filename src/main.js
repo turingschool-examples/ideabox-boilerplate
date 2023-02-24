@@ -8,6 +8,7 @@ var bodyInput = document.querySelector(".body-input")
 var ideaContainer = document.querySelector(".idea-box-container")
 var form = document.querySelector(".form-container")
 var deleteButton = document.querySelector(".delete-x")
+var starButton = document.querySelector(".star")
 
 //====================================================
 // Variables
@@ -35,6 +36,8 @@ deleteButton.addEventListener('click', deleteIdeaCard)
 
 ideaContainer.addEventListener('click', updateIdea)
 
+starButton.addEventListener('click', toggleStar)
+
 
 //====================================================
 // Functions
@@ -50,7 +53,7 @@ function createCard(){
     ideaContainer.innerHTML += 
     `<section class="idea-card" id=${savedIdeas[i].id}>
       <section class="top-bar">
-        <img class="star" src="assets/star.svg" alt="White Star">
+        <img class="star" id=${savedIdeas[i].id} src="assets/star.svg" alt="White Star">
         <img class="delete-x" id=${savedIdeas[i].id} src="assets/delete.svg" alt="delete X">
       </section>
       <section class="card-description">
@@ -83,7 +86,7 @@ function disableSaveButton() {
 function toggleSaveBtn() {
   if (titleInput.value !== '' && bodyInput.value !== '') {
     savedButton.disabled = false
-  } else  {
+  } else {
     savedButton.disabled = true
   }
 }
@@ -101,5 +104,21 @@ function updateIdea(event) {
   if(event.target.classList.contains('delete-x')) {
   deleteIdeaCard(event)
   }
+  if(event.target.classList.contains('star')) {
+    toggleStar(event)
+  }
 }
 
+function toggleStar(event) {
+  // console.log(parseInt(event.target.id))
+  // console.log('start console log')
+  for (var i = 0; i < savedIdeas.length; i++) {
+    // console.log(savedIdeas[i].star)
+  if(parseInt(event.target.id) === savedIdeas[i].id) {
+      // console.log('start console log')
+    savedIdeas[i].star = true
+    starButton.src = 'assets/star-active.svg'
+  }
+}
+  createCard()
+}
