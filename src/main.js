@@ -10,8 +10,10 @@ var savedIdeas = []
 // Event Listeners
 
 savedButton.addEventListener('click', function(event){
-event.preventDefault()
-saveCard()
+  event.preventDefault()
+  saveCard()
+  clearInput()
+  disableSaveButton()
 })
 
 // Functions
@@ -42,4 +44,13 @@ function saveCard(){
   currentIdea = new Idea(titleInput.value, bodyInput.value)
   savedIdeas.push(currentIdea);
   createCard()
+}
+
+function clearInput() {
+  titleInput.value = ''
+  bodyInput.value = ''
+}
+
+function disableSaveButton() {
+
 }

@@ -151,7 +151,9 @@ form {
     height: 60%;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
+    background-color: #EAEAF4;
 }
 
 .idea-card {
@@ -193,4 +195,10 @@ form {
 
 .hidden {
     display: none;   
+}
+
+*:disabled {
+    background-color: dimgrey;
+    color: linen;
+    opacity: 1;
 }
