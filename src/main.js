@@ -30,11 +30,11 @@ savedButton.addEventListener('click', function(event){
   disableSaveButton()
 })
 
-form.addEventListener('keydown', toggleSaveBtn)
+form.addEventListener('keyup', toggleSaveBtn)
 
 deleteButton.addEventListener('click', deleteIdeaCard)
 
-ideaContainer.addEventListener('click', updateIdea)
+ideaContainer.addEventListener('click', updateCard)
 
 starButton.addEventListener('click', toggleStar)
 
@@ -50,10 +50,14 @@ function pageLoad() {
 function createCard(){
   ideaContainer.innerHTML = ''
   for (var i = 0; i < savedIdeas.length; i++ ) {
+    var star = 'star.svg' 
+    if (savedIdeas[i].star) {
+      star = 'star-active.svg'
+    }
     ideaContainer.innerHTML += 
     `<section class="idea-card" id=${savedIdeas[i].id}>
       <section class="top-bar">
-        <img class="star" id=${savedIdeas[i].id} src="assets/star.svg" alt="White Star">
+        <img class="star" id=${savedIdeas[i].id} src=assets/${star} alt="White Star">
         <img class="delete-x" id=${savedIdeas[i].id} src="assets/delete.svg" alt="delete X">
       </section>
       <section class="card-description">
@@ -100,9 +104,9 @@ function deleteIdeaCard(event) {
   createCard()
 }
 
-function updateIdea(event) {
+function updateCard(event) {
   if(event.target.classList.contains('delete-x')) {
-  deleteIdeaCard(event)
+    deleteIdeaCard(event)
   }
   if(event.target.classList.contains('star')) {
     toggleStar(event)
@@ -110,15 +114,11 @@ function updateIdea(event) {
 }
 
 function toggleStar(event) {
-  // console.log(parseInt(event.target.id))
-  // console.log('start console log')
   for (var i = 0; i < savedIdeas.length; i++) {
-    // console.log(savedIdeas[i].star)
-  if(parseInt(event.target.id) === savedIdeas[i].id) {
-      // console.log('start console log')
-    savedIdeas[i].star = true
-    starButton.src = 'assets/star-active.svg'
-  }
-}
+    if (parseInt(event.target.id) === savedIdeas[i].id) {
+      savedIdeas[i].updateIdea()
+    }
+  }  
   createCard()
 }
+
