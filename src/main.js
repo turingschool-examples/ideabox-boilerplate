@@ -9,7 +9,9 @@ var ideaContainer = document.querySelector(".idea-box-container")
 var form = document.querySelector(".form-container")
 var deleteButton = document.querySelector(".delete-x")
 var starButton = document.querySelector(".star")
-
+var showAllIdeasBtn = document.querySelector(".show-all-ideas-btn")
+var showStarredIdeasBtn = document.querySelector(".starred-ideas-btn")
+var ideaCard = document.querySelector(".idea-card")
 //====================================================
 // Variables
 //====================================================
@@ -37,6 +39,9 @@ deleteButton.addEventListener('click', deleteIdeaCard)
 ideaContainer.addEventListener('click', updateCard)
 
 starButton.addEventListener('click', toggleStar)
+
+showAllIdeasBtn.addEventListener('click', toggleIdeasBtn)
+showStarredIdeasBtn.addEventListener('click', toggleIdeasBtn  )
 
 
 //====================================================
@@ -122,3 +127,27 @@ function toggleStar(event) {
   createCard()
 }
 
+function toggleIdeasBtn() {
+ showAllIdeasBtn.classList.toggle('hidden')
+ showStarredIdeasBtn.classList.toggle('hidden')
+ showStarredIdeas()
+}
+
+function showStarredIdeas() {
+  // console.log('is this working')
+  for (var i = 0; i < savedIdeas.length; i++){
+ if (savedIdeas[i].star === true) {
+  createCard()
+ } else if (savedIdeas[i].star === false) {
+  var cardToRemove = document.getElementById(`${savedIdeas[i].id}`)
+  cardToRemove.classList.toggle('hidden')
+  // savedIdeas[i].ideaCard.classList.add('hidden')
+  console.log(savedIdeas)
+  }
+ }
+}
+
+// function that goes through an array and checks to see if the 
+// star value is set to true.
+//for statement or .length to go through array but we need to access the object
+// and find the value of star

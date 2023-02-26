@@ -49,7 +49,15 @@ h2 {
     font-size: 27.5px;
     border: 2px solid #353567;
 }
-
+.show-all-ideas-btn {
+    font-weight: bold;
+    background-color: #5356A4;
+    color: #E9E9F3;
+    height: 35%;
+    width: 95%;
+    font-size: 27.5px;
+    border: 2px solid #353567;
+}
 form {
     height: 45%;
     display: flex;
@@ -205,3 +213,4 @@ form {
     opacity: 1;
     cursor: not-allowed;
 }
+
