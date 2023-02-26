@@ -12,12 +12,14 @@ var starButton = document.querySelector(".star")
 var showAllIdeasBtn = document.querySelector(".show-all-ideas-btn")
 var showStarredIdeasBtn = document.querySelector(".starred-ideas-btn")
 var ideaCard = document.querySelector(".idea-card")
+var filterBox = document.getElementById("filter-box")
 //====================================================
 // Variables
 //====================================================
 
 var currentIdea
 var savedIdeas = []
+var showFavorite = false
 
 //====================================================
 // Event Listeners
@@ -41,8 +43,10 @@ ideaContainer.addEventListener('click', updateCard)
 starButton.addEventListener('click', toggleStar)
 
 showAllIdeasBtn.addEventListener('click', showAllIdeas)
+
 showStarredIdeasBtn.addEventListener('click', showFavorites)
 
+filterBox.addEventListener('input', createCard)
 
 //====================================================
 // Functions
@@ -55,31 +59,43 @@ function pageLoad() {
 function createCard(){
   ideaContainer.innerHTML = ''
   for (var i = 0; i < savedIdeas.length; i++ ) {
-    var star = 'star.svg' 
-    if (savedIdeas[i].star) {
-      star = 'star-active.svg'
+    if (savedIdeas[i].title.toLowerCase().includes(filterBox.value.toLowerCase()) || savedIdeas[i].body.toLowerCase().includes(filterBox.value.toLowerCase())) {
+      if (savedIdeas[i].star === true && showFavorite === true) {
+        drawSingleCard(savedIdeas[i])
+      } else if (showFavorite === false ) { 
+        drawSingleCard(savedIdeas[i])
+      }
     }
-    ideaContainer.innerHTML += 
-    `<section class="idea-card" id=${savedIdeas[i].id}>
-      <section class="top-bar">
-        <img class="star" id=${savedIdeas[i].id} src=assets/${star} alt="White Star">
-        <img class="delete-x" id=${savedIdeas[i].id} src="assets/delete.svg" alt="delete X">
-      </section>
-      <section class="card-description">
-        <h3>${savedIdeas[i].title}</h3>
-        <p>${savedIdeas[i].body}</p>
-      </section>
-      <section class="bottom-bar">
-        <img class="comment-img" src="assets/comment.svg" alt="comment-img">
-        <h4>Comment</h4>
-      </section>
-    </section>`
   }
+}
+
+function drawSingleCard(idea) {
+    var star ='star.svg' 
+    var altStar = 'White star'
+    if (idea.star) {
+      star = 'star-active.svg'
+      altStar = 'Orange star'
+    }
+  ideaContainer.innerHTML += 
+  `<section class="idea-card" id=${idea.id}>
+    <section class="top-bar">
+      <img class="star" id=${idea.id} src=assets/${star} alt=${altStar}>
+      <img class="delete-x" id=${idea.id} src="assets/delete.svg" alt="delete X">
+    </section>
+    <section class="card-description">
+      <h3>${idea.title}</h3>
+      <p>${idea.body}</p>
+    </section>
+    <section class="bottom-bar">
+      <img class="comment-img" src="assets/comment.svg" alt="comment-img">
+      <h4>Comment</h4>
+    </section>
+  </section>`
 }
 
 function saveCard(){
   currentIdea = new Idea(titleInput.value, bodyInput.value)
-  savedIdeas.push(currentIdea);
+  savedIdeas.push(currentIdea)
   createCard()
 }
 
@@ -127,26 +143,17 @@ function toggleStar(event) {
   createCard()
 }
 
-function showStarredIdeas() {
-for (var i = 0; i < savedIdeas.length; i++){
-  if (savedIdeas[i].star === true && showStarredIdeasBtn.classList === 'hidden') {
-    createCard()
-  } else if (savedIdeas[i].star === false) {
-    var cardToRemove = document.getElementById(`${savedIdeas[i].id}`)
-    cardToRemove.classList.toggle('hidden')
-  }
- }
-}
-
 function showFavorites() {
   showAllIdeasBtn.classList.remove('hidden')
   showStarredIdeasBtn.classList.add('hidden')
-  showStarredIdeas()
+  showFavorite = true
+  createCard()
 }
 
 function showAllIdeas() {
   showAllIdeasBtn.classList.add('hidden')
   showStarredIdeasBtn.classList.remove('hidden')
+  showFavorite = false
   createCard()
 }
 
