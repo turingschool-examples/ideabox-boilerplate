@@ -134,20 +134,15 @@ function toggleIdeasBtn() {
 }
 
 function showStarredIdeas() {
-  // console.log('is this working')
-  for (var i = 0; i < savedIdeas.length; i++){
- if (savedIdeas[i].star === true) {
-  createCard()
- } else if (savedIdeas[i].star === false) {
-  var cardToRemove = document.getElementById(`${savedIdeas[i].id}`)
-  cardToRemove.classList.toggle('hidden')
-  // savedIdeas[i].ideaCard.classList.add('hidden')
-  console.log(savedIdeas)
+for (var i = 0; i < savedIdeas.length; i++){
+  if (savedIdeas[i].star === true) {
+    createCard()
+  } else if (savedIdeas[i].star === false) {
+    var cardToRemove = document.getElementById(`${savedIdeas[i].id}`)
+    cardToRemove.classList.toggle('hidden')
   }
  }
 }
 
-// function that goes through an array and checks to see if the 
-// star value is set to true.
-//for statement or .length to go through array but we need to access the object
-// and find the value of star
+// Currently bug with toggling starred ideas and non starred ideas. Have to add new Idea to see
+// the whole array again after clicking starred ideas button.
