@@ -6,7 +6,49 @@
     <link rel="stylesheet" type="text/css" href="./styles.css">
   </head>
   <body>
-
-    <script src="./src/main.js"></script>
-  </body>
+    <header>
+      <h1>IdeaBox</h1>
+      <h2>Filter Starred Ideas<button class="starred-ideas-btn">Show Starred Ideas</button><button class="show-all-ideas-btn hidden">Show All Ideas</button></h2> 
+    </header>
+  <main>
+    <form class="form-container">
+      <div class="title-container">
+        <label class="title-text" for="title">Title</label> <br>
+        <input class="title-input" id="title" type="text">
+      </div>
+      <div class="body-container">  
+        <label for="body">Body</label> <br>
+        <input class="body-input" id="body" type="text">
+      </div>
+      <div class="save-btn-container">
+        <button class="save-btn" id="save-btn">Save</button>
+      </div>  
+      <div class="search-img-container">
+        <div class="search-box">
+          <img class="search-img" src='assets/search.svg' >
+        </div>
+        <input class="search-image-box" id="filter-box" type="text" placeholder="Search ideas">
+      </div>
+    </form>
+    <section class="idea-box-container">
+      <section class="idea-card hidden" id="dateNow">
+        <section class="top-bar">
+          <img class="star" src="assets/star.svg" alt="White Star">
+          <img class="delete-x" src="assets/delete.svg" alt="delete X">
+        </section>
+        <section class="card-description">
+          <h3>IdeaTitle</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, reiciendis?</p>
+        </section>
+        <section class="bottom-bar">
+          <img class="comment-img" src="assets/comment.svg" alt="comment-img">
+          <h4>Comment</h4>
+        </section>
+      </section>
+    </section>
+  </main>
+  <script src="./src/Idea.js"></script>
+  <script src="./src/main.js"></script>
+</body>
 </html>
+
