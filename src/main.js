@@ -40,8 +40,8 @@ ideaContainer.addEventListener('click', updateCard)
 
 starButton.addEventListener('click', toggleStar)
 
-showAllIdeasBtn.addEventListener('click', toggleIdeasBtn)
-showStarredIdeasBtn.addEventListener('click', toggleIdeasBtn  )
+showAllIdeasBtn.addEventListener('click', showAllIdeas)
+showStarredIdeasBtn.addEventListener('click', showFavorites)
 
 
 //====================================================
@@ -127,15 +127,9 @@ function toggleStar(event) {
   createCard()
 }
 
-function toggleIdeasBtn() {
- showAllIdeasBtn.classList.toggle('hidden')
- showStarredIdeasBtn.classList.toggle('hidden')
- showStarredIdeas()
-}
-
 function showStarredIdeas() {
 for (var i = 0; i < savedIdeas.length; i++){
-  if (savedIdeas[i].star === true) {
+  if (savedIdeas[i].star === true && showStarredIdeasBtn.classList === 'hidden') {
     createCard()
   } else if (savedIdeas[i].star === false) {
     var cardToRemove = document.getElementById(`${savedIdeas[i].id}`)
@@ -144,5 +138,15 @@ for (var i = 0; i < savedIdeas.length; i++){
  }
 }
 
-// Currently bug with toggling starred ideas and non starred ideas. Have to add new Idea to see
-// the whole array again after clicking starred ideas button.
+function showFavorites() {
+  showAllIdeasBtn.classList.remove('hidden')
+  showStarredIdeasBtn.classList.add('hidden')
+  showStarredIdeas()
+}
+
+function showAllIdeas() {
+  showAllIdeasBtn.classList.add('hidden')
+  showStarredIdeasBtn.classList.remove('hidden')
+  createCard()
+}
+
